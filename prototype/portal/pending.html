@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pending Approval - Customer Portal | Silent Disco Headsets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/portal.css">
+</head>
+<body>
+    <div class="pending-page">
+        <div class="pending-card">
+            <div class="pending-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+            </div>
+
+            <h1>Account Pending Approval</h1>
+            <p>Thanks for registering! Your account is currently being reviewed by our team. You'll receive an email notification once your account has been approved.</p>
+
+            <div style="background: var(--gray-light); border-radius: var(--border-radius); padding: 1.5rem; margin-bottom: 1.5rem; text-align: left;">
+                <h4 style="margin-bottom: 0.5rem; font-size: 1rem;">What happens next?</h4>
+                <ul style="margin: 0; padding-left: 1.25rem; color: var(--gray-medium);">
+                    <li>Our team will verify your purchase</li>
+                    <li>You'll receive an approval email</li>
+                    <li>Then you can access all portal features</li>
+                </ul>
+            </div>
+
+            <p style="font-size: 0.875rem; color: var(--gray-medium);">
+                Questions? Contact us at <a href="mailto:huzz@nichuzz.com" style="color: var(--purple-dark);">huzz@nichuzz.com</a>
+            </p>
+
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
+                <button class="btn btn-secondary" id="check-status-btn">Check Status</button>
+                <button class="btn btn-outline" id="logout-btn">Sign Out</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-client.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Check if logged in
+            const user = await Auth.getCurrentUser();
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Check if already approved
+            const profile = await Auth.getCurrentProfile();
+            if (profile?.is_approved || profile?.is_admin) {
+                if (profile.is_admin) {
+                    window.location.href = 'admin/index.html';
+                } else {
+                    window.location.href = 'dashboard.html';
+                }
+                return;
+            }
+
+            // Check status button
+            document.getElementById('check-status-btn').addEventListener('click', async () => {
+                const btn = document.getElementById('check-status-btn');
+                btn.textContent = 'Checking...';
+                btn.disabled = true;
+
+                const profile = await Auth.getCurrentProfile();
+
+                if (profile?.is_approved) {
+                    Utils.showToast('Your account has been approved!', 'success');
+                    setTimeout(() => {
+                        window.location.href = 'dashboard.html';
+                    }, 1500);
+                } else {
+                    Utils.showToast('Your account is still pending approval', 'info');
+                    btn.textContent = 'Check Status';
+                    btn.disabled = false;
+                }
+            });
+
+            // Logout button
+            document.getElementById('logout-btn').addEventListener('click', async () => {
+                await Auth.signOut();
+                window.location.href = 'login.html';
+            });
+        });
+    </script>
+</body>
+</html>

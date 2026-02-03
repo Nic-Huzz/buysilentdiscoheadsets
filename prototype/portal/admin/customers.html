@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers - Admin | Silent Disco Headsets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/portal.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <a href="../../index.html" class="portal-logo">
+            <span>Admin Portal</span>
+        </a>
+
+        <nav class="admin-nav">
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                Dashboard
+            </a>
+            <a href="customers.html" class="active">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Customers
+            </a>
+            <a href="orders.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                Orders
+            </a>
+            <a href="resources.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                Resources
+            </a>
+            <a href="upsells.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                Upsells
+            </a>
+        </nav>
+
+        <div style="margin-top: auto; padding-top: 2rem;">
+            <a href="../dashboard.html" style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.5); font-size: 0.875rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 18l-6-6 6-6"></path>
+                </svg>
+                Back to Portal
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="admin-main">
+        <header class="admin-header">
+            <div>
+                <h1 style="font-size: 1.5rem; margin-bottom: 0;">Customers</h1>
+            </div>
+            <div class="portal-user-menu">
+                <button class="portal-user-btn" id="user-menu-btn">
+                    <span id="user-name">Admin</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="portal-dropdown" id="user-dropdown">
+                    <button id="logout-btn">Sign Out</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="admin-content">
+            <!-- Filters -->
+            <div style="display: flex; gap: var(--spacing-sm); margin-bottom: var(--spacing-md);">
+                <button class="filter-btn active" data-filter="all">All Customers</button>
+                <button class="filter-btn" data-filter="pending">Pending Approval</button>
+                <button class="filter-btn" data-filter="approved">Approved</button>
+            </div>
+
+            <!-- Customers Table -->
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Company</th>
+                        <th>Registered</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="customers-table">
+                    <tr>
+                        <td colspan="6" style="text-align: center; color: var(--gray-medium);">Loading...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../js/supabase-client.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script>
+        let allCustomers = [];
+        let currentFilter = 'all';
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await initProtectedPage({
+                requireAdmin: true,
+                onReady: async (user, profile) => {
+                    setupPortalHeader(profile);
+                    setupAdminSidebar();
+                    setupFilters();
+                    await loadCustomers();
+                }
+            });
+        });
+
+        function setupFilters() {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilter = btn.dataset.filter;
+                    renderCustomers();
+                });
+            });
+        }
+
+        async function loadCustomers() {
+            try {
+                allCustomers = await DB.profiles.getAll();
+                // Filter out admins from the list
+                allCustomers = allCustomers.filter(c => !c.is_admin);
+                renderCustomers();
+            } catch (error) {
+                console.error('Error loading customers:', error);
+                Utils.showToast('Error loading customers', 'error');
+            }
+        }
+
+        function renderCustomers() {
+            let filtered = allCustomers;
+
+            if (currentFilter === 'pending') {
+                filtered = allCustomers.filter(c => !c.is_approved);
+            } else if (currentFilter === 'approved') {
+                filtered = allCustomers.filter(c => c.is_approved);
+            }
+
+            const tbody = document.getElementById('customers-table');
+
+            if (filtered.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; color: var(--gray-medium);">No customers found</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = filtered.map(c => `
+                <tr>
+                    <td><strong>${c.full_name || '-'}</strong></td>
+                    <td>${c.email}</td>
+                    <td>${c.company_name || '-'}</td>
+                    <td>${Utils.formatDate(c.created_at)}</td>
+                    <td>
+                        <span class="badge ${c.is_approved ? 'badge-approved' : 'badge-pending'}">
+                            ${c.is_approved ? 'Approved' : 'Pending'}
+                        </span>
+                    </td>
+                    <td>
+                        <div class="action-btns">
+                            ${!c.is_approved ? `
+                                <button class="action-btn approve" title="Approve" onclick="approveCustomer('${c.id}')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </button>
+                            ` : ''}
+                            <button class="action-btn edit" title="View Details" onclick="viewCustomer('${c.id}')">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        async function approveCustomer(id) {
+            try {
+                await DB.profiles.approve(id);
+                Utils.showToast('Customer approved successfully', 'success');
+                await loadCustomers();
+            } catch (error) {
+                console.error('Error approving customer:', error);
+                Utils.showToast('Error approving customer', 'error');
+            }
+        }
+
+        function viewCustomer(id) {
+            const customer = allCustomers.find(c => c.id === id);
+            if (!customer) return;
+
+            alert(`
+Customer Details:
+Name: ${customer.full_name || '-'}
+Email: ${customer.email}
+Phone: ${customer.phone || '-'}
+Company: ${customer.company_name || '-'}
+Status: ${customer.is_approved ? 'Approved' : 'Pending'}
+Registered: ${Utils.formatDate(customer.created_at)}
+${customer.approved_at ? `Approved: ${Utils.formatDate(customer.approved_at)}` : ''}
+            `.trim());
+        }
+    </script>
+</body>
+</html>

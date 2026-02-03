@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Customer Portal | Silent Disco Headsets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/portal.css">
+</head>
+<body>
+    <div class="auth-page">
+        <div class="auth-card">
+            <div class="auth-logo">
+                <a href="../index.html">
+                    <img src="../images/logo-dark.png" alt="Silent Disco Headsets" onerror="this.style.display='none'">
+                </a>
+                <h1>Customer Portal</h1>
+            </div>
+
+            <div class="auth-title">
+                <h2>Create Account</h2>
+                <p>Register to track orders and access exclusive resources</p>
+            </div>
+
+            <form id="register-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="John Smith">
+                        <div class="form-error" id="fullName-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="companyName">Company Name</label>
+                        <input type="text" id="companyName" name="companyName" placeholder="Your Company">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="you@company.com">
+                    <div class="form-error" id="email-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+61 400 000 000">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="password">Password *</label>
+                        <input type="password" id="password" name="password" required placeholder="Min. 8 characters">
+                        <div class="form-error" id="password-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password *</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm password">
+                        <div class="form-error" id="confirmPassword-error"></div>
+                    </div>
+                </div>
+
+                <div class="form-hint" style="margin-bottom: 1rem;">
+                    After registration, your account will be reviewed and approved. You'll receive an email once approved.
+                </div>
+
+                <div class="form-error" id="form-error" style="text-align: center; margin-bottom: 1rem;"></div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" id="register-btn">
+                        <span class="btn-text">Create Account</span>
+                        <span class="btn-loading" style="display: none;">Creating account...</span>
+                    </button>
+                </div>
+            </form>
+
+            <div class="form-footer">
+                <p>Already have an account? <a href="login.html">Sign in</a></p>
+                <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--gray-medium);">Back to main site</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal">
+            <div class="modal-body" style="text-align: center; padding: 3rem 2rem;">
+                <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: rgba(34, 197, 94, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#15803d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                </div>
+                <h3 style="margin-bottom: 0.5rem;">Registration Successful!</h3>
+                <p style="color: var(--gray-medium); margin-bottom: 1.5rem;">Please check your email to verify your account. Once verified and approved by our team, you'll have full access to the customer portal.</p>
+                <a href="login.html" class="btn btn-primary">Go to Login</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-client.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Check if already logged in
+            const user = await Auth.getCurrentUser();
+            if (user) {
+                window.location.href = 'dashboard.html';
+                return;
+            }
+
+            const form = document.getElementById('register-form');
+            const registerBtn = document.getElementById('register-btn');
+            const btnText = registerBtn.querySelector('.btn-text');
+            const btnLoading = registerBtn.querySelector('.btn-loading');
+            const successModal = document.getElementById('success-modal');
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                // Clear errors
+                document.querySelectorAll('.form-error').forEach(el => el.textContent = '');
+
+                const fullName = document.getElementById('fullName').value.trim();
+                const companyName = document.getElementById('companyName').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+
+                // Validate
+                let hasError = false;
+
+                if (!fullName) {
+                    document.getElementById('fullName-error').textContent = 'Full name is required';
+                    hasError = true;
+                }
+                if (!email) {
+                    document.getElementById('email-error').textContent = 'Email is required';
+                    hasError = true;
+                }
+                if (!password) {
+                    document.getElementById('password-error').textContent = 'Password is required';
+                    hasError = true;
+                } else if (password.length < 8) {
+                    document.getElementById('password-error').textContent = 'Password must be at least 8 characters';
+                    hasError = true;
+                }
+                if (password !== confirmPassword) {
+                    document.getElementById('confirmPassword-error').textContent = 'Passwords do not match';
+                    hasError = true;
+                }
+
+                if (hasError) return;
+
+                // Show loading
+                btnText.style.display = 'none';
+                btnLoading.style.display = 'inline';
+                registerBtn.disabled = true;
+
+                try {
+                    await Auth.signUp(email, password, {
+                        fullName,
+                        phone,
+                        companyName
+                    });
+
+                    // Show success modal
+                    successModal.classList.add('show');
+                } catch (error) {
+                    document.getElementById('form-error').textContent = error.message || 'Registration failed. Please try again.';
+                    btnText.style.display = 'inline';
+                    btnLoading.style.display = 'none';
+                    registerBtn.disabled = false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

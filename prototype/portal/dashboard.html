@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Customer Portal | Silent Disco Headsets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/portal.css">
+</head>
+<body>
+    <div class="portal-wrapper">
+        <!-- Header -->
+        <header class="portal-header">
+            <div class="container">
+                <a href="../index.html" class="portal-logo">
+                    <img src="../images/logo-dark.png" alt="Silent Disco Headsets" onerror="this.style.display='none'">
+                    <span>Customer Portal</span>
+                </a>
+
+                <nav class="portal-nav">
+                    <a href="dashboard.html" class="active">Dashboard</a>
+                    <a href="orders.html">My Orders</a>
+                    <a href="resources.html">Resources</a>
+                </nav>
+
+                <div class="portal-user-menu">
+                    <button class="portal-user-btn" id="user-menu-btn">
+                        <span id="user-name">Account</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="portal-dropdown" id="user-dropdown">
+                        <a href="#" id="profile-link">My Profile</a>
+                        <hr>
+                        <button id="logout-btn">Sign Out</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="portal-main">
+            <div class="container">
+                <!-- Welcome Section -->
+                <div class="dashboard-header">
+                    <h1>Welcome back, <span id="welcome-name">Customer</span>!</h1>
+                    <p>Here's an overview of your account and latest updates.</p>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="dashboard-grid" style="margin-bottom: var(--spacing-lg);">
+                    <div class="dashboard-card">
+                        <h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            Total Orders
+                        </h3>
+                        <div class="dashboard-stat">
+                            <span class="number" id="total-orders">0</span>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            In Progress
+                        </h3>
+                        <div class="dashboard-stat">
+                            <span class="number" id="orders-in-progress">0</span>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15803d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            Delivered
+                        </h3>
+                        <div class="dashboard-stat">
+                            <span class="number" id="orders-delivered">0</span>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                            </svg>
+                            Resources
+                        </h3>
+                        <div class="dashboard-stat">
+                            <span class="number" id="total-resources">0</span>
+                            <span class="label">available</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <div class="dashboard-card" style="margin-bottom: var(--spacing-lg);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
+                        <h3 style="margin-bottom: 0;">Recent Orders</h3>
+                        <a href="orders.html" style="color: var(--purple-dark); font-weight: 500;">View All</a>
+                    </div>
+
+                    <div id="recent-orders">
+                        <!-- Orders loaded dynamically -->
+                        <div class="empty-state" id="no-orders">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            <h3>No orders yet</h3>
+                            <p>Your orders will appear here once created by our team.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upsells Section -->
+                <div class="upsells-section" id="upsells-section" style="display: none;">
+                    <h2>Recommended for You</h2>
+                    <div class="upsells-grid" id="upsells-grid">
+                        <!-- Upsells loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="portal-footer">
+            <div class="container">
+                <p>Silent Disco Headsets &copy; 2025. Need help? <a href="mailto:huzz@nichuzz.com" style="color: var(--purple-dark);">Contact Support</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-client.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Initialize protected page
+            const initialized = await initProtectedPage({
+                requireApproved: true,
+                onReady: async (user, profile) => {
+                    // Setup header
+                    setupPortalHeader(profile);
+
+                    // Set welcome name
+                    const firstName = profile.full_name ? profile.full_name.split(' ')[0] : 'Customer';
+                    document.getElementById('welcome-name').textContent = firstName;
+
+                    // Load data
+                    await loadDashboardData(user.id);
+                }
+            });
+        });
+
+        async function loadDashboardData(userId) {
+            try {
+                // Load orders
+                const orders = await DB.orders.getByCustomer(userId);
+
+                // Update stats
+                document.getElementById('total-orders').textContent = orders.length;
+                document.getElementById('orders-in-progress').textContent =
+                    orders.filter(o => ['received', 'processing', 'shipped'].includes(o.current_stage)).length;
+                document.getElementById('orders-delivered').textContent =
+                    orders.filter(o => o.current_stage === 'delivered').length;
+
+                // Render recent orders (max 3)
+                renderRecentOrders(orders.slice(0, 3));
+
+                // Load resources count
+                const resources = await DB.resources.getActive();
+                document.getElementById('total-resources').textContent = resources.length;
+
+                // Load and render upsells
+                const upsells = await DB.upsells.getActive();
+                if (upsells.length > 0) {
+                    renderUpsells(upsells);
+                }
+
+            } catch (error) {
+                console.error('Error loading dashboard data:', error);
+                Utils.showToast('Error loading dashboard data', 'error');
+            }
+        }
+
+        function renderRecentOrders(orders) {
+            const container = document.getElementById('recent-orders');
+            const emptyState = document.getElementById('no-orders');
+
+            if (orders.length === 0) {
+                emptyState.style.display = 'block';
+                return;
+            }
+
+            emptyState.style.display = 'none';
+
+            const ordersHtml = orders.map(order => {
+                const stageInfo = Utils.getStageInfo(order.current_stage);
+                return `
+                    <div class="order-card">
+                        <div class="order-card-header">
+                            <span class="order-number">${order.order_number}</span>
+                            <span class="order-status ${order.current_stage}">${stageInfo.label}</span>
+                        </div>
+                        <div class="order-details">
+                            <div class="order-detail">
+                                <span class="label">Headsets</span>
+                                <span class="value">${order.headset_quantity || 0}</span>
+                            </div>
+                            <div class="order-detail">
+                                <span class="label">Transmitters</span>
+                                <span class="value">${order.transmitter_quantity || 0}</span>
+                            </div>
+                            <div class="order-detail">
+                                <span class="label">Total</span>
+                                <span class="value">${Utils.formatCurrency(order.total_amount)}</span>
+                            </div>
+                            <div class="order-detail">
+                                <span class="label">Date</span>
+                                <span class="value">${Utils.formatDate(order.created_at)}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            container.innerHTML = ordersHtml + container.innerHTML;
+        }
+
+        function renderUpsells(upsells) {
+            const section = document.getElementById('upsells-section');
+            const grid = document.getElementById('upsells-grid');
+
+            section.style.display = 'block';
+
+            grid.innerHTML = upsells.map(upsell => `
+                <div class="upsell-card">
+                    <div class="upsell-image">
+                        ${upsell.image_path
+                            ? `<img src="${upsell.image_path}" alt="${upsell.title}">`
+                            : `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gray-medium)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>`
+                        }
+                    </div>
+                    <div class="upsell-content">
+                        <h4 class="upsell-title">${upsell.title}</h4>
+                        <p class="upsell-description">${upsell.description || ''}</p>
+                        ${upsell.price ? `<div class="upsell-price">${Utils.formatCurrency(upsell.price)}</div>` : ''}
+                        <a href="${upsell.cta_link || '#'}" class="btn btn-primary" target="_blank">${upsell.cta_text || 'Learn More'}</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
+</html>

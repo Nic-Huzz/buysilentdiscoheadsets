@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Silent Disco Headsets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/portal.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <a href="../../index.html" class="portal-logo">
+            <span>Admin Portal</span>
+        </a>
+
+        <nav class="admin-nav">
+            <a href="index.html" class="active">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                Dashboard
+            </a>
+            <a href="customers.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Customers
+            </a>
+            <a href="orders.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                Orders
+            </a>
+            <a href="resources.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                Resources
+            </a>
+            <a href="upsells.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                Upsells
+            </a>
+        </nav>
+
+        <div style="margin-top: auto; padding-top: 2rem;">
+            <a href="../dashboard.html" style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.5); font-size: 0.875rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 18l-6-6 6-6"></path>
+                </svg>
+                Back to Portal
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="admin-main">
+        <header class="admin-header">
+            <div>
+                <h1 style="font-size: 1.5rem; margin-bottom: 0;">Dashboard</h1>
+            </div>
+            <div class="portal-user-menu">
+                <button class="portal-user-btn" id="user-menu-btn">
+                    <span id="user-name">Admin</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="portal-dropdown" id="user-dropdown">
+                    <button id="logout-btn">Sign Out</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="admin-content">
+            <!-- Stats -->
+            <div class="admin-stats">
+                <div class="admin-stat-card">
+                    <div class="label">Pending Approvals</div>
+                    <div class="value" id="pending-count">0</div>
+                </div>
+                <div class="admin-stat-card">
+                    <div class="label">Total Customers</div>
+                    <div class="value" id="customer-count">0</div>
+                </div>
+                <div class="admin-stat-card">
+                    <div class="label">Active Orders</div>
+                    <div class="value" id="active-orders">0</div>
+                </div>
+                <div class="admin-stat-card">
+                    <div class="label">Total Revenue</div>
+                    <div class="value" id="total-revenue">$0</div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md);">
+                <!-- Pending Approvals -->
+                <div class="dashboard-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
+                        <h3 style="margin-bottom: 0;">Pending Approvals</h3>
+                        <a href="customers.html" style="color: var(--purple-dark); font-size: 0.875rem;">View All</a>
+                    </div>
+                    <div id="pending-list">
+                        <p style="color: var(--gray-medium);">Loading...</p>
+                    </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <div class="dashboard-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
+                        <h3 style="margin-bottom: 0;">Recent Orders</h3>
+                        <a href="orders.html" style="color: var(--purple-dark); font-size: 0.875rem;">View All</a>
+                    </div>
+                    <div id="recent-orders">
+                        <p style="color: var(--gray-medium);">Loading...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../js/supabase-client.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            await initProtectedPage({
+                requireAdmin: true,
+                onReady: async (user, profile) => {
+                    setupPortalHeader(profile);
+                    setupAdminSidebar();
+                    await loadDashboardData();
+                }
+            });
+        });
+
+        async function loadDashboardData() {
+            try {
+                // Load all profiles
+                const profiles = await DB.profiles.getAll();
+                const pendingProfiles = profiles.filter(p => !p.is_approved && !p.is_admin);
+                const approvedCustomers = profiles.filter(p => p.is_approved && !p.is_admin);
+
+                // Load orders
+                const orders = await DB.orders.getAll();
+                const activeOrders = orders.filter(o => o.current_stage !== 'delivered');
+                const totalRevenue = orders.reduce((sum, o) => sum + parseFloat(o.total_amount || 0), 0);
+
+                // Update stats
+                document.getElementById('pending-count').textContent = pendingProfiles.length;
+                document.getElementById('customer-count').textContent = approvedCustomers.length;
+                document.getElementById('active-orders').textContent = activeOrders.length;
+                document.getElementById('total-revenue').textContent = Utils.formatCurrency(totalRevenue);
+
+                // Render pending approvals
+                renderPendingList(pendingProfiles.slice(0, 5));
+
+                // Render recent orders
+                renderRecentOrders(orders.slice(0, 5));
+
+            } catch (error) {
+                console.error('Error loading dashboard:', error);
+                Utils.showToast('Error loading dashboard data', 'error');
+            }
+        }
+
+        function renderPendingList(profiles) {
+            const container = document.getElementById('pending-list');
+
+            if (profiles.length === 0) {
+                container.innerHTML = '<p style="color: var(--gray-medium);">No pending approvals</p>';
+                return;
+            }
+
+            container.innerHTML = profiles.map(p => `
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
+                    <div>
+                        <div style="font-weight: 500;">${p.full_name || 'Unknown'}</div>
+                        <div style="font-size: 0.875rem; color: var(--gray-medium);">${p.email}</div>
+                    </div>
+                    <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;" onclick="approveUser('${p.id}')">
+                        Approve
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function renderRecentOrders(orders) {
+            const container = document.getElementById('recent-orders');
+
+            if (orders.length === 0) {
+                container.innerHTML = '<p style="color: var(--gray-medium);">No orders yet</p>';
+                return;
+            }
+
+            container.innerHTML = orders.map(o => {
+                const stageInfo = Utils.getStageInfo(o.current_stage);
+                return `
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
+                        <div>
+                            <div style="font-weight: 500;">${o.order_number}</div>
+                            <div style="font-size: 0.875rem; color: var(--gray-medium);">${o.customer?.full_name || 'Customer'}</div>
+                        </div>
+                        <span class="order-status ${o.current_stage}">${stageInfo.label}</span>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        async function approveUser(userId) {
+            try {
+                await DB.profiles.approve(userId);
+                Utils.showToast('Customer approved successfully', 'success');
+                await loadDashboardData();
+            } catch (error) {
+                console.error('Error approving user:', error);
+                Utils.showToast('Error approving customer', 'error');
+            }
+        }
+    </script>
+</body>
+</html>

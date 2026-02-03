@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Customer Portal | Silent Disco Headsets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/portal.css">
+</head>
+<body>
+    <div class="portal-wrapper">
+        <!-- Header -->
+        <header class="portal-header">
+            <div class="container">
+                <a href="../index.html" class="portal-logo">
+                    <img src="../images/logo-dark.png" alt="Silent Disco Headsets" onerror="this.style.display='none'">
+                    <span>Customer Portal</span>
+                </a>
+
+                <nav class="portal-nav">
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="orders.html">My Orders</a>
+                    <a href="resources.html" class="active">Resources</a>
+                </nav>
+
+                <div class="portal-user-menu">
+                    <button class="portal-user-btn" id="user-menu-btn">
+                        <span id="user-name">Account</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="portal-dropdown" id="user-dropdown">
+                        <a href="#">My Profile</a>
+                        <hr>
+                        <button id="logout-btn">Sign Out</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="portal-main">
+            <div class="container">
+                <div class="resources-header">
+                    <div>
+                        <h1>Resources</h1>
+                        <p style="color: var(--gray-medium); margin-bottom: 0;">Guides, tutorials, and materials to help you succeed</p>
+                    </div>
+
+                    <!-- Search -->
+                    <div style="position: relative;">
+                        <input type="text" id="search-input" placeholder="Search resources..."
+                            style="padding: 0.75rem 1rem 0.75rem 2.5rem; border: 2px solid #e5e5e7; border-radius: 100px; width: 250px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gray-medium)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            style="position: absolute; left: 0.875rem; top: 50%; transform: translateY(-50%);">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="resources-filters" id="category-filters">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <!-- Categories loaded dynamically -->
+                </div>
+
+                <!-- Resources Grid -->
+                <div class="resources-grid" id="resources-grid">
+                    <!-- Resources loaded dynamically -->
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="no-resources" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                    <h3>No resources found</h3>
+                    <p>Check back soon - we're adding new resources regularly!</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="portal-footer">
+            <div class="container">
+                <p>Silent Disco Headsets 2025. Need help? <a href="mailto:huzz@nichuzz.com" style="color: var(--purple-dark);">Contact Support</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="modal-overlay" id="video-modal">
+        <div class="modal" style="max-width: 900px; padding: 0; background: transparent; box-shadow: none;">
+            <button class="modal-close" style="position: absolute; top: -40px; right: 0; background: var(--white); border-radius: 50%; width: 36px; height: 36px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div id="video-container" style="background: var(--navy); border-radius: var(--border-radius-lg); overflow: hidden;">
+                <!-- Video content loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-client.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        let allResources = [];
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await initProtectedPage({
+                requireApproved: true,
+                onReady: async (user, profile) => {
+                    setupPortalHeader(profile);
+                    setupModalCloseHandlers();
+                    await loadResources();
+                    setupSearch();
+                }
+            });
+        });
+
+        async function loadResources() {
+            try {
+                allResources = await DB.resources.getActive();
+                const categories = await DB.resources.getCategories();
+
+                // Render category filters
+                renderCategoryFilters(categories);
+
+                // Render resources
+                filterAndRenderResources();
+            } catch (error) {
+                console.error('Error loading resources:', error);
+                Utils.showToast('Error loading resources', 'error');
+            }
+        }
+
+        function renderCategoryFilters(categories) {
+            const container = document.getElementById('category-filters');
+
+            // Add category buttons
+            categories.forEach(category => {
+                const btn = document.createElement('button');
+                btn.className = 'filter-btn';
+                btn.dataset.category = category;
+                btn.textContent = category;
+                container.appendChild(btn);
+            });
+
+            // Add click handlers
+            container.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    container.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentCategory = btn.dataset.category;
+                    filterAndRenderResources();
+                });
+            });
+        }
+
+        function setupSearch() {
+            const searchInput = document.getElementById('search-input');
+            let debounceTimer;
+
+            searchInput.addEventListener('input', (e) => {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(() => {
+                    searchQuery = e.target.value.toLowerCase();
+                    filterAndRenderResources();
+                }, 300);
+            });
+        }
+
+        function filterAndRenderResources() {
+            let filtered = allResources;
+
+            // Filter by category
+            if (currentCategory !== 'all') {
+                filtered = filtered.filter(r => r.category === currentCategory);
+            }
+
+            // Filter by search
+            if (searchQuery) {
+                filtered = filtered.filter(r =>
+                    r.title.toLowerCase().includes(searchQuery) ||
+                    (r.description && r.description.toLowerCase().includes(searchQuery)) ||
+                    r.category.toLowerCase().includes(searchQuery)
+                );
+            }
+
+            renderResources(filtered);
+        }
+
+        function renderResources(resources) {
+            const grid = document.getElementById('resources-grid');
+            const emptyState = document.getElementById('no-resources');
+
+            if (resources.length === 0) {
+                grid.innerHTML = '';
+                emptyState.style.display = 'block';
+                return;
+            }
+
+            emptyState.style.display = 'none';
+
+            grid.innerHTML = resources.map(resource => {
+                const icon = Utils.getResourceIcon(resource.file_type);
+                const actionText = getActionText(resource.file_type);
+
+                return `
+                    <div class="resource-card">
+                        <div class="resource-thumbnail" ${resource.thumbnail_path ? `style="background-image: url('${resource.thumbnail_path}'); background-size: cover; background-position: center;"` : ''}>
+                            ${!resource.thumbnail_path ? icon : ''}
+                        </div>
+                        <div class="resource-content">
+                            <span class="resource-category">${resource.category}</span>
+                            <h4 class="resource-title">${resource.title}</h4>
+                            <p class="resource-description">${resource.description || ''}</p>
+                            <a href="#" class="resource-action" onclick="openResource('${resource.id}', '${resource.file_type}', '${resource.file_path}', '${resource.title}'); return false;">
+                                ${icon}
+                                ${actionText}
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function getActionText(fileType) {
+            const actions = {
+                pdf: 'Download PDF',
+                video: 'Watch Video',
+                audio: 'Listen Now',
+                link: 'Open Link'
+            };
+            return actions[fileType] || 'View';
+        }
+
+        async function openResource(id, fileType, filePath, title) {
+            try {
+                if (fileType === 'link') {
+                    // External link - open directly
+                    window.open(filePath, '_blank');
+                    return;
+                }
+
+                if (fileType === 'video') {
+                    // Check if it's an embed URL (YouTube, Vimeo, etc.)
+                    if (filePath.includes('youtube.com') || filePath.includes('youtu.be')) {
+                        const videoId = extractYouTubeId(filePath);
+                        document.getElementById('video-container').innerHTML = `
+                            <iframe width="100%" height="500" src="https://www.youtube.com/embed/${videoId}?autoplay=1"
+                                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        `;
+                        showModal('video-modal');
+                    } else if (filePath.includes('vimeo.com')) {
+                        const videoId = filePath.split('/').pop();
+                        document.getElementById('video-container').innerHTML = `
+                            <iframe src="https://player.vimeo.com/video/${videoId}?autoplay=1"
+                                width="100%" height="500" frameborder="0"
+                                allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                        `;
+                        showModal('video-modal');
+                    } else {
+                        // Hosted video - get signed URL
+                        Utils.showLoading();
+                        const url = await Storage.getSignedUrl('resources', filePath);
+                        Utils.hideLoading();
+                        document.getElementById('video-container').innerHTML = `
+                            <video controls autoplay width="100%" style="max-height: 500px;">
+                                <source src="${url}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        `;
+                        showModal('video-modal');
+                    }
+                    return;
+                }
+
+                if (fileType === 'audio') {
+                    Utils.showLoading();
+                    const url = await Storage.getSignedUrl('resources', filePath);
+                    Utils.hideLoading();
+                    document.getElementById('video-container').innerHTML = `
+                        <div style="padding: 3rem; text-align: center;">
+                            <h3 style="color: var(--white); margin-bottom: 1rem;">${title}</h3>
+                            <audio controls autoplay style="width: 100%;">
+                                <source src="${url}" type="audio/mpeg">
+                                Your browser does not support the audio tag.
+                            </audio>
+                        </div>
+                    `;
+                    showModal('video-modal');
+                    return;
+                }
+
+                // PDF or other downloadable
+                Utils.showLoading();
+                const url = await Storage.getSignedUrl('resources', filePath);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = title;
+                link.target = '_blank';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                Utils.hideLoading();
+
+            } catch (error) {
+                Utils.hideLoading();
+                console.error('Error opening resource:', error);
+                Utils.showToast('Error accessing resource', 'error');
+            }
+        }
+
+        function extractYouTubeId(url) {
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[2].length === 11) ? match[2] : null;
+        }
+
+        // Close video modal and stop video
+        document.getElementById('video-modal').addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal-overlay') || e.target.closest('.modal-close')) {
+                document.getElementById('video-container').innerHTML = '';
+            }
+        });
+    </script>
+</body>
+</html>
