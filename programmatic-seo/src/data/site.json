@@ -1,0 +1,17 @@
+{
+  "name": "Buy Silent Disco Headsets",
+  "url": "https://buysilentdiscoheadsets.com",
+  "logo": "https://buysilentdiscoheadsets.com/images/logo.png",
+  "description": "Premium silent disco headphones and wireless event equipment. Bali's largest silent disco brand, shipping worldwide.",
+  "priceHeadset": 49,
+  "priceTransmitter": 169,
+  "currency": "USD",
+  "fleetSize": "350+",
+  "wirelessRange": "500m",
+  "batteryLife": "10+ hours",
+  "channels": 3,
+  "socialLinks": {
+    "facebook": "https://www.facebook.com/buysilentdiscoheadsets",
+    "instagram": "https://www.instagram.com/buysilentdiscoheadsets"
+  }
+}

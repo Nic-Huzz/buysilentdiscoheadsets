@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
           logo.classList.add('active');
           video.currentTime = 0;
-          video.play().catch(err => console.log('Video play failed:', err));
+          video.play().catch(() => {});
         }
       });
 
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (!logo.classList.contains('active')) {
             logo.classList.add('active');
             video.currentTime = 0;
-            video.play().catch(err => console.log('Video play failed:', err));
+            video.play().catch(() => {});
           }
         });
 
@@ -252,13 +252,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const emailInput = newsletterForm.querySelector('.newsletter-input');
       const email = emailInput.value;
+      const submitBtn = newsletterForm.querySelector('.newsletter-btn');
 
       // Simple validation
       if (email && email.includes('@')) {
-        alert('Thank you for subscribing! We\'ll keep you updated with our latest offers and news.');
+        submitBtn.textContent = 'Subscribed!';
+        submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
         emailInput.value = '';
+        setTimeout(() => {
+          submitBtn.textContent = 'Subscribe';
+          submitBtn.style.background = '';
+        }, 3000);
       } else {
-        alert('Please enter a valid email address.');
+        submitBtn.textContent = 'Invalid email';
+        submitBtn.style.background = '#ef4444';
+        setTimeout(() => {
+          submitBtn.textContent = 'Subscribe';
+          submitBtn.style.background = '';
+        }, 2000);
       }
     });
   }
@@ -291,8 +302,6 @@ document.addEventListener('DOMContentLoaded', function() {
         button.style.border = '';
       }, 2000);
 
-      // You can replace this with actual cart functionality
-      console.log(`Added ${packageName} to cart`);
     });
   });
 });
@@ -439,7 +448,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
           imageContainer.classList.add('active');
           video.currentTime = 0;
-          video.play().catch(err => console.log('Video play failed:', err));
+          video.play().catch(() => {});
         }
 
         // Pause auto-slide when interacting with video
@@ -452,7 +461,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (!imageContainer.classList.contains('active')) {
             imageContainer.classList.add('active');
             video.currentTime = 0;
-            video.play().catch(err => console.log('Video play failed:', err));
+            video.play().catch(() => {});
           }
         });
 
@@ -475,9 +484,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const estimatedTotalInput = document.getElementById('estimated-total');
   const packageForm = document.getElementById('package-form');
 
-  // Pricing
-  const HEADSET_PRICE = 69;
-  const TRANSMITTER_PRICE = 249;
+  // Pricing (USD)
+  const HEADSET_PRICE = 49;
+  const TRANSMITTER_PRICE = 169;
 
   // Function to update price summary
   function updatePrice() {
