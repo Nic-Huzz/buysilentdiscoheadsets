@@ -1554,6 +1554,17 @@ p {
   font-size: 1.125rem;
 }
 
+/* Answer summary on dark backgrounds (hero section) */
+.hero .answer-summary {
+  background: rgba(255, 255, 255, 0.1);
+  border-left-color: var(--gold);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.hero .answer-summary p {
+  color: rgba(255, 255, 255, 0.95);
+}
+
 /* ==================== */
 /* AUTHOR BYLINE */
 /* ==================== */
@@ -1575,6 +1586,19 @@ p {
 .author-byline .byline-separator {
   color: var(--gray-medium);
   opacity: 0.5;
+}
+
+/* Author byline on dark backgrounds (hero section) */
+.hero .author-byline {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.hero .author-byline strong {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.hero .author-byline .byline-separator {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 /* ==================== */
