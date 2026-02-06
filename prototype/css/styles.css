@@ -101,7 +101,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   letter-spacing: -0.02em;
 }
 
@@ -207,12 +207,13 @@ p {
 
 .logo {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
   background: var(--gradient-purple);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  white-space: nowrap;
 }
 
 .nav {
@@ -307,6 +308,7 @@ p {
 .hero-text h1 {
   color: var(--white);
   margin-bottom: var(--spacing-md);
+  padding-top: var(--spacing-md);
 }
 
 .hero-text p {
@@ -1271,6 +1273,20 @@ p {
     display: block;
   }
 
+  .breadcrumb-bar .breadcrumb-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .breadcrumb-bar .author-byline {
+    font-size: 0.75rem;
+  }
+
+  .hero-byline {
+    font-size: 0.75rem;
+  }
+
   .hero-content,
   .product-overview-content {
     grid-template-columns: 1fr;
@@ -1536,45 +1552,31 @@ p {
 .mt-lg { margin-top: var(--spacing-lg); }
 
 /* ==================== */
-/* ANSWER SUMMARY */
+/* ANSWER SUMMARY (Editorial lead-in) */
 /* ==================== */
 .answer-summary {
-  border-left: 4px solid var(--gold);
-  background: rgba(255, 221, 39, 0.06);
-  padding: 1.25rem 1.5rem;
-  margin: 1.5rem 0;
-  border-radius: 0 var(--border-radius) var(--border-radius) 0;
   font-size: 1.125rem;
-  line-height: 1.7;
-  color: var(--gray-dark);
+  line-height: 1.8;
+  color: var(--gray-medium);
+  max-width: 800px;
+  margin: 0 0 var(--spacing-md);
 }
 
 .answer-summary p {
   margin: 0;
-  font-size: 1.125rem;
-}
-
-/* Answer summary on dark backgrounds (hero section) */
-.hero .answer-summary {
-  background: rgba(255, 255, 255, 0.1);
-  border-left-color: var(--gold);
-  color: rgba(255, 255, 255, 0.95);
-}
-
-.hero .answer-summary p {
-  color: rgba(255, 255, 255, 0.95);
+  font-size: inherit;
+  color: inherit;
 }
 
 /* ==================== */
 /* AUTHOR BYLINE */
 /* ==================== */
 .author-byline {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--gray-medium);
-  padding: 0.75rem 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.4rem;
   align-items: center;
 }
 
@@ -1583,22 +1585,92 @@ p {
   font-weight: 500;
 }
 
+.author-byline strong {
+  font-weight: 600;
+  color: var(--gray-dark);
+}
+
 .author-byline .byline-separator {
   color: var(--gray-medium);
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
-/* Author byline on dark backgrounds (hero section) */
-.hero .author-byline {
-  color: rgba(255, 255, 255, 0.75);
+/* Byline inside breadcrumb bar */
+.breadcrumb-bar {
+  background: var(--gray-light);
+  padding: 0.75rem 0;
+  font-size: 0.9rem;
 }
 
-.hero .author-byline strong {
-  color: rgba(255, 255, 255, 0.95);
+.breadcrumb-bar .breadcrumb-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.hero .author-byline .byline-separator {
-  color: rgba(255, 255, 255, 0.4);
+.breadcrumb-bar .breadcrumb-path a {
+  color: var(--purple-dark);
+}
+
+.breadcrumb-bar .breadcrumb-path span {
+  color: var(--gray-medium);
+}
+
+.breadcrumb-bar .author-byline {
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero byline (homepage) */
+.hero-byline {
+  position: relative;
+  z-index: 1;
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.45);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.hero-byline strong {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+}
+
+.hero-byline .byline-separator {
+  opacity: 0.3;
+}
+
+/* Source/citation links */
+.source-link,
+a[href*="alibaba.com"],
+a[href*="eventbrite.com"],
+a[href*="ibisworld.com"],
+a[href*="fcc.gov"],
+a[href*="shure.com"] {
+  color: var(--gray-medium) !important;
+  font-weight: 500 !important;
+  text-decoration: underline;
+  text-decoration-color: rgba(134, 134, 139, 0.3);
+  text-underline-offset: 2px;
+  transition: all var(--transition-fast);
+}
+
+a[href*="alibaba.com"]:hover,
+a[href*="eventbrite.com"]:hover,
+a[href*="ibisworld.com"]:hover,
+a[href*="fcc.gov"]:hover,
+a[href*="shure.com"]:hover,
+.source-link:hover {
+  color: var(--purple-dark) !important;
+  text-decoration-color: var(--purple-dark);
 }
 
 /* ==================== */
@@ -1636,6 +1708,8 @@ p {
   margin: 0;
   line-height: 1.5;
   flex: 1;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
 }
 
 .cookie-banner a {
