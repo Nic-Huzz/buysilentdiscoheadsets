@@ -1,16 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://buysilentdiscoheadsets.com/</loc>
     <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://buysilentdiscoheadsets.com/images/hero-headphones.webp</image:loc>
+      <image:title>Premium Silent Disco Headphones with LED Lights</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://buysilentdiscoheadsets.com/images/equipment-headset.webp</image:loc>
+      <image:title>Silent Disco Headphone with 3-Channel LED and Noise Cancelling</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://buysilentdiscoheadsets.com/images/equipment-transmitter.webp</image:loc>
+      <image:title>Professional Silent Disco Transmitter with 500m Range</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://buysilentdiscoheadsets.com/images/product-showcase.webp</image:loc>
+      <image:title>Silent Disco Headphones Product Showcase</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://buysilentdiscoheadsets.com/silent-disco-headphones.html</loc>
     <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://buysilentdiscoheadsets.com/images/equipment-headset.webp</image:loc>
+      <image:title>Silent Disco Headphones Specs and Features</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://buysilentdiscoheadsets.com/images/equipment-transmitter.webp</image:loc>
+      <image:title>Professional Silent Disco Transmitter</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://buysilentdiscoheadsets.com/best-silent-disco-headphones.html</loc>
@@ -35,6 +60,54 @@
     <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://buysilentdiscoheadsets.com/buy-vs-rent-silent-disco-headphones.html</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://buysilentdiscoheadsets.com/silent-disco-headphones-for-weddings/</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buysilentdiscoheadsets.com/silent-disco-headphones-for-yoga-and-wellness/</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buysilentdiscoheadsets.com/silent-disco-headphones-for-corporate-events/</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buysilentdiscoheadsets.com/silent-disco-headphones-for-festivals/</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buysilentdiscoheadsets.com/silent-disco-headphones-for-house-parties/</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buysilentdiscoheadsets.com/silent-disco-headphones-for-fitness-classes/</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buysilentdiscoheadsets.com/silent-disco-headphones-in-bali/</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buysilentdiscoheadsets.com/about.html</loc>
