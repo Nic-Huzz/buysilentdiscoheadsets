@@ -538,3 +538,42 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// ==================== //
+// COOKIE CONSENT BANNER
+// ==================== //
+document.addEventListener('DOMContentLoaded', function() {
+  if (localStorage.getItem('cookie-consent')) return;
+
+  const banner = document.createElement('div');
+  banner.className = 'cookie-banner';
+  banner.innerHTML = `
+    <div class="cookie-banner-inner">
+      <p>We use cookies to improve your experience and analyse site traffic. See our <a href="legal.html#privacy">privacy policy</a>.</p>
+      <div class="cookie-banner-buttons">
+        <button class="cookie-btn cookie-btn-accept">Accept</button>
+        <button class="cookie-btn cookie-btn-decline">Decline</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(banner);
+
+  // Show with slight delay so the transition plays
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      banner.classList.add('visible');
+    });
+  });
+
+  banner.querySelector('.cookie-btn-accept').addEventListener('click', () => {
+    localStorage.setItem('cookie-consent', 'accepted');
+    banner.classList.remove('visible');
+    setTimeout(() => banner.remove(), 400);
+  });
+
+  banner.querySelector('.cookie-btn-decline').addEventListener('click', () => {
+    localStorage.setItem('cookie-consent', 'declined');
+    banner.classList.remove('visible');
+    setTimeout(() => banner.remove(), 400);
+  });
+});
