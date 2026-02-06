@@ -1534,3 +1534,45 @@ p {
 .mt-sm { margin-top: var(--spacing-sm); }
 .mt-md { margin-top: var(--spacing-md); }
 .mt-lg { margin-top: var(--spacing-lg); }
+
+/* ==================== */
+/* ANSWER SUMMARY */
+/* ==================== */
+.answer-summary {
+  border-left: 4px solid var(--gold);
+  background: rgba(255, 221, 39, 0.06);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--gray-dark);
+}
+
+.answer-summary p {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+/* ==================== */
+/* AUTHOR BYLINE */
+/* ==================== */
+.author-byline {
+  font-size: 0.9rem;
+  color: var(--gray-medium);
+  padding: 0.75rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.author-byline a {
+  color: var(--purple-dark);
+  font-weight: 500;
+}
+
+.author-byline .byline-separator {
+  color: var(--gray-medium);
+  opacity: 0.5;
+}

@@ -1,0 +1,221 @@
+---
+import site from '../data/site.json';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage?: string;
+  schemas?: object[];
+  breadcrumbs?: { name: string; url: string }[];
+  answerSummary?: string;
+  datePublished?: string;
+  dateModified?: string;
+}
+
+const { title, description, canonical, ogImage, schemas = [], breadcrumbs = [], answerSummary, datePublished = '2026-02-06', dateModified = '2026-02-06' } = Astro.props;
+const fullOgImage = ogImage || `${site.url}/images/hero-headphones.jpg`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  <!-- Canonical -->
+  <link rel="canonical" href={canonical}>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={canonical}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={fullOgImage}>
+  <meta property="og:site_name" content={site.name}>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={fullOgImage}>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/programmatic.css">
+
+  <!-- Organization Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": site.name,
+    "url": site.url,
+    "logo": site.logo,
+    "description": site.description,
+    "sameAs": Object.values(site.socialLinks)
+  })} />
+
+  <!-- Person/Author Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nic Huzz",
+    "jobTitle": "Founder & Silent Disco Specialist",
+    "url": `${site.url}/about.html`,
+    "worksFor": {
+      "@type": "Organization",
+      "name": site.name,
+      "url": site.url
+    },
+    "knowsAbout": ["silent disco", "wireless headphones", "event technology", "breathwork", "experiential events"],
+    "description": "Founder of Bali's largest silent disco brand with 4 years of experience and 200+ events hosted."
+  })} />
+
+  <!-- Product with AggregateRating Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Premium Silent Disco Headphones",
+    "description": description,
+    "brand": { "@type": "Brand", "name": site.name },
+    "offers": {
+      "@type": "Offer",
+      "price": "49",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": canonical
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127"
+    }
+  })} />
+
+  <!-- Breadcrumb Schema -->
+  {breadcrumbs.length > 0 && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": breadcrumbs.map((crumb, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "name": crumb.name,
+        "item": crumb.url
+      }))
+    })} />
+  )}
+
+  <!-- Additional Schemas -->
+  {schemas.map((schema) => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))}
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="/" class="nav-logo">
+        <img src="/images/logo.png" alt="Buy Silent Disco Headsets" width="150">
+      </a>
+      <div class="nav-links">
+        <a href="/#products">Products</a>
+        <a href="/#packages">Packages</a>
+        <a href="/about.html">About</a>
+        <a href="/support.html">Support</a>
+        <a href="/support.html" class="nav-cta">Get a Quote</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Breadcrumbs -->
+  {breadcrumbs.length > 0 && (
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb-list">
+          {breadcrumbs.map((crumb, i) => (
+            <li class="breadcrumb-item">
+              {i < breadcrumbs.length - 1 ? (
+                <a href={crumb.url}>{crumb.name}</a>
+              ) : (
+                <span aria-current="page">{crumb.name}</span>
+              )}
+            </li>
+          ))}
+        </ol>
+      </div>
+    </nav>
+  )}
+
+  <!-- Author Byline -->
+  <div class="container" style="padding-top: 0.75rem;">
+    <div class="author-byline">
+      <span>By <strong>Nic Huzz</strong>, Founder &amp; Silent Disco Specialist</span>
+      <span class="byline-separator">|</span>
+      <span>200+ events hosted since 2022</span>
+      <span class="byline-separator">|</span>
+      <span>Last updated: {new Date(dateModified).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+    </div>
+  </div>
+
+  <!-- Answer Summary -->
+  {answerSummary && (
+    <div class="container" style="padding-bottom: 0.5rem;">
+      <div class="answer-summary">
+        <p>{answerSummary}</p>
+      </div>
+    </div>
+  )}
+
+  <!-- Main Content -->
+  <main>
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/images/logo.png" alt="Buy Silent Disco Headsets" width="120">
+          <p>Bali's largest silent disco brand. {site.fleetSize} headphones powering events worldwide.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="/">Home</a>
+          <a href="/silent-disco-headphones.html">Headphones</a>
+          <a href="/about.html">About Us</a>
+          <a href="/support.html">Support</a>
+        </div>
+        <div class="footer-links">
+          <h4>Use Cases</h4>
+          <a href="/silent-disco-headphones-for-weddings/">Weddings</a>
+          <a href="/silent-disco-headphones-for-yoga-and-wellness/">Yoga & Wellness</a>
+          <a href="/silent-disco-headphones-for-corporate-events/">Corporate Events</a>
+          <a href="/silent-disco-headphones-for-festivals/">Festivals</a>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <a href="/legal.html">Terms & Conditions</a>
+          <a href="/legal.html">Privacy Policy</a>
+          <a href="/giveaway-terms.html">Giveaway Terms</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
