@@ -513,12 +513,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update display
     document.getElementById('summary-headsets').textContent = headsetQty;
     document.getElementById('summary-transmitters').textContent = transmitterQty;
-    document.getElementById('price-headsets').textContent = `$${headsetTotal.toLocaleString()} AUD`;
-    document.getElementById('price-transmitters').textContent = `$${transmitterTotal.toLocaleString()} AUD`;
-    document.getElementById('price-total').textContent = `$${grandTotal.toLocaleString()} AUD`;
+    document.getElementById('price-headsets').textContent = `$${headsetTotal.toLocaleString()} USD`;
+    document.getElementById('price-transmitters').textContent = `$${transmitterTotal.toLocaleString()} USD`;
+    document.getElementById('price-total').textContent = `$${grandTotal.toLocaleString()} USD`;
 
     // Update hidden field for form submission
-    estimatedTotalInput.value = `$${grandTotal.toLocaleString()} AUD`;
+    estimatedTotalInput.value = `$${grandTotal.toLocaleString()} USD`;
   }
 
   // Event listeners for price updates
