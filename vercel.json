@@ -1,5 +1,10 @@
 {
   "buildCommand": "",
   "outputDirectory": "prototype",
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/caf/", "destination": "/", "permanent": true },
+    { "source": "/caf", "destination": "/", "permanent": true }
+  ]
 }
