@@ -130,12 +130,9 @@ p {
   padding: 0 var(--spacing-md);
 }
 
-.section {
-  padding: 8rem 0;
-}
-
+.section,
 .section-sm {
-  padding: var(--spacing-lg) 0;
+  padding: var(--spacing-xl) 0;
 }
 
 /* ==================== */
