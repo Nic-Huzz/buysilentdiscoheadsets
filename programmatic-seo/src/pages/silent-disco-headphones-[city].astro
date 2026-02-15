@@ -1,0 +1,230 @@
+---
+import SEOPage from '../layouts/SEOPage.astro';
+import site from '../data/site.json';
+import cities from '../data/cities.json';
+import eventTypes from '../data/event-types.json';
+
+export function getStaticPaths() {
+  // Only generate pages for cities with tier > 0 (real data)
+  return cities.filter((c) => c.tier > 0).map((city) => ({
+    params: { city: city.slug },
+    props: { city },
+  }));
+}
+
+const { city } = Astro.props;
+
+const title = `Silent Disco Headphones in ${city.name} | ${site.name}`;
+const description = `Buy silent disco headphones in ${city.name}, ${city.country}. Premium wireless headsets for events, weddings, yoga, and corporate functions. From $${site.priceHeadset} ${site.currency}. Ships to ${city.name}.`;
+const canonical = `${site.url}/silent-disco-headphones-${city.slug}/`;
+
+const breadcrumbs = [
+  { name: 'Home', url: site.url },
+  { name: 'Silent Disco Headphones', url: `${site.url}/silent-disco-headphones.html` },
+  { name: city.name, url: canonical },
+];
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": `Silent Disco Headphones in ${city.name}`,
+    "description": description,
+    "brand": { "@type": "Brand", "name": site.name },
+    "offers": {
+      "@type": "Offer",
+      "price": site.priceHeadset,
+      "priceCurrency": site.currency,
+      "availability": "https://schema.org/InStock",
+      "url": canonical,
+      "areaServed": {
+        "@type": "City",
+        "name": city.name,
+        "containedInPlace": {
+          "@type": "Country",
+          "name": city.country
+        }
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": `Can you ship silent disco headphones to ${city.name}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": city.shippingInfo
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `How much do silent disco headphones cost in ${city.name}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Our silent disco headphones are $${site.priceHeadset} ${site.currency} per unit and transmitters are $${site.priceTransmitter} ${site.currency} each. We offer volume discounts for larger orders. Shipping to ${city.name} is included for orders over 50 units.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `What events use silent disco headphones in ${city.name}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Silent disco headphones are popular in ${city.name} for ${city.popularVenueTypes.slice(0, 3).join(', ').toLowerCase()} and more. ${city.eventsScene}`
+        }
+      }
+    ]
+  }
+];
+---
+
+<SEOPage
+  title={title}
+  description={description}
+  canonical={canonical}
+  schemas={schemas}
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Hero -->
+  <section class="hero hero--city">
+    <div class="container">
+      <h1>Silent Disco Headphones in {city.name}</h1>
+      <p class="hero-subtitle">Premium wireless headphones for events in {city.name}, {city.country}. {site.channels}-channel LED system, {site.wirelessRange} range, {site.batteryLife} battery.</p>
+      <div class="hero-cta-group">
+        <a href="/support.html" class="btn btn--primary">Get a Quote for {city.name}</a>
+        <a href="#events" class="btn btn--secondary">See Use Cases</a>
+      </div>
+      <div class="hero-trust">
+        <span class="trust-badge">From ${site.priceHeadset} {site.currency}/headset</span>
+        <span class="trust-badge">Ships to {city.name}</span>
+        <span class="trust-badge">{site.fleetSize} headphones in fleet</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Silent Disco in This City -->
+  <section class="content-section">
+    <div class="container container--narrow">
+      <h2>Silent Disco in {city.name}</h2>
+      <p class="intro-text">{city.description}</p>
+      {city.localAuthority && (
+        <p class="authority-text"><strong>{city.localAuthority}</strong></p>
+      )}
+    </div>
+  </section>
+
+  <!-- Events Scene -->
+  <section class="content-section content-section--alt">
+    <div class="container">
+      <h2>The {city.name} Events Scene</h2>
+      <p>{city.eventsScene}</p>
+
+      <h3>Popular Venue Types in {city.name}</h3>
+      <div class="venue-tags">
+        {city.popularVenueTypes.map((venue) => (
+          <span class="venue-tag">{venue}</span>
+        ))}
+      </div>
+
+      {city.noiseContext && (
+        <div class="noise-callout">
+          <h3>Noise Regulations in {city.name}</h3>
+          <p>{city.noiseContext}</p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Event Types in This City -->
+  <section id="events" class="content-section">
+    <div class="container">
+      <h2>Silent Disco for Every Event in {city.name}</h2>
+      <div class="event-type-grid">
+        {eventTypes.map((event) => (
+          <a href={`/silent-disco-headphones-for-${event.slug}/`} class="event-type-card">
+            <h3>Silent Disco for {event.name}</h3>
+            <p>{event.intro.slice(0, 150)}...</p>
+            <span class="card-link">Learn more &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Specs -->
+  <section class="content-section content-section--alt">
+    <div class="container">
+      <h2>Equipment &amp; Pricing</h2>
+      <div class="specs-grid">
+        <div class="spec-card">
+          <h3>Silent Disco Headphones</h3>
+          <p class="spec-price">${site.priceHeadset} <span>{site.currency} per unit</span></p>
+          <ul class="spec-list">
+            <li>Hi-Fi sound with noise cancelling</li>
+            <li>{site.channels}-channel LED system</li>
+            <li>{site.batteryLife} battery life</li>
+            <li>{site.wirelessRange} wireless range</li>
+          </ul>
+        </div>
+        <div class="spec-card">
+          <h3>Wireless Transmitter</h3>
+          <p class="spec-price">${site.priceTransmitter} <span>{site.currency} per unit</span></p>
+          <ul class="spec-list">
+            <li>{site.channels} independent channels</li>
+            <li>{site.wirelessRange} broadcast range</li>
+            <li>3.5mm + RCA inputs</li>
+            <li>Plug and play</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shipping -->
+  <section class="content-section">
+    <div class="container container--narrow">
+      <h2>Shipping to {city.name}</h2>
+      <p>{city.shippingInfo}</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="content-section content-section--alt">
+    <div class="container container--narrow">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-accordion">
+        <details class="faq-item">
+          <summary class="faq-question">Can you ship silent disco headphones to {city.name}?</summary>
+          <div class="faq-answer"><p>{city.shippingInfo}</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">How much do silent disco headphones cost in {city.name}?</summary>
+          <div class="faq-answer"><p>Our silent disco headphones are ${site.priceHeadset} {site.currency} per unit and transmitters are ${site.priceTransmitter} {site.currency} each. We offer volume discounts for larger orders. Shipping to {city.name} is included for orders over 50 units.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">What events use silent disco headphones in {city.name}?</summary>
+          <div class="faq-answer"><p>Silent disco headphones are popular in {city.name} for {city.popularVenueTypes.slice(0, 3).join(', ').toLowerCase()} and more. {city.eventsScene}</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Do you offer delivery in {city.name}?</summary>
+          <div class="faq-answer"><p>{city.shippingInfo} Contact us for specific delivery timeframes and bulk shipping options.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Get Silent Disco Headphones in {city.name}</h2>
+      <p>Ready to bring silent disco to your next event in {city.name}? Get a custom quote with pricing for your event size.</p>
+      <div class="hero-cta-group">
+        <a href="/support.html" class="btn btn--primary">Get a Quote</a>
+        <a href="/#packages" class="btn btn--secondary">View Packages</a>
+      </div>
+      <p class="cta-subtext">From ${site.priceHeadset} {site.currency} per headphone &middot; Ships to {city.name} &middot; {site.wirelessRange} wireless range</p>
+    </div>
+  </section>
+</SEOPage>

@@ -15,15 +15,27 @@
         <!-- Header -->
         <header class="portal-header">
             <div class="container">
+                <!-- Mobile Menu Toggle -->
+                <button class="portal-mobile-toggle" id="mobile-nav-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+
                 <a href="../index.html" class="portal-logo">
                     <img src="../images/logo-dark.png" alt="Silent Disco Headsets" onerror="this.style.display='none'">
                     <span>Customer Portal</span>
                 </a>
 
                 <nav class="portal-nav">
-                    <a href="dashboard.html" class="active">Dashboard</a>
-                    <a href="orders.html">My Orders</a>
+                    <a href="orders.html" class="active">My Orders</a>
                     <a href="resources.html">Resources</a>
+                    <a href="#" class="coming-soon-nav" onclick="event.preventDefault();">Marketing Assets <span class="nav-badge-inline">Soon</span></a>
+                    <a href="#" class="coming-soon-nav" onclick="event.preventDefault();">Acquisition Portal <span class="nav-badge-inline">Soon</span></a>
+                    <a href="#" class="coming-soon-nav" onclick="event.preventDefault();">Facilitator Training <span class="nav-badge-inline">Soon</span></a>
+                    <a href="admin/index.html" id="admin-link" style="display: none;">Admin Panel</a>
                 </nav>
 
                 <div class="portal-user-menu">
@@ -39,6 +51,15 @@
                         <button id="logout-btn">Sign Out</button>
                     </div>
                 </div>
+
+                <!-- Mobile Nav Dropdown -->
+                <nav class="portal-nav-mobile" id="mobile-nav">
+                    <a href="orders.html" class="active">My Orders</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="#" class="coming-soon-nav" onclick="event.preventDefault();">Marketing Assets <span class="nav-badge-inline">Soon</span></a>
+                    <a href="#" class="coming-soon-nav" onclick="event.preventDefault();">Acquisition Portal <span class="nav-badge-inline">Soon</span></a>
+                    <a href="admin/index.html" id="admin-link-mobile" style="display: none;">Admin Panel</a>
+                </nav>
             </div>
         </header>
 
@@ -136,6 +157,47 @@
                         <!-- Upsells loaded dynamically -->
                     </div>
                 </div>
+
+                <!-- Coming Soon Sections -->
+                <div class="dashboard-grid" style="margin-top: var(--spacing-lg);">
+                    <div class="dashboard-card coming-soon-card">
+                        <div class="coming-soon-badge">Coming Soon</div>
+                        <h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            Marketing Assets
+                        </h3>
+                        <p style="color: var(--gray-medium); margin-top: var(--spacing-xs);">Access branded marketing materials, social media templates, and promotional content to help grow your silent disco business.</p>
+                    </div>
+
+                    <div class="dashboard-card coming-soon-card">
+                        <div class="coming-soon-badge">Coming Soon</div>
+                        <h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                            Customer Acquisition Portal
+                        </h3>
+                        <p style="color: var(--gray-medium); margin-top: var(--spacing-xs);">Tools and strategies to help you find and convert new customers for your silent disco events and experiences.</p>
+                    </div>
+
+                    <div class="dashboard-card coming-soon-card">
+                        <div class="coming-soon-badge">Coming Soon</div>
+                        <h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                                <path d="M12 14v7"></path>
+                            </svg>
+                            Facilitator Training
+                        </h3>
+                        <p style="color: var(--gray-medium); margin-top: var(--spacing-xs);">Comprehensive training resources and certification programs to become a skilled silent disco facilitator and run amazing events.</p>
+                    </div>
+                </div>
             </div>
         </main>
 
@@ -154,10 +216,10 @@
         document.addEventListener('DOMContentLoaded', async () => {
             // Initialize protected page
             const initialized = await initProtectedPage({
-                requireApproved: true,
                 onReady: async (user, profile) => {
                     // Setup header
                     setupPortalHeader(profile);
+                    setupMobileNav(profile);
 
                     // Set welcome name
                     const firstName = profile.full_name ? profile.full_name.split(' ')[0] : 'Customer';
@@ -168,6 +230,28 @@
                 }
             });
         });
+
+        function setupMobileNav(profile) {
+            const toggle = document.getElementById('mobile-nav-toggle');
+            const mobileNav = document.getElementById('mobile-nav');
+            const adminLinkMobile = document.getElementById('admin-link-mobile');
+
+            if (toggle && mobileNav) {
+                toggle.addEventListener('click', () => {
+                    mobileNav.classList.toggle('show');
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!toggle.contains(e.target) && !mobileNav.contains(e.target)) {
+                        mobileNav.classList.remove('show');
+                    }
+                });
+            }
+
+            if (adminLinkMobile && profile?.is_admin) {
+                adminLinkMobile.style.display = 'block';
+            }
+        }
 
         async function loadDashboardData(userId) {
             try {

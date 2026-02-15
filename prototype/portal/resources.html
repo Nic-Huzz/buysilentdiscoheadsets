@@ -15,15 +15,33 @@
         <!-- Header -->
         <header class="portal-header">
             <div class="container">
+                <!-- Mobile Menu Toggle -->
+                <button class="portal-mobile-toggle" id="mobile-nav-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+
                 <a href="../index.html" class="portal-logo">
                     <img src="../images/logo-dark.png" alt="Silent Disco Headsets" onerror="this.style.display='none'">
                     <span>Customer Portal</span>
                 </a>
 
                 <nav class="portal-nav">
-                    <a href="dashboard.html">Dashboard</a>
                     <a href="orders.html">My Orders</a>
                     <a href="resources.html" class="active">Resources</a>
+                    <a href="#" class="coming-soon-nav" onclick="event.preventDefault();">Marketing Assets <span class="nav-badge-inline">Soon</span></a>
+                    <a href="#" class="coming-soon-nav" onclick="event.preventDefault();">Acquisition Portal <span class="nav-badge-inline">Soon</span></a>
+                    <a href="#" class="coming-soon-nav" onclick="event.preventDefault();">Facilitator Training <span class="nav-badge-inline">Soon</span></a>
+                    <a href="admin/index.html" id="admin-link" class="admin-btn" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"></path>
+                        </svg>
+                        Admin
+                    </a>
                 </nav>
 
                 <div class="portal-user-menu">
@@ -35,10 +53,33 @@
                     </button>
                     <div class="portal-dropdown" id="user-dropdown">
                         <a href="#">My Profile</a>
+                        <a href="admin/index.html" id="admin-link-dropdown" class="admin-dropdown-link" style="display: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"></path>
+                            </svg>
+                            Admin Panel
+                        </a>
                         <hr>
                         <button id="logout-btn">Sign Out</button>
                     </div>
                 </div>
+
+                <!-- Mobile Nav Dropdown -->
+                <nav class="portal-nav-mobile" id="mobile-nav">
+                    <a href="orders.html">My Orders</a>
+                    <a href="resources.html" class="active">Resources</a>
+                    <a href="#" class="coming-soon-nav" onclick="event.preventDefault();">Marketing Assets <span class="nav-badge-inline">Soon</span></a>
+                    <a href="#" class="coming-soon-nav" onclick="event.preventDefault();">Acquisition Portal <span class="nav-badge-inline">Soon</span></a>
+                    <a href="#" class="coming-soon-nav" onclick="event.preventDefault();">Facilitator Training <span class="nav-badge-inline">Soon</span></a>
+                    <a href="admin/index.html" id="admin-link-mobile" class="admin-btn-mobile" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"></path>
+                        </svg>
+                        Admin Panel
+                    </a>
+                </nav>
             </div>
         </header>
 
@@ -119,15 +160,37 @@
 
         document.addEventListener('DOMContentLoaded', async () => {
             await initProtectedPage({
-                requireApproved: true,
                 onReady: async (user, profile) => {
                     setupPortalHeader(profile);
+                    setupMobileNav(profile);
                     setupModalCloseHandlers();
                     await loadResources();
                     setupSearch();
                 }
             });
         });
+
+        function setupMobileNav(profile) {
+            const toggle = document.getElementById('mobile-nav-toggle');
+            const mobileNav = document.getElementById('mobile-nav');
+            const adminLinkMobile = document.getElementById('admin-link-mobile');
+
+            if (toggle && mobileNav) {
+                toggle.addEventListener('click', () => {
+                    mobileNav.classList.toggle('show');
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!toggle.contains(e.target) && !mobileNav.contains(e.target)) {
+                        mobileNav.classList.remove('show');
+                    }
+                });
+            }
+
+            if (adminLinkMobile && profile?.is_admin) {
+                adminLinkMobile.style.display = 'block';
+            }
+        }
 
         async function loadResources() {
             try {

@@ -1,3 +1,5 @@
 {
-  "outputDirectory": "prototype"
+  "buildCommand": "",
+  "outputDirectory": "prototype",
+  "trailingSlash": true
 }

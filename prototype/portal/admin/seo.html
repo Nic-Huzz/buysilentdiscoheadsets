@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Battle - Admin | Silent Disco Headsets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/portal.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <a href="../../index.html" class="portal-logo">
+            <span>Admin Portal</span>
+        </a>
+
+        <nav class="admin-nav">
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                Dashboard
+            </a>
+            <a href="customers.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                Customers
+            </a>
+            <a href="invites.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="M7 15h0M2 9.5h20"></path>
+                </svg>
+                Invite Codes
+            </a>
+            <a href="orders.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line></svg>
+                Orders
+            </a>
+            <a href="resources.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                Resources
+            </a>
+            <a href="upsells.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                Upsells
+            </a>
+            <a href="seo.html" class="active">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                SEO Battle
+            </a>
+            <a href="#" class="coming-soon-nav" onclick="event.preventDefault();">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                Marketing Assets
+                <span class="nav-badge">Soon</span>
+            </a>
+            <a href="#" class="coming-soon-nav" onclick="event.preventDefault();">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                Acquisition Portal
+                <span class="nav-badge">Soon</span>
+            </a>
+        </nav>
+
+        <div style="margin-top: auto; padding-top: 2rem;">
+            <a href="../dashboard.html" style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.5); font-size: 0.875rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"></path></svg>
+                Back to Portal
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="admin-main">
+        <header class="admin-header">
+            <div>
+                <h1 style="font-size: 1.5rem; margin-bottom: 0;">SEO Battle Dashboard</h1>
+                <p style="color: var(--gray-medium); margin: 0; font-size: 0.875rem;">Target: "silent disco headphones" (KD: 3)</p>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <span id="last-updated" style="font-size: 0.75rem; color: var(--gray-medium);"></span>
+                <div class="portal-user-menu">
+                    <button class="portal-user-btn" id="user-menu-btn">
+                        <span id="user-name">Admin</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="portal-dropdown" id="user-dropdown">
+                        <button id="logout-btn">Sign Out</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="admin-content">
+            <!-- Top Stats -->
+            <div class="admin-stats">
+                <div class="admin-stat-card" style="text-align: center;">
+                    <div class="label">SEO Score</div>
+                    <div class="seo-score-circle" id="seo-score-circle">
+                        <svg width="120" height="120" viewBox="0 0 120 120">
+                            <circle cx="60" cy="60" r="54" fill="none" stroke="#e5e5e7" stroke-width="8"/>
+                            <circle id="score-ring" cx="60" cy="60" r="54" fill="none" stroke="url(#scoreGradient)" stroke-width="8" stroke-linecap="round" stroke-dasharray="339.29" stroke-dashoffset="339.29"/>
+                            <defs>
+                                <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color: var(--purple-dark)"/>
+                                    <stop offset="100%" style="stop-color: var(--purple-light, #8b5cf6)"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="score-value" id="seo-score">0</span>
+                        <span class="score-label">/ 100</span>
+                    </div>
+                </div>
+                <div class="admin-stat-card seo-stat-editable" onclick="editRank()">
+                    <div class="label">Current Rank</div>
+                    <div class="value" id="current-rank">#--</div>
+                </div>
+                <div class="admin-stat-card">
+                    <div class="label">Page Speed</div>
+                    <div class="value" id="page-speed-score">--</div>
+                </div>
+                <div class="admin-stat-card seo-stat-editable" onclick="editBacklinkCount()">
+                    <div class="label">Backlinks</div>
+                    <div class="value" id="backlink-count">0</div>
+                </div>
+            </div>
+
+            <!-- Progress to #1 -->
+            <div class="dashboard-card" style="margin-bottom: var(--spacing-md);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <h3 style="margin-bottom: 0;">Progress to #1</h3>
+                    <span style="font-size: 0.875rem; color: var(--gray-medium);" id="rank-label">Rank -- / 100</span>
+                </div>
+                <div class="seo-progress-bar">
+                    <div class="seo-progress-fill" id="rank-progress" style="width: 0%; min-width: 0;">
+                        <span id="rank-progress-text">0%</span>
+                    </div>
+                </div>
+                <div class="seo-progress-meta">
+                    <span>Current: <strong id="progress-current">#--</strong></span>
+                    <span>Target: <strong>#1</strong></span>
+                </div>
+            </div>
+
+            <!-- Two Column: Vitals + Checklist -->
+            <div class="seo-two-col" style="margin-bottom: var(--spacing-md);">
+                <!-- Core Web Vitals -->
+                <div class="dashboard-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <h3 style="margin-bottom: 0;">Core Web Vitals</h3>
+                        <button class="seo-refresh-btn" id="refresh-vitals" onclick="fetchPageSpeed()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+                            Refresh
+                        </button>
+                    </div>
+                    <p style="font-size: 0.8125rem; color: var(--gray-medium); margin-bottom: 0.5rem;">Live from Google PageSpeed Insights (mobile)</p>
+
+                    <div style="text-align: center; margin: 1rem 0;">
+                        <div class="seo-score-circle" style="width: 90px; height: 90px;">
+                            <svg width="90" height="90" viewBox="0 0 90 90">
+                                <circle cx="45" cy="45" r="40" fill="none" stroke="#e5e5e7" stroke-width="6"/>
+                                <circle id="perf-ring" cx="45" cy="45" r="40" fill="none" stroke="#15803d" stroke-width="6" stroke-linecap="round" stroke-dasharray="251.33" stroke-dashoffset="251.33"/>
+                            </svg>
+                            <span class="score-value" id="perf-score" style="font-size: 1.5rem;">--</span>
+                        </div>
+                        <div style="font-size: 0.75rem; color: var(--gray-medium); margin-top: 0.25rem;">Performance</div>
+                    </div>
+
+                    <div class="seo-vitals-grid">
+                        <div class="seo-vital-item">
+                            <div class="vital-label">LCP</div>
+                            <div class="vital-value" id="vital-lcp">--</div>
+                        </div>
+                        <div class="seo-vital-item">
+                            <div class="vital-label">CLS</div>
+                            <div class="vital-value" id="vital-cls">--</div>
+                        </div>
+                        <div class="seo-vital-item">
+                            <div class="vital-label">INP</div>
+                            <div class="vital-value" id="vital-inp">--</div>
+                        </div>
+                        <div class="seo-vital-item">
+                            <div class="vital-label">FCP</div>
+                            <div class="vital-value" id="vital-fcp">--</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- On-Page SEO Checklist -->
+                <div class="dashboard-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <h3 style="margin-bottom: 0;">On-Page SEO Checklist</h3>
+                        <span style="font-size: 0.875rem; font-weight: 700; color: var(--purple-dark);" id="checklist-score">0/15</span>
+                    </div>
+                    <div class="seo-progress-bar" style="height: 8px; margin-bottom: 1rem;">
+                        <div class="seo-progress-fill" id="checklist-progress" style="width: 0%; min-width: 0;"></div>
+                    </div>
+                    <ul class="seo-checklist" id="seo-checklist">
+                        <!-- Rendered by JS -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Content Tracker -->
+            <div class="dashboard-card" style="margin-bottom: var(--spacing-md);">
+                <h3 style="margin-bottom: var(--spacing-sm);">Content Tracker</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Landing Page</th>
+                            <th>Target Keyword</th>
+                            <th>Status</th>
+                            <th>URL</th>
+                        </tr>
+                    </thead>
+                    <tbody id="content-tracker">
+                        <!-- Rendered by JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Backlink Log -->
+            <div class="dashboard-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
+                    <h3 style="margin-bottom: 0;">Backlink Log</h3>
+                    <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;" onclick="showModal('add-backlink-modal')">+ Add Backlink</button>
+                </div>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Source</th>
+                            <th>URL</th>
+                            <th>Date Added</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="backlinks-table">
+                        <tr><td colspan="4" style="text-align: center; color: var(--gray-medium);">No backlinks tracked yet</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Backlink Modal -->
+    <div class="modal-overlay" id="add-backlink-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Add Backlink</h3>
+                <button class="modal-close" onclick="hideModal('add-backlink-modal')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="add-backlink-form">
+                    <div class="form-group">
+                        <label for="backlink_source">Source Name *</label>
+                        <input type="text" id="backlink_source" required placeholder="e.g., Event Blog, DJ Forum">
+                    </div>
+                    <div class="form-group">
+                        <label for="backlink_url">URL *</label>
+                        <input type="url" id="backlink_url" required placeholder="https://...">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="hideModal('add-backlink-modal')">Cancel</button>
+                <button class="btn btn-primary" onclick="addBacklink()">Add Backlink</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Rank Modal -->
+    <div class="modal-overlay" id="edit-rank-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Update Current Rank</h3>
+                <button class="modal-close" onclick="hideModal('edit-rank-modal')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="rank_input">Google Rank for "silent disco headphones"</label>
+                    <input type="number" id="rank_input" min="1" max="100" placeholder="e.g., 15">
+                    <div class="form-hint">Enter your current position (1-100). Check via Google Search Console or manual search.</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="hideModal('edit-rank-modal')">Cancel</button>
+                <button class="btn btn-primary" onclick="saveRank()">Save Rank</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../js/supabase-client.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script>
+        // ==========================================
+        // SEO BATTLE DASHBOARD - INLINE JS
+        // ==========================================
+
+        const TARGET_URL = 'https://silentdiscoheadsets.com.au';
+
+        // SEO Checklist items with weights
+        const SEO_CHECKLIST = [
+            { id: 'title_tag', label: 'Title tag contains "silent disco headphones"', weight: 10, auto: true },
+            { id: 'meta_desc', label: 'Meta description with target keyword', weight: 8, auto: true },
+            { id: 'h1_keyword', label: 'H1 contains target keyword', weight: 10, auto: true },
+            { id: 'h2_subheadings', label: 'H2 subheadings with related terms', weight: 5, auto: true },
+            { id: 'url_structure', label: 'Clean URL structure', weight: 5, auto: true },
+            { id: 'internal_links', label: 'Internal linking between pages', weight: 7, auto: true },
+            { id: 'image_alt', label: 'Images have descriptive alt text', weight: 5, auto: true },
+            { id: 'mobile_responsive', label: 'Fully mobile responsive', weight: 8, auto: true },
+            { id: 'ssl_https', label: 'SSL/HTTPS enabled', weight: 8, auto: true },
+            { id: 'sitemap', label: 'XML sitemap submitted', weight: 5, auto: true },
+            { id: 'robots_txt', label: 'robots.txt configured', weight: 5, auto: true },
+            { id: 'schema_markup', label: 'Schema markup (Product/Organization)', weight: 7, auto: true },
+            { id: 'og_tags', label: 'Open Graph tags set', weight: 5, auto: true },
+            { id: 'canonical_url', label: 'Canonical URLs configured', weight: 5, auto: true },
+            { id: 'page_speed', label: 'Page speed score > 90', weight: 7, auto: false },
+        ];
+
+        // Content tracker data
+        const CONTENT_PAGES = [
+            { page: 'Homepage', keyword: 'silent disco headphones', status: 'live', url: '/' },
+            { page: 'Silent Disco Breathwork', keyword: 'silent disco breathwork', status: 'planned', url: '/breathwork' },
+            { page: 'Corporate Events', keyword: 'corporate silent disco', status: 'planned', url: '/corporate' },
+            { page: 'Silent Disco Weddings', keyword: 'silent disco wedding', status: 'planned', url: '/weddings' },
+            { page: 'Yoga & Meditation', keyword: 'silent disco yoga', status: 'planned', url: '/yoga' },
+            { page: 'Festival Packages', keyword: 'silent disco festival hire', status: 'planned', url: '/festivals' },
+        ];
+
+        // Default checklist state (most items done for a well-built site)
+        const DEFAULT_CHECKLIST_STATE = {
+            title_tag: true,
+            meta_desc: true,
+            h1_keyword: true,
+            h2_subheadings: true,
+            url_structure: true,
+            internal_links: true,
+            image_alt: true,
+            mobile_responsive: true,
+            ssl_https: true,
+            sitemap: true,
+            robots_txt: true,
+            schema_markup: true,
+            og_tags: true,
+            canonical_url: true,
+            page_speed: false, // dynamic based on score
+        };
+
+        // ==========================================
+        // INIT
+        // ==========================================
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await initProtectedPage({
+                requireAdmin: true,
+                onReady: async (user, profile) => {
+                    setupPortalHeader(profile);
+                    setupAdminSidebar();
+                    setupModalCloseHandlers();
+                    initDashboard();
+                }
+            });
+        });
+
+        function initDashboard() {
+            loadRank();
+            loadBacklinks();
+            renderContentTracker();
+            loadCachedPageSpeed();
+            updateSEOScore(); // also calls renderChecklist()
+            updateLastUpdated();
+        }
+
+        // ==========================================
+        // RANK MANAGEMENT
+        // ==========================================
+
+        function loadRank() {
+            const rank = parseInt(localStorage.getItem('seo_current_rank')) || 0;
+            updateRankDisplay(rank);
+        }
+
+        function editRank() {
+            const current = parseInt(localStorage.getItem('seo_current_rank')) || '';
+            document.getElementById('rank_input').value = current;
+            showModal('edit-rank-modal');
+        }
+
+        function saveRank() {
+            const rank = parseInt(document.getElementById('rank_input').value);
+            if (!rank || rank < 1 || rank > 100) {
+                alert('Please enter a valid rank between 1 and 100');
+                return;
+            }
+            localStorage.setItem('seo_current_rank', rank);
+            localStorage.setItem('seo_last_updated', new Date().toISOString());
+            updateRankDisplay(rank);
+            updateSEOScore();
+            updateLastUpdated();
+            hideModal('edit-rank-modal');
+        }
+
+        function updateRankDisplay(rank) {
+            const rankEl = document.getElementById('current-rank');
+            const progressEl = document.getElementById('rank-progress');
+            const progressText = document.getElementById('rank-progress-text');
+            const rankLabel = document.getElementById('rank-label');
+            const progressCurrent = document.getElementById('progress-current');
+
+            if (!rank || rank === 0) {
+                rankEl.textContent = '#--';
+                progressEl.style.width = '0%';
+                progressEl.style.minWidth = '0';
+                progressText.textContent = '';
+                rankLabel.textContent = 'Not ranked yet';
+                progressCurrent.textContent = '#--';
+                return;
+            }
+
+            rankEl.textContent = `#${rank}`;
+            progressCurrent.textContent = `#${rank}`;
+            rankLabel.textContent = `Rank ${rank} / 100`;
+
+            // Progress: rank 100 = 0%, rank 1 = 100%
+            const progress = Math.max(0, Math.min(100, ((100 - rank) / 99) * 100));
+            progressEl.style.width = `${progress}%`;
+            progressEl.style.minWidth = '40px';
+            progressText.textContent = `${Math.round(progress)}%`;
+        }
+
+        // ==========================================
+        // BACKLINK MANAGEMENT
+        // ==========================================
+
+        function loadBacklinks() {
+            const backlinks = getBacklinks();
+            renderBacklinks(backlinks);
+            document.getElementById('backlink-count').textContent = backlinks.length;
+        }
+
+        function getBacklinks() {
+            try {
+                return JSON.parse(localStorage.getItem('seo_backlinks')) || [];
+            } catch {
+                return [];
+            }
+        }
+
+        function renderBacklinks(backlinks) {
+            const tbody = document.getElementById('backlinks-table');
+
+            if (backlinks.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: var(--gray-medium);">No backlinks tracked yet</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = backlinks.map((b, i) => `
+                <tr>
+                    <td><strong>${escapeHtml(b.source)}</strong></td>
+                    <td><a href="${escapeHtml(b.url)}" target="_blank" rel="noopener" style="color: var(--purple-dark); word-break: break-all;">${escapeHtml(b.url)}</a></td>
+                    <td>${new Date(b.dateAdded).toLocaleDateString()}</td>
+                    <td>
+                        <button class="action-btn delete" title="Remove" onclick="removeBacklink(${i})">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function addBacklink() {
+            const source = document.getElementById('backlink_source').value.trim();
+            const url = document.getElementById('backlink_url').value.trim();
+
+            if (!source || !url) {
+                alert('Please fill in both fields');
+                return;
+            }
+
+            const backlinks = getBacklinks();
+            backlinks.push({ source, url, dateAdded: new Date().toISOString() });
+            localStorage.setItem('seo_backlinks', JSON.stringify(backlinks));
+            localStorage.setItem('seo_last_updated', new Date().toISOString());
+
+            document.getElementById('add-backlink-form').reset();
+            hideModal('add-backlink-modal');
+            loadBacklinks();
+            updateSEOScore();
+            updateLastUpdated();
+        }
+
+        function editBacklinkCount() {
+            showModal('add-backlink-modal');
+        }
+
+        function removeBacklink(index) {
+            if (!confirm('Remove this backlink?')) return;
+
+            const backlinks = getBacklinks();
+            backlinks.splice(index, 1);
+            localStorage.setItem('seo_backlinks', JSON.stringify(backlinks));
+            localStorage.setItem('seo_last_updated', new Date().toISOString());
+
+            loadBacklinks();
+            updateSEOScore();
+            updateLastUpdated();
+        }
+
+        // ==========================================
+        // PAGESPEED INSIGHTS API
+        // ==========================================
+
+        function loadCachedPageSpeed() {
+            try {
+                const cached = JSON.parse(localStorage.getItem('seo_page_speed_data'));
+                if (cached) {
+                    displayPageSpeedData(cached);
+                }
+            } catch {
+                // No cached data
+            }
+        }
+
+        async function fetchPageSpeed() {
+            const btn = document.getElementById('refresh-vitals');
+            btn.classList.add('loading');
+            btn.disabled = true;
+
+            try {
+                const apiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(TARGET_URL)}&strategy=mobile&category=performance`;
+                const response = await fetch(apiUrl);
+
+                if (!response.ok) throw new Error(`API returned ${response.status}`);
+
+                const data = await response.json();
+
+                // Extract relevant metrics
+                const lighthouse = data.lighthouseResult;
+                const perfScore = Math.round((lighthouse.categories.performance.score || 0) * 100);
+                const audits = lighthouse.audits;
+
+                const pageSpeedData = {
+                    performance: perfScore,
+                    lcp: audits['largest-contentful-paint']?.displayValue || '--',
+                    lcpScore: audits['largest-contentful-paint']?.score || 0,
+                    cls: audits['cumulative-layout-shift']?.displayValue || '--',
+                    clsScore: audits['cumulative-layout-shift']?.score || 0,
+                    inp: audits['interaction-to-next-paint']?.displayValue || audits['max-potential-fid']?.displayValue || '--',
+                    inpScore: audits['interaction-to-next-paint']?.score || audits['max-potential-fid']?.score || 0,
+                    fcp: audits['first-contentful-paint']?.displayValue || '--',
+                    fcpScore: audits['first-contentful-paint']?.score || 0,
+                    fetchedAt: new Date().toISOString()
+                };
+
+                localStorage.setItem('seo_page_speed_data', JSON.stringify(pageSpeedData));
+                localStorage.setItem('seo_last_updated', new Date().toISOString());
+
+                displayPageSpeedData(pageSpeedData);
+                updateSEOScore();
+                updateLastUpdated();
+
+            } catch (error) {
+                console.error('PageSpeed API error:', error);
+                alert('Failed to fetch PageSpeed data. Try again in a moment.');
+            } finally {
+                btn.classList.remove('loading');
+                btn.disabled = false;
+            }
+        }
+
+        function displayPageSpeedData(data) {
+            // Performance score
+            document.getElementById('perf-score').textContent = data.performance;
+            document.getElementById('page-speed-score').textContent = data.performance;
+
+            // Performance ring
+            const perfRing = document.getElementById('perf-ring');
+            const circumference = 2 * Math.PI * 40; // r=40
+            const offset = circumference - (data.performance / 100) * circumference;
+            perfRing.style.strokeDashoffset = offset;
+            perfRing.style.stroke = getScoreColor(data.performance);
+
+            // Vitals
+            setVitalValue('vital-lcp', data.lcp, data.lcpScore);
+            setVitalValue('vital-cls', data.cls, data.clsScore);
+            setVitalValue('vital-inp', data.inp, data.inpScore);
+            setVitalValue('vital-fcp', data.fcp, data.fcpScore);
+        }
+
+        function setVitalValue(elementId, value, score) {
+            const el = document.getElementById(elementId);
+            el.textContent = value;
+            el.className = 'vital-value';
+            if (score >= 0.9) el.classList.add('good');
+            else if (score >= 0.5) el.classList.add('needs-improvement');
+            else el.classList.add('poor');
+        }
+
+        function getScoreColor(score) {
+            if (score >= 90) return '#15803d';
+            if (score >= 50) return '#b45309';
+            return '#dc2626';
+        }
+
+        // ==========================================
+        // SEO CHECKLIST
+        // ==========================================
+
+        function renderChecklist() {
+            const container = document.getElementById('seo-checklist');
+            const state = getChecklistState();
+
+            container.innerHTML = SEO_CHECKLIST.map(item => {
+                const done = item.id === 'page_speed' ? isPageSpeedGood() : (state[item.id] !== false);
+                return `
+                    <li>
+                        <span class="seo-check ${done ? 'done' : 'pending'}">
+                            ${done
+                                ? '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>'
+                                : '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>'
+                            }
+                        </span>
+                        <span style="${done ? '' : 'color: var(--gray-medium);'}">${item.label}</span>
+                    </li>
+                `;
+            }).join('');
+
+            // Update score
+            const completed = SEO_CHECKLIST.filter(item => {
+                return item.id === 'page_speed' ? isPageSpeedGood() : (state[item.id] !== false);
+            }).length;
+            document.getElementById('checklist-score').textContent = `${completed}/${SEO_CHECKLIST.length}`;
+
+            const progressPct = (completed / SEO_CHECKLIST.length) * 100;
+            document.getElementById('checklist-progress').style.width = `${progressPct}%`;
+        }
+
+        function getChecklistState() {
+            try {
+                const stored = JSON.parse(localStorage.getItem('seo_checklist_state'));
+                return stored || { ...DEFAULT_CHECKLIST_STATE };
+            } catch {
+                return { ...DEFAULT_CHECKLIST_STATE };
+            }
+        }
+
+        function isPageSpeedGood() {
+            try {
+                const data = JSON.parse(localStorage.getItem('seo_page_speed_data'));
+                return data && data.performance >= 90;
+            } catch {
+                return false;
+            }
+        }
+
+        // ==========================================
+        // CONTENT TRACKER
+        // ==========================================
+
+        function renderContentTracker() {
+            const tbody = document.getElementById('content-tracker');
+            tbody.innerHTML = CONTENT_PAGES.map(p => `
+                <tr>
+                    <td><strong>${p.page}</strong></td>
+                    <td style="font-family: monospace; font-size: 0.8125rem;">${p.keyword}</td>
+                    <td><span class="seo-content-status ${p.status}">${p.status.charAt(0).toUpperCase() + p.status.slice(1)}</span></td>
+                    <td style="font-family: monospace; font-size: 0.8125rem; color: var(--gray-medium);">${p.url}</td>
+                </tr>
+            `).join('');
+        }
+
+        // ==========================================
+        // SEO SCORE CALCULATION
+        // ==========================================
+
+        function updateSEOScore() {
+            const state = getChecklistState();
+
+            // On-Page Checklist: 0-100 pts
+            let checklistTotal = 0;
+            let checklistMax = 0;
+            SEO_CHECKLIST.forEach(item => {
+                checklistMax += item.weight;
+                const done = item.id === 'page_speed' ? isPageSpeedGood() : (state[item.id] !== false);
+                if (done) checklistTotal += item.weight;
+            });
+            const checklistScore = Math.round((checklistTotal / checklistMax) * 100);
+
+            // Rank Bonus: 0-50 pts
+            const rank = parseInt(localStorage.getItem('seo_current_rank')) || 0;
+            const rankBonus = rank > 0 ? Math.max(0, 50 - rank * 0.5) : 0;
+
+            // Backlinks: 0-30 pts
+            const backlinks = getBacklinks();
+            const backlinkScore = Math.min(30, backlinks.length);
+
+            // Final score
+            const total = checklistScore + rankBonus + backlinkScore;
+            const finalScore = Math.min(100, Math.round((total / 180) * 100));
+
+            // Animate score
+            animateScore(finalScore);
+
+            // Update checklist display
+            renderChecklist();
+        }
+
+        function animateScore(target) {
+            const scoreEl = document.getElementById('seo-score');
+            const ringEl = document.getElementById('score-ring');
+            const circumference = 2 * Math.PI * 54; // r=54
+
+            const current = parseInt(scoreEl.textContent) || 0;
+            const diff = target - current;
+            const duration = 600;
+            const start = performance.now();
+
+            function update(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+
+                const value = Math.round(current + diff * eased);
+                scoreEl.textContent = value;
+
+                const offset = circumference - (value / 100) * circumference;
+                ringEl.style.strokeDashoffset = offset;
+
+                if (progress < 1) requestAnimationFrame(update);
+            }
+
+            requestAnimationFrame(update);
+        }
+
+        // ==========================================
+        // UTILITIES
+        // ==========================================
+
+        function updateLastUpdated() {
+            const ts = localStorage.getItem('seo_last_updated');
+            const el = document.getElementById('last-updated');
+            if (ts) {
+                const date = new Date(ts);
+                el.textContent = `Last updated: ${date.toLocaleDateString()} ${date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+            }
+        }
+
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        }
+
+        // showModal / hideModal provided by auth.js
+    </script>
+</body>
+</html>

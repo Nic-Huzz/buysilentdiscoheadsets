@@ -22,35 +22,41 @@
 
             <div class="auth-title">
                 <h2>Welcome Back</h2>
-                <p>Sign in to access your orders and resources</p>
+                <p>Enter your email to receive a magic sign-in link</p>
             </div>
 
+            <!-- Email Entry Form -->
             <form id="login-form">
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" required placeholder="you@company.com">
+                    <div class="form-hint">We'll send you a secure link to sign in</div>
                     <div class="form-error" id="email-error"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required placeholder="Enter your password">
-                    <div class="form-error" id="password-error"></div>
-                </div>
-
-                <div class="form-group" style="text-align: right;">
-                    <a href="forgot-password.html" style="color: var(--purple-dark); font-size: 0.875rem;">Forgot password?</a>
                 </div>
 
                 <div class="form-error" id="form-error" style="text-align: center; margin-bottom: 1rem;"></div>
 
                 <div class="form-actions">
                     <button type="submit" class="btn btn-primary" id="login-btn">
-                        <span class="btn-text">Sign In</span>
-                        <span class="btn-loading" style="display: none;">Signing in...</span>
+                        <span class="btn-text">Send Magic Link</span>
+                        <span class="btn-loading" style="display: none;">Sending...</span>
                     </button>
                 </div>
             </form>
+
+            <!-- Success Message (hidden initially) -->
+            <div id="email-sent" style="display: none; text-align: center;">
+                <div style="width: 64px; height: 64px; margin: 0 auto 1rem; background: rgba(34, 197, 94, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#15803d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </div>
+                <h3 style="margin-bottom: 0.5rem;">Check Your Email!</h3>
+                <p style="color: var(--gray-medium); margin-bottom: 1rem;">We've sent a magic link to <strong id="sent-email"></strong></p>
+                <p style="color: var(--gray-medium); font-size: 0.875rem; margin-bottom: 1.5rem;">Click the link in the email to sign in. The link expires in 1 hour.</p>
+                <button type="button" class="btn btn-secondary" id="try-again-btn">Send Another Link</button>
+            </div>
 
             <div class="form-footer">
                 <p>Don't have an account? <a href="register.html">Create one</a></p>
@@ -70,10 +76,8 @@
                 const profile = await Auth.getCurrentProfile();
                 if (profile?.is_admin) {
                     window.location.href = 'admin/index.html';
-                } else if (profile?.is_approved) {
-                    window.location.href = 'dashboard.html';
                 } else {
-                    window.location.href = 'pending.html';
+                    window.location.href = 'orders.html';
                 }
                 return;
             }
@@ -83,25 +87,22 @@
             const loginBtn = document.getElementById('login-btn');
             const btnText = loginBtn.querySelector('.btn-text');
             const btnLoading = loginBtn.querySelector('.btn-loading');
+            const emailSent = document.getElementById('email-sent');
+            const sentEmailSpan = document.getElementById('sent-email');
+            const tryAgainBtn = document.getElementById('try-again-btn');
 
             form.addEventListener('submit', async (e) => {
                 e.preventDefault();
 
                 // Clear errors
                 document.getElementById('email-error').textContent = '';
-                document.getElementById('password-error').textContent = '';
                 document.getElementById('form-error').textContent = '';
 
                 const email = document.getElementById('email').value.trim();
-                const password = document.getElementById('password').value;
 
                 // Validate
                 if (!email) {
                     document.getElementById('email-error').textContent = 'Email is required';
-                    return;
-                }
-                if (!password) {
-                    document.getElementById('password-error').textContent = 'Password is required';
                     return;
                 }
 
@@ -111,23 +112,27 @@
                 loginBtn.disabled = true;
 
                 try {
-                    await Auth.signIn(email, password);
+                    await Auth.signInWithOTP(email);
 
-                    // Check profile and redirect
-                    const profile = await Auth.getCurrentProfile();
-                    if (profile?.is_admin) {
-                        window.location.href = 'admin/index.html';
-                    } else if (profile?.is_approved) {
-                        window.location.href = 'dashboard.html';
-                    } else {
-                        window.location.href = 'pending.html';
-                    }
+                    // Show success message
+                    form.style.display = 'none';
+                    emailSent.style.display = 'block';
+                    sentEmailSpan.textContent = email;
                 } catch (error) {
-                    document.getElementById('form-error').textContent = error.message || 'Invalid email or password';
+                    document.getElementById('form-error').textContent = error.message || 'Failed to send magic link. Please try again.';
                     btnText.style.display = 'inline';
                     btnLoading.style.display = 'none';
                     loginBtn.disabled = false;
                 }
+            });
+
+            // Handle try again button
+            tryAgainBtn.addEventListener('click', () => {
+                form.style.display = 'block';
+                emailSent.style.display = 'none';
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                loginBtn.disabled = false;
             });
         });
     </script>

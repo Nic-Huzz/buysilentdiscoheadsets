@@ -20,67 +20,89 @@
                 <h1>Customer Portal</h1>
             </div>
 
-            <div class="auth-title">
-                <h2>Create Account</h2>
-                <p>Register to track orders and access exclusive resources</p>
+            <!-- Step 1: Invite Code -->
+            <div id="invite-step">
+                <div class="auth-title">
+                    <h2>Enter Invite Code</h2>
+                    <p>You need an invite code to create an account. Check your email or contact us to get one.</p>
+                </div>
+
+                <form id="invite-form">
+                    <div class="form-group">
+                        <label for="inviteCode">Invite Code *</label>
+                        <input type="text" id="inviteCode" name="inviteCode" required placeholder="SDH-XXXX-XXXX" style="text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; text-align: center; font-size: 1.125rem;">
+                        <div class="form-error" id="invite-error"></div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="invite-btn">
+                            <span class="btn-text">Continue</span>
+                            <span class="btn-loading" style="display: none;">Validating...</span>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="form-footer">
+                    <p>Already have an account? <a href="login.html">Sign in</a></p>
+                    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--gray-medium);">Back to main site</a></p>
+                </div>
             </div>
 
-            <form id="register-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="fullName">Full Name *</label>
-                        <input type="text" id="fullName" name="fullName" required placeholder="John Smith">
-                        <div class="form-error" id="fullName-error"></div>
+            <!-- Step 2: Registration Form (hidden initially) -->
+            <div id="register-step" style="display: none;">
+                <div class="auth-title">
+                    <h2>Create Account</h2>
+                    <p>Complete your details to access the portal</p>
+                </div>
+
+                <div id="invite-code-badge" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem; padding: 0.625rem 1rem; background: rgba(34, 197, 94, 0.08); border-radius: var(--border-radius); border: 1px solid rgba(34, 197, 94, 0.2);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#15803d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <span style="font-size: 0.875rem; color: #15803d; font-weight: 500;">Invite code verified</span>
+                </div>
+
+                <form id="register-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="John Smith">
+                            <div class="form-error" id="fullName-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyName">Company Name</label>
+                            <input type="text" id="companyName" name="companyName" placeholder="Your Company">
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="companyName">Company Name</label>
-                        <input type="text" id="companyName" name="companyName" placeholder="Your Company">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required placeholder="you@company.com">
-                    <div class="form-error" id="email-error"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+61 400 000 000">
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="password">Password *</label>
-                        <input type="password" id="password" name="password" required placeholder="Min. 8 characters">
-                        <div class="form-error" id="password-error"></div>
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="you@company.com">
+                        <div class="form-hint">We'll send you a magic link to sign in</div>
+                        <div class="form-error" id="email-error"></div>
                     </div>
 
                     <div class="form-group">
-                        <label for="confirmPassword">Confirm Password *</label>
-                        <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm password">
-                        <div class="form-error" id="confirmPassword-error"></div>
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+61 400 000 000">
                     </div>
+
+                    <div class="form-error" id="form-error" style="text-align: center; margin-bottom: 1rem;"></div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="register-btn">
+                            <span class="btn-text">Create Account</span>
+                            <span class="btn-loading" style="display: none;">Creating account...</span>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="form-footer">
+                    <p>Already have an account? <a href="login.html">Sign in</a></p>
+                    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--gray-medium);">Back to main site</a></p>
                 </div>
-
-                <div class="form-hint" style="margin-bottom: 1rem;">
-                    After registration, your account will be reviewed and approved. You'll receive an email once approved.
-                </div>
-
-                <div class="form-error" id="form-error" style="text-align: center; margin-bottom: 1rem;"></div>
-
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-primary" id="register-btn">
-                        <span class="btn-text">Create Account</span>
-                        <span class="btn-loading" style="display: none;">Creating account...</span>
-                    </button>
-                </div>
-            </form>
-
-            <div class="form-footer">
-                <p>Already have an account? <a href="login.html">Sign in</a></p>
-                <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--gray-medium);">Back to main site</a></p>
             </div>
         </div>
     </div>
@@ -95,9 +117,9 @@
                         <polyline points="22 4 12 14.01 9 11.01"></polyline>
                     </svg>
                 </div>
-                <h3 style="margin-bottom: 0.5rem;">Registration Successful!</h3>
-                <p style="color: var(--gray-medium); margin-bottom: 1.5rem;">Please check your email to verify your account. Once verified and approved by our team, you'll have full access to the customer portal.</p>
-                <a href="login.html" class="btn btn-primary">Go to Login</a>
+                <h3 style="margin-bottom: 0.5rem;">Check Your Email!</h3>
+                <p style="color: var(--gray-medium); margin-bottom: 1.5rem;">We've sent a magic link to your email address. Click the link to sign in and access the customer portal.</p>
+                <p style="color: var(--gray-medium); font-size: 0.875rem;">Didn't receive it? Check your spam folder or try again.</p>
             </div>
         </div>
     </div>
@@ -110,10 +132,56 @@
             // Check if already logged in
             const user = await Auth.getCurrentUser();
             if (user) {
-                window.location.href = 'dashboard.html';
+                window.location.href = 'orders.html';
                 return;
             }
 
+            let validatedCode = null;
+
+            // Step 1: Invite Code Validation
+            const inviteForm = document.getElementById('invite-form');
+            const inviteBtn = document.getElementById('invite-btn');
+            const inviteBtnText = inviteBtn.querySelector('.btn-text');
+            const inviteBtnLoading = inviteBtn.querySelector('.btn-loading');
+
+            inviteForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                document.getElementById('invite-error').textContent = '';
+
+                const code = document.getElementById('inviteCode').value.trim().toUpperCase();
+                if (!code) {
+                    document.getElementById('invite-error').textContent = 'Please enter your invite code';
+                    return;
+                }
+
+                inviteBtnText.style.display = 'none';
+                inviteBtnLoading.style.display = 'inline';
+                inviteBtn.disabled = true;
+
+                try {
+                    const result = await DB.inviteCodes.validate(code);
+
+                    if (!result.valid) {
+                        document.getElementById('invite-error').textContent = result.reason;
+                        inviteBtnText.style.display = 'inline';
+                        inviteBtnLoading.style.display = 'none';
+                        inviteBtn.disabled = false;
+                        return;
+                    }
+
+                    validatedCode = code;
+                    document.getElementById('invite-step').style.display = 'none';
+                    document.getElementById('register-step').style.display = 'block';
+
+                } catch (error) {
+                    document.getElementById('invite-error').textContent = 'Error validating code. Please try again.';
+                    inviteBtnText.style.display = 'inline';
+                    inviteBtnLoading.style.display = 'none';
+                    inviteBtn.disabled = false;
+                }
+            });
+
+            // Step 2: Registration
             const form = document.getElementById('register-form');
             const registerBtn = document.getElementById('register-btn');
             const btnText = registerBtn.querySelector('.btn-text');
@@ -130,8 +198,6 @@
                 const companyName = document.getElementById('companyName').value.trim();
                 const email = document.getElementById('email').value.trim();
                 const phone = document.getElementById('phone').value.trim();
-                const password = document.getElementById('password').value;
-                const confirmPassword = document.getElementById('confirmPassword').value;
 
                 // Validate
                 let hasError = false;
@@ -144,17 +210,6 @@
                     document.getElementById('email-error').textContent = 'Email is required';
                     hasError = true;
                 }
-                if (!password) {
-                    document.getElementById('password-error').textContent = 'Password is required';
-                    hasError = true;
-                } else if (password.length < 8) {
-                    document.getElementById('password-error').textContent = 'Password must be at least 8 characters';
-                    hasError = true;
-                }
-                if (password !== confirmPassword) {
-                    document.getElementById('confirmPassword-error').textContent = 'Passwords do not match';
-                    hasError = true;
-                }
 
                 if (hasError) return;
 
@@ -164,10 +219,11 @@
                 registerBtn.disabled = true;
 
                 try {
-                    await Auth.signUp(email, password, {
+                    await Auth.signUpWithOTP(email, {
                         fullName,
                         phone,
-                        companyName
+                        companyName,
+                        inviteCode: validatedCode
                     });
 
                     // Show success modal

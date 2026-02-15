@@ -1,0 +1,44 @@
+{% comment %}
+  HOMEPAGE TEMPLATE
+
+  To customize this page after upload:
+  1. Go to Online Store > Themes > Customize
+  2. Edit the homepage sections
+  3. Or edit this file directly in: Online Store > Themes > Edit Code
+
+  For now, this template shows your main content.
+  You can paste your full homepage HTML here and convert images to use:
+  {{ 'image-name.jpg' | asset_url }}
+{% endcomment %}
+
+<div class="homepage-container">
+  <h1 style="text-align: center; padding: 4rem 0; background: linear-gradient(135deg, #5e17eb 0%, #8b5cf6 100%); color: white; margin: 0;">
+    Welcome to {{ shop.name }}
+  </h1>
+
+  <div class="container" style="padding: 4rem 2rem; text-align: center;">
+    <h2>Your Shopify Store is Live!</h2>
+    <p style="max-width: 700px; margin: 2rem auto;">
+      To add your full homepage content:
+    </p>
+    <ol style="max-width: 600px; margin: 2rem auto; text-align: left;">
+      <li style="margin-bottom: 1rem;">Go to <strong>Online Store > Themes > Edit Code</strong></li>
+      <li style="margin-bottom: 1rem;">Open <strong>templates/index.liquid</strong></li>
+      <li style="margin-bottom: 1rem;">Paste your homepage HTML from the prototype</li>
+      <li style="margin-bottom: 1rem;">Update image paths to: <code>{{ '{{ "image.jpg" | asset_url }}' }}</code></li>
+    </ol>
+
+    <p style="margin-top: 3rem;">
+      <a href="/#packages" class="btn btn-secondary">View Packages</a>
+      <a href="/pages/about" class="btn btn-outline" style="margin-left: 1rem;">About Us</a>
+    </p>
+  </div>
+
+  {% comment %}
+    Or use Shopify sections - uncomment below:
+
+    {% section 'hero' %}
+    {% section 'features' %}
+    {% section 'products' %}
+  {% endcomment %}
+</div>

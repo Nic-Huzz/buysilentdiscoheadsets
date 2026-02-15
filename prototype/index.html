@@ -741,10 +741,70 @@
     <div class="container">
       <h2>Calculate Your Event ROI</h2>
       <div class="roi-calculator-container">
-        <!-- Elfsight Calculator Widget -->
-        <script src="https://elfsightcdn.com/platform.js" async></script>
-        <div class="elfsight-app-ac538655-a0ab-44c8-a93a-d19550919ce5" data-elfsight-app-lazy></div>
+        <div class="builder-form">
+          <div class="builder-field">
+            <label>How many headphones are you buying?</label>
+            <input type="number" id="roi-headphones" class="builder-input" value="50" min="1" max="1000">
+          </div>
+          <div class="builder-field">
+            <label>How many events per year will you host?</label>
+            <input type="number" id="roi-events" class="builder-input" value="12" min="1" max="365">
+          </div>
+          <div class="builder-field">
+            <label>Rental price per headphone per event (USD)</label>
+            <input type="number" id="roi-rental" class="builder-input" value="15" min="1" max="100">
+          </div>
+          <div class="builder-summary" id="roi-results">
+            <div class="summary-row">
+              <span>Your Investment</span>
+              <span id="roi-investment">$2,619</span>
+            </div>
+            <div class="summary-row">
+              <span>Revenue Per Event</span>
+              <span id="roi-per-event">$750</span>
+            </div>
+            <div class="summary-divider"></div>
+            <div class="summary-row">
+              <span>Events to Break Even</span>
+              <span id="roi-breakeven" style="color: var(--purple-dark); font-weight: 700;">4 events</span>
+            </div>
+            <div class="summary-row summary-total">
+              <span>Annual Profit</span>
+              <span id="roi-profit">$6,381</span>
+            </div>
+            <div class="summary-row summary-total" style="border-top: 2px solid var(--purple-light); padding-top: 1rem; margin-top: 0.5rem;">
+              <span>Return on Investment</span>
+              <span id="roi-percentage" style="font-size: 1.5rem;">244%</span>
+            </div>
+          </div>
+          <p class="summary-note">Based on headphones at $49 USD + 1 transmitter at $169 USD</p>
+        </div>
       </div>
+      <script>
+        (function() {
+          var hp = document.getElementById('roi-headphones');
+          var ev = document.getElementById('roi-events');
+          var rn = document.getElementById('roi-rental');
+          function calc() {
+            var h = parseInt(hp.value) || 0;
+            var e = parseInt(ev.value) || 0;
+            var r = parseInt(rn.value) || 0;
+            var investment = (h * 49) + 169;
+            var perEvent = h * r;
+            var breakeven = perEvent > 0 ? Math.ceil(investment / perEvent) : 0;
+            var annual = (perEvent * e) - investment;
+            var roiPct = investment > 0 ? Math.round((annual / investment) * 100) : 0;
+            document.getElementById('roi-investment').textContent = '$' + investment.toLocaleString();
+            document.getElementById('roi-per-event').textContent = '$' + perEvent.toLocaleString();
+            document.getElementById('roi-breakeven').textContent = breakeven + ' event' + (breakeven !== 1 ? 's' : '');
+            document.getElementById('roi-profit').textContent = (annual >= 0 ? '$' : '-$') + Math.abs(annual).toLocaleString();
+            document.getElementById('roi-percentage').textContent = roiPct + '%';
+          }
+          hp.addEventListener('input', calc);
+          ev.addEventListener('input', calc);
+          rn.addEventListener('input', calc);
+        })();
+      </script>
     </div>
   </section>
 

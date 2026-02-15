@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invite Codes - Admin | Silent Disco Headsets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/portal.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <a href="../../index.html" class="portal-logo">
+            <span>Admin Portal</span>
+        </a>
+
+        <nav class="admin-nav">
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                Dashboard
+            </a>
+            <a href="customers.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Customers
+            </a>
+            <a href="invites.html" class="active">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="M7 15h0M2 9.5h20"></path>
+                </svg>
+                Invite Codes
+            </a>
+            <a href="orders.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                Orders
+            </a>
+            <a href="resources.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                Resources
+            </a>
+            <a href="upsells.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                Upsells
+            </a>
+            <a href="seo.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+                SEO Battle
+            </a>
+            <a href="#" class="coming-soon-nav" onclick="event.preventDefault();">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                Marketing Assets
+                <span class="nav-badge">Soon</span>
+            </a>
+            <a href="#" class="coming-soon-nav" onclick="event.preventDefault();">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Acquisition Portal
+                <span class="nav-badge">Soon</span>
+            </a>
+        </nav>
+
+        <div style="margin-top: auto; padding-top: 2rem;">
+            <a href="../dashboard.html" style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.5); font-size: 0.875rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 18l-6-6 6-6"></path>
+                </svg>
+                Back to Portal
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="admin-main">
+        <header class="admin-header">
+            <div>
+                <h1 style="font-size: 1.5rem; margin-bottom: 0;">Invite Codes</h1>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="btn btn-primary" onclick="showModal('create-modal')" style="padding: 0.5rem 1rem; font-size: 0.875rem;">
+                    + Generate Code
+                </button>
+                <div class="portal-user-menu">
+                    <button class="portal-user-btn" id="user-menu-btn">
+                        <span id="user-name">Admin</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="portal-dropdown" id="user-dropdown">
+                        <button id="logout-btn">Sign Out</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="admin-content">
+            <!-- Stats -->
+            <div class="admin-stats">
+                <div class="admin-stat-card">
+                    <div class="label">Total Codes</div>
+                    <div class="value" id="total-codes">0</div>
+                </div>
+                <div class="admin-stat-card">
+                    <div class="label">Active Codes</div>
+                    <div class="value" id="active-codes">0</div>
+                </div>
+                <div class="admin-stat-card">
+                    <div class="label">Total Redeemed</div>
+                    <div class="value" id="total-redeemed">0</div>
+                </div>
+                <div class="admin-stat-card">
+                    <div class="label">Expired / Revoked</div>
+                    <div class="value" id="inactive-codes">0</div>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div style="display: flex; gap: var(--spacing-sm); margin-bottom: var(--spacing-md);">
+                <button class="filter-btn active" data-filter="all">All Codes</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="used">Fully Used</button>
+                <button class="filter-btn" data-filter="inactive">Revoked</button>
+            </div>
+
+            <!-- Invite Codes Table -->
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Label</th>
+                        <th>Usage</th>
+                        <th>Status</th>
+                        <th>Created</th>
+                        <th>Expires</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="codes-table">
+                    <tr>
+                        <td colspan="7" style="text-align: center; color: var(--gray-medium);">Loading...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Create Invite Code Modal -->
+    <div class="modal-overlay" id="create-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Generate Invite Code</h3>
+                <button class="modal-close" onclick="hideModal('create-modal')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="create-form">
+                    <div class="form-group">
+                        <label for="code-preview">Invite Code</label>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <input type="text" id="code-preview" readonly style="font-family: monospace; font-weight: 600; letter-spacing: 0.05em; background: var(--gray-light);">
+                            <button type="button" class="btn" onclick="regenerateCode()" style="padding: 0.875rem 1rem; white-space: nowrap; background: var(--gray-light); border: 2px solid #e5e5e7;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="23 4 23 10 17 10"></polyline>
+                                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="code-label">Label (optional)</label>
+                        <input type="text" id="code-label" placeholder="e.g. John's Wedding, Summer Event">
+                        <div class="form-hint">A friendly name to help you remember who this code is for</div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="max-uses">Max Uses</label>
+                            <input type="number" id="max-uses" value="1" min="1" max="100">
+                            <div class="form-hint">How many times this code can be used</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="expires-at">Expires (optional)</label>
+                            <input type="date" id="expires-at">
+                            <div class="form-hint">Leave blank for no expiry</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" onclick="hideModal('create-modal')" style="background: var(--gray-light);">Cancel</button>
+                <button class="btn btn-primary" id="create-btn" onclick="createInviteCode()">Create Code</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Code Created Success Modal -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal">
+            <div class="modal-body" style="text-align: center; padding: 2.5rem 2rem;">
+                <div style="width: 64px; height: 64px; margin: 0 auto 1.25rem; background: rgba(34, 197, 94, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#15803d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                </div>
+                <h3 style="margin-bottom: 0.5rem;">Invite Code Created!</h3>
+                <p style="color: var(--gray-medium); margin-bottom: 1.25rem;">Share this code with your customer:</p>
+                <div id="created-code-display" style="font-family: monospace; font-size: 1.5rem; font-weight: 700; letter-spacing: 0.1em; padding: 1rem; background: var(--gray-light); border-radius: var(--border-radius); margin-bottom: 1.25rem; user-select: all;"></div>
+                <button class="btn btn-primary" onclick="copyCreatedCode()" style="width: 100%;">
+                    <span id="copy-btn-text">Copy to Clipboard</span>
+                </button>
+                <button class="btn" onclick="hideModal('success-modal')" style="width: 100%; margin-top: 0.5rem; background: transparent;">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../js/supabase-client.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script>
+        let allCodes = [];
+        let currentFilter = 'all';
+        let currentUser = null;
+        let lastCreatedCode = '';
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await initProtectedPage({
+                requireAdmin: true,
+                onReady: async (user, profile) => {
+                    currentUser = user;
+                    setupPortalHeader(profile);
+                    setupAdminSidebar();
+                    setupModalCloseHandlers();
+                    setupFilters();
+                    regenerateCode();
+                    await loadInviteCodes();
+                }
+            });
+        });
+
+        function setupFilters() {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilter = btn.dataset.filter;
+                    renderCodes();
+                });
+            });
+        }
+
+        function regenerateCode() {
+            document.getElementById('code-preview').value = DB.inviteCodes.generateCode();
+        }
+
+        async function loadInviteCodes() {
+            try {
+                allCodes = await DB.inviteCodes.getAll();
+                updateStats();
+                renderCodes();
+            } catch (error) {
+                console.error('Error loading invite codes:', error);
+                Utils.showToast('Error loading invite codes', 'error');
+            }
+        }
+
+        function updateStats() {
+            const active = allCodes.filter(c => c.is_active && (c.max_uses === 0 || c.uses < c.max_uses) && (!c.expires_at || new Date(c.expires_at) > new Date()));
+            const totalRedeemed = allCodes.reduce((sum, c) => sum + c.uses, 0);
+            const inactive = allCodes.filter(c => !c.is_active);
+
+            document.getElementById('total-codes').textContent = allCodes.length;
+            document.getElementById('active-codes').textContent = active.length;
+            document.getElementById('total-redeemed').textContent = totalRedeemed;
+            document.getElementById('inactive-codes').textContent = inactive.length;
+        }
+
+        function getCodeStatus(code) {
+            if (!code.is_active) return { label: 'Revoked', class: 'badge-revoked' };
+            if (code.expires_at && new Date(code.expires_at) < new Date()) return { label: 'Expired', class: 'badge-expired' };
+            if (code.max_uses > 0 && code.uses >= code.max_uses) return { label: 'Fully Used', class: 'badge-used' };
+            return { label: 'Active', class: 'badge-approved' };
+        }
+
+        function renderCodes() {
+            let filtered = allCodes;
+
+            if (currentFilter === 'active') {
+                filtered = allCodes.filter(c => {
+                    const status = getCodeStatus(c);
+                    return status.label === 'Active';
+                });
+            } else if (currentFilter === 'used') {
+                filtered = allCodes.filter(c => c.max_uses > 0 && c.uses >= c.max_uses);
+            } else if (currentFilter === 'inactive') {
+                filtered = allCodes.filter(c => !c.is_active);
+            }
+
+            const tbody = document.getElementById('codes-table');
+
+            if (filtered.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--gray-medium);">No invite codes found</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = filtered.map(c => {
+                const status = getCodeStatus(c);
+                return `
+                    <tr>
+                        <td>
+                            <code style="font-family: monospace; font-weight: 600; font-size: 0.9375rem; letter-spacing: 0.03em;">${c.code}</code>
+                        </td>
+                        <td>${c.label || '<span style="color: var(--gray-medium);">-</span>'}</td>
+                        <td>
+                            <span style="font-weight: 600;">${c.uses}</span>
+                            <span style="color: var(--gray-medium);">/ ${c.max_uses > 0 ? c.max_uses : 'Unlimited'}</span>
+                        </td>
+                        <td>
+                            <span class="badge ${status.class}">${status.label}</span>
+                        </td>
+                        <td>${Utils.formatDate(c.created_at)}</td>
+                        <td>${c.expires_at ? Utils.formatDate(c.expires_at) : '<span style="color: var(--gray-medium);">Never</span>'}</td>
+                        <td>
+                            <div class="action-btns">
+                                <button class="action-btn edit" title="Copy Code" onclick="copyCode('${c.code}')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                </button>
+                                ${c.is_active ? `
+                                    <button class="action-btn delete" title="Revoke" onclick="revokeCode('${c.id}')">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="15" y1="9" x2="9" y2="15"></line>
+                                            <line x1="9" y1="9" x2="15" y2="15"></line>
+                                        </svg>
+                                    </button>
+                                ` : ''}
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        async function createInviteCode() {
+            const code = document.getElementById('code-preview').value.trim();
+            const label = document.getElementById('code-label').value.trim();
+            const maxUses = parseInt(document.getElementById('max-uses').value) || 1;
+            const expiresAt = document.getElementById('expires-at').value;
+
+            const createBtn = document.getElementById('create-btn');
+            createBtn.disabled = true;
+            createBtn.textContent = 'Creating...';
+
+            try {
+                const codeData = {
+                    code,
+                    label: label || null,
+                    max_uses: maxUses,
+                    expires_at: expiresAt ? new Date(expiresAt + 'T23:59:59').toISOString() : null,
+                    created_by: currentUser.id
+                };
+
+                await DB.inviteCodes.create(codeData);
+
+                hideModal('create-modal');
+
+                // Show success with copy
+                lastCreatedCode = code;
+                document.getElementById('created-code-display').textContent = code;
+                document.getElementById('copy-btn-text').textContent = 'Copy to Clipboard';
+                showModal('success-modal');
+
+                // Reset form
+                document.getElementById('code-label').value = '';
+                document.getElementById('max-uses').value = '1';
+                document.getElementById('expires-at').value = '';
+                regenerateCode();
+
+                await loadInviteCodes();
+            } catch (error) {
+                console.error('Error creating invite code:', error);
+                Utils.showToast('Error creating invite code', 'error');
+            } finally {
+                createBtn.disabled = false;
+                createBtn.textContent = 'Create Code';
+            }
+        }
+
+        async function copyCode(code) {
+            try {
+                await navigator.clipboard.writeText(code);
+                Utils.showToast('Code copied to clipboard', 'success');
+            } catch {
+                Utils.showToast('Failed to copy code', 'error');
+            }
+        }
+
+        async function copyCreatedCode() {
+            try {
+                await navigator.clipboard.writeText(lastCreatedCode);
+                document.getElementById('copy-btn-text').textContent = 'Copied!';
+                setTimeout(() => {
+                    document.getElementById('copy-btn-text').textContent = 'Copy to Clipboard';
+                }, 2000);
+            } catch {
+                Utils.showToast('Failed to copy code', 'error');
+            }
+        }
+
+        async function revokeCode(id) {
+            const confirmed = await confirmAction('Are you sure you want to revoke this invite code? It will no longer be usable.');
+            if (!confirmed) return;
+
+            try {
+                await DB.inviteCodes.update(id, { is_active: false });
+                Utils.showToast('Invite code revoked', 'success');
+                await loadInviteCodes();
+            } catch (error) {
+                console.error('Error revoking code:', error);
+                Utils.showToast('Error revoking invite code', 'error');
+            }
+        }
+    </script>
+
+    <style>
+        .badge-revoked {
+            background: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+        }
+        .badge-expired {
+            background: rgba(107, 114, 128, 0.1);
+            color: #6b7280;
+        }
+        .badge-used {
+            background: rgba(59, 130, 246, 0.1);
+            color: #1d4ed8;
+        }
+    </style>
+</body>
+</html>

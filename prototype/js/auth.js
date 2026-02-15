@@ -23,8 +23,8 @@ Auth.onAuthStateChange((event, session) => {
  */
 async function initProtectedPage(options = {}) {
     const {
-        requireApproved = true,
         requireAdmin = false,
+        requireOnboarding = true,
         onReady = () => {}
     } = options;
 
@@ -40,12 +40,13 @@ async function initProtectedPage(options = {}) {
     const profile = await Auth.getCurrentProfile();
 
     if (requireAdmin && !profile?.is_admin) {
-        window.location.href = '/portal/dashboard.html';
+        window.location.href = '/portal/orders.html';
         return false;
     }
 
-    if (requireApproved && !profile?.is_approved && !profile?.is_admin) {
-        window.location.href = '/portal/pending.html';
+    // Check if onboarding is required and not completed (skip for admins)
+    if (requireOnboarding && !profile?.is_admin && !profile?.onboarding_completed) {
+        window.location.href = '/portal/onboarding.html';
         return false;
     }
 
@@ -62,9 +63,21 @@ function setupPortalHeader(profile) {
     const userDropdown = document.getElementById('user-dropdown');
     const userName = document.getElementById('user-name');
     const logoutBtn = document.getElementById('logout-btn');
+    const adminLink = document.getElementById('admin-link');
 
     if (userName && profile) {
         userName.textContent = profile.full_name || profile.email;
+    }
+
+    // Show admin links for admins
+    if (adminLink && profile?.is_admin) {
+        adminLink.style.display = 'inline-flex';
+    }
+
+    // Show admin link in dropdown for admins
+    const adminLinkDropdown = document.getElementById('admin-link-dropdown');
+    if (adminLinkDropdown && profile?.is_admin) {
+        adminLinkDropdown.style.display = 'flex';
     }
 
     if (userBtn && userDropdown) {

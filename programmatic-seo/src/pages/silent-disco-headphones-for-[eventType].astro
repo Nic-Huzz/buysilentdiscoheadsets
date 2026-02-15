@@ -1,0 +1,203 @@
+---
+import SEOPage from '../layouts/SEOPage.astro';
+import site from '../data/site.json';
+import eventTypes from '../data/event-types.json';
+
+export function getStaticPaths() {
+  return eventTypes.map((event) => ({
+    params: { eventType: event.slug },
+    props: { event },
+  }));
+}
+
+const { event } = Astro.props;
+
+const title = `${event.title} | ${site.name}`;
+const canonical = `${site.url}/silent-disco-headphones-for-${event.slug}/`;
+
+const breadcrumbs = [
+  { name: 'Home', url: site.url },
+  { name: 'Silent Disco Headphones', url: `${site.url}/silent-disco-headphones.html` },
+  { name: event.name, url: canonical },
+];
+
+const schemas = [
+  // Product schema
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": `Silent Disco Headphones for ${event.name}`,
+    "description": event.metaDescription,
+    "brand": { "@type": "Brand", "name": site.name },
+    "offers": {
+      "@type": "Offer",
+      "price": site.priceHeadset,
+      "priceCurrency": site.currency,
+      "availability": "https://schema.org/InStock",
+      "url": canonical
+    },
+    "image": `${site.url}/images/${event.image}`
+  },
+  // FAQ schema
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": event.faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
+];
+
+// Get related event types
+const relatedEvents = eventTypes.filter((e) => event.relatedEventTypes.includes(e.slug));
+---
+
+<SEOPage
+  title={title}
+  description={event.metaDescription}
+  canonical={canonical}
+  schemas={schemas}
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Hero -->
+  <section class="hero hero--event-type">
+    <div class="container">
+      <h1>{event.heroHeadline}</h1>
+      <p class="hero-subtitle">{event.heroSubheadline}</p>
+      <div class="hero-cta-group">
+        <a href="/support.html" class="btn btn--primary">Get a Quote</a>
+        <a href="#benefits" class="btn btn--secondary">Learn More</a>
+      </div>
+      <div class="hero-trust">
+        <span class="trust-badge">From ${site.priceHeadset} {site.currency}/headset</span>
+        <span class="trust-badge">{site.fleetSize} headphones in our fleet</span>
+        <span class="trust-badge">{site.wirelessRange} wireless range</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="content-section">
+    <div class="container container--narrow">
+      <p class="intro-text">{event.intro}</p>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section id="benefits" class="content-section content-section--alt">
+    <div class="container">
+      <h2>Why Silent Disco Headphones Are Perfect for {event.name}</h2>
+      <div class="benefits-grid">
+        {event.benefits.map((benefit) => (
+          <div class="benefit-card">
+            <div class="benefit-icon">&#10003;</div>
+            <p>{benefit}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works / Setup Tips -->
+  <section class="content-section">
+    <div class="container">
+      <h2>How to Set Up Silent Disco for {event.name}</h2>
+      <div class="setup-steps">
+        {event.setupTips.map((tip, i) => (
+          <div class="setup-step">
+            <div class="step-number">{i + 1}</div>
+            <p>{tip}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Specs -->
+  <section class="content-section content-section--alt">
+    <div class="container">
+      <h2>What's Included</h2>
+      <div class="specs-grid">
+        <div class="spec-card">
+          <h3>Silent Disco Headphones</h3>
+          <p class="spec-price">${site.priceHeadset} <span>{site.currency} per unit</span></p>
+          <ul class="spec-list">
+            <li>Hi-Fi sound with noise cancelling</li>
+            <li>{site.channels}-channel LED system (Red, Green, Blue)</li>
+            <li>{site.batteryLife} battery life</li>
+            <li>{site.wirelessRange} wireless range</li>
+            <li>Adjustable, comfortable fit</li>
+            <li>Durable event-grade construction</li>
+          </ul>
+        </div>
+        <div class="spec-card">
+          <h3>Wireless Transmitter</h3>
+          <p class="spec-price">${site.priceTransmitter} <span>{site.currency} per unit</span></p>
+          <ul class="spec-list">
+            <li>{site.channels} independent audio channels</li>
+            <li>{site.wirelessRange} broadcast range</li>
+            <li>3.5mm + RCA audio inputs</li>
+            <li>Works with any audio source</li>
+            <li>Compact and portable</li>
+            <li>Plug and play — no setup required</li>
+          </ul>
+        </div>
+      </div>
+      <p class="recommended-package"><strong>Recommended for {event.name.toLowerCase()}:</strong> {event.recommendedPackage}</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="content-section">
+    <div class="container container--narrow">
+      <h2>Frequently Asked Questions: Silent Disco for {event.name}</h2>
+      <div class="faq-accordion">
+        {event.faqs.map((faq) => (
+          <details class="faq-item">
+            <summary class="faq-question">{faq.question}</summary>
+            <div class="faq-answer">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Event Types -->
+  <section class="content-section content-section--alt">
+    <div class="container">
+      <h2>Silent Disco for Other Events</h2>
+      <div class="related-grid">
+        {relatedEvents.map((related) => (
+          <a href={`/silent-disco-headphones-for-${related.slug}/`} class="related-card">
+            <h3>{related.name}</h3>
+            <p>{related.metaDescription.slice(0, 120)}...</p>
+          </a>
+        ))}
+        <a href="/silent-disco-headphones.html" class="related-card related-card--all">
+          <h3>All Silent Disco Headphones</h3>
+          <p>View our complete range of silent disco equipment and packages.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Book Silent Disco for Your {event.name.slice(0, -1) === event.name ? event.name : event.name.endsWith('s') ? event.name.slice(0, -1) : event.name}?</h2>
+      <p>Get a custom quote for your event. We'll recommend the perfect package size and help you plan the setup.</p>
+      <div class="hero-cta-group">
+        <a href="/support.html" class="btn btn--primary">Get a Quote</a>
+        <a href="/#packages" class="btn btn--secondary">View Packages</a>
+      </div>
+      <p class="cta-subtext">From ${site.priceHeadset} {site.currency} per headphone &middot; Ships worldwide &middot; {site.wirelessRange} wireless range</p>
+    </div>
+  </section>
+</SEOPage>

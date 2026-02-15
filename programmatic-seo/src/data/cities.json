@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "bali",
+    "name": "Bali",
+    "country": "Indonesia",
+    "region": "Asia Pacific",
+    "currency": "AUD",
+    "description": "Bali's vibrant event scene makes it one of the top destinations for silent disco experiences. From beach clubs in Seminyak to wellness retreats in Ubud, silent disco headphones are transforming how Bali celebrates.",
+    "eventsScene": "Bali hosts thousands of events annually — from full moon parties and beach festivals to yoga retreats and wellness ceremonies. The island's strict noise regulations in residential areas make silent disco the perfect solution for late-night events.",
+    "popularVenueTypes": ["Beach clubs", "Villas", "Rice paddy venues", "Wellness retreats", "Rooftop bars"],
+    "noiseContext": "Bali's banjar (village council) noise regulations mean many venues have strict sound curfews after 10pm. Silent disco headphones let you keep the party going without any noise issues.",
+    "shippingInfo": "We're based in Bali — local delivery available within 24-48 hours. Free delivery for orders over 50 units.",
+    "localAuthority": "As Bali's largest silent disco company with over 350 headphones in our fleet, we've powered events for major brands, international festivals, and hundreds of private celebrations across the island.",
+    "tier": 1
+  },
+  {
+    "slug": "sydney",
+    "name": "Sydney",
+    "country": "Australia",
+    "region": "Asia Pacific",
+    "currency": "AUD",
+    "description": "PLACEHOLDER - Awaiting search volume data",
+    "eventsScene": "PLACEHOLDER",
+    "popularVenueTypes": ["Harbour venues", "Rooftop bars", "Beaches", "Parks", "Corporate spaces"],
+    "noiseContext": "PLACEHOLDER",
+    "shippingInfo": "Ships to Sydney from our Bali warehouse. Express delivery 3-5 business days.",
+    "localAuthority": "",
+    "tier": 0
+  },
+  {
+    "slug": "melbourne",
+    "name": "Melbourne",
+    "country": "Australia",
+    "region": "Asia Pacific",
+    "currency": "AUD",
+    "description": "PLACEHOLDER - Awaiting search volume data",
+    "eventsScene": "PLACEHOLDER",
+    "popularVenueTypes": ["Laneways", "Rooftop bars", "Parks", "Warehouses", "Galleries"],
+    "noiseContext": "PLACEHOLDER",
+    "shippingInfo": "Ships to Melbourne from our Bali warehouse. Express delivery 3-5 business days.",
+    "localAuthority": "",
+    "tier": 0
+  }
+]

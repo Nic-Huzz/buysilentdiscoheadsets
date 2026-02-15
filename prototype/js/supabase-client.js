@@ -1,25 +1,26 @@
 /**
  * Silent Disco Headsets - Supabase Client
- *
- * SETUP INSTRUCTIONS:
- * 1. Create a project at https://supabase.com
- * 2. Go to Settings > API to find your credentials
- * 3. Replace the values below with your actual credentials
- * 4. Run the schema SQL in the Supabase SQL Editor
  */
 
+// Prevent double initialization
+if (window._supabaseClientInitialized) {
+    console.warn('Supabase client already initialized');
+} else {
+    window._supabaseClientInitialized = true;
+}
+
 // ==============================================
-// CONFIGURATION - UPDATE THESE VALUES
+// CONFIGURATION
 // ==============================================
 
-const SUPABASE_URL = 'YOUR_SUPABASE_URL'; // e.g., 'https://abc123.supabase.co'
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY'; // Found in Settings > API
+const SUPABASE_URL = 'https://gjttekhkgjfuiykwkuek.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdqdHRla2hrZ2pmdWl5a3drdWVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAyMjg0MTIsImV4cCI6MjA4NTgwNDQxMn0.0i7EoEzkplOh4pV-SZeSviUBfX73OhJ0oQ8qB8KoYsI';
 
 // ==============================================
 // SUPABASE CLIENT INITIALIZATION
 // ==============================================
 
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // ==============================================
 // AUTH HELPERS
@@ -30,9 +31,12 @@ const Auth = {
      * Get the current logged-in user
      */
     async getCurrentUser() {
-        const { data: { user }, error } = await supabase.auth.getUser();
+        const { data: { user }, error } = await supabaseClient.auth.getUser();
         if (error) {
-            console.error('Error getting user:', error.message);
+            // "Auth session missing" is expected on public pages - don't log it
+            if (!error.message.includes('session missing')) {
+                console.error('Error getting user:', error.message);
+            }
             return null;
         }
         return user;
@@ -45,7 +49,7 @@ const Auth = {
         const user = await this.getCurrentUser();
         if (!user) return null;
 
-        const { data, error } = await supabase
+        const { data, error } = await supabaseClient
             .from('profiles')
             .select('*')
             .eq('id', user.id)
@@ -83,18 +87,19 @@ const Auth = {
     },
 
     /**
-     * Sign up a new user
+     * Sign up a new user with magic link (OTP)
      */
-    async signUp(email, password, metadata = {}) {
-        const { data, error } = await supabase.auth.signUp({
+    async signUpWithOTP(email, metadata = {}) {
+        const { data, error } = await supabaseClient.auth.signInWithOtp({
             email,
-            password,
             options: {
                 data: {
                     full_name: metadata.fullName || '',
                     phone: metadata.phone || '',
-                    company_name: metadata.companyName || ''
-                }
+                    company_name: metadata.companyName || '',
+                    invite_code: metadata.inviteCode || ''
+                },
+                emailRedirectTo: `${window.location.origin}/portal/orders.html`
             }
         });
 
@@ -105,12 +110,14 @@ const Auth = {
     },
 
     /**
-     * Sign in with email and password
+     * Sign in with magic link (OTP)
      */
-    async signIn(email, password) {
-        const { data, error } = await supabase.auth.signInWithPassword({
+    async signInWithOTP(email) {
+        const { data, error } = await supabaseClient.auth.signInWithOtp({
             email,
-            password
+            options: {
+                emailRedirectTo: `${window.location.origin}/portal/orders.html`
+            }
         });
 
         if (error) {
@@ -123,7 +130,7 @@ const Auth = {
      * Sign out the current user
      */
     async signOut() {
-        const { error } = await supabase.auth.signOut();
+        const { error } = await supabaseClient.auth.signOut();
         if (error) {
             throw new Error(error.message);
         }
@@ -133,7 +140,7 @@ const Auth = {
      * Send password reset email
      */
     async resetPassword(email) {
-        const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
             redirectTo: `${window.location.origin}/portal/reset-password.html`
         });
 
@@ -146,7 +153,7 @@ const Auth = {
      * Update password (when user clicks reset link)
      */
     async updatePassword(newPassword) {
-        const { error } = await supabase.auth.updateUser({
+        const { error } = await supabaseClient.auth.updateUser({
             password: newPassword
         });
 
@@ -159,7 +166,7 @@ const Auth = {
      * Listen for auth state changes
      */
     onAuthStateChange(callback) {
-        return supabase.auth.onAuthStateChange((event, session) => {
+        return supabaseClient.auth.onAuthStateChange((event, session) => {
             callback(event, session);
         });
     }
@@ -173,7 +180,7 @@ const DB = {
     // PROFILES
     profiles: {
         async getAll() {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('profiles')
                 .select('*')
                 .order('created_at', { ascending: false });
@@ -182,7 +189,7 @@ const DB = {
         },
 
         async getById(id) {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('profiles')
                 .select('*')
                 .eq('id', id)
@@ -192,7 +199,7 @@ const DB = {
         },
 
         async update(id, updates) {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('profiles')
                 .update(updates)
                 .eq('id', id)
@@ -210,7 +217,7 @@ const DB = {
         },
 
         async getPending() {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('profiles')
                 .select('*')
                 .eq('is_approved', false)
@@ -223,7 +230,7 @@ const DB = {
     // ORDERS
     orders: {
         async getAll() {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('orders')
                 .select(`
                     *,
@@ -236,7 +243,7 @@ const DB = {
         },
 
         async getByCustomer(customerId) {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('orders')
                 .select(`
                     *,
@@ -249,7 +256,7 @@ const DB = {
         },
 
         async getById(id) {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('orders')
                 .select(`
                     *,
@@ -263,7 +270,7 @@ const DB = {
         },
 
         async create(orderData) {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('orders')
                 .insert(orderData)
                 .select()
@@ -273,7 +280,7 @@ const DB = {
         },
 
         async update(id, updates) {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('orders')
                 .update(updates)
                 .eq('id', id)
@@ -284,7 +291,7 @@ const DB = {
         },
 
         async updateStage(id, stage, notes = '') {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('orders')
                 .update({ current_stage: stage })
                 .eq('id', id)
@@ -295,7 +302,7 @@ const DB = {
         },
 
         async delete(id) {
-            const { error } = await supabase
+            const { error } = await supabaseClient
                 .from('orders')
                 .delete()
                 .eq('id', id);
@@ -306,7 +313,7 @@ const DB = {
     // ORDER STAGE HISTORY
     orderHistory: {
         async getByOrder(orderId) {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('order_stage_history')
                 .select('*')
                 .eq('order_id', orderId)
@@ -319,7 +326,7 @@ const DB = {
     // INVOICES
     invoices: {
         async create(invoiceData) {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('invoices')
                 .insert(invoiceData)
                 .select()
@@ -329,7 +336,7 @@ const DB = {
         },
 
         async delete(id) {
-            const { error } = await supabase
+            const { error } = await supabaseClient
                 .from('invoices')
                 .delete()
                 .eq('id', id);
@@ -340,7 +347,7 @@ const DB = {
     // RESOURCES
     resources: {
         async getAll() {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('resources')
                 .select('*')
                 .order('category')
@@ -350,7 +357,7 @@ const DB = {
         },
 
         async getActive() {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('resources')
                 .select('*')
                 .eq('is_active', true)
@@ -361,7 +368,7 @@ const DB = {
         },
 
         async getByCategory(category) {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('resources')
                 .select('*')
                 .eq('category', category)
@@ -372,7 +379,7 @@ const DB = {
         },
 
         async getCategories() {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('resources')
                 .select('category')
                 .eq('is_active', true);
@@ -381,7 +388,7 @@ const DB = {
         },
 
         async create(resourceData) {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('resources')
                 .insert(resourceData)
                 .select()
@@ -391,7 +398,7 @@ const DB = {
         },
 
         async update(id, updates) {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('resources')
                 .update(updates)
                 .eq('id', id)
@@ -402,7 +409,7 @@ const DB = {
         },
 
         async delete(id) {
-            const { error } = await supabase
+            const { error } = await supabaseClient
                 .from('resources')
                 .delete()
                 .eq('id', id);
@@ -410,10 +417,72 @@ const DB = {
         }
     },
 
+    // INVITE CODES
+    inviteCodes: {
+        async getAll() {
+            const { data, error } = await supabaseClient
+                .from('invite_codes')
+                .select('*')
+                .order('created_at', { ascending: false });
+            if (error) throw new Error(error.message);
+            return data;
+        },
+
+        async create(codeData) {
+            const { data, error } = await supabaseClient
+                .from('invite_codes')
+                .insert(codeData)
+                .select()
+                .single();
+            if (error) throw new Error(error.message);
+            return data;
+        },
+
+        async update(id, updates) {
+            const { data, error } = await supabaseClient
+                .from('invite_codes')
+                .update(updates)
+                .eq('id', id)
+                .select()
+                .single();
+            if (error) throw new Error(error.message);
+            return data;
+        },
+
+        async delete(id) {
+            const { error } = await supabaseClient
+                .from('invite_codes')
+                .delete()
+                .eq('id', id);
+            if (error) throw new Error(error.message);
+        },
+
+        async validate(code) {
+            const { data, error } = await supabaseClient
+                .from('invite_codes')
+                .select('*')
+                .eq('code', code)
+                .eq('is_active', true)
+                .single();
+
+            if (error || !data) return { valid: false, reason: 'Invalid invite code' };
+            if (data.max_uses > 0 && data.uses >= data.max_uses) return { valid: false, reason: 'This invite code has reached its usage limit' };
+            if (data.expires_at && new Date(data.expires_at) < new Date()) return { valid: false, reason: 'This invite code has expired' };
+
+            return { valid: true, data };
+        },
+
+        generateCode() {
+            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+            const segment = () => Array.from({ length: 4 }, () => chars[Math.floor(Math.random() * chars.length)]).join('');
+            return `SDH-${segment()}-${segment()}`;
+        }
+    },
+
     // UPSELLS
     upsells: {
         async getAll() {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('upsells')
                 .select('*')
                 .order('display_order');
@@ -422,7 +491,7 @@ const DB = {
         },
 
         async getActive() {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('upsells')
                 .select('*')
                 .eq('is_active', true)
@@ -432,7 +501,7 @@ const DB = {
         },
 
         async create(upsellData) {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('upsells')
                 .insert(upsellData)
                 .select()
@@ -442,7 +511,7 @@ const DB = {
         },
 
         async update(id, updates) {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('upsells')
                 .update(updates)
                 .eq('id', id)
@@ -453,7 +522,7 @@ const DB = {
         },
 
         async delete(id) {
-            const { error } = await supabase
+            const { error } = await supabaseClient
                 .from('upsells')
                 .delete()
                 .eq('id', id);
@@ -471,7 +540,7 @@ const Storage = {
      * Upload a file to a bucket
      */
     async upload(bucket, path, file) {
-        const { data, error } = await supabase.storage
+        const { data, error } = await supabaseClient.storage
             .from(bucket)
             .upload(path, file, {
                 cacheControl: '3600',
@@ -485,7 +554,7 @@ const Storage = {
      * Get a signed URL for private file download
      */
     async getSignedUrl(bucket, path, expiresIn = 3600) {
-        const { data, error } = await supabase.storage
+        const { data, error } = await supabaseClient.storage
             .from(bucket)
             .createSignedUrl(path, expiresIn);
         if (error) throw new Error(error.message);
@@ -496,7 +565,7 @@ const Storage = {
      * Get public URL (for public buckets only)
      */
     getPublicUrl(bucket, path) {
-        const { data } = supabase.storage.from(bucket).getPublicUrl(path);
+        const { data } = supabaseClient.storage.from(bucket).getPublicUrl(path);
         return data.publicUrl;
     },
 
@@ -504,7 +573,7 @@ const Storage = {
      * Delete a file from a bucket
      */
     async delete(bucket, paths) {
-        const { error } = await supabase.storage
+        const { error } = await supabaseClient.storage
             .from(bucket)
             .remove(Array.isArray(paths) ? paths : [paths]);
         if (error) throw new Error(error.message);
@@ -514,7 +583,7 @@ const Storage = {
      * List files in a bucket path
      */
     async list(bucket, path = '') {
-        const { data, error } = await supabase.storage
+        const { data, error } = await supabaseClient.storage
             .from(bucket)
             .list(path);
         if (error) throw new Error(error.message);
@@ -569,7 +638,7 @@ const Utils = {
     getStageInfo(stage) {
         const stages = {
             received: { label: 'Order Received', icon: '1', color: '#5e17eb' },
-            processing: { label: 'Processing', icon: '2', color: '#5e17eb' },
+            processing: { label: 'Manufacturing', icon: '2', color: '#5e17eb' },
             shipped: { label: 'Shipped', icon: '3', color: '#5e17eb' },
             delivered: { label: 'Delivered', icon: '4', color: '#22c55e' }
         };
@@ -638,9 +707,8 @@ const ProtectedRoute = {
     /**
      * Check if user can access the page
      * Redirects to login if not authenticated
-     * Redirects to pending if not approved
      */
-    async check(requireApproved = true, requireAdmin = false) {
+    async check(requireAdmin = false) {
         const user = await Auth.getCurrentUser();
 
         if (!user) {
@@ -648,16 +716,12 @@ const ProtectedRoute = {
             return false;
         }
 
-        const profile = await Auth.getCurrentProfile();
-
-        if (requireAdmin && !profile?.is_admin) {
-            window.location.href = '/portal/dashboard.html';
-            return false;
-        }
-
-        if (requireApproved && !profile?.is_approved && !profile?.is_admin) {
-            window.location.href = '/portal/pending.html';
-            return false;
+        if (requireAdmin) {
+            const profile = await Auth.getCurrentProfile();
+            if (!profile?.is_admin) {
+                window.location.href = '/portal/orders.html';
+                return false;
+            }
         }
 
         return true;

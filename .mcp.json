@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "shadcn": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "shadcn@latest",
+        "mcp"
+      ],
+      "env": {}
+    },
+    "supabase": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@supabase/mcp-server-supabase@latest",
+        "--project-ref",
+        "gjttekhkgjfuiykwkuek",
+        "--access-token",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdqdHRla2hrZ2pmdWl5a3drdWVrIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MDIyODQxMiwiZXhwIjoyMDg1ODA0NDEyfQ.0vqdj-0Qvzu1sviBq82uXHflZNQ_Q6oGoOM1hGVkK_Wo"
+      ]
+    }
+  }
+}

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Your Profile | Silent Disco Headsets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/portal.css">
+    <style>
+        .onboarding-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f7ff 0%, #fff 100%);
+        }
+
+        .onboarding-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            max-width: 560px;
+            width: 100%;
+            padding: 3rem;
+        }
+
+        .onboarding-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .onboarding-header h1 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+
+        .onboarding-header p {
+            color: var(--gray-medium);
+            margin: 0;
+        }
+
+        .onboarding-progress {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .progress-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #e5e5e7;
+        }
+
+        .progress-dot.active {
+            background: var(--purple-dark);
+        }
+
+        .onboarding-form .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .onboarding-form label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+
+        .onboarding-form label .optional {
+            font-weight: 400;
+            color: var(--gray-medium);
+            font-size: 0.875rem;
+        }
+
+        .onboarding-form input,
+        .onboarding-form textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #e5e5e7;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        .onboarding-form input:focus,
+        .onboarding-form textarea:focus {
+            outline: none;
+            border-color: var(--purple-dark);
+        }
+
+        .onboarding-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-hint {
+            font-size: 0.8125rem;
+            color: var(--gray-medium);
+            margin-top: 0.375rem;
+        }
+
+        .onboarding-submit {
+            width: 100%;
+            padding: 1rem;
+            background: var(--purple-dark);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            margin-top: 1rem;
+        }
+
+        .onboarding-submit:hover {
+            background: var(--purple-darker);
+        }
+
+        .onboarding-submit:active {
+            transform: scale(0.98);
+        }
+
+        .onboarding-submit:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .welcome-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--purple-dark), var(--purple-darker));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .welcome-icon svg {
+            width: 32px;
+            height: 32px;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            .onboarding-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .onboarding-header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="onboarding-wrapper">
+        <div class="onboarding-card">
+            <div class="onboarding-header">
+                <div class="welcome-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <h1>Complete Your Profile</h1>
+                <p>Tell us about you and your business so we can serve you better</p>
+            </div>
+
+            <div class="onboarding-progress">
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+            </div>
+
+            <form class="onboarding-form" id="onboarding-form">
+                <div class="form-group">
+                    <label for="full_name">Full Name *</label>
+                    <input type="text" id="full_name" name="full_name" required placeholder="Your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" readonly disabled>
+                    <p class="form-hint">This is the email linked to your account</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="company_name">Business Name *</label>
+                    <input type="text" id="company_name" name="company_name" required placeholder="Your business or organization name">
+                </div>
+
+                <div class="form-group">
+                    <label for="business_id_number">Business ID Number <span class="optional">(ABN/ACN)</span></label>
+                    <input type="text" id="business_id_number" name="business_id_number" placeholder="e.g., 12 345 678 901">
+                    <p class="form-hint">Australian Business Number or Company Number</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="delivery_address">Delivery Address *</label>
+                    <textarea id="delivery_address" name="delivery_address" required placeholder="Full street address including suburb, state, and postcode"></textarea>
+                    <p class="form-hint">This will be the default address for your orders</p>
+                </div>
+
+                <button type="submit" class="onboarding-submit" id="submit-btn">
+                    Continue to Portal
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-client.js"></script>
+    <script>
+        let currentUser = null;
+        let currentProfile = null;
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Check if user is logged in
+            currentUser = await Auth.getCurrentUser();
+            if (!currentUser) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Get profile
+            currentProfile = await Auth.getCurrentProfile();
+
+            // If already completed onboarding, redirect to orders
+            if (currentProfile?.onboarding_completed) {
+                window.location.href = 'orders.html';
+                return;
+            }
+
+            // Pre-fill form with existing data
+            document.getElementById('email').value = currentUser.email;
+            if (currentProfile) {
+                document.getElementById('full_name').value = currentProfile.full_name || '';
+                document.getElementById('company_name').value = currentProfile.company_name || '';
+                document.getElementById('business_id_number').value = currentProfile.business_id_number || '';
+                document.getElementById('delivery_address').value = currentProfile.delivery_address || '';
+            }
+
+            // Handle form submit
+            document.getElementById('onboarding-form').addEventListener('submit', handleSubmit);
+        });
+
+        async function handleSubmit(e) {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Saving...';
+
+            try {
+                const updates = {
+                    full_name: document.getElementById('full_name').value.trim(),
+                    company_name: document.getElementById('company_name').value.trim(),
+                    business_id_number: document.getElementById('business_id_number').value.trim() || null,
+                    delivery_address: document.getElementById('delivery_address').value.trim(),
+                    onboarding_completed: true,
+                    onboarding_completed_at: new Date().toISOString()
+                };
+
+                await DB.profiles.update(currentUser.id, updates);
+
+                Utils.showToast('Profile completed successfully!', 'success');
+
+                // Redirect to orders page
+                setTimeout(() => {
+                    window.location.href = 'orders.html';
+                }, 500);
+
+            } catch (error) {
+                console.error('Error saving profile:', error);
+                Utils.showToast('Error saving profile. Please try again.', 'error');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Continue to Portal';
+            }
+        }
+    </script>
+</body>
+</html>
