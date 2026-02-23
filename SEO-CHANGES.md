@@ -1,7 +1,7 @@
 # SEO & AI Search Optimization: buysilentdiscoheadsets.com
 
 **Started:** February 4, 2026
-**Last Updated:** February 6, 2026
+**Last Updated:** February 23, 2026
 **Target Keyword:** Silent Disco Headphones (2,000 searches/mo, difficulty 3)
 **Secondary Keywords:** buy silent disco headphones, wireless silent disco headphones
 
@@ -139,7 +139,131 @@ Answer-summary boxes added to all content pages:
 
 ---
 
-## Still To Do
+## Phase 4: Ahrefs Audit Fixes + GSC Analysis (Feb 23) — COMPLETE
+
+### Ahrefs Audit Issues Fixed
+
+All issues from Ahrefs site audit resolved across 35 files:
+
+**Content fixes:**
+- Meta descriptions shortened to <155 chars on all pages (8 were too long)
+- Titles shortened to <60 chars on all pages (7 were too long)
+- Meta descriptions added to pages that were missing them (2 pages)
+- Short meta descriptions lengthened to >70 chars (2 pages: legal, giveaway-terms)
+
+**Social tag fixes:**
+- OG tags added to `404.html` (was missing all OG tags)
+- Twitter card tags added to `404.html` (was missing all Twitter tags)
+- `og:url` added to `404.html`
+
+**Link fixes:**
+- All `index.html` href references replaced with `/` across all pages (eliminates 301 redirects)
+- Use Cases footer section added to ALL pages with links to 7 programmatic SEO pages (fixes orphan pages)
+- Internal linking now connects all content pages bidirectionally
+
+**Image fixes:**
+- Broken image references in `event-types.json` fixed (6 non-existent images replaced with `silent-disco-event.jpg`)
+
+**Portal/noindex fixes:**
+- `noindex, nofollow` added to `portal/login.html`, `portal/register.html`, `portal/forgot-password.html`
+- All portal admin pages already had noindex
+
+**Programmatic SEO fixes:**
+- Event type titles shortened for SERP display (e.g., "Yoga & Wellness Events" -> "Yoga & Wellness")
+- Weddings metaDescription shortened from 162 to 141 chars
+- SEOPage.astro footer updated with all 7 programmatic page links
+- All pages rebuilt and deployed
+
+### IndexNow Resubmission
+
+All 17 URLs resubmitted via IndexNow API — HTTP 200 accepted.
+
+### Sitemap Updated
+
+All `lastmod` dates updated to `2026-02-23`.
+
+### GSC Analysis (90 days: Nov 26, 2025 - Feb 20, 2026)
+
+**Index coverage: POOR — only 8 of 17 sitemap pages seen in GSC**
+
+| Page | Position | Impressions | Indexed? |
+|------|----------|-------------|----------|
+| `/` | 11.9 | 9 | Yes |
+| `/about.html` | 7.5 | 13 | Yes |
+| `/how-to-host-a-silent-disco.html` | 13.5 | 28 | Yes |
+| `/support.html` | 6.5 | 2 | Yes |
+| `/giveaway-terms.html` | 8.0 | 2 | Yes |
+| `/legal.html` | 2.0 | 1 | Yes |
+| `/portal/login.html` | 8.5 | 4 | Yes (noindex now added, will drop) |
+| `/silent-disco-headphones-for-yoga-and-wellness/` | 9.0 | 2 | Yes |
+| `/silent-disco-headphones.html` | — | — | **NO** |
+| `/best-silent-disco-headphones.html` | — | — | **NO** |
+| `/how-silent-disco-headphones-work.html` | — | — | **NO** |
+| `/silent-disco-vs-bluetooth-headphones.html` | — | — | **NO** |
+| `/buy-vs-rent-silent-disco-headphones.html` | — | — | **NO** |
+| 5 of 7 programmatic SEO pages | — | — | **NO** |
+
+**Performance: 0 clicks, 8 total impressions, 6 keywords tracked**
+
+**Keywords found (none are target keywords):**
+- "silent customer portal" (pos 9.3, 3 impr) — irrelevant
+- "buy silent disco equipment" (pos 49)
+- "diy silent disco" (pos 68)
+- "silent disco setup" (pos 73)
+- "silent disco diy" (pos 80)
+- "nic huzz" (pos 11)
+
+**"silent disco headphones" — NOT RANKING AT ALL**
+
+**Google SERP check:** Searching for `buysilentdiscoheadsets.com` directly — site does not appear in top 10. Competitors shown: quietevents.com, silentsoundsystem.com, Amazon, silentdiscotheque.com.
+
+### Root Cause Analysis
+
+1. **No backlinks** — Ahrefs shows only 1 dofollow incoming link. Google needs external signals to discover and trust new domains.
+2. **New domain / sandbox** — Site is very young (<3 months). Google intentionally suppresses new sites until they prove value.
+3. **9 key content pages not indexed** — The most valuable pages (product, buyer's guide, comparison articles) are invisible to Google.
+4. **Portal page leaking into index** — `/portal/login.html` was indexed (now fixed with noindex).
+
+---
+
+## Phase 5: Index Recovery + Backlink Campaign — TODO
+
+### Immediate (Do This Week)
+
+- [ ] **Manual URL inspection in GSC** — Request indexing for all 9 unindexed pages one by one via GSC URL Inspection tool
+- [ ] **Resubmit sitemap in GSC** — Go to GSC > Sitemaps > resubmit `sitemap.xml` with updated lastmod dates
+- [ ] **Bing URL submission** — Submit all unindexed URLs via Bing Webmaster Tools URL Submission
+- [ ] **Check GSC Coverage report** — Look for crawl errors, "Discovered but not indexed", "Crawled but not indexed" status
+
+### Short Term (Next 2 Weeks)
+
+- [ ] **Build 5-10 backlinks** — This is THE bottleneck. Ideas:
+  - Submit to event equipment directories (The Bash, Eventective, PartySlate)
+  - Get listed on "silent disco equipment suppliers" roundup pages
+  - Post in r/silentdisco, r/eventplanning with genuine value (not spam)
+  - HARO / Connectively — respond to journalist queries about events/entertainment
+  - Guest post on 1-2 event planning blogs
+- [ ] **Google Business Profile** — Create one if not exists. Helps entity recognition.
+- [ ] **Bing Places listing** — ChatGPT uses Bing index, Bing Places helps.
+
+### Medium Term (Next Month)
+
+- [ ] **Google Merchant Center** — Product feed for Shopping results + AI Overviews
+- [ ] **Wikidata entity** — Create entry for "Buy Silent Disco Headsets"
+- [ ] **1 YouTube video** — Even a 2-minute demo. Google AI Overviews embed YouTube.
+- [ ] **Core Web Vitals audit** — Check LCP, INP, CLS in GSC once more pages are indexed
+
+### Tracking
+
+Run `python3 rank-tracker.py` weekly to monitor progress. Key metrics to watch:
+- Number of indexed pages (target: 17)
+- Impressions for "silent disco headphones" (target: appearing at all)
+- Total clicks (target: >0)
+- Average position (target: <20 for main keywords)
+
+---
+
+## Still To Do (Carried Forward)
 
 ### Optional Platform Tasks
 - [ ] **Google Merchant Center** — Product feed setup for Shopping results

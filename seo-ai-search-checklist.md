@@ -43,74 +43,73 @@
 
 ---
 
-## You Need To Do
+## Completed (Previously "You Need To Do")
 
-### High Priority (Do First)
+- [x] **Deploy updated files** — All files pushed to production via Vercel (Feb 6)
+- [x] **Google Search Console setup** — Verified, sitemap submitted, API connected via `api/gsc.js` + `rank-tracker.py`
+- [x] **Bing Webmaster Tools setup** — Verified, imported from GSC
+- [x] **Validate structured data live** — All schema validated via Google Rich Results Test (Feb 6)
+- [x] **Set up IndexNow** — Key deployed at `/2de1fea9067e497ba26b2ca48f03b7f8.txt`, all URLs submitted
+- [x] **Add programmatic SEO pages to sitemap** — All 7 programmatic pages in sitemap.xml
+- [x] **Ahrefs audit fixes (Feb 23)** — 35 files fixed: meta descriptions, titles, OG/Twitter tags, internal links, broken images, noindex on portal pages, Use Cases footer added site-wide
+- [x] **IndexNow resubmission (Feb 23)** — All 17 URLs resubmitted, HTTP 200
+- [x] **Sitemap lastmod refresh (Feb 23)** — All dates updated to 2026-02-23
 
-- [ ] **Deploy updated files** — Push all changed files to production:
-  - `robots.txt`, `sitemap.xml`
-  - `index.html`, `silent-disco-headphones.html`, `best-silent-disco-headphones.html`
-  - `how-to-host-a-silent-disco.html`, `how-silent-disco-headphones-work.html`
-  - `support.html`, `about.html`, `legal.html`, `giveaway-terms.html`
-  - `css/styles.css`
-  - Programmatic SEO: `SEOPage.astro` + `programmatic.css`
+## GSC Analysis (Feb 23) — THE REAL PROBLEM
 
-- [ ] **Google Search Console setup**
-  1. Go to https://search.google.com/search-console/about
-  2. Add property: `https://buysilentdiscoheadsets.com`
-  3. Verify via HTML file upload, DNS record, or meta tag
-  4. Submit sitemap: enter `sitemap.xml` under Sitemaps section
-  5. Use URL Inspection to request indexing for each key page
+**90-day data shows the site is essentially invisible on Google:**
+- 0 clicks total
+- 8 impressions total
+- Only 8 of 17 pages indexed
+- "silent disco headphones" — NOT RANKING AT ALL
+- Site doesn't appear when you Google the domain name directly
 
-- [ ] **Bing Webmaster Tools setup** — Critical because ChatGPT Search uses Bing's index:
-  1. Go to https://www.bing.com/webmasters
-  2. Easiest method: "Import from Google Search Console"
-  3. Submit your sitemap
-  4. Submit key URLs via URL Submission tool
+**9 KEY PAGES NOT INDEXED (including the most valuable ones):**
+- `/silent-disco-headphones.html` (product page)
+- `/best-silent-disco-headphones.html` (buyer's guide)
+- `/how-silent-disco-headphones-work.html`
+- `/silent-disco-vs-bluetooth-headphones.html`
+- `/buy-vs-rent-silent-disco-headphones.html`
+- 5 of 7 programmatic SEO pages
 
-- [ ] **Validate structured data live** — After deploy, run each page through:
-  1. [Google Rich Results Test](https://search.google.com/test/rich-results) — paste each URL
-  2. [Schema.org Validator](https://validator.schema.org/) — for broader validation
+**Root cause: No backlinks.** Ahrefs shows only 1 dofollow incoming link. On-page SEO is strong but Google won't rank a site with zero domain authority.
+
+## You Need To Do (Updated Feb 23)
+
+### CRITICAL — Do This Week
+
+- [ ] **Manual URL inspection in GSC** — Go to GSC > URL Inspection > paste each of the 9 unindexed URLs > click "Request Indexing". Do all 9 one by one.
+- [ ] **Resubmit sitemap in GSC** — GSC > Sitemaps > resubmit `sitemap.xml`
+- [ ] **Bing URL submission** — Submit all 9 unindexed URLs via Bing Webmaster Tools
+- [ ] **Check GSC Coverage report** — Look for "Discovered but not indexed" or "Crawled but not indexed" errors
+
+### HIGH PRIORITY — Backlinks (The Real Bottleneck)
+
+Without backlinks, all the on-page SEO work is wasted. Need 5-10 quality links:
+
+- [ ] **Event equipment directories** — Submit to The Bash, Eventective, PartySlate, WeddingWire vendor listings
+- [ ] **Reddit presence** — Answer questions in r/silentdisco, r/eventplanning, r/weddingplanning (genuine helpful answers, not spam)
+- [ ] **HARO / Connectively** — Sign up and respond to journalist queries about events/entertainment
+- [ ] **Guest post** — Write 1-2 articles for event planning blogs (offer silent disco expertise)
+- [ ] **Google Business Profile** — Create if not exists. Helps domain trust and entity recognition.
+- [ ] **Bing Places listing** — ChatGPT uses Bing index. Free listing helps visibility.
 
 ### Medium Priority
 
-- [ ] **Set up IndexNow** — Pushes URL updates to Bing/Yandex instantly:
-  1. Go to https://www.bing.com/indexnow/getstarted
-  2. Generate an API key
-  3. Host the key file at `https://buysilentdiscoheadsets.com/{your-key}.txt`
-  4. Ping the API whenever you update a page
-
-- [ ] **Google Merchant Center** — Gets your products into Google Shopping + AI Overviews product carousels:
-  1. Sign up at https://merchants.google.com
-  2. Create a product feed with your headphones ($49) and transmitter ($169)
-  3. Fill in AI-specific attributes: `product_highlight`, `product_detail`, sustainability info
-  4. Google AI Overviews pull directly from Merchant Center for product queries
-
-- [ ] **Add programmatic SEO pages to sitemap** — When programmatic pages go live, add their URLs
-
-- [ ] **Verify outbound citation links work** — Click-test each external link:
-  - FCC, IBISWorld (may be paywalled), Shure, Eventbrite, IEC, Yoga Alliance
-  - Alibaba, Battery University, Thumbtack, WHO (x2)
-
-- [ ] **Check Core Web Vitals** in GSC (LCP < 2.0s, INP < 150ms, CLS < 0.1)
-
-- [ ] **If using Cloudflare** — Security > Bots: ensure AI search crawlers are not blocked
-
-- [ ] **Clarify price positioning** — The comparison table on best-silent-disco-headphones.html frames "$70-100" as the "sweet spot" but the product is $49. Consider rewording to position $49 as the value leader rather than implying it's below the sweet spot.
-
-### Lower Priority / Ongoing
-
-- [ ] **Request re-indexing after deploy** — In GSC and Bing, request re-crawl of all updated pages
-
+- [ ] **Google Merchant Center** — Product feed for Shopping results + AI Overviews
+- [ ] **Wikidata entity** — Create entry for "Buy Silent Disco Headsets" business
+- [ ] **1 YouTube video** — Even a 2-minute demo. Google AI Overviews embed YouTube frequently.
+- [ ] **Core Web Vitals** — Check in GSC once more pages are indexed (LCP < 2.0s, INP < 150ms, CLS < 0.1)
 - [ ] **Add width/height to img tags** — Missing across all pages; causes CLS (layout shift)
-
+- [ ] **Clarify price positioning** — Comparison table frames "$70-100" as "sweet spot" but product is $49
 - [ ] **Newsletter form** — Has no action attribute or JS handler; submitting does nothing
 
-- [ ] **Quarterly content freshness** — Every 3 months: update stats/prices, refresh dateModified, add new FAQs from GSC query data
+### Ongoing / Quarterly
 
-- [ ] **AI citation monitoring** — [Otterly.AI](https://otterly.ai/) ($29/mo) or manual searches on ChatGPT/Perplexity/Google
-
-- [ ] **Consider Yandex Webmaster Tools** — https://webmaster.yandex.com/
+- [ ] **Run `python3 rank-tracker.py` weekly** — Track indexed pages, impressions, positions
+- [ ] **Quarterly content freshness** — Update stats/prices, refresh dateModified, add new FAQs from GSC query data
+- [ ] **AI citation monitoring** — Manual searches on ChatGPT/Perplexity/Google for "silent disco headphones"
+- [ ] **Dec 2026** — Update `priceValidUntil` schema from `2026-12-31` to `2027-12-31`
 
 ---
 
