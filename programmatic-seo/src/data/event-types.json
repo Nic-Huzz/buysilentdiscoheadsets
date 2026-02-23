@@ -3,7 +3,7 @@
     "slug": "weddings",
     "name": "Weddings",
     "title": "Silent Disco Headphones for Weddings",
-    "metaDescription": "Transform your wedding reception with silent disco headphones. Multiple music channels, no noise complaints, and unforgettable memories. From $49 USD per headset.",
+    "metaDescription": "Transform your wedding with silent disco headphones. Multiple music channels, no noise complaints, unforgettable memories. From $49 USD.",
     "heroHeadline": "Make Your Wedding Reception Unforgettable with Silent Disco",
     "heroSubheadline": "Give every guest the power to choose their own music — from classic love songs to dance floor bangers — all on the same dance floor.",
     "intro": "Silent disco headphones are revolutionising wedding receptions. Instead of one DJ playlist that only half your guests enjoy, silent disco lets every generation find their groove. Grandma can waltz to Frank Sinatra on Channel 1 while your friends go wild to house music on Channel 3 — all at the same time, on the same dance floor.",
@@ -41,13 +41,13 @@
       }
     ],
     "relatedEventTypes": ["corporate-events", "festivals", "birthday-parties"],
-    "image": "wedding-silent-disco.jpg",
+    "image": "silent-disco-event.jpg",
     "icon": "ring"
   },
   {
     "slug": "yoga-and-wellness",
     "name": "Yoga & Wellness",
-    "title": "Silent Disco Headphones for Yoga & Wellness Events",
+    "title": "Silent Disco Headphones for Yoga & Wellness",
     "metaDescription": "Elevate yoga, breathwork, and wellness sessions with silent disco headphones. Immersive guided audio without disturbing others. From $49 USD per headset.",
     "heroHeadline": "Immersive Yoga & Wellness Experiences with Silent Disco",
     "heroSubheadline": "Guide your participants into deep focus with crystal-clear audio delivered directly to their ears — no external speakers needed.",
@@ -86,7 +86,7 @@
       }
     ],
     "relatedEventTypes": ["weddings", "festivals", "guided-tours"],
-    "image": "yoga-silent-disco.jpg",
+    "image": "silent-disco-event.jpg",
     "icon": "lotus"
   },
   {
@@ -131,13 +131,13 @@
       }
     ],
     "relatedEventTypes": ["weddings", "festivals", "guided-tours"],
-    "image": "corporate-silent-disco.jpg",
+    "image": "silent-disco-event.jpg",
     "icon": "briefcase"
   },
   {
     "slug": "festivals",
     "name": "Festivals & Music Events",
-    "title": "Silent Disco Headphones for Festivals & Music Events",
+    "title": "Silent Disco Headphones for Festivals",
     "metaDescription": "Run incredible silent disco stages at festivals and music events. 3-channel wireless headphones with 500m range. From $49 USD per headset. Ships worldwide.",
     "heroHeadline": "The Festival Stage Everyone Talks About",
     "heroSubheadline": "Silent disco stages are the most Instagrammed, most talked-about experience at any festival. Give your audience the power to choose their own vibe.",
@@ -176,7 +176,7 @@
       }
     ],
     "relatedEventTypes": ["weddings", "corporate-events", "birthday-parties"],
-    "image": "festival-silent-disco.jpg",
+    "image": "silent-disco-event.jpg",
     "icon": "music"
   },
   {
@@ -221,7 +221,7 @@
       }
     ],
     "relatedEventTypes": ["weddings", "festivals", "corporate-events"],
-    "image": "birthday-silent-disco.jpg",
+    "image": "silent-disco-event.jpg",
     "icon": "cake"
   },
   {
@@ -266,7 +266,7 @@
       }
     ],
     "relatedEventTypes": ["corporate-events", "yoga-and-wellness", "festivals"],
-    "image": "guided-tour-silent-disco.jpg",
+    "image": "silent-disco-event.jpg",
     "icon": "map"
   }
 ]

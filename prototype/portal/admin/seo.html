@@ -13,7 +13,7 @@
 <body>
     <!-- Sidebar -->
     <aside class="admin-sidebar">
-        <a href="../../index.html" class="portal-logo">
+        <a href="/" class="portal-logo">
             <span>Admin Portal</span>
         </a>
 
@@ -118,9 +118,10 @@
                     <div class="label">Page Speed</div>
                     <div class="value" id="page-speed-score">--</div>
                 </div>
-                <div class="admin-stat-card seo-stat-editable" onclick="editBacklinkCount()">
-                    <div class="label">Backlinks</div>
-                    <div class="value" id="backlink-count">0</div>
+                <div class="admin-stat-card">
+                    <div class="label">Clicks (28d)</div>
+                    <div class="value" id="total-clicks">--</div>
+                    <div style="font-size: 0.75rem; color: var(--gray-medium); margin-top: 0.25rem;" id="total-impressions-label"></div>
                 </div>
             </div>
 
@@ -197,6 +198,77 @@
                     <ul class="seo-checklist" id="seo-checklist">
                         <!-- Rendered by JS -->
                     </ul>
+                </div>
+            </div>
+
+            <!-- Google Search Console -->
+            <div class="dashboard-card" style="margin-bottom: var(--spacing-md);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <h3 style="margin-bottom: 0;">Google Search Console (28 days)</h3>
+                    <button class="seo-refresh-btn" id="refresh-gsc" onclick="fetchGSCData(true)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+                        Refresh
+                    </button>
+                </div>
+                <p style="font-size: 0.8125rem; color: var(--gray-medium); margin-bottom: 1rem;" id="gsc-status">Loading...</p>
+
+                <!-- GSC Summary -->
+                <div class="admin-stats" style="margin-bottom: 1rem;" id="gsc-summary-stats">
+                    <div class="admin-stat-card" style="padding: 0.75rem;">
+                        <div class="label">Avg Position</div>
+                        <div class="value" style="font-size: 1.25rem;" id="gsc-avg-position">--</div>
+                    </div>
+                    <div class="admin-stat-card" style="padding: 0.75rem;">
+                        <div class="label">Page 1 Keywords</div>
+                        <div class="value" style="font-size: 1.25rem;" id="gsc-page1">--</div>
+                    </div>
+                    <div class="admin-stat-card" style="padding: 0.75rem;">
+                        <div class="label">Top 3 Keywords</div>
+                        <div class="value" style="font-size: 1.25rem;" id="gsc-top3">--</div>
+                    </div>
+                    <div class="admin-stat-card" style="padding: 0.75rem;">
+                        <div class="label">Avg CTR</div>
+                        <div class="value" style="font-size: 1.25rem;" id="gsc-avg-ctr">--</div>
+                    </div>
+                </div>
+
+                <!-- Top Keywords -->
+                <h4 style="margin-bottom: 0.5rem; font-size: 0.9375rem;">Top Keywords</h4>
+                <div style="overflow-x: auto; margin-bottom: 1.5rem;">
+                    <table class="admin-table" id="gsc-keywords-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Keyword</th>
+                                <th style="text-align: right;">Pos</th>
+                                <th style="text-align: right;">Clicks</th>
+                                <th style="text-align: right;">Impr</th>
+                                <th style="text-align: right;">CTR</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gsc-keywords-body">
+                            <tr><td colspan="6" style="text-align: center; color: var(--gray-medium);">Fetching data...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Top Pages -->
+                <h4 style="margin-bottom: 0.5rem; font-size: 0.9375rem;">Top Pages</h4>
+                <div style="overflow-x: auto;">
+                    <table class="admin-table" id="gsc-pages-table">
+                        <thead>
+                            <tr>
+                                <th>Page</th>
+                                <th style="text-align: right;">Pos</th>
+                                <th style="text-align: right;">Clicks</th>
+                                <th style="text-align: right;">Impr</th>
+                                <th style="text-align: right;">CTR</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gsc-pages-body">
+                            <tr><td colspan="5" style="text-align: center; color: var(--gray-medium);">Fetching data...</td></tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
@@ -373,6 +445,7 @@
             loadCachedPageSpeed();
             updateSEOScore(); // also calls renderChecklist()
             updateLastUpdated();
+            fetchGSCData(); // auto-fetch (uses 1hr cache)
         }
 
         // ==========================================
@@ -756,6 +829,134 @@
         }
 
         // showModal / hideModal provided by auth.js
+
+        // ==========================================
+        // GOOGLE SEARCH CONSOLE (LIVE DATA)
+        // ==========================================
+
+        const GSC_CACHE_KEY = 'gsc_data_cache';
+        const GSC_CACHE_TTL = 60 * 60 * 1000; // 1 hour
+
+        async function fetchGSCData(forceRefresh = false) {
+            // Check cache first
+            if (!forceRefresh) {
+                try {
+                    const cached = JSON.parse(localStorage.getItem(GSC_CACHE_KEY));
+                    if (cached && (Date.now() - new Date(cached.fetchedAt).getTime()) < GSC_CACHE_TTL) {
+                        displayGSCData(cached);
+                        return;
+                    }
+                } catch { /* no cache */ }
+            }
+
+            const btn = document.getElementById('refresh-gsc');
+            if (btn) {
+                btn.classList.add('loading');
+                btn.disabled = true;
+            }
+            document.getElementById('gsc-status').textContent = 'Fetching from Google Search Console...';
+
+            try {
+                const { data: { session } } = await supabaseClient.auth.getSession();
+                if (!session) {
+                    document.getElementById('gsc-status').textContent = 'Not authenticated';
+                    return;
+                }
+
+                const res = await fetch('/api/gsc', {
+                    headers: { Authorization: `Bearer ${session.access_token}` }
+                });
+
+                if (!res.ok) {
+                    const err = await res.json();
+                    throw new Error(err.error || `HTTP ${res.status}`);
+                }
+
+                const data = await res.json();
+                localStorage.setItem(GSC_CACHE_KEY, JSON.stringify(data));
+                displayGSCData(data);
+
+            } catch (error) {
+                console.error('GSC fetch error:', error);
+                document.getElementById('gsc-status').textContent = `Error: ${error.message}`;
+                document.getElementById('gsc-keywords-body').innerHTML =
+                    '<tr><td colspan="6" style="text-align:center;color:var(--gray-medium);">Failed to load</td></tr>';
+                document.getElementById('gsc-pages-body').innerHTML =
+                    '<tr><td colspan="5" style="text-align:center;color:var(--gray-medium);">Failed to load</td></tr>';
+            } finally {
+                if (btn) {
+                    btn.classList.remove('loading');
+                    btn.disabled = false;
+                }
+            }
+        }
+
+        function displayGSCData(data) {
+            const fetchedDate = new Date(data.fetchedAt);
+            document.getElementById('gsc-status').textContent =
+                `Last synced: ${fetchedDate.toLocaleDateString()} ${fetchedDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+
+            // Summary stats
+            document.getElementById('gsc-avg-position').textContent = data.summary.avgPosition.toFixed(1);
+            document.getElementById('gsc-page1').textContent = data.summary.page1Keywords;
+            document.getElementById('gsc-top3').textContent = data.summary.top3Keywords;
+
+            const avgCtr = data.summary.totalImpressions > 0
+                ? ((data.summary.totalClicks / data.summary.totalImpressions) * 100).toFixed(1) + '%'
+                : '--';
+            document.getElementById('gsc-avg-ctr').textContent = avgCtr;
+
+            // Top stat cards
+            document.getElementById('total-clicks').textContent = data.summary.totalClicks.toLocaleString();
+            document.getElementById('total-impressions-label').textContent =
+                `${data.summary.totalImpressions.toLocaleString()} impressions`;
+
+            // Auto-update rank from target keyword
+            if (data.targetKeyword) {
+                const rank = Math.round(data.targetKeyword.position);
+                localStorage.setItem('seo_current_rank', rank);
+                updateRankDisplay(rank);
+                updateSEOScore();
+            }
+
+            // Keywords table
+            const kwBody = document.getElementById('gsc-keywords-body');
+            if (data.keywords.length === 0) {
+                kwBody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--gray-medium);">No keyword data yet</td></tr>';
+            } else {
+                kwBody.innerHTML = data.keywords.map(r => {
+                    const pos = r.position.toFixed(1);
+                    const marker = r.position <= 3 ? '<span style="color:#15803d;font-weight:700;">**</span>'
+                        : r.position <= 10 ? '<span style="color:#b45309;font-weight:600;">*</span>'
+                        : '<span style="color:var(--gray-medium);">&nbsp;&nbsp;</span>';
+                    return `<tr>
+                        <td style="width:24px;text-align:center;">${marker}</td>
+                        <td style="font-family:monospace;font-size:0.8125rem;">${escapeHtml(r.keyword)}</td>
+                        <td style="text-align:right;font-weight:600;">${pos}</td>
+                        <td style="text-align:right;">${r.clicks}</td>
+                        <td style="text-align:right;">${r.impressions.toLocaleString()}</td>
+                        <td style="text-align:right;">${(r.ctr * 100).toFixed(1)}%</td>
+                    </tr>`;
+                }).join('');
+            }
+
+            // Pages table
+            const pgBody = document.getElementById('gsc-pages-body');
+            if (data.pages.length === 0) {
+                pgBody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--gray-medium);">No page data yet</td></tr>';
+            } else {
+                pgBody.innerHTML = data.pages.map(r => {
+                    const shortUrl = r.page.replace('https://buysilentdiscoheadsets.com', '').replace('https://www.buysilentdiscoheadsets.com', '') || '/';
+                    return `<tr>
+                        <td><a href="${escapeHtml(r.page)}" target="_blank" rel="noopener" style="color:var(--purple-dark);font-family:monospace;font-size:0.8125rem;">${escapeHtml(shortUrl)}</a></td>
+                        <td style="text-align:right;font-weight:600;">${r.position.toFixed(1)}</td>
+                        <td style="text-align:right;">${r.clicks}</td>
+                        <td style="text-align:right;">${r.impressions.toLocaleString()}</td>
+                        <td style="text-align:right;">${(r.ctr * 100).toFixed(1)}%</td>
+                    </tr>`;
+                }).join('');
+            }
+        }
     </script>
 </body>
 </html>
