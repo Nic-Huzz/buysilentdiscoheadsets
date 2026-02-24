@@ -83,22 +83,94 @@
 - [ ] **Bing URL submission** — Submit all 9 unindexed URLs via Bing Webmaster Tools
 - [ ] **Check GSC Coverage report** — Look for "Discovered but not indexed" or "Crawled but not indexed" errors
 
+**GSC URL Inspection walkthrough:**
+1. Open https://search.google.com/search-console (property: `sc-domain:buysilentdiscoheadsets.com`)
+2. Click the URL Inspection bar at the top
+3. Paste one URL at a time, wait for inspection to load
+4. If "URL is not on Google" or "Discovered - currently not indexed" > click **Request Indexing**
+5. Wait ~30 seconds for confirmation, then do the next URL
+6. Google limits ~10-12 requests/day. If you hit the limit, finish the rest next day.
+
+**URLs to submit (priority order):**
+```
+https://buysilentdiscoheadsets.com/silent-disco-headphones.html
+https://buysilentdiscoheadsets.com/best-silent-disco-headphones.html
+https://buysilentdiscoheadsets.com/how-silent-disco-headphones-work.html
+https://buysilentdiscoheadsets.com/silent-disco-vs-bluetooth-headphones.html
+https://buysilentdiscoheadsets.com/buy-vs-rent-silent-disco-headphones.html
+https://buysilentdiscoheadsets.com/silent-disco-headphones-for-weddings/
+https://buysilentdiscoheadsets.com/silent-disco-headphones-for-corporate-events/
+https://buysilentdiscoheadsets.com/silent-disco-headphones-for-festivals/
+https://buysilentdiscoheadsets.com/silent-disco-headphones-for-birthday-parties/
+https://buysilentdiscoheadsets.com/silent-disco-headphones-for-guided-tours/
+https://buysilentdiscoheadsets.com/silent-disco-headphones-bali/
+```
+Also re-check the homepage: `https://buysilentdiscoheadsets.com/`
+
 ### HIGH PRIORITY — Backlinks (The Real Bottleneck)
 
-Without backlinks, all the on-page SEO work is wasted. Need 5-10 quality links:
+Without backlinks, all the on-page SEO work is wasted. The site has only 1 dofollow incoming link. Need 5-10 quality links to get Google to take the domain seriously. Every competitor ranking above us has hundreds of links.
 
-- [ ] **Event equipment directories** — Submit to The Bash, Eventective, PartySlate, WeddingWire vendor listings
-- [ ] **Reddit presence** — Answer questions in r/silentdisco, r/eventplanning, r/weddingplanning (genuine helpful answers, not spam)
-- [ ] **HARO / Connectively** — Sign up and respond to journalist queries about events/entertainment
-- [ ] **Guest post** — Write 1-2 articles for event planning blogs (offer silent disco expertise)
-- [ ] **Google Business Profile** — Create if not exists. Helps domain trust and entity recognition.
-- [ ] **Bing Places listing** — ChatGPT uses Bing index. Free listing helps visibility.
+**Tier 1: Low effort, do this week (15-20 mins each = free backlink + business listing):**
+
+- [ ] **Event equipment directories:**
+  - [The Bash](https://www.thebash.com/) — event vendor directory, huge domain authority
+  - [Eventective](https://www.eventective.com/) — event vendor directory
+  - [WeddingWire](https://www.weddingwire.com/) / [The Knot](https://www.theknot.com/) — vendor listings (weddings page targets this audience)
+  - [PartySlate](https://www.partyslate.com/) — event inspiration platform
+- [ ] **Google Business Profile** — https://business.google.com — Create listing for "Buy Silent Disco Headsets". Add photos, products, website. Not technically a backlink but helps Google understand you're a real business.
+- [ ] **Bing Places listing** — https://www.bingplaces.com/ — ChatGPT pulls from Bing index. Free listing helps visibility.
+
+**Tier 2: Medium effort, high value:**
+
+- [ ] **Reddit (genuine participation, NOT spam):**
+  - Search r/silentdisco, r/eventplanning, r/weddingplanning, r/DJs, r/yoga for questions about silent disco equipment
+  - Answer helpfully. Mention your site naturally only when directly relevant (e.g., someone asks "where to buy silent disco headphones?")
+  - Even without linking, Reddit threads rank in Google and brand mentions = entity signals for AI search
+- [ ] **HARO / Connectively** — https://www.connectively.us/ (free tier)
+  - Journalists post queries like "looking for event entertainment experts"
+  - Respond with a quote + credentials (200+ events since 2022)
+  - If they use your quote, you get a backlink from a news site (high DA)
+  - Takes 5 mins/day to scan queries, 10 mins to respond when relevant
+
+**Tier 3: Higher effort, compounding returns:**
+
+- [ ] **Guest posts:**
+  - Find 2-3 event planning blogs that accept guest content
+  - Pitch angle: "I've run 200+ silent disco events - here's what most event planners get wrong"
+  - You get a backlink in author bio
+  - Search: `"write for us" event planning` or `"guest post" event entertainment`
+- [ ] **1 YouTube video:**
+  - "How Silent Disco Headphones Work" (2-minute demo)
+  - YouTube description links back to site
+  - Google AI Overviews embed YouTube results frequently
+  - Already have the equipment — just film a quick demo
+- [ ] **Digital PR:**
+  - Silent disco angle is genuinely interesting to journalists
+  - Pitch local Bali media: "Australian brings silent disco to Bali events"
+  - Pitch event industry publications with expertise
+
+**What NOT to waste time on:**
+- Buying backlinks from Fiverr (Google penalizes this)
+- Low-quality directory spam (no traffic directories)
+- Blog comment links (nofollow, zero value)
+- Link exchanges (Google detects and devalues these)
+
+**Realistic backlink timeline:**
+
+| Week | Action | Expected Links |
+|------|--------|---------------|
+| Week 1 | GSC submissions + 4 directory listings + Google Business Profile | 4-5 |
+| Week 2 | Reddit answers + HARO signup + Bing Places | 1-3 |
+| Week 3-4 | Guest post pitch + YouTube video | 1-2 |
+| Ongoing | HARO responses + Reddit + content freshness | 1-2/month |
+
+**Target: 10 quality backlinks in the next month.** That should be enough to get Google to start indexing and ranking the content pages. Once indexed, all the on-page SEO work kicks in.
 
 ### Medium Priority
 
 - [ ] **Google Merchant Center** — Product feed for Shopping results + AI Overviews
 - [ ] **Wikidata entity** — Create entry for "Buy Silent Disco Headsets" business
-- [ ] **1 YouTube video** — Even a 2-minute demo. Google AI Overviews embed YouTube frequently.
 - [ ] **Core Web Vitals** — Check in GSC once more pages are indexed (LCP < 2.0s, INP < 150ms, CLS < 0.1)
 - [ ] **Add width/height to img tags** — Missing across all pages; causes CLS (layout shift)
 - [ ] **Clarify price positioning** — Comparison table frames "$70-100" as "sweet spot" but product is $49
@@ -110,6 +182,23 @@ Without backlinks, all the on-page SEO work is wasted. Need 5-10 quality links:
 - [ ] **Quarterly content freshness** — Update stats/prices, refresh dateModified, add new FAQs from GSC query data
 - [ ] **AI citation monitoring** — Manual searches on ChatGPT/Perplexity/Google for "silent disco headphones"
 - [ ] **Dec 2026** — Update `priceValidUntil` schema from `2026-12-31` to `2027-12-31`
+
+### GSC Monitoring (for agents)
+
+**How to pull GSC data:**
+- Run `python3 rank-tracker.py` from the `/Headset-sales` directory
+- Credentials: `/Users/nichurrell/Downloads/headset-sales-6317b2b3f175.json`
+- GSC property: `sc-domain:buysilentdiscoheadsets.com`
+- The script pulls top keywords (by impressions) and top pages (by clicks) for last 28 days
+- For custom queries (90-day, per-page keywords, filtered searches), use the Google Search Console API directly via the `google.oauth2` + `googleapiclient` Python libraries (see inline script examples in session history)
+- Also available as a Vercel serverless function at `api/gsc.js` (requires admin auth via Supabase)
+
+**Key metrics to track weekly:**
+- Number of indexed pages (target: 17, currently 8)
+- Total impressions (currently 8 over 90 days)
+- Any impressions for "silent disco headphones" (currently: zero)
+- Total clicks (currently: 0)
+- Average position for target keywords (target: <20)
 
 ---
 
