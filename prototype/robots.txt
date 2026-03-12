@@ -27,4 +27,4 @@ Disallow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://buysilentdiscoheadsets.com/sitemap.xml
+Sitemap: https://buysilentdiscoheadphones.com/sitemap.xml
