@@ -116,7 +116,7 @@ Answer-summary boxes added to all content pages:
 - `how-silent-disco-headphones-work.html` — Added technical specs
 
 ### Programmatic SEO Data Fixed
-- `event-types.json` — Pricing corrected from $89 AUD to $49 USD across all 6 event types
+- `event-types.json` — Pricing corrected from $89 AUD to $39 USD across all 6 event types
 - Range corrected from 200m to 500m across all event types
 
 ### Design Integration
@@ -298,5 +298,5 @@ Run `python3 rank-tracker.py` weekly to monitor progress. Key metrics to watch:
 | `prototype/sitemap.xml` | Added comparison page URL |
 | `prototype/2de1fea9067e497ba26b2ca48f03b7f8.txt` | IndexNow API key file |
 | `programmatic-seo/src/layouts/SEOPage.astro` | datePublished, AggregateRating, Person schema, byline, answer summary slot |
-| `programmatic-seo/src/data/event-types.json` | Pricing ($49 USD) and range (500m) fixes |
+| `programmatic-seo/src/data/event-types.json` | Pricing ($39 USD) and range (500m) fixes |
 | `programmatic-seo/public/css/programmatic.css` | Answer summary and byline styling |

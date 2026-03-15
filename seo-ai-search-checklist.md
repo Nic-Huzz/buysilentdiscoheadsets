@@ -13,7 +13,7 @@
 - [x] Fix duplicate warranty FAQ in index.html (removed duplicate from schema + visible FAQ)
 - [x] Fix invalid `datePublished`/`dateModified` on Product schemas (removed — only valid on Article/WebPage)
 - [x] Fix AggregateRating on Article in best-silent-disco-headphones.html (moved to separate Product schema for rich results eligibility)
-- [x] Fix pricing: comparison table $69 → $49, packages corrected ($463 / $1,149 / $2,957)
+- [x] Fix pricing: comparison table $69 → $39, packages corrected ($463 / $1,149 / $2,957)
 - [x] Fix range inconsistency: how-to-host page said 200m, now 500m (matches all other pages)
 - [x] Fix battery life inconsistency: how-to-host page said 8+ hours, now 10+ hours (matches all other pages)
 - [x] Fix HowTo schema estimatedCost: $1,629 → $1,149 (matches corrected package pricing)
@@ -173,7 +173,7 @@ Without backlinks, all the on-page SEO work is wasted. The site has only 1 dofol
 - [ ] **Wikidata entity** — Create entry for "Buy Silent Disco Headsets" business
 - [ ] **Core Web Vitals** — Check in GSC once more pages are indexed (LCP < 2.0s, INP < 150ms, CLS < 0.1)
 - [ ] **Add width/height to img tags** — Missing across all pages; causes CLS (layout shift)
-- [ ] **Clarify price positioning** — Comparison table frames "$70-100" as "sweet spot" but product is $49
+- [ ] **Clarify price positioning** — Comparison table frames "$70-100" as "sweet spot" but product is $39
 - [ ] **Newsletter form** — Has no action attribute or JS handler; submitting does nothing
 
 ### Ongoing / Quarterly
