@@ -17,9 +17,9 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-# Block AI training crawlers (optional - allow search but not training)
+# AI training crawlers - allow GPTBot for ChatGPT citation eligibility
 User-agent: GPTBot
-Disallow: /
+Allow: /
 
 User-agent: CCBot
 Disallow: /
