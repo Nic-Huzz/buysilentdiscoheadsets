@@ -256,6 +256,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Simple validation
       if (email && email.includes('@')) {
+        // GA4: Track newsletter signup
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', {
+            event_category: 'newsletter',
+            event_label: 'footer_signup',
+            value: 1
+          });
+        }
         submitBtn.textContent = 'Subscribed!';
         submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
         emailInput.value = '';
@@ -530,6 +538,25 @@ document.addEventListener('DOMContentLoaded', function() {
   // Form submission handler
   if (packageForm) {
     packageForm.addEventListener('submit', function(e) {
+      // GA4: Track quote request with package details
+      if (typeof gtag === 'function') {
+        const headsets = headsetSelect ? headsetSelect.value : '0';
+        const transmitters = transmitterSelect ? transmitterSelect.value : '0';
+        const country = packageForm.querySelector('[name="delivery-country"]');
+        gtag('event', 'purchase', {
+          event_category: 'quote_request',
+          event_label: headsets + ' headsets, ' + transmitters + ' transmitters',
+          value: parseInt(headsets) * 39 + parseInt(transmitters) * 169,
+          currency: 'USD',
+          items: [{
+            item_name: 'Silent Disco Headphones',
+            quantity: parseInt(headsets)
+          }, {
+            item_name: 'Transmitter',
+            quantity: parseInt(transmitters)
+          }]
+        });
+      }
       // Let the form submit naturally to Formspree
       // Show a loading state on the button
       const submitBtn = document.getElementById('submit-quote-btn');
@@ -537,6 +564,36 @@ document.addEventListener('DOMContentLoaded', function() {
       submitBtn.disabled = true;
     });
   }
+});
+
+// ==================== //
+// GA4 CTA CLICK TRACKING
+// ==================== //
+document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('click', function(e) {
+    const link = e.target.closest('a, button');
+    if (!link || typeof gtag !== 'function') return;
+
+    const text = (link.textContent || '').trim().toLowerCase();
+    const href = link.getAttribute('href') || '';
+
+    // Track WhatsApp clicks
+    if (href.includes('wa.me') || href.includes('whatsapp')) {
+      gtag('event', 'contact', { event_category: 'whatsapp', event_label: href });
+    }
+    // Track portal login clicks
+    else if (href.includes('portal/login')) {
+      gtag('event', 'login', { event_category: 'portal', event_label: 'portal_click' });
+    }
+    // Track Shop Now / package section clicks
+    else if (text.includes('shop now') || text.includes('get quote') || text.includes('build your package')) {
+      gtag('event', 'select_content', { event_category: 'cta', event_label: text });
+    }
+    // Track outbound links
+    else if (href.startsWith('http') && !href.includes('buysilentdisco')) {
+      gtag('event', 'click', { event_category: 'outbound', event_label: href });
+    }
+  });
 });
 
 // ==================== //
