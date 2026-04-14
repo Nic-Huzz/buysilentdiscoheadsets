@@ -1258,88 +1258,112 @@ p {
   background: var(--navy);
   color: var(--white);
   overflow: hidden;
+  padding: 5rem 0;
 }
 
 .worldwide-map h2 {
   text-align: center;
   color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
 }
 
 .worldwide-map-subtitle {
   text-align: center;
   color: var(--gray-medium);
   font-size: 1.125rem;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: 3rem;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
 .map-wrapper {
-  max-width: 800px;
-  margin: 0 auto var(--spacing-md);
+  max-width: 900px;
+  margin: 0 auto var(--spacing-lg);
 }
 
 .world-map-svg {
   width: 100%;
   height: auto;
+  display: block;
 }
 
-.map-land {
-  fill: #2a2f3a;
-  stroke: #3a3f4a;
-  stroke-width: 0.5;
+/* Pin labels */
+.pin-label {
+  fill: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-heading);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  pointer-events: none;
 }
 
-.map-highlight {
-  fill: var(--purple-dark);
-  stroke: var(--purple-light);
-  stroke-width: 0.8;
-  opacity: 0.85;
+/* Purple glow behind each pin */
+.pin-glow {
+  fill: var(--purple-light);
+  opacity: 0.18;
 }
 
+/* Gold dot (solid center of each pin) */
 .pin-dot {
   fill: var(--gold);
+  filter: drop-shadow(0 0 6px rgba(255, 221, 39, 0.7));
 }
 
+/* Pulsing gold ring animation */
 .pin-pulse {
   fill: var(--gold);
   opacity: 0;
-  animation: pulse-ring 2s ease-out infinite;
+  animation: pulse-ring 2.5s ease-out infinite;
 }
 
-.map-pin:nth-child(8) .pin-pulse { animation-delay: 0s; }
-.map-pin:nth-child(9) .pin-pulse { animation-delay: 0.35s; }
-.map-pin:nth-child(10) .pin-pulse { animation-delay: 0.7s; }
-.map-pin:nth-child(11) .pin-pulse { animation-delay: 1.05s; }
-.map-pin:nth-child(12) .pin-pulse { animation-delay: 1.4s; }
-.map-pin:nth-child(13) .pin-pulse { animation-delay: 1.75s; }
+/* Staggered pulse delays — driven by inline --delay custom property */
+.pin-pulse {
+  animation-delay: var(--delay, 0s);
+}
 
 @keyframes pulse-ring {
   0% {
-    r: 4;
+    r: 3.5;
     opacity: 0.6;
   }
   100% {
-    r: 14;
+    r: 18;
     opacity: 0;
   }
 }
 
+/* Connection arcs subtle entrance */
+.connection-arcs {
+  stroke-dasharray: 4 6;
+}
+
+/* Stats bar */
 .worldwide-stats {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: var(--spacing-sm);
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
 .worldwide-stat {
+  font-family: var(--font-heading);
   font-size: 1.125rem;
   font-weight: 600;
   color: var(--gold);
+  letter-spacing: 0.01em;
 }
 
 .worldwide-stat-divider {
-  color: var(--gray-medium);
+  color: #3a3f4a;
   font-weight: 300;
+  font-size: 1.25rem;
 }
 
 /* ==================== */
@@ -1416,6 +1440,19 @@ p {
     text-align: center;
   }
 
+  /* Map section - tablet */
+  .worldwide-map {
+    padding: 3.5rem 0;
+  }
+
+  .worldwide-map h2 {
+    font-size: 2rem;
+  }
+
+  .pin-label {
+    font-size: 7px;
+  }
+
   /* Story section - stack on tablet */
   .story-content {
     grid-template-columns: 1fr;
@@ -1455,6 +1492,28 @@ p {
   .worldwide-stat-divider {
     display: none;
   }
+
+  .worldwide-map {
+    padding: 3rem 0;
+  }
+
+  .worldwide-map-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .map-wrapper {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .pin-label {
+    display: none;
+  }
+
+  .connection-arcs {
+    display: none;
+  }
+
   h1 {
     font-size: 2.5rem;
   }
