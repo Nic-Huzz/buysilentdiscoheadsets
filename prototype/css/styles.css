@@ -1252,6 +1252,97 @@ p {
 }
 
 /* ==================== */
+/* WORLDWIDE MAP */
+/* ==================== */
+.worldwide-map {
+  background: var(--navy);
+  color: var(--white);
+  overflow: hidden;
+}
+
+.worldwide-map h2 {
+  text-align: center;
+  color: var(--white);
+}
+
+.worldwide-map-subtitle {
+  text-align: center;
+  color: var(--gray-medium);
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+.map-wrapper {
+  max-width: 800px;
+  margin: 0 auto var(--spacing-md);
+}
+
+.world-map-svg {
+  width: 100%;
+  height: auto;
+}
+
+.map-land {
+  fill: #2a2f3a;
+  stroke: #3a3f4a;
+  stroke-width: 0.5;
+}
+
+.map-highlight {
+  fill: var(--purple-dark);
+  stroke: var(--purple-light);
+  stroke-width: 0.8;
+  opacity: 0.85;
+}
+
+.pin-dot {
+  fill: var(--gold);
+}
+
+.pin-pulse {
+  fill: var(--gold);
+  opacity: 0;
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+.map-pin:nth-child(8) .pin-pulse { animation-delay: 0s; }
+.map-pin:nth-child(9) .pin-pulse { animation-delay: 0.35s; }
+.map-pin:nth-child(10) .pin-pulse { animation-delay: 0.7s; }
+.map-pin:nth-child(11) .pin-pulse { animation-delay: 1.05s; }
+.map-pin:nth-child(12) .pin-pulse { animation-delay: 1.4s; }
+.map-pin:nth-child(13) .pin-pulse { animation-delay: 1.75s; }
+
+@keyframes pulse-ring {
+  0% {
+    r: 4;
+    opacity: 0.6;
+  }
+  100% {
+    r: 14;
+    opacity: 0;
+  }
+}
+
+.worldwide-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.worldwide-stat {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.worldwide-stat-divider {
+  color: var(--gray-medium);
+  font-weight: 300;
+}
+
+/* ==================== */
 /* RESPONSIVE DESIGN */
 /* ==================== */
 
@@ -1356,6 +1447,14 @@ p {
 
 /* Large Mobile (Between tablet and small mobile) */
 @media (max-width: 640px) {
+  .worldwide-stats {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .worldwide-stat-divider {
+    display: none;
+  }
   h1 {
     font-size: 2.5rem;
   }
