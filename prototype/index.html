@@ -910,76 +910,135 @@
 
       <div class="map-wrapper">
         <svg class="world-map-svg" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" aria-label="World map showing countries where we ship silent disco headphones">
-          <!-- Simplified world map paths -->
-          <!-- North America -->
-          <path class="map-land" d="M130,60 L160,55 L180,50 L220,45 L250,50 L270,55 L285,70 L290,90 L280,100 L275,120 L260,130 L250,140 L240,160 L220,175 L200,185 L190,200 L180,220 L170,230 L160,240 L155,250 L165,260 L175,265 L185,270 L195,275 L200,285 L195,290 L185,288 L175,280 L160,275 L150,265 L140,250 L135,235 L130,220 L120,200 L110,180 L105,160 L100,140 L95,120 L100,100 L110,80 Z"/>
-          <!-- USA highlighted -->
-          <path class="map-highlight" d="M110,140 L130,130 L160,125 L190,120 L220,125 L250,135 L260,145 L250,155 L235,165 L215,175 L195,185 L180,195 L165,200 L150,210 L140,215 L130,210 L120,195 L112,175 L108,160 Z"/>
-          <!-- Canada highlighted -->
-          <path class="map-highlight" d="M100,90 L120,80 L140,72 L170,65 L200,60 L230,58 L260,65 L280,78 L285,90 L278,105 L265,115 L245,125 L220,128 L190,125 L160,128 L130,135 L110,140 L100,130 L95,110 Z"/>
-          <!-- Central America -->
-          <path class="map-land" d="M155,250 L165,260 L175,268 L180,275 L175,285 L168,290 L160,288 L155,280 L150,270 L152,260 Z"/>
-          <!-- South America -->
-          <path class="map-land" d="M195,290 L210,285 L225,290 L240,305 L250,325 L255,345 L260,365 L255,385 L245,400 L235,415 L225,425 L215,430 L205,425 L200,415 L195,400 L190,380 L185,360 L180,340 L178,320 L180,305 L188,295 Z"/>
-          <!-- Europe -->
-          <path class="map-land" d="M440,70 L460,65 L480,60 L500,55 L520,58 L540,65 L555,75 L560,90 L555,105 L545,115 L530,120 L520,130 L510,135 L500,140 L490,145 L480,148 L470,145 L460,140 L450,135 L445,125 L440,115 L435,100 L438,85 Z"/>
-          <!-- Belgium/Germany highlighted -->
-          <path class="map-highlight" d="M478,88 L495,84 L515,82 L530,86 L535,95 L530,105 L520,112 L505,116 L490,114 L480,108 L475,100 L476,94 Z"/>
-          <!-- UK -->
-          <path class="map-land" d="M440,78 L448,72 L455,70 L458,76 L455,84 L448,88 L442,86 Z"/>
-          <!-- Scandinavia -->
-          <path class="map-land" d="M490,40 L500,35 L510,38 L515,48 L510,58 L502,55 L495,50 Z"/>
-          <!-- Africa -->
-          <path class="map-land" d="M460,160 L480,155 L505,158 L520,165 L535,180 L540,200 L545,225 L540,250 L535,275 L525,295 L515,310 L505,320 L495,325 L485,320 L475,310 L465,295 L458,275 L455,250 L452,225 L450,200 L452,180 Z"/>
-          <!-- Middle East -->
-          <path class="map-land" d="M555,120 L575,115 L595,118 L610,125 L620,135 L625,150 L618,160 L605,165 L590,162 L575,155 L565,145 L558,135 Z"/>
-          <!-- Russia/Central Asia -->
-          <path class="map-land" d="M540,60 L580,50 L620,42 L660,38 L700,35 L740,38 L780,42 L810,50 L830,60 L840,75 L835,90 L820,100 L800,105 L770,100 L740,95 L710,92 L680,88 L650,85 L620,82 L590,78 L565,72 L550,68 Z"/>
-          <!-- India -->
-          <path class="map-land" d="M630,140 L650,135 L670,138 L685,148 L695,165 L700,185 L695,205 L685,220 L670,230 L655,225 L645,215 L638,200 L632,180 L628,160 Z"/>
-          <!-- Southeast Asia -->
-          <path class="map-land" d="M710,165 L730,158 L750,162 L765,172 L770,185 L765,200 L755,210 L740,215 L725,210 L715,200 L710,185 Z"/>
-          <!-- Indonesia highlighted -->
-          <path class="map-highlight" d="M720,225 L740,220 L760,222 L780,225 L800,228 L810,235 L805,242 L790,245 L770,243 L750,240 L735,238 L722,235 Z"/>
-          <!-- China/East Asia -->
-          <path class="map-land" d="M700,90 L730,85 L760,82 L790,85 L810,95 L820,110 L815,125 L805,140 L790,150 L770,155 L750,158 L730,155 L715,145 L705,130 L700,115 L698,100 Z"/>
-          <!-- Japan -->
-          <path class="map-land" d="M830,95 L840,90 L848,95 L850,108 L845,118 L838,122 L832,115 L828,105 Z"/>
-          <!-- Australia highlighted -->
-          <path class="map-highlight" d="M770,310 L800,300 L830,295 L860,298 L880,305 L895,320 L900,340 L895,360 L882,375 L865,385 L845,388 L825,385 L808,375 L795,360 L785,345 L778,330 L772,318 Z"/>
-          <!-- New Zealand highlighted -->
-          <path class="map-highlight" d="M915,370 L922,365 L928,370 L930,380 L926,392 L920,398 L914,395 L912,385 Z"/>
+          <defs>
+            <!-- Dot grid pattern for regular land masses -->
+            <pattern id="landDots" width="11" height="11" patternUnits="userSpaceOnUse">
+              <circle cx="5.5" cy="5.5" r="1.3" fill="#2a2f3a"/>
+            </pattern>
+            <!-- Denser, brighter dot pattern for highlighted countries -->
+            <pattern id="highlightDots" width="8" height="8" patternUnits="userSpaceOnUse">
+              <circle cx="4" cy="4" r="1.5" fill="#7c3aed"/>
+            </pattern>
+            <!-- Glow filter for highlighted regions -->
+            <filter id="regionGlow" x="-15%" y="-15%" width="130%" height="130%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+              <feFlood flood-color="#5e17eb" flood-opacity="0.25"/>
+              <feComposite in2="blur" operator="in" result="glow"/>
+              <feMerge>
+                <feMergeNode in="glow"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <!-- Gold glow for pins -->
+            <filter id="pinGlow" x="-200%" y="-200%" width="500%" height="500%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+              <feFlood flood-color="#ffdd27" flood-opacity="0.6"/>
+              <feComposite in2="blur" operator="in"/>
+            </filter>
+          </defs>
 
-          <!-- Pulsing location dots -->
-          <!-- USA - California -->
+          <!-- === BASE LAND (dot grid continents) === -->
+          <!-- North America outline -->
+          <path fill="url(#landDots)" d="M130,60 L160,55 L180,50 L220,45 L250,50 L270,55 L285,70 L290,90 L280,100 L275,120 L260,130 L250,140 L240,160 L220,175 L200,185 L190,200 L180,220 L170,230 L160,240 L155,250 L165,260 L175,265 L185,270 L195,275 L200,285 L195,290 L185,288 L175,280 L160,275 L150,265 L140,250 L135,235 L130,220 L120,200 L110,180 L105,160 L100,140 L95,120 L100,100 L110,80 Z"/>
+          <!-- Central America -->
+          <path fill="url(#landDots)" d="M155,250 L165,260 L175,268 L180,275 L175,285 L168,290 L160,288 L155,280 L150,270 L152,260 Z"/>
+          <!-- South America -->
+          <path fill="url(#landDots)" d="M195,290 L210,285 L225,290 L240,305 L250,325 L255,345 L260,365 L255,385 L245,400 L235,415 L225,425 L215,430 L205,425 L200,415 L195,400 L190,380 L185,360 L180,340 L178,320 L180,305 L188,295 Z"/>
+          <!-- Europe -->
+          <path fill="url(#landDots)" d="M440,70 L460,65 L480,60 L500,55 L520,58 L540,65 L555,75 L560,90 L555,105 L545,115 L530,120 L520,130 L510,135 L500,140 L490,145 L480,148 L470,145 L460,140 L450,135 L445,125 L440,115 L435,100 L438,85 Z"/>
+          <!-- UK -->
+          <path fill="url(#landDots)" d="M440,78 L448,72 L455,70 L458,76 L455,84 L448,88 L442,86 Z"/>
+          <!-- Scandinavia -->
+          <path fill="url(#landDots)" d="M490,40 L500,35 L510,38 L515,48 L510,58 L502,55 L495,50 Z"/>
+          <!-- Africa -->
+          <path fill="url(#landDots)" d="M460,160 L480,155 L505,158 L520,165 L535,180 L540,200 L545,225 L540,250 L535,275 L525,295 L515,310 L505,320 L495,325 L485,320 L475,310 L465,295 L458,275 L455,250 L452,225 L450,200 L452,180 Z"/>
+          <!-- Middle East -->
+          <path fill="url(#landDots)" d="M555,120 L575,115 L595,118 L610,125 L620,135 L625,150 L618,160 L605,165 L590,162 L575,155 L565,145 L558,135 Z"/>
+          <!-- Russia/Central Asia -->
+          <path fill="url(#landDots)" d="M540,60 L580,50 L620,42 L660,38 L700,35 L740,38 L780,42 L810,50 L830,60 L840,75 L835,90 L820,100 L800,105 L770,100 L740,95 L710,92 L680,88 L650,85 L620,82 L590,78 L565,72 L550,68 Z"/>
+          <!-- India -->
+          <path fill="url(#landDots)" d="M630,140 L650,135 L670,138 L685,148 L695,165 L700,185 L695,205 L685,220 L670,230 L655,225 L645,215 L638,200 L632,180 L628,160 Z"/>
+          <!-- Southeast Asia -->
+          <path fill="url(#landDots)" d="M710,165 L730,158 L750,162 L765,172 L770,185 L765,200 L755,210 L740,215 L725,210 L715,200 L710,185 Z"/>
+          <!-- China/East Asia -->
+          <path fill="url(#landDots)" d="M700,90 L730,85 L760,82 L790,85 L810,95 L820,110 L815,125 L805,140 L790,150 L770,155 L750,158 L730,155 L715,145 L705,130 L700,115 L698,100 Z"/>
+          <!-- Japan -->
+          <path fill="url(#landDots)" d="M830,95 L840,90 L848,95 L850,108 L845,118 L838,122 L832,115 L828,105 Z"/>
+
+          <!-- === HIGHLIGHTED COUNTRIES (denser purple dots + glow) === -->
+          <g filter="url(#regionGlow)">
+            <!-- USA -->
+            <path fill="url(#highlightDots)" d="M110,140 L130,130 L160,125 L190,120 L220,125 L250,135 L260,145 L250,155 L235,165 L215,175 L195,185 L180,195 L165,200 L150,210 L140,215 L130,210 L120,195 L112,175 L108,160 Z"/>
+            <!-- Canada -->
+            <path fill="url(#highlightDots)" d="M100,90 L120,80 L140,72 L170,65 L200,60 L230,58 L260,65 L280,78 L285,90 L278,105 L265,115 L245,125 L220,128 L190,125 L160,128 L130,135 L110,140 L100,130 L95,110 Z"/>
+            <!-- Belgium/Germany -->
+            <path fill="url(#highlightDots)" d="M478,88 L495,84 L515,82 L530,86 L535,95 L530,105 L520,112 L505,116 L490,114 L480,108 L475,100 L476,94 Z"/>
+            <!-- Indonesia (Bali) -->
+            <path fill="url(#highlightDots)" d="M720,225 L740,220 L760,222 L780,225 L800,228 L810,235 L805,242 L790,245 L770,243 L750,240 L735,238 L722,235 Z"/>
+            <!-- Australia -->
+            <path fill="url(#highlightDots)" d="M770,310 L800,300 L830,295 L860,298 L880,305 L895,320 L900,340 L895,360 L882,375 L865,385 L845,388 L825,385 L808,375 L795,360 L785,345 L778,330 L772,318 Z"/>
+            <!-- New Zealand -->
+            <path fill="url(#highlightDots)" d="M915,370 L922,365 L928,370 L930,380 L926,392 L920,398 L914,395 L912,385 Z"/>
+          </g>
+
+          <!-- === CONNECTION ARCS (faint purple curved lines) === -->
+          <g class="connection-arcs" fill="none" stroke="#5e17eb" stroke-width="0.8" opacity="0.15">
+            <!-- California to Canada -->
+            <path d="M135,168 Q160,110 190,95"/>
+            <!-- California to Belgium/Germany -->
+            <path d="M135,168 Q320,60 505,98"/>
+            <!-- California to Australia -->
+            <path d="M135,168 Q500,400 870,330"/>
+            <!-- Belgium/Germany to Bali -->
+            <path d="M505,98 Q640,140 765,232"/>
+            <!-- Australia to New Zealand -->
+            <path d="M870,330 Q900,350 920,382"/>
+            <!-- Bali to Australia -->
+            <path d="M765,232 Q810,270 870,330"/>
+          </g>
+
+          <!-- === ANIMATED PINS === -->
+          <!-- California, USA -->
           <g class="map-pin" aria-label="California, USA">
-            <circle class="pin-pulse" cx="135" cy="168" r="6"/>
-            <circle class="pin-dot" cx="135" cy="168" r="4"/>
+            <circle class="pin-glow" cx="135" cy="168" r="10"/>
+            <circle class="pin-pulse" cx="135" cy="168" r="6" style="--delay: 0s"/>
+            <circle class="pin-dot" cx="135" cy="168" r="3.5"/>
+            <text class="pin-label" x="135" y="155" text-anchor="middle">California</text>
           </g>
           <!-- Canada -->
           <g class="map-pin" aria-label="Canada">
-            <circle class="pin-pulse" cx="190" cy="95" r="6"/>
-            <circle class="pin-dot" cx="190" cy="95" r="4"/>
+            <circle class="pin-glow" cx="190" cy="95" r="10"/>
+            <circle class="pin-pulse" cx="190" cy="95" r="6" style="--delay: 0.4s"/>
+            <circle class="pin-dot" cx="190" cy="95" r="3.5"/>
+            <text class="pin-label" x="190" y="82" text-anchor="middle">Canada</text>
           </g>
-          <!-- Belgium/Germany -->
+          <!-- Belgium & Germany -->
           <g class="map-pin" aria-label="Belgium & Germany, Europe">
-            <circle class="pin-pulse" cx="505" cy="98" r="6"/>
-            <circle class="pin-dot" cx="505" cy="98" r="4"/>
+            <circle class="pin-glow" cx="505" cy="98" r="10"/>
+            <circle class="pin-pulse" cx="505" cy="98" r="6" style="--delay: 0.8s"/>
+            <circle class="pin-dot" cx="505" cy="98" r="3.5"/>
+            <text class="pin-label" x="505" y="85" text-anchor="middle">Europe</text>
           </g>
-          <!-- Indonesia - Bali -->
+          <!-- Bali, Indonesia -->
           <g class="map-pin" aria-label="Bali, Indonesia">
-            <circle class="pin-pulse" cx="765" cy="232" r="6"/>
-            <circle class="pin-dot" cx="765" cy="232" r="4"/>
+            <circle class="pin-glow" cx="765" cy="232" r="10"/>
+            <circle class="pin-pulse" cx="765" cy="232" r="6" style="--delay: 1.2s"/>
+            <circle class="pin-dot" cx="765" cy="232" r="3.5"/>
+            <text class="pin-label" x="765" y="219" text-anchor="middle">Bali</text>
           </g>
-          <!-- Australia - Queensland -->
+          <!-- Queensland, Australia -->
           <g class="map-pin" aria-label="Queensland, Australia">
-            <circle class="pin-pulse" cx="870" cy="330" r="6"/>
-            <circle class="pin-dot" cx="870" cy="330" r="4"/>
+            <circle class="pin-glow" cx="870" cy="330" r="10"/>
+            <circle class="pin-pulse" cx="870" cy="330" r="6" style="--delay: 1.6s"/>
+            <circle class="pin-dot" cx="870" cy="330" r="3.5"/>
+            <text class="pin-label" x="870" y="317" text-anchor="middle">Australia</text>
           </g>
           <!-- New Zealand -->
           <g class="map-pin" aria-label="New Zealand">
-            <circle class="pin-pulse" cx="920" cy="382" r="6"/>
-            <circle class="pin-dot" cx="920" cy="382" r="4"/>
+            <circle class="pin-glow" cx="920" cy="382" r="10"/>
+            <circle class="pin-pulse" cx="920" cy="382" r="6" style="--delay: 2.0s"/>
+            <circle class="pin-dot" cx="920" cy="382" r="3.5"/>
+            <text class="pin-label" x="920" y="369" text-anchor="middle">NZ</text>
           </g>
         </svg>
       </div>
