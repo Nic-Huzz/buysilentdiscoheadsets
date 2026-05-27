@@ -229,15 +229,15 @@
 
         /* ─── CUSTOM BRANDING SECTION ─── */
         .branding-card {
-            background: linear-gradient(135deg, rgba(124,92,252,0.04), rgba(124,92,252,0.01));
-            border: 1.5px solid rgba(124,92,252,0.3);
+            background: linear-gradient(135deg, rgba(217,181,107,0.04), rgba(217,181,107,0.01));
+            border: 1.5px solid rgba(217,181,107,0.3);
             border-radius: 20px; padding: 40px;
             text-align: center; margin-top: 40px;
         }
         .branding-card .icon-circle {
             width: 56px; height: 56px; margin: 0 auto 16px;
             border-radius: 50%; background: var(--accent-glow);
-            border: 1.5px solid rgba(124,92,252,0.2);
+            border: 1.5px solid rgba(217,181,107,0.2);
             display: flex; align-items: center; justify-content: center;
         }
         .branding-card .icon-circle svg { width: 26px; height: 26px; color: var(--accent); }
@@ -262,11 +262,11 @@
         }
         .competitor-table tr:last-child td { border-bottom: none; }
         .competitor-table tr.highlight {
-            background: linear-gradient(135deg, rgba(124,92,252,0.06), rgba(124,92,252,0.02));
+            background: linear-gradient(135deg, rgba(217,181,107,0.06), rgba(217,181,107,0.02));
         }
         .competitor-table tr.highlight td {
             color: var(--charcoal); font-weight: 600;
-            border-bottom-color: rgba(124,92,252,0.15);
+            border-bottom-color: rgba(217,181,107,0.15);
         }
         .competitor-table .badge-best {
             display: inline-block; background: var(--accent);
@@ -346,7 +346,7 @@
 
         /* ─── INVESTMENT TABLE ─── */
         .investment-total {
-            background: linear-gradient(135deg, rgba(124,92,252,0.04), rgba(124,92,252,0.01));
+            background: linear-gradient(135deg, rgba(217,181,107,0.04), rgba(217,181,107,0.01));
             border: 2px solid var(--accent);
             border-radius: 20px; padding: 36px 40px;
             text-align: center; max-width: 600px; margin: 0 auto 36px;
@@ -427,7 +427,7 @@
         .step-num {
             width: 44px; height: 44px; min-width: 44px;
             border-radius: 50%; background: var(--accent-glow);
-            border: 1.5px solid rgba(124,92,252,0.25);
+            border: 1.5px solid rgba(217,181,107,0.25);
             display: flex; align-items: center; justify-content: center;
             font-family: 'Montserrat', sans-serif;
             font-size: 16px; font-weight: 700; color: var(--accent);
@@ -552,6 +552,7 @@
 
             .package-grid { grid-template-columns: 1fr; }
             .package-card { padding: 28px 24px; }
+            .equipment-visuals { grid-template-columns: 1fr !important; }
 
             .portal-features { grid-template-columns: 1fr; }
             .values-grid { grid-template-columns: repeat(2, 1fr); }
@@ -649,15 +650,8 @@
         </svg>
     </div>
 
-    <!-- ─── PRODUCT HERO ─── -->
-    <section class="bg-white fade-up" style="padding-bottom: 0;">
-        <div class="container" style="text-align: center;">
-            <img src="prototype/images/hero-headphones.webp" alt="Premium silent disco headphones with LED lights" style="max-width: 380px; width: 100%; margin: 0 auto;" onerror="this.src='prototype/images/hero-headphones.jpg'">
-        </div>
-    </section>
-
     <!-- ─── SEE IT IN ACTION ─── -->
-    <section class="bg-white fade-up" style="padding-top: 24px;">
+    <section class="bg-white fade-up">
         <div class="container wide">
             <div class="section-label">See It In Action</div>
             <h2>Watch them in the wild.</h2>
@@ -902,7 +896,7 @@
             </div>
 
             <!-- Equipment Visuals -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px;">
+            <div class="equipment-visuals" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px;">
                 <!-- Headphone with Your Logo -->
                 <div style="background: var(--white); border-radius: 20px; border: 1.5px solid var(--divider); padding: 32px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
                     <img src="prototype/images/equipment-headset.webp" alt="Silent disco headphones with custom logo branding zone" style="width: 100%; max-width: 280px; border-radius: 12px; margin-bottom: 16px;" onerror="this.src='prototype/images/equipment-headset.jpg'">
@@ -988,7 +982,7 @@
         <div class="container wide">
             <div class="section-label">Packages</div>
             <h2>Two options to fit your budget.</h2>
-            <p class="section-subtitle">Both include transmitters, worldwide shipping, a test event, and access to our customer portal.</p>
+            <p class="section-subtitle">Both include transmitters, shipping to Bali, a test event, and ongoing support.</p>
 
             <div class="package-grid">
                 <!-- Package 2 - Budget Fit -->
@@ -996,7 +990,7 @@
                     <span class="package-badge">Fits Your Budget</span>
                     <div class="package-name">150 Headsets</div>
                     <p class="package-desc">Perfect starting fleet for Club Med venues</p>
-                    <div class="package-price">&euro;7,618</div>
+                    <div class="package-price">&euro;7,599</div>
                     <p class="package-price-note">All inclusive</p>
 
                     <ul class="bullet-list">
@@ -1015,7 +1009,7 @@
                     <span class="package-badge">Full Scale</span>
                     <div class="package-name">200 Headsets</div>
                     <p class="package-desc">Full deployment across all venues</p>
-                    <div class="package-price">&euro;9,516</div>
+                    <div class="package-price">&euro;9,492</div>
                     <p class="package-price-note">All inclusive</p>
 
                     <ul class="bullet-list">
@@ -1054,11 +1048,11 @@
                     <div class="investment-table">
                         <div class="investment-row">
                             <span>150 headsets @ &euro;36</span>
-                            <span style="font-weight: 600;">&euro;5,417</span>
+                            <span style="font-weight: 600;">&euro;5,400</span>
                         </div>
                         <div class="investment-row">
                             <span>3 transmitters @ &euro;156</span>
-                            <span style="font-weight: 600;">&euro;469</span>
+                            <span style="font-weight: 600;">&euro;468</span>
                         </div>
                         <div class="investment-row">
                             <span>Shipping to Bali</span>
@@ -1070,7 +1064,7 @@
                         </div>
                         <div class="investment-row total">
                             <span>Total</span>
-                            <span>&euro;7,618</span>
+                            <span>&euro;7,599</span>
                         </div>
                     </div>
                 </div>
@@ -1081,11 +1075,11 @@
                     <div class="investment-table">
                         <div class="investment-row">
                             <span>200 headsets @ &euro;36</span>
-                            <span style="font-weight: 600;">&euro;7,222</span>
+                            <span style="font-weight: 600;">&euro;7,200</span>
                         </div>
                         <div class="investment-row">
                             <span>3 transmitters @ &euro;156</span>
-                            <span style="font-weight: 600;">&euro;469</span>
+                            <span style="font-weight: 600;">&euro;468</span>
                         </div>
                         <div class="investment-row">
                             <span>Shipping to Bali</span>
@@ -1097,7 +1091,7 @@
                         </div>
                         <div class="investment-row total">
                             <span>Total</span>
-                            <span>&euro;9,516</span>
+                            <span>&euro;9,492</span>
                         </div>
                     </div>
                 </div>
@@ -1152,8 +1146,8 @@
                 </div>
                 <div class="portal-feature">
                     <div class="pf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-                    <h4>Reorder Portal</h4>
-                    <p>Need more headsets or replacement parts? Reorder directly through your portal with preferred pricing.</p>
+                    <h4>Event Playbooks</h4>
+                    <p>Ready-made runsheets for silent parties, wellness sessions, and kids' events. Plug in and run.</p>
                     <p class="coming">Add-on</p>
                 </div>
                 <div class="portal-feature">
