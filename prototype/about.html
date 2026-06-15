@@ -7,10 +7,11 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Buy Silent Disco Headsets</title>
-  <meta name="description" content="Meet Nic Huzz and the team behind Buy Silent Disco Headsets. 200+ events hosted, 600+ headphone fleet. Based in Bali, shipping worldwide.">
+  <title>About Us | Buy Silent Disco Headphones</title>
+  <meta name="description" content="Meet Nic Huzz — from dancing alone on Bondi Beach to powering 200+ events for Amazon, IBM, and iconic Bali venues. The story behind Buy Silent Disco Headphones.">
 
   <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://buysilentdiscoheadphones.com/about.html">
@@ -18,15 +19,15 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://buysilentdiscoheadphones.com/about.html">
-  <meta property="og:title" content="About Us | Buy Silent Disco Headsets">
-  <meta property="og:description" content="Meet the team behind Buy Silent Disco Headsets - premium silent disco headphones founded in Bali by Nic 'Huzz' to empower facilitators worldwide.">
+  <meta property="og:title" content="About Us | Buy Silent Disco Headphones">
+  <meta property="og:description" content="Meet Nic Huzz — from dancing alone on Bondi Beach to powering 200+ events for Amazon, IBM, and iconic Bali venues.">
   <meta property="og:image" content="https://buysilentdiscoheadphones.com/images/hero-headphones.webp">
-  <meta property="og:site_name" content="Buy Silent Disco Headsets">
+  <meta property="og:site_name" content="Buy Silent Disco Headphones">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About Us | Buy Silent Disco Headsets">
-  <meta name="twitter:description" content="Meet the team behind Buy Silent Disco Headsets - premium silent disco headphones founded in Bali by Nic 'Huzz' to empower facilitators worldwide.">
+  <meta name="twitter:title" content="About Us | Buy Silent Disco Headphones">
+  <meta name="twitter:description" content="Meet Nic Huzz — from dancing alone on Bondi Beach to powering 200+ events for Amazon, IBM, and iconic Bali venues.">
   <meta name="twitter:image" content="https://buysilentdiscoheadphones.com/images/hero-headphones.webp">
 
   <!-- Google Fonts -->
@@ -36,23 +37,47 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .about-story { max-width: 800px; margin: 0 auto; }
+    .about-story p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; }
+    .about-story .highlight { color: var(--purple-dark); font-weight: 600; }
+    .about-milestone { display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 2rem; }
+    .about-milestone .year { font-family: var(--font-heading); font-weight: 800; font-size: 1.1rem; color: var(--purple-dark); min-width: 140px; padding-top: 0.15rem; }
+    .about-milestone p { margin: 0; }
+    .about-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-md); text-align: center; margin: var(--spacing-xl) 0; }
+    .about-stat-number { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--purple-dark); }
+    .about-stat-label { font-size: 0.9rem; color: var(--gray-medium); margin-top: 0.25rem; }
+    .mission-values { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-md); margin-top: var(--spacing-lg); }
+    .mission-value { background: var(--white); padding: var(--spacing-md); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-sm); }
+    .mission-value h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--purple-dark); }
+    .mission-value p { margin: 0; font-size: 0.95rem; }
+    .about-differentiators { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-md); margin-top: var(--spacing-lg); }
+    .about-diff { text-align: center; padding: var(--spacing-md); }
+    .about-diff-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+    .about-diff h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+    .about-diff p { font-size: 0.9rem; color: var(--gray-medium); margin: 0; }
+    @media (max-width: 768px) {
+      .about-stats { grid-template-columns: repeat(2, 1fr); }
+      .mission-values { grid-template-columns: 1fr; }
+      .about-differentiators { grid-template-columns: 1fr; }
+      .about-milestone { flex-direction: column; gap: 0.25rem; }
+      .about-milestone .year { min-width: auto; }
+    }
+  </style>
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body>
 
-  <!-- ==================== -->
   <!-- HEADER -->
-  <!-- ==================== -->
   <header class="header">
     <div class="container">
       <div class="header-content">
-        <a href="/" class="logo">Buy Silent Disco Headsets</a>
-
+        <a href="/" class="logo">Buy Silent Disco Headphones</a>
         <nav class="nav">
           <a href="/#products" class="nav-link">Products</a>
           <a href="/#packages" class="nav-link">Packages</a>
-          <a href="/#testimonials" class="nav-link">Testimonials</a>
+          <a href="reviews.html" class="nav-link">Reviews</a>
           <a href="/#faq" class="nav-link">FAQ</a>
           <a href="support.html#contact" class="nav-link">Contact</a>
         </nav>
@@ -60,114 +85,186 @@
     </div>
   </header>
 
-  <!-- ==================== -->
   <!-- PAGE HERO -->
-  <!-- ==================== -->
-  <section class="page-hero" style="background: linear-gradient(135deg, #5e17eb 0%, #8b5cf6 100%); padding: 4rem 0;">
+  <section class="page-hero" style="background: var(--gradient-purple); padding: 4rem 0;">
     <div class="container">
-      <h1 style="color: white; text-align: center;">About Us</h1>
-      <p style="color: rgba(255,255,255,0.9); text-align: center; font-size: 1.25rem; max-width: 700px; margin: 1rem auto 0;">
-        From Bali's largest silent disco rental business to empowering facilitators worldwide
+      <h1 style="color: white; text-align: center;">From Bondi Beach to 200+ Events Worldwide</h1>
+      <p style="color: rgba(255,255,255,0.9); text-align: center; font-size: 1.1rem; max-width: 700px; margin: 1rem auto 0;">
+        The story of how dancing with 5 friends on a beach turned into Bali's largest silent disco brand
       </p>
     </div>
   </section>
 
-  <!-- ==================== -->
-  <!-- OUR STORY -->
-  <!-- ==================== -->
+  <!-- THE STORY -->
   <section class="section" style="background: white;">
-    <div class="container" style="max-width: 900px;">
+    <div class="container about-story">
       <h2>Our Story</h2>
 
-      <p style="margin-top: 2rem; font-size: 1.125rem;">Buy Silent Disco Headsets was founded by Nic "Huzz" in Bali after running hundreds of silent disco, breathwork, and guided experiences across Australia and Southeast Asia.</p>
+      <p style="margin-top: 2rem;">In early 2023, I started a personal challenge to do things that terrified me. One Saturday morning in February, I took a bag of headphones down to Bondi Beach and danced with 5 friends. No speakers, no venue, no permission needed. Just headphones and a playlist.</p>
 
-      <p style="margin-top: 1.5rem; font-size: 1.125rem;">Our mission is simple:<br><strong>Make high-quality silent disco technology accessible, reliable, and effortless for facilitators and event creators</strong> — so you can focus on delivering transformational experiences.</p>
+      <p>Strangers stopped to watch. Then they asked to join in. Something about seeing people dance in silence — then putting on the headphones and suddenly being inside this incredible shared musical experience — was magnetic.</p>
 
-      <p style="margin-top: 1.5rem; font-size: 1.125rem;">From intimate retreats to large-scale dance activations, our headsets have powered thousands of moments of joy, connection, and emotion.</p>
+      <p>Four months later, I set up a silent disco by myself outside the <span class="highlight">Sydney Opera House</span>. Within an hour, there was a line of people waiting to use the headphones. People were offering to pay me.</p>
+
+      <p>That was the moment I realised this wasn't just a fun experiment. This was something people genuinely wanted.</p>
+
+      <p>I spent the rest of 2023 travelling through Southeast Asia, starting sunset silent discos on beaches and funding my travels through the donations I received. Every event taught me what worked and what didn't — which headphones held up in sand and humidity, which frequencies sounded best outdoors, how to create that moment where someone takes off their headphones, hears silence, laughs, and puts them straight back on.</p>
+
+      <p>In February 2024, I moved to Bali and started the island's first silent disco rental company with 50 headphones. Within a year, we'd grown to <span class="highlight">over 750 headphones</span>, hosted <span class="highlight">200+ events</span>, and become the go-to supplier for organisations like <span class="highlight">Amazon, IBM, EPSON</span>, iconic beach clubs like <span class="highlight">Sunday's Beach Club</span>, and Bali's biggest event brands.</p>
+
+      <p>Today, I sell the <strong>exact same headphones I use at every single event</strong>. I wouldn't put my name on anything I don't stake my own reputation on. Every headphone model has been tested in real breathwork sessions, ecstatic dances, beach parties, corporate team events, and Balinese ceremonies.</p>
+
+      <p>That's why I started Buy Silent Disco Headphones — to give other event creators, retreat leaders, and entrepreneurs access to the same professional-grade equipment at a price that makes sense. No middleman. Direct from our supply chain. Backed by someone who actually uses them.</p>
+
+      <p style="font-weight: 600; color: var(--purple-dark);">— Nic "Huzz", Founder</p>
     </div>
   </section>
 
-  <!-- ==================== -->
-  <!-- MEET THE TEAM -->
-  <!-- ==================== -->
-  <section class="section" style="background: var(--gray-light);">
-    <div class="container" style="max-width: 900px;">
-      <h2>Meet the Team</h2>
-
-      <p style="margin-top: 2rem; font-size: 1.125rem;">We're a small, family-run operation — and we like it that way.</p>
-
-      <ul style="margin-left: 2rem; margin-top: 1.5rem; font-size: 1.125rem;">
-        <li style="margin-bottom: 0.5rem;"><strong>Nic "Huzz"</strong> — Founder & Experience Designer</li>
-        <li style="margin-bottom: 0.5rem;"><strong>Spiff</strong> — Emotional Support & Creative Director</li>
-        <li style="margin-bottom: 0.5rem;"><strong>Our three cats</strong> — Office entertainment</li>
-      </ul>
-
-      <p style="margin-top: 1.5rem; font-size: 1.125rem;">Together, we keep the business personal, playful, and hands-on. Every headset model we ship has been tested, used, and refined through real live events.</p>
-
-    </div>
-  </section>
-
-  <!-- ==================== -->
-  <!-- OUR MISSION -->
-  <!-- ==================== -->
-  <section class="section" style="background: white;">
-    <div class="container" style="max-width: 900px;">
-      <h2>Our Mission</h2>
-
-      <p style="margin-top: 2rem; font-size: 1.125rem;">To empower facilitators, retreat leaders, wellness practitioners, and event creators with professional-quality silent audio equipment that is:</p>
-
-      <ul style="margin-left: 2rem; margin-top: 1.5rem; font-size: 1.125rem;">
-        <li style="margin-bottom: 0.5rem;">Reliable</li>
-        <li style="margin-bottom: 0.5rem;">Easy to use</li>
-        <li style="margin-bottom: 0.5rem;">Affordable</li>
-        <li style="margin-bottom: 0.5rem;">Supported by humans who actually run events</li>
-      </ul>
-
-      <p style="margin-top: 1.5rem; font-size: 1.25rem; font-weight: 600; color: var(--purple-dark);">We don't just sell headsets — we use them in our own experiences.</p>
-    </div>
-  </section>
-
-  <!-- ==================== -->
-  <!-- WHAT MAKES US DIFFERENT -->
-  <!-- ==================== -->
-  <section class="section" style="background: linear-gradient(135deg, #5e17eb 0%, #8b5cf6 100%);">
-    <div class="container" style="max-width: 900px;">
-      <h2 style="color: white;">What Makes Us Different</h2>
-
-      <ul style="margin-left: 2rem; margin-top: 2rem; font-size: 1.125rem; color: rgba(255,255,255,0.95);">
-        <li style="margin-bottom: 1rem;">Event-tested gear used in real breathwork, dance, meditation, and retreat environments</li>
-        <li style="margin-bottom: 1rem;">Fast global shipping from our Shenzhen logistics hub</li>
-        <li style="margin-bottom: 1rem;">1-year warranty on all headsets</li>
-        <li style="margin-bottom: 1rem;">Human support from real facilitators who understand your needs</li>
-        <li style="margin-bottom: 1rem;">Small, family-led team that still values personal touch</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ==================== -->
-  <!-- CTA SECTION -->
-  <!-- ==================== -->
-  <section class="section" style="background: white;">
-    <div class="container" style="max-width: 700px; text-align: center;">
-      <h2>Ready to Create Unforgettable Experiences?</h2>
-      <p style="margin-top: 1.5rem; font-size: 1.125rem;">Join hundreds of facilitators who trust our headsets for their events, retreats, and transformational experiences.</p>
-      <div style="margin-top: 2rem;">
-        <a href="/#packages" class="btn btn-secondary" style="margin-right: 1rem;">Shop Packages</a>
-        <a href="support.html#contact" class="btn btn-outline">Contact Us</a>
+  <!-- STATS BAR -->
+  <section style="background: var(--gray-light); padding: var(--spacing-lg) 0;">
+    <div class="container">
+      <div class="about-stats">
+        <div>
+          <div class="about-stat-number">200+</div>
+          <div class="about-stat-label">Events Hosted</div>
+        </div>
+        <div>
+          <div class="about-stat-number">750+</div>
+          <div class="about-stat-label">Headphones Shipped</div>
+        </div>
+        <div>
+          <div class="about-stat-number">6</div>
+          <div class="about-stat-label">Countries Served</div>
+        </div>
+        <div>
+          <div class="about-stat-number">4.9/5</div>
+          <div class="about-stat-label">Customer Rating</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== -->
+  <!-- THE JOURNEY -->
+  <section class="section" style="background: white;">
+    <div class="container about-story">
+      <h2>The Journey</h2>
+
+      <div style="margin-top: 2rem;">
+        <div class="about-milestone">
+          <div class="year">February 2023</div>
+          <p>Took headphones to Bondi Beach on a Saturday morning. Danced with 5 friends. Strangers asked to join.</p>
+        </div>
+        <div class="about-milestone">
+          <div class="year">June 2023</div>
+          <p>Started a solo silent disco outside the Sydney Opera House. A line formed within an hour. People offered to pay.</p>
+        </div>
+        <div class="about-milestone">
+          <div class="year">Aug – Dec 2023</div>
+          <p>Travelled Southeast Asia starting sunset silent discos on beaches, funded entirely by donations from participants.</p>
+        </div>
+        <div class="about-milestone">
+          <div class="year">February 2024</div>
+          <p>Moved to Bali. Started the island's first silent disco rental company with 50 headphones.</p>
+        </div>
+        <div class="about-milestone">
+          <div class="year">2024 – Present</div>
+          <p>Grew to 750+ headphones, 200+ events, and partnerships with Amazon, IBM, Sunday's Beach Club, and Bali's biggest event brands. Launched buysilentdiscoheadphones.com to sell worldwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR MISSION -->
+  <section class="section" style="background: var(--gradient-purple);">
+    <div class="container" style="max-width: 900px;">
+      <h2 style="color: white; text-align: center;">Our Mission</h2>
+      <p style="color: rgba(255,255,255,0.9); text-align: center; font-size: 1.1rem; max-width: 700px; margin: 1rem auto 0;">
+        We believe every event deserves to be unforgettable — and no noise curfew, budget constraint, or technical barrier should stand in the way of that.
+      </p>
+
+      <div class="mission-values">
+        <div class="mission-value">
+          <h3>Accessible</h3>
+          <p>Professional-grade equipment at a fraction of competitor pricing. We sell direct — no middlemen, no markups.</p>
+        </div>
+        <div class="mission-value">
+          <h3>Reliable</h3>
+          <p>Every headphone model is tested at our own events before we sell it. 10+ hour battery. 500m range. Built for real conditions.</p>
+        </div>
+        <div class="mission-value">
+          <h3>Supported</h3>
+          <p>We're not a faceless warehouse. We're event hosts who use this gear every week. WhatsApp us anytime — we respond within hours.</p>
+        </div>
+        <div class="mission-value">
+          <h3>Effortless</h3>
+          <p>Plug in, turn on, go. No technical skills needed. Setup guide included with every order. First-time hosts run successful events every week.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT MAKES US DIFFERENT -->
+  <section class="section" style="background: white;">
+    <div class="container" style="max-width: 900px;">
+      <h2 style="text-align: center;">Why Event Hosts Choose Us</h2>
+
+      <div class="about-differentiators">
+        <div class="about-diff">
+          <div class="about-diff-icon">🎧</div>
+          <h3>We Use Our Own Gear</h3>
+          <p>We host events every week with the same headphones we sell you. If it's not good enough for our events, we don't sell it.</p>
+        </div>
+        <div class="about-diff">
+          <div class="about-diff-icon">💰</div>
+          <h3>Best Price, Guaranteed</h3>
+          <p>$39/headphone vs $46-79 from competitors. Same quality, direct from our supply chain. No middleman markup.</p>
+        </div>
+        <div class="about-diff">
+          <div class="about-diff-icon">🤝</div>
+          <h3>Human Support</h3>
+          <p>WhatsApp us before, during, or after your event. We're real people who understand what you need — because we do it too.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET THE TEAM -->
+  <section class="section" style="background: var(--gray-light);">
+    <div class="container about-story">
+      <h2>Meet the Team</h2>
+
+      <p style="margin-top: 2rem;">We're a small, hands-on operation — and we like it that way. Every order, every support message, every event recommendation comes from people who actually care about your experience.</p>
+
+      <ul style="margin-left: 2rem; margin-top: 1.5rem; font-size: 1.05rem; line-height: 2;">
+        <li><strong>Nic "Huzz"</strong> — Founder, Experience Designer & your main point of contact. 400+ hours certified breathwork facilitator (Samma Karuna, Koh Phangan, Thailand)</li>
+        <li><strong>Spiff</strong> — Emotional Support & Creative Director (the real boss)</li>
+        <li><strong>Three cats</strong> — Office entertainment & quality assurance</li>
+      </ul>
+
+      <p style="margin-top: 1.5rem;">Every headphone model we ship has been tested, used, and refined through real live events. We're not resellers — we're practitioners.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background: white;">
+    <div class="container" style="max-width: 700px; text-align: center;">
+      <h2>Ready to Create Unforgettable Experiences?</h2>
+      <p style="margin-top: 1.5rem; font-size: 1.05rem;">Join 200+ event hosts across 6 countries who trust our headphones for their events, retreats, and experiences.</p>
+      <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="/#packages" class="btn btn-secondary">Shop Packages</a>
+        <a href="support.html#contact" class="btn btn-outline">Contact Us</a>
+      </div>
+      <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--gray-medium);">Every order backed by our 1-year warranty + event guarantee</p>
+    </div>
+  </section>
+
   <!-- FOOTER -->
-  <!-- ==================== -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h3>Buy Silent Disco Headsets</h3>
-          <p>Premium wireless headset equipment from Bali's largest rental business. Bringing the magic of wireless headsets to events worldwide.</p>
-
+          <h3>Buy Silent Disco Headphones</h3>
+          <p>Premium wireless headphone equipment from Bali's largest rental business. Bringing the magic of silent disco to events worldwide.</p>
           <div style="margin-top: 1.5rem;">
             <h3>Subscribe to Our Newsletter</h3>
             <form class="newsletter-form">
@@ -176,7 +273,6 @@
             </form>
           </div>
         </div>
-
         <div class="footer-section">
           <h3>Support</h3>
           <ul class="footer-links">
@@ -187,7 +283,6 @@
             <li><a href="support.html#contact">Contact Us</a></li>
           </ul>
         </div>
-
         <div class="footer-section">
           <h3>Guides</h3>
           <ul class="footer-links">
@@ -200,7 +295,6 @@
             <li><a href="buy-vs-rent-silent-disco-headphones.html">Buy vs Rent Guide</a></li>
           </ul>
         </div>
-
         <div class="footer-section">
           <h3>Use Cases</h3>
           <ul class="footer-links">
@@ -213,22 +307,20 @@
             <li><a href="/silent-disco-headphones-bali/">Bali</a></li>
           </ul>
         </div>
-
         <div class="footer-section">
           <h3>Company</h3>
           <ul class="footer-links">
             <li><a href="about.html">About Us</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
             <li><a href="legal.html#privacy">Privacy Policy</a></li>
             <li><a href="legal.html#terms">Terms of Service</a></li>
-            <li><a href="giveaway-terms.html">Giveaway Terms</a></li>
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
         <div>
           <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">
-            &copy; 2026 Buy Silent Disco Headsets. All rights reserved.
+            &copy; 2026 Buy Silent Disco Headphones. All rights reserved.
           </p>
         </div>
         <div class="payment-icons">
@@ -241,7 +333,6 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
   <script src="js/script.js"></script>
 </body>
 </html>
