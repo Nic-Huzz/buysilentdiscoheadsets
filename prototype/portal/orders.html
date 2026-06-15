@@ -340,7 +340,7 @@
                     <div class="order-tracker" style="cursor: pointer;" onclick="showOrderDetail('${order.id}')">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-md);">
                             <div>
-                                <span class="order-number" style="font-size: 1.25rem;">${order.order_number}</span>
+                                <span class="order-number" style="font-size: 1rem;">${order.order_number}</span>
                                 <span style="color: var(--gray-medium); margin-left: 0.5rem;">
                                     Placed on ${Utils.formatDate(order.created_at)}
                                 </span>
@@ -486,7 +486,7 @@
                     ${order.tracking_number ? `
                         <div class="dashboard-card" style="margin-bottom: var(--spacing-sm);">
                             <h4 style="margin-bottom: 0.5rem; font-size: 0.875rem; color: var(--gray-medium);">Tracking Number</h4>
-                            <p style="margin-bottom: 0; font-family: monospace; font-size: 1.125rem;">${order.tracking_number}</p>
+                            <p style="margin-bottom: 0; font-family: monospace; font-size: 1rem;">${order.tracking_number}</p>
                         </div>
                     ` : ''}
 
