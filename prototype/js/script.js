@@ -493,7 +493,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const packageForm = document.getElementById('package-form');
 
   // Pricing (USD)
-  const HEADSET_PRICE = 49;
+  const HEADSET_PRICE = 39;
   const TRANSMITTER_PRICE = 169;
 
   // Function to update price summary

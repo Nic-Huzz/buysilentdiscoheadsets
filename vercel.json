@@ -5,6 +5,14 @@
   "redirects": [
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/caf/", "destination": "/", "permanent": true },
-    { "source": "/caf", "destination": "/", "permanent": true }
+    { "source": "/caf", "destination": "/", "permanent": true },
+    { "source": "/shop", "destination": "/#packages", "permanent": false },
+    { "source": "/starter", "destination": "/#packages", "permanent": false },
+    { "source": "/pro", "destination": "/#packages", "permanent": false },
+    { "source": "/scale", "destination": "/#packages", "permanent": false },
+    { "source": "/reviews", "destination": "/reviews/", "permanent": true },
+    { "source": "/about", "destination": "/about/", "permanent": true },
+    { "source": "/run-events", "destination": "/run-events/", "permanent": true },
+    { "source": "/start", "destination": "/run-events/", "permanent": false }
   ]
 }

@@ -8,12 +8,14 @@
 <item>
   <g:id>headphone-f8-hifi</g:id>
   <g:title>Silent Disco Headphone - Hi-Fi Sound, Noise-Cancelling, 3-Channel LED</g:title>
-  <g:description>Premium wireless silent disco headphone with Hi-Fi sound quality, active noise cancellation, 3-channel LED system (red/green/blue), 10+ hours battery life, 500m range. Comfortable over-ear design. Perfect for parties, yoga, breathwork, weddings, and corporate events. Ships worldwide.</g:description>
+  <g:description>Premium wireless silent disco headphone with Hi-Fi sound quality, active noise cancellation, 3-channel LED system (red/green/blue), 10+ hours battery life, 500m range. Comfortable over-ear design with 40mm drivers (20Hz-20kHz). Perfect for parties, yoga, breathwork, weddings, and corporate events. 1-year warranty. Ships worldwide from Bali.</g:description>
   <g:link>https://buysilentdiscoheadphones.com/silent-disco-headphones.html</g:link>
-  <g:image_link>https://buysilentdiscoheadphones.com/images/equipment-headset.jpg</g:image_link>
+  <g:image_link>https://buysilentdiscoheadphones.com/images/equipment-headset.webp</g:image_link>
+  <g:additional_image_link>https://buysilentdiscoheadphones.com/images/hero-headphones.webp</g:additional_image_link>
   <g:availability>in_stock</g:availability>
   <g:price>39.00 USD</g:price>
-  <g:brand>Silent Disco Rental Bali</g:brand>
+  <g:brand>Buy Silent Disco Headphones</g:brand>
+  <g:mpn>SDH-001</g:mpn>
   <g:condition>new</g:condition>
   <g:google_product_category>Electronics > Audio > Headphones</g:google_product_category>
   <g:product_type>Silent Disco Headphones</g:product_type>
@@ -22,82 +24,132 @@
     <g:service>Standard</g:service>
     <g:price>0 USD</g:price>
   </g:shipping>
+  <g:shipping>
+    <g:country>AU</g:country>
+    <g:service>International Standard</g:service>
+    <g:price>15.00 USD</g:price>
+  </g:shipping>
+  <g:shipping>
+    <g:country>GB</g:country>
+    <g:service>International Standard</g:service>
+    <g:price>15.00 USD</g:price>
+  </g:shipping>
   <g:custom_label_0>headphones</g:custom_label_0>
+  <g:custom_label_1>individual</g:custom_label_1>
 </item>
 
 <item>
   <g:id>transmitter-3ch</g:id>
   <g:title>Silent Disco Transmitter - 3-Channel, 500m Range, LCD Display</g:title>
-  <g:description>Professional 3-channel silent disco transmitter with 500m range. Multiple input options (AUX, RCA, XLR). Supports 500+ headphones simultaneously. LCD display with controls. Portable and rechargeable. Perfect for events, parties, fitness classes, and guided experiences.</g:description>
+  <g:description>Professional 3-channel silent disco transmitter with 500m range. Multiple input options (AUX, RCA, XLR). Supports 500+ headphones simultaneously. LCD display with controls. Portable and rechargeable. 1-year warranty. Ships worldwide from Bali.</g:description>
   <g:link>https://buysilentdiscoheadphones.com/silent-disco-headphones.html</g:link>
-  <g:image_link>https://buysilentdiscoheadphones.com/images/equipment-transmitter.jpg</g:image_link>
+  <g:image_link>https://buysilentdiscoheadphones.com/images/equipment-transmitter.webp</g:image_link>
   <g:availability>in_stock</g:availability>
   <g:price>169.00 USD</g:price>
-  <g:brand>Silent Disco Rental Bali</g:brand>
+  <g:brand>Buy Silent Disco Headphones</g:brand>
+  <g:mpn>SDT-001</g:mpn>
   <g:condition>new</g:condition>
-  <g:google_product_category>Electronics > Audio > Audio Transmitters</g:google_product_category>
+  <g:google_product_category>Electronics > Audio > Audio Accessories > Audio Transmitters</g:google_product_category>
   <g:product_type>Silent Disco Transmitter</g:product_type>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:service>Standard</g:service>
+    <g:price>0 USD</g:price>
+  </g:shipping>
   <g:custom_label_0>transmitters</g:custom_label_0>
+  <g:custom_label_1>individual</g:custom_label_1>
 </item>
 
 <item>
   <g:id>bundle-10hp-1tx</g:id>
   <g:title>Silent Disco Starter Kit - 10 Headphones + 1 Transmitter</g:title>
-  <g:description>Complete silent disco starter package: 10 premium Hi-Fi noise-cancelling headphones with 3-channel LED + 1 professional transmitter with 500m range. Everything you need to start hosting silent disco events. Perfect for small events, yoga studios, and guided experiences. Ships worldwide.</g:description>
-  <g:link>https://buysilentdiscoheadphones.com/#packages</g:link>
-  <g:image_link>https://buysilentdiscoheadphones.com/images/equipment-headset.jpg</g:image_link>
+  <g:description>Complete silent disco starter package: 10 premium Hi-Fi noise-cancelling headphones with 3-channel LED + 1 professional transmitter with 500m range. Everything you need to host silent disco events. Perfect for yoga studios, small events, and guided experiences. 1-year warranty. Ships worldwide.</g:description>
+  <g:link>https://buysilentdiscoheadphones.com/silent-disco-headphones.html#packages</g:link>
+  <g:image_link>https://buysilentdiscoheadphones.com/images/equipment-headset.webp</g:image_link>
+  <g:additional_image_link>https://buysilentdiscoheadphones.com/images/equipment-transmitter.webp</g:additional_image_link>
   <g:availability>in_stock</g:availability>
   <g:price>559.00 USD</g:price>
-  <g:brand>Silent Disco Rental Bali</g:brand>
+  <g:brand>Buy Silent Disco Headphones</g:brand>
+  <g:mpn>SDB-010</g:mpn>
   <g:condition>new</g:condition>
   <g:google_product_category>Electronics > Audio > Headphones</g:google_product_category>
   <g:product_type>Silent Disco Bundle</g:product_type>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:service>Standard</g:service>
+    <g:price>0 USD</g:price>
+  </g:shipping>
   <g:custom_label_0>bundles</g:custom_label_0>
+  <g:custom_label_1>starter</g:custom_label_1>
 </item>
 
 <item>
   <g:id>bundle-20hp-1tx</g:id>
   <g:title>Silent Disco Package - 20 Headphones + 1 Transmitter</g:title>
-  <g:description>Silent disco event package: 20 premium Hi-Fi noise-cancelling headphones with 3-channel LED + 1 professional transmitter. Ideal for yoga studios, breathwork sessions, small parties, and corporate team building. 500m range, 10+ hour battery. Ships worldwide.</g:description>
-  <g:link>https://buysilentdiscoheadphones.com/#packages</g:link>
-  <g:image_link>https://buysilentdiscoheadphones.com/images/equipment-headset.jpg</g:image_link>
+  <g:description>Most popular silent disco package: 20 premium Hi-Fi noise-cancelling headphones with 3-channel LED + 1 professional transmitter. Ideal for yoga studios, breathwork sessions, small parties, and corporate team building. 500m range, 10+ hour battery. 1-year warranty. Ships worldwide.</g:description>
+  <g:link>https://buysilentdiscoheadphones.com/silent-disco-headphones.html#packages</g:link>
+  <g:image_link>https://buysilentdiscoheadphones.com/images/equipment-headset.webp</g:image_link>
+  <g:additional_image_link>https://buysilentdiscoheadphones.com/images/equipment-transmitter.webp</g:additional_image_link>
   <g:availability>in_stock</g:availability>
   <g:price>949.00 USD</g:price>
-  <g:brand>Silent Disco Rental Bali</g:brand>
+  <g:brand>Buy Silent Disco Headphones</g:brand>
+  <g:mpn>SDB-020</g:mpn>
   <g:condition>new</g:condition>
   <g:google_product_category>Electronics > Audio > Headphones</g:google_product_category>
   <g:product_type>Silent Disco Bundle</g:product_type>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:service>Standard</g:service>
+    <g:price>0 USD</g:price>
+  </g:shipping>
   <g:custom_label_0>bundles</g:custom_label_0>
+  <g:custom_label_1>popular</g:custom_label_1>
 </item>
 
 <item>
   <g:id>bundle-50hp-3tx</g:id>
   <g:title>Silent Disco Event Kit - 50 Headphones + 3 Transmitters</g:title>
-  <g:description>Professional silent disco event kit: 50 premium Hi-Fi noise-cancelling headphones with 3-channel LED + 3 transmitters (one per channel). Perfect for weddings, festivals, school events, fitness classes, and corporate events. Full 3-channel experience. 500m range. Ships worldwide.</g:description>
-  <g:link>https://buysilentdiscoheadphones.com/#packages</g:link>
-  <g:image_link>https://buysilentdiscoheadphones.com/images/equipment-headset.jpg</g:image_link>
+  <g:description>Professional silent disco event kit: 50 premium Hi-Fi noise-cancelling headphones with 3-channel LED + 3 transmitters (one per channel). Full 3-channel experience for weddings, festivals, school events, fitness classes, and corporate events. 500m range. 1-year warranty. Ships worldwide.</g:description>
+  <g:link>https://buysilentdiscoheadphones.com/silent-disco-headphones.html#packages</g:link>
+  <g:image_link>https://buysilentdiscoheadphones.com/images/equipment-headset.webp</g:image_link>
+  <g:additional_image_link>https://buysilentdiscoheadphones.com/images/equipment-transmitter.webp</g:additional_image_link>
   <g:availability>in_stock</g:availability>
   <g:price>2457.00 USD</g:price>
-  <g:brand>Silent Disco Rental Bali</g:brand>
+  <g:brand>Buy Silent Disco Headphones</g:brand>
+  <g:mpn>SDB-050</g:mpn>
   <g:condition>new</g:condition>
   <g:google_product_category>Electronics > Audio > Headphones</g:google_product_category>
   <g:product_type>Silent Disco Bundle</g:product_type>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:service>Standard</g:service>
+    <g:price>0 USD</g:price>
+  </g:shipping>
   <g:custom_label_0>bundles</g:custom_label_0>
+  <g:custom_label_1>event</g:custom_label_1>
 </item>
 
 <item>
   <g:id>bundle-100hp-3tx</g:id>
   <g:title>Silent Disco Pro Kit - 100 Headphones + 3 Transmitters</g:title>
-  <g:description>Large-scale silent disco package: 100 premium Hi-Fi noise-cancelling headphones with 3-channel LED + 3 professional transmitters. Built for festivals, large weddings, school fundraisers, corporate events, and fitness studios. ROI calculator shows break-even in just 4 events. Ships worldwide.</g:description>
-  <g:link>https://buysilentdiscoheadphones.com/#packages</g:link>
-  <g:image_link>https://buysilentdiscoheadphones.com/images/equipment-headset.jpg</g:image_link>
+  <g:description>Large-scale silent disco package: 100 premium Hi-Fi noise-cancelling headphones with 3-channel LED + 3 professional transmitters. Built for festivals, large weddings, school fundraisers, corporate events, and fitness studios. Break even in just 4 rental events. 1-year warranty. Ships worldwide.</g:description>
+  <g:link>https://buysilentdiscoheadphones.com/silent-disco-headphones.html#packages</g:link>
+  <g:image_link>https://buysilentdiscoheadphones.com/images/equipment-headset.webp</g:image_link>
+  <g:additional_image_link>https://buysilentdiscoheadphones.com/images/equipment-transmitter.webp</g:additional_image_link>
   <g:availability>in_stock</g:availability>
   <g:price>4407.00 USD</g:price>
-  <g:brand>Silent Disco Rental Bali</g:brand>
+  <g:brand>Buy Silent Disco Headphones</g:brand>
+  <g:mpn>SDB-100</g:mpn>
   <g:condition>new</g:condition>
   <g:google_product_category>Electronics > Audio > Headphones</g:google_product_category>
   <g:product_type>Silent Disco Bundle</g:product_type>
+  <g:shipping>
+    <g:country>US</g:country>
+    <g:service>Standard</g:service>
+    <g:price>0 USD</g:price>
+  </g:shipping>
   <g:custom_label_0>bundles</g:custom_label_0>
+  <g:custom_label_1>pro</g:custom_label_1>
 </item>
 
 </channel>
