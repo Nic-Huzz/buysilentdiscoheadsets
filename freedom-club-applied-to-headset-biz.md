@@ -819,3 +819,53 @@ Every interaction should move them one step up the ladder.
 9. **Film a 15-second testimonial** at your next 5 events. Build a library of 25+ video testimonials.
 
 10. **Reply to every social media comment and DM** within 1 hour with an engagement question. This is free marketing that compounds over time.
+
+---
+
+## Implementation Status & Confidence Assessment (added 2026-06-19)
+
+### What's been done:
+- [x] Compare-at pricing on site (~~$69~~ $39) ✅
+- [x] Tiered packages (Starter/Professional/Scale) ✅
+- [x] Social proof — client logos, testimonials ✅
+- [x] Feature + Benefit copywriting audit — 16 lines fixed across hero, equipment, why cards, packages ✅
+- [x] Email pop-up coded on site (pending Supabase table for storage) ✅
+- [x] 4-email welcome flow drafted (saved to email-welcome-flow.md) ✅
+- [x] 1-year warranty (not 30-day money-back — returns from China impractical) ✅
+
+### Not yet done:
+- [ ] Create 2 video ads from event footage
+- [ ] Launch Facebook/Instagram ads ($50/day, 5 ad sets)
+- [ ] Set up Meta Pixel on custom HTML site
+- [ ] Set up email marketing platform (Klaviyo/Mailchimp) and connect welcome flow
+- [ ] Create Silent Disco Event Planning Guide (lead magnet PDF)
+- [ ] Film 15-second testimonials at next 5 events
+- [ ] Set up branded email (hi@buysilentdiscoheadphones.com)
+- [ ] Create URL redirects (/shop, /starter, /pro)
+- [ ] Set up WhatsApp Business auto-replies
+- [ ] Create saved reply templates for common questions
+- [ ] Bundle upsell flow (push buyers up the value ladder)
+- [ ] Reply strategy for social media comments/DMs
+
+### Ads Confidence Assessment
+
+**High confidence (directly from Freedom Club Days 24-28):**
+- Ad structure: hook → benefits → social proof → CTA
+- 2 video creatives, square + vertical formats, subtitles always
+- $50/day across 5 interest-based ad sets
+- Use same post ID to stack engagement across ad sets
+- Optimize every 2 days, kill after spending breakeven CPA with zero sales
+
+**Medium confidence (adapted from dropshipping context):**
+- The 5 specific interests (event planning, breathwork, weddings, DJ equipment, broad) — reasonable but untested for this niche
+- $50/day budget — course recommends for dropshipping. Higher-ticket packages may need $75-100/day since sales cycle is longer
+- Adjusted benchmarks (CPM <$15, CTR >1.5%) — estimates, not proven for this niche
+
+**Lower confidence (my additions, not from notes):**
+- Excluding Indonesia from sales ads — my logic (rental market), but some Indonesian buyers might want to buy too
+- COGS estimates in breakeven table — need real numbers plugged in
+
+**What the notes DON'T cover that matters:**
+- Sale happens on WhatsApp, not checkout — need to optimize for "Lead" events, not "Purchase"
+- Retargeting website visitors — critical for $1,000-4,000 packages where nobody buys on first visit
+- Meta Pixel on custom HTML site — course assumes Shopify auto-installs it, you'd need manual setup + custom events for WhatsApp clicks and form submissions
