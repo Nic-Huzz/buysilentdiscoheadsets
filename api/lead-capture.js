@@ -1,19 +1,17 @@
-import { createClient } from '@supabase/supabase-js'
+const { createClient } = require('@supabase/supabase-js')
 
 const supabase = createClient(
   'https://qlwfcfypnoptsocdpxuv.supabase.co',
   process.env.SUPABASE_SERVICE_ROLE_KEY
 )
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'Content-Type',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-}
+module.exports = async function handler(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS')
 
-export default async function handler(req, res) {
   if (req.method === 'OPTIONS') {
-    return res.status(200).json({})
+    return res.status(200).end()
   }
 
   if (req.method !== 'POST') {
@@ -33,7 +31,6 @@ export default async function handler(req, res) {
 
     const cleanEmail = email.toLowerCase().trim()
 
-    // Check if contact already exists
     const { data: existing } = await supabase
       .from('external_contacts')
       .select('id, tags')
@@ -41,20 +38,16 @@ export default async function handler(req, res) {
       .single()
 
     if (existing) {
-      // Append tag if not already present
       const currentTags = existing.tags || []
       if (!currentTags.includes(tag)) {
         const { error } = await supabase
           .from('external_contacts')
           .update({ tags: [...currentTags, tag] })
           .eq('id', existing.id)
-
         if (error) throw error
       }
-
       return res.status(200).json({ success: true, action: 'updated', id: existing.id })
     } else {
-      // Create new contact
       const { data, error } = await supabase
         .from('external_contacts')
         .insert({
@@ -66,9 +59,7 @@ export default async function handler(req, res) {
         })
         .select('id')
         .single()
-
       if (error) throw error
-
       return res.status(200).json({ success: true, action: 'created', id: data.id })
     }
   } catch (err) {
