@@ -858,6 +858,25 @@
             <p class="builder-help">We offer facilitator training programs</p>
           </div>
 
+          <!-- Add-Ons -->
+          <div class="builder-field">
+            <label>Optional Add-Ons</label>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.25rem;">
+              <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 400; font-size: 0.95rem; cursor: pointer;">
+                <input type="checkbox" name="addon_facilitator_training" value="yes"> Facilitator Training (breathwork / dance) - Message for pricing
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 400; font-size: 0.95rem; cursor: pointer;">
+                <input type="checkbox" name="addon_marketing_footage" value="yes"> Marketing Footage Pack - Message for pricing
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 400; font-size: 0.95rem; cursor: pointer;">
+                <input type="checkbox" name="addon_marketing_posters" value="yes"> Marketing Poster Templates - Message for pricing
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 400; font-size: 0.95rem; cursor: pointer;">
+                <input type="checkbox" name="addon_website" value="yes"> Website Creation for your business - from $900
+              </label>
+            </div>
+          </div>
+
           <!-- Price Summary -->
           <div class="builder-summary">
             <div class="summary-row">
@@ -960,6 +979,47 @@
           rn.addEventListener('input', calc);
         })();
       </script>
+
+      <!-- Add-On Services -->
+      <div style="margin-top: var(--spacing-xl);">
+        <h3 class="text-center">Want More Than Just Headphones?</h3>
+        <p class="text-center" style="max-width: 600px; margin: 0 auto var(--spacing-lg); color: var(--gray-dark); font-size: 0.95rem;">We help you build the whole experience - not just supply the equipment.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-md);">
+          <div style="background: var(--white); border-radius: var(--border-radius-lg); overflow: hidden; text-align: center; box-shadow: var(--shadow-sm);">
+            <img src="images/founder/founder-icon-2.webp" alt="Facilitator training" style="width: 100%; height: 160px; object-fit: cover;" loading="lazy">
+            <div style="padding: var(--spacing-sm);">
+              <h3 style="font-size: 1rem; margin-bottom: 0.25rem;">Facilitator Training</h3>
+              <p style="font-size: 0.85rem; color: var(--gray-medium); margin-bottom: 0.5rem;">Learn to lead breathwork, dance, and guided experiences with headsets</p>
+              <p style="font-weight: 700; color: var(--purple-dark); margin: 0; font-size: 0.9rem;">Message Huzz</p>
+            </div>
+          </div>
+          <div style="background: var(--white); border-radius: var(--border-radius-lg); overflow: hidden; text-align: center; box-shadow: var(--shadow-sm);">
+            <img src="images/why-section/why-dance.webp" alt="Marketing footage" style="width: 100%; height: 160px; object-fit: cover; object-position: center 20%;" loading="lazy">
+            <div style="padding: var(--spacing-sm);">
+              <h3 style="font-size: 1rem; margin-bottom: 0.25rem;">Marketing Footage</h3>
+              <p style="font-size: 0.85rem; color: var(--gray-medium); margin-bottom: 0.5rem;">Professional event photos and video content for your brand</p>
+              <p style="font-weight: 700; color: var(--purple-dark); margin: 0; font-size: 0.9rem;">Message Huzz</p>
+            </div>
+          </div>
+          <div style="background: var(--white); border-radius: var(--border-radius-lg); overflow: hidden; text-align: center; box-shadow: var(--shadow-sm);">
+            <img src="images/founder/founder-icon-1.webp" alt="Marketing posters" style="width: 100%; height: 160px; object-fit: cover; object-position: center 40%;" loading="lazy">
+            <div style="padding: var(--spacing-sm);">
+              <h3 style="font-size: 1rem; margin-bottom: 0.25rem;">Marketing Posters</h3>
+              <p style="font-size: 0.85rem; color: var(--gray-medium); margin-bottom: 0.5rem;">Ready-to-use event poster templates customised for your brand</p>
+              <p style="font-weight: 700; color: var(--purple-dark); margin: 0; font-size: 0.9rem;">Message Huzz</p>
+            </div>
+          </div>
+          <div style="background: var(--white); border-radius: var(--border-radius-lg); overflow: hidden; text-align: center; box-shadow: var(--shadow-sm);">
+            <img src="images/equipment-headset.webp" alt="Website creation" style="width: 100%; height: 160px; object-fit: cover;" loading="lazy">
+            <div style="padding: var(--spacing-sm);">
+              <h3 style="font-size: 1rem; margin-bottom: 0.25rem;">Website Creation</h3>
+              <p style="font-size: 0.85rem; color: var(--gray-medium); margin-bottom: 0.5rem;">Get a professional website built for your rental or events business</p>
+              <p style="font-weight: 700; color: var(--purple-dark); margin: 0; font-size: 0.9rem;">Starting from $900</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Package-Specific FAQs -->
       <div style="max-width: 800px; margin: var(--spacing-xl) auto 0;">
