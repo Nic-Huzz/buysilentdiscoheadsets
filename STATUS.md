@@ -1,6 +1,6 @@
 # Buy Silent Disco Headphones — Action Items & Status
 
-_Last updated: 2026-06-19_
+_Last updated: 2026-06-21_
 _Source: Freedom Club 30-Day Challenge + ongoing site improvements_
 
 ---
@@ -25,9 +25,9 @@ _Source: Freedom Club 30-Day Challenge + ongoing site improvements_
 | 14 | Image borders | ✅ Done | Subtle purple border on all product images |
 | 15 | Hero fills viewport | ✅ Done | min-height: calc(100vh - 70px) |
 | 16 | Warranty copy simplified | ✅ Done | Removed "event guarantee" everywhere |
-| 17 | Add founder photo to About page | ❌ Todo | "People buy from people" — needs a photo of Nic at an event |
+| 17 | Add founder photo to About page | ✅ Done | Circular avatar with name/title, compressed to 87KB |
 | 18 | Add event photos to About page | ❌ Todo | UGC collage — 4 customer/event photos in a grid |
-| 19 | Compress all images via tinypng.com | ❌ Todo | Speed = conversion |
+| 19 | Compress all images via tinypng.com | ⚠️ Partial | Founder photo compressed. 5 other images >1MB still need compression |
 | 20 | URL redirects (/shop, /starter, /pro) | ❌ Todo | For clean ad links |
 
 ---
@@ -41,7 +41,7 @@ _Source: Freedom Club 30-Day Challenge + ongoing site improvements_
 | 23 | Connect pop-up to Supabase (not Formspree) | ❌ Todo | Waiting on table creation |
 | 24 | Set up Klaviyo or Mailchimp | ❌ Todo | For automated email flows |
 | 25 | 4-email welcome flow | ✅ Drafted | Saved in email-welcome-flow.md. Needs platform setup |
-| 26 | Create lead magnet PDF (Event Planning Guide) | ❌ Todo | 5-10 pages: headphone sizing, setup, playlists, ROI |
+| 26 | Create lead magnet PDF (Event Planning Guide) | ✅ Drafted | 8-page guide in lead-magnet-event-guide.md. Needs Canva design |
 | 27 | Set up branded email (hi@buysilentdiscoheadphones.com) | ❌ Todo | Via Google Workspace |
 | 28 | WhatsApp Business auto-replies | ❌ Todo | After-hours message with FAQ link |
 | 29 | Saved reply templates | ❌ Todo | Pricing, shipping, specs, warranty |
