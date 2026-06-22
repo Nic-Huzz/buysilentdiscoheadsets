@@ -471,6 +471,7 @@
                 <li>No sound pollution  - practice anywhere, anytime</li>
                 <li>Noise-cancelling keeps participants deeply focused and present</li>
               </ul>
+              <p style="margin-top: var(--spacing-sm);"><a href="#" onclick="showPlaylistGate('breathwork');return false;" style="color: var(--purple-dark); font-weight: 600; font-size: 0.9rem;">Listen to our Breathwork Playlist on Spotify →</a></p>
             </div>
           </div>
         </div>
@@ -504,6 +505,7 @@
                 <li>LED colour-sync creates magical visual moments guests photograph and share</li>
                 <li>Perfect for beaches, rooftops, and unique venues  - no speakers, no permits, no noise complaints</li>
               </ul>
+              <p style="margin-top: var(--spacing-sm);"><a href="#" onclick="showPlaylistGate('dance');return false;" style="color: var(--purple-dark); font-weight: 600; font-size: 0.9rem;">Listen to our Dance Playlist on Spotify →</a></p>
             </div>
           </div>
         </div>
@@ -1658,11 +1660,11 @@
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       var email = form.querySelector('input[type="email"]').value;
-      // Submit to Formspree
-      fetch(form.action, {
+      // Submit to lead capture API
+      fetch('/api/lead-capture', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ email: email, source: 'exit-intent-popup', _subject: 'New email subscriber (10% off popup)' })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, tag: 'popup-discount' })
       }).then(function() {
         content.style.display = 'none';
         success.style.display = 'block';
@@ -1674,6 +1676,36 @@
       });
     });
   })();
+  </script>
+
+  <!-- Playlist Gate Helper -->
+  <script>
+  function showPlaylistGate(playlistType) {
+    var tag = playlistType === 'breathwork' ? 'breathwork-playlist' : 'dance-playlist';
+    var spotifyUrl = playlistType === 'breathwork'
+      ? 'https://open.spotify.com/playlist/3QerAp22uDXUJ1n8Bq0NwJ?si=9e07f61dab6444d9'
+      : 'https://open.spotify.com/playlist/6Ftw0T93Qjo48TJcFY9aC5?si=d05f6427289d4b75';
+
+    // Check if already unlocked
+    if (localStorage.getItem('playlist_' + playlistType)) {
+      window.open(spotifyUrl, '_blank');
+      return;
+    }
+
+    var email = prompt('Enter your email to access our ' + (playlistType === 'breathwork' ? 'Breathwork' : 'Dance') + ' playlist:');
+    if (!email || !email.includes('@')) return;
+
+    fetch('/api/lead-capture', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, tag: tag })
+    }).then(function() {
+      localStorage.setItem('playlist_' + playlistType, '1');
+      window.open(spotifyUrl, '_blank');
+    }).catch(function() {
+      window.open(spotifyUrl, '_blank');
+    });
+  }
   </script>
 </body>
 </html>

@@ -1,6 +1,11 @@
 {
   "buildCommand": "",
   "outputDirectory": "prototype",
+  "functions": {
+    "api/*.js": {
+      "runtime": "@vercel/node@3"
+    }
+  },
   "trailingSlash": true,
   "redirects": [
     { "source": "/index.html", "destination": "/", "permanent": true },

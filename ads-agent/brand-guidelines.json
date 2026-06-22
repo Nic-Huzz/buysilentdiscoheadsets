@@ -1,0 +1,50 @@
+{
+  "brand_name": "Buy Silent Disco Headphones",
+  "tagline": "From $35 USD — Ships Worldwide",
+  "colors": {
+    "primary_dark": "#5e17eb",
+    "primary_light": "#8b5cf6",
+    "accent": "#ffdd27",
+    "gradient": "linear-gradient(135deg, #5e17eb 0%, #8b5cf6 100%)",
+    "background_dark": "#0f0f23",
+    "background_light": "#ffffff",
+    "text_primary": "#ffffff",
+    "text_dark": "#1a1a2e"
+  },
+  "typography": {
+    "font_family": "Poppins",
+    "heading_weights": [700, 800],
+    "body_weights": [400, 500],
+    "cta_weight": 600
+  },
+  "logo": {
+    "description": "Clean modern wordmark. Use white on dark backgrounds, dark purple on light backgrounds.",
+    "url": "https://buysilentdiscoheadphones.com/images/logo.png"
+  },
+  "visual_style": {
+    "mood": "Premium but accessible. High-energy for dance/party ads. Calm and immersive for wellness/breathwork ads.",
+    "photography_style": "Real people wearing headphones in beautiful settings — beaches, retreats, festivals, yoga studios, outdoor ceremonies",
+    "led_colors": "Headphones have RGB LEDs (Red, Green, Blue) that glow in the dark — this is a signature visual element",
+    "key_imagery": ["Groups wearing glowing headphones outdoors at sunset", "Breathwork circles with headphones", "Silent disco dance parties", "Yoga sessions with headphones", "Beach/tropical settings (Bali)"]
+  },
+  "voice": {
+    "tone": "Direct, confident, slightly irreverent. Not corporate. Speaks like a founder who actually runs events, not a marketing department.",
+    "do": ["Use specific numbers and proof points", "Lead with the experience, not the product specs", "Reference real events and real clients", "Speak to the transformation (not just the equipment)"],
+    "dont": ["Sound like generic ecommerce copy", "Use excessive exclamation marks", "Be overly formal or stiff", "Oversell — let the product and proof speak"]
+  },
+  "social_proof": {
+    "clients": ["Amazon", "IBM", "Google", "EPSON", "Sundays Beach Club Bali"],
+    "stats": {
+      "headphones_in_operation": "600+",
+      "events_hosted": "200+",
+      "countries": "11",
+      "failure_rate": "0%"
+    }
+  },
+  "ad_specific": {
+    "cta_options": ["Get a Quote", "Shop Now", "Build Your Package", "See Pricing"],
+    "price_anchors": ["From $35 USD per headphone", "$1,919 for a 50-headphone setup", "Break even in 3 events"],
+    "urgency_hooks": ["Ships worldwide from Bali", "1-year warranty included", "Trusted by 200+ events"],
+    "use_case_angles": ["Silent disco parties", "Breathwork & meditation", "Yoga retreats", "Weddings", "Corporate events", "Fitness classes", "Guided tours", "School events"]
+  }
+}
