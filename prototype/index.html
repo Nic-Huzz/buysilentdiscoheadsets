@@ -534,14 +534,7 @@
                 <li>Noise-cancelling creates a personal sound cocoon  - journeys feel 10x more immersive</li>
               </ul>
 
-              <h4 style="margin-top: var(--spacing-md); color: var(--purple-dark);">The 5 Principles We Build Every Session Off:</h4>
-              <ol style="list-style: none; margin: 0; padding: 0; margin-top: var(--spacing-xs);">
-                <li style="padding: 0.4rem 0; font-size: 0.95rem; color: var(--gray-dark); display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: var(--purple-dark); font-weight: 700; min-width: 20px;">1.</span> <strong>Safety is key</strong> - participants can only go as deep or feel as high as they feel safe</li>
-                <li style="padding: 0.4rem 0; font-size: 0.95rem; color: var(--gray-dark); display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: var(--purple-dark); font-weight: 700; min-width: 20px;">2.</span> <strong>They leave feeling great</strong> - every session ends with movement</li>
-                <li style="padding: 0.4rem 0; font-size: 0.95rem; color: var(--gray-dark); display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: var(--purple-dark); font-weight: 700; min-width: 20px;">3.</span> <strong>Clear on the peaks</strong> - design the peak highs and peak lows intentionally</li>
-                <li style="padding: 0.4rem 0; font-size: 0.95rem; color: var(--gray-dark); display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: var(--purple-dark); font-weight: 700; min-width: 20px;">4.</span> <strong>Never have attendees sitting still passively consuming for more than 5 minutes</strong> - keep the energy and session fresh and moving</li>
-                <li style="padding: 0.4rem 0; font-size: 0.95rem; color: var(--gray-dark); display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: var(--purple-dark); font-weight: 700; min-width: 20px;">5.</span> <strong>Connect them to the mission</strong> - they need to feel why they're here</li>
-              </ol>
+              <p style="margin-top: var(--spacing-sm);"><a href="#" onclick="showPlaylistGate('principles');return false;" style="color: var(--purple-dark); font-weight: 600; font-size: 0.9rem;">Free: The 5 principles we build every session off →</a></p>
             </div>
           </div>
         </div>
@@ -1690,18 +1683,28 @@
   <!-- Playlist Gate Helper -->
   <script>
   function showPlaylistGate(playlistType) {
-    var tag = playlistType === 'breathwork' ? 'breathwork-playlist' : 'dance-playlist';
-    var spotifyUrl = playlistType === 'breathwork'
-      ? 'https://open.spotify.com/playlist/3QerAp22uDXUJ1n8Bq0NwJ?si=9e07f61dab6444d9'
-      : 'https://open.spotify.com/playlist/6Ftw0T93Qjo48TJcFY9aC5?si=d05f6427289d4b75';
+    var tags = { breathwork: 'breathwork-playlist', dance: 'dance-playlist', principles: '5-principles' };
+    var tag = tags[playlistType] || playlistType;
+
+    var urls = {
+      breathwork: 'https://open.spotify.com/playlist/3QerAp22uDXUJ1n8Bq0NwJ?si=9e07f61dab6444d9',
+      dance: 'https://open.spotify.com/playlist/6Ftw0T93Qjo48TJcFY9aC5?si=d05f6427289d4b75',
+      principles: null
+    };
+
+    var labels = { breathwork: 'Breathwork playlist', dance: 'Dance playlist', principles: '5 Principles guide' };
 
     // Check if already unlocked
     if (localStorage.getItem('playlist_' + playlistType)) {
-      window.open(spotifyUrl, '_blank');
+      if (urls[playlistType]) {
+        window.open(urls[playlistType], '_blank');
+      } else {
+        alert('Check your email for the 5 Principles!');
+      }
       return;
     }
 
-    var email = prompt('Enter your email to access our ' + (playlistType === 'breathwork' ? 'Breathwork' : 'Dance') + ' playlist:');
+    var email = prompt('Enter your email to access our ' + labels[playlistType] + ':');
     if (!email || !email.includes('@')) return;
 
     fetch('/api/lead-capture', {
@@ -1710,9 +1713,13 @@
       body: JSON.stringify({ email: email, tag: tag })
     }).then(function() {
       localStorage.setItem('playlist_' + playlistType, '1');
-      window.open(spotifyUrl, '_blank');
+      if (urls[playlistType]) {
+        window.open(urls[playlistType], '_blank');
+      } else {
+        alert('Thanks! Check your email for the 5 Principles.');
+      }
     }).catch(function() {
-      window.open(spotifyUrl, '_blank');
+      if (urls[playlistType]) window.open(urls[playlistType], '_blank');
     });
   }
   </script>
