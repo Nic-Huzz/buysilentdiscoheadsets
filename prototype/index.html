@@ -1663,7 +1663,7 @@
       e.preventDefault();
       var email = form.querySelector('input[type="email"]').value;
       // Submit to lead capture API
-      fetch('/api/lead-capture', {
+      fetch('https://qlwfcfypnoptsocdpxuv.supabase.co/functions/v1/headset-lead-capture', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: email, tag: 'popup-discount' })
@@ -1707,7 +1707,7 @@
     var email = prompt('Enter your email to access our ' + labels[playlistType] + ':');
     if (!email || !email.includes('@')) return;
 
-    fetch('/api/lead-capture', {
+    fetch('https://qlwfcfypnoptsocdpxuv.supabase.co/functions/v1/headset-lead-capture', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email, tag: tag })
