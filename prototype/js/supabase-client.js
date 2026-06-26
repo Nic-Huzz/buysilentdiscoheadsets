@@ -13,8 +13,8 @@ if (window._supabaseClientInitialized) {
 // CONFIGURATION
 // ==============================================
 
-const SUPABASE_URL = 'https://gjttekhkgjfuiykwkuek.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdqdHRla2hrZ2pmdWl5a3drdWVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAyMjg0MTIsImV4cCI6MjA4NTgwNDQxMn0.0i7EoEzkplOh4pV-SZeSviUBfX73OhJ0oQ8qB8KoYsI';
+const SUPABASE_URL = 'https://qlwfcfypnoptsocdpxuv.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFsd2ZjZnlwbm9wdHNvY2RweHV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcxODY2NzUsImV4cCI6MjA3Mjc2MjY3NX0.fZLwb_VC2o8Sn3kp5H0_eJmhC8Hu8VtSHa2fpuqGNbY';
 
 // ==============================================
 // SUPABASE CLIENT INITIALIZATION
@@ -94,6 +94,7 @@ const Auth = {
             email,
             options: {
                 data: {
+                    portal: 'headset',
                     full_name: metadata.fullName || '',
                     phone: metadata.phone || '',
                     company_name: metadata.companyName || '',
@@ -110,14 +111,11 @@ const Auth = {
     },
 
     /**
-     * Sign in with magic link (OTP)
+     * Sign in with OTP code (6-digit code sent to email)
      */
     async signInWithOTP(email) {
         const { data, error } = await supabaseClient.auth.signInWithOtp({
-            email,
-            options: {
-                emailRedirectTo: `${window.location.origin}/portal/orders.html`
-            }
+            email
         });
 
         if (error) {

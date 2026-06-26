@@ -179,7 +179,6 @@
 
             <div class="onboarding-progress">
                 <div class="progress-dot active"></div>
-                <div class="progress-dot"></div>
             </div>
 
             <form class="onboarding-form" id="onboarding-form">
@@ -197,12 +196,6 @@
                 <div class="form-group">
                     <label for="company_name">Business Name *</label>
                     <input type="text" id="company_name" name="company_name" required placeholder="Your business or organization name">
-                </div>
-
-                <div class="form-group">
-                    <label for="business_id_number">Business ID Number <span class="optional">(ABN/ACN)</span></label>
-                    <input type="text" id="business_id_number" name="business_id_number" placeholder="e.g., 12 345 678 901">
-                    <p class="form-hint">Australian Business Number or Company Number</p>
                 </div>
 
                 <div class="form-group">
@@ -246,7 +239,6 @@
             if (currentProfile) {
                 document.getElementById('full_name').value = currentProfile.full_name || '';
                 document.getElementById('company_name').value = currentProfile.company_name || '';
-                document.getElementById('business_id_number').value = currentProfile.business_id_number || '';
                 document.getElementById('delivery_address').value = currentProfile.delivery_address || '';
             }
 
@@ -262,16 +254,28 @@
             submitBtn.textContent = 'Saving...';
 
             try {
-                const updates = {
+                const profileData = {
                     full_name: document.getElementById('full_name').value.trim(),
                     company_name: document.getElementById('company_name').value.trim(),
-                    business_id_number: document.getElementById('business_id_number').value.trim() || null,
                     delivery_address: document.getElementById('delivery_address').value.trim(),
                     onboarding_completed: true,
                     onboarding_completed_at: new Date().toISOString()
                 };
 
-                await DB.profiles.update(currentUser.id, updates);
+                if (currentProfile) {
+                    // Profile exists — update it
+                    await DB.profiles.update(currentUser.id, profileData);
+                } else {
+                    // No profile yet (e.g. existing FindMyFlow user) — create one
+                    const { error } = await supabaseClient
+                        .from('profiles')
+                        .insert({
+                            id: currentUser.id,
+                            email: currentUser.email,
+                            ...profileData
+                        });
+                    if (error) throw new Error(error.message);
+                }
 
                 Utils.showToast('Profile completed successfully!', 'success');
 
