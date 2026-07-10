@@ -12,7 +12,7 @@ export function getStaticPaths() {
 
 const { event } = Astro.props;
 
-const title = `${event.title} | From $49 USD`;
+const title = `${event.title} | From $${site.priceHeadset} ${site.currency}`;
 const canonical = `${site.url}/silent-disco-headphones-for-${event.slug}/`;
 
 const breadcrumbs = [

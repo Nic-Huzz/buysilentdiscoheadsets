@@ -3,7 +3,7 @@
     "slug": "weddings",
     "name": "Weddings",
     "title": "Silent Disco Headphones for Weddings",
-    "metaDescription": "Transform your wedding with silent disco headphones. Multiple music channels, no noise complaints, unforgettable memories. From $39 USD.",
+    "metaDescription": "Transform your wedding with silent disco headphones. Multiple music channels, no noise complaints, unforgettable memories. From $35 USD.",
     "heroHeadline": "Make Your Wedding Reception Unforgettable with Silent Disco",
     "heroSubheadline": "Give every guest the power to choose their own music — from classic love songs to dance floor bangers — all on the same dance floor.",
     "intro": "Silent disco headphones are revolutionising wedding receptions. Instead of one DJ playlist that only half your guests enjoy, silent disco lets every generation find their groove. Grandma can waltz to Frank Sinatra on Channel 1 while your friends go wild to house music on Channel 3 — all at the same time, on the same dance floor.",
@@ -46,10 +46,10 @@
   },
   {
     "slug": "yoga-and-wellness",
-    "name": "Yoga & Wellness",
-    "title": "Silent Disco Headphones for Yoga & Wellness",
-    "metaDescription": "Elevate yoga, breathwork, and wellness sessions with silent disco headphones. Immersive guided audio without disturbing others. From $39 USD per headset.",
-    "heroHeadline": "Immersive Yoga & Wellness Experiences with Silent Disco",
+    "name": "Yoga",
+    "title": "Silent Disco Headphones for Yoga",
+    "metaDescription": "Silent disco headphones for yoga classes, outdoor sessions, and retreats. Every student hears every cue — no speakers, no sound bleed. From $35 USD per headset.",
+    "heroHeadline": "Silent Disco Headphones for Yoga Classes & Retreats",
     "heroSubheadline": "Guide your participants into deep focus with crystal-clear audio delivered directly to their ears — no external speakers needed.",
     "intro": "Silent disco headphones are transforming the wellness industry. From outdoor yoga sessions to breathwork ceremonies and sound healing events, wireless headphones create an immersive cocoon of sound that deepens the experience beyond anything speakers can achieve. Participants hear every instruction, every beat, every breath cue with perfect clarity — even in open-air settings.",
     "benefits": [
@@ -85,7 +85,7 @@
         "answer": "Yes — that's the power of 3 channels. Run a yoga class on Channel 1, a meditation session on Channel 2, and a dance/movement class on Channel 3, all in the same space at the same time."
       }
     ],
-    "relatedEventTypes": ["weddings", "festivals", "guided-tours"],
+    "relatedEventTypes": ["breathwork", "meditation", "ecstatic-dance"],
     "image": "silent-disco-event.jpg",
     "icon": "lotus"
   },
@@ -93,7 +93,7 @@
     "slug": "corporate-events",
     "name": "Corporate Events",
     "title": "Silent Disco Headphones for Corporate Events",
-    "metaDescription": "Engage teams with silent disco at corporate events, conferences, and team building. Professional wireless audio for any venue. From $39 USD per headset.",
+    "metaDescription": "Engage teams with silent disco at corporate events, conferences, and team building. Professional wireless audio for any venue. From $35 USD per headset.",
     "heroHeadline": "Corporate Events That Actually Engage Your Team",
     "heroSubheadline": "From conference ice-breakers to end-of-year celebrations — silent disco headphones turn any corporate event into one people actually remember.",
     "intro": "Corporate events face a universal challenge: keeping everyone engaged. Silent disco headphones solve this by giving attendees choice and participation. Use them for multi-track conference sessions, team building activities, networking events, or the end-of-night party that doesn't disturb the hotel. Major brands including Amazon, IBM, and Google have used silent disco to transform their events.",
@@ -138,7 +138,7 @@
     "slug": "festivals",
     "name": "Festivals & Music Events",
     "title": "Silent Disco Headphones for Festivals",
-    "metaDescription": "Run incredible silent disco stages at festivals and music events. 3-channel wireless headphones with 500m range. From $39 USD per headset. Ships worldwide.",
+    "metaDescription": "Run incredible silent disco stages at festivals and music events. 3-channel wireless headphones with 500m range. From $35 USD per headset. Ships worldwide.",
     "heroHeadline": "The Festival Stage Everyone Talks About",
     "heroSubheadline": "Silent disco stages are the most Instagrammed, most talked-about experience at any festival. Give your audience the power to choose their own vibe.",
     "intro": "Every major music festival now features a silent disco stage — and it's consistently one of the most popular attractions. The concept is simple but powerful: 3 DJs play simultaneously on 3 channels, and the crowd chooses which one to listen to by switching channels on their headphones. The result? A dance floor where people in different coloured headphones dance to completely different music, creating an unforgettable visual and social experience.",
@@ -172,7 +172,7 @@
       },
       {
         "question": "What's the battery life for a full festival day?",
-        "answer": "Our headphones last 8+ hours on a single charge — enough for an entire festival evening and night. For multi-day festivals, we include charging racks that charge 50+ headphones simultaneously overnight."
+        "answer": "Our headphones last 10+ hours on a single charge — enough for an entire festival evening and night. For multi-day festivals, we include charging racks that charge 50+ headphones simultaneously overnight."
       }
     ],
     "relatedEventTypes": ["weddings", "corporate-events", "birthday-parties"],
@@ -183,7 +183,7 @@
     "slug": "birthday-parties",
     "name": "Birthday Parties",
     "title": "Silent Disco Headphones for Birthday Parties",
-    "metaDescription": "Throw the most unique birthday party with silent disco headphones. 3 music channels, LED light-up headphones, no noise issues. From $39 USD per headset.",
+    "metaDescription": "Throw the most unique birthday party with silent disco headphones. 3 music channels, LED light-up headphones, no noise issues. From $35 USD per headset.",
     "heroHeadline": "The Birthday Party Everyone Will Be Talking About",
     "heroSubheadline": "LED headphones, 3 music channels, and zero noise complaints — silent disco turns any birthday into an unforgettable experience.",
     "intro": "Looking for a birthday party idea that's genuinely different? Silent disco headphones turn any space — your backyard, a rooftop, a park, or a rented venue — into a dance floor without the noise. Kids and adults love the novelty of choosing their own channel, and the LED headphones create an incredible atmosphere for photos. It's the party activity that works for every age group.",
@@ -228,7 +228,7 @@
     "slug": "guided-tours",
     "name": "Guided Tours",
     "title": "Silent Disco Headphones for Guided Tours",
-    "metaDescription": "Run professional guided tours with silent disco headphone technology. Crystal-clear audio for walking tours, museums, and group excursions. From $39 USD.",
+    "metaDescription": "Run professional guided tours with silent disco headphone technology. Crystal-clear audio for walking tours, museums, and group excursions. From $35 USD.",
     "heroHeadline": "Guided Tours Your Guests Actually Hear",
     "heroSubheadline": "No more shouting over crowds, traffic, or wind. Silent disco headphones deliver your voice directly to every participant with perfect clarity.",
     "intro": "Tour guides face a constant battle: being heard. Street noise, wind, other tour groups, and large group sizes all conspire against clear communication. Silent disco headphones solve this completely. Your voice goes directly into each participant's ears via the wireless transmitter, ensuring everyone hears every word regardless of group size or environment. Many tour operators are switching to wireless headphone systems and never going back.",
@@ -262,11 +262,281 @@
       },
       {
         "question": "How long does the battery last for a full tour day?",
-        "answer": "Our headphones last 8+ hours on a single charge — enough for a full day of tours. For operators running multiple tours per day, we include rapid-charge solutions that get headphones ready between sessions."
+        "answer": "Our headphones last 10+ hours on a single charge — enough for a full day of tours. For operators running multiple tours per day, we include rapid-charge solutions that get headphones ready between sessions."
       }
     ],
     "relatedEventTypes": ["corporate-events", "yoga-and-wellness", "festivals"],
     "image": "silent-disco-event.jpg",
     "icon": "map"
+  },
+  {
+    "slug": "breathwork",
+    "name": "Breathwork",
+    "title": "Silent Disco Headphones for Breathwork",
+    "metaDescription": "Silent disco headphones for breathwork facilitators. Voice cues, music journeys, and binaural beats delivered straight into every participant's ears. From $35 USD.",
+    "heroHeadline": "Take Your Breathwork Journeys Deeper with Silent Disco Headphones",
+    "heroSubheadline": "Your voice, your music, and every breath cue delivered directly into each participant's ears — like a private session, even with 50 people in the room.",
+    "intro": "Breathwork lives and dies by the audio. If participants miss a breath cue, lose the music under wind noise, or hear the traffic outside the studio, they get pulled out of the journey. Silent disco headphones solve this completely: your microphone and playlist broadcast wirelessly into every participant's headphones, creating an intimate cocoon of sound. Facilitators consistently tell us headphones take their participants deeper, faster — because the outside world simply disappears. It's why breathwork facilitators have become one of our biggest customer groups.",
+    "benefits": [
+      "Your voice lands directly in each participant's ears — cues feel personal, even in large groups",
+      "Participants drop in faster with the outside world acoustically removed",
+      "Run breathwork anywhere — beaches, rooftops, parks, shared studios — without noise bleed in or out",
+      "Mix voice and music live: guide over the track without fighting the volume",
+      "Binaural beats and layered soundscapes actually work — they require headphones, not speakers"
+    ],
+    "setupTips": [
+      "Connect your microphone and music source to the transmitter — participants hear both mixed together in real time",
+      "Keep your voice channel slightly above the music so breath cues always cut through at peak moments",
+      "Dedicate Channel 2 to a pure music journey and Channel 3 to binaural beats for participants who prefer no voice guidance",
+      "Have participants lie down and put headphones on before you begin — the moment the room 'disappears' is powerful",
+      "For outdoor ceremonies, the 500m range means wind and distance are never a problem"
+    ],
+    "recommendedPackage": "20-50 headphones + 1 transmitter for studio sessions and retreats, 50-100 for large ceremonies",
+    "faqs": [
+      {
+        "question": "How do I use a microphone with silent disco headphones for breathwork?",
+        "answer": "Connect your microphone (lapel, headset, or handheld) and your music source to the transmitter. Both are broadcast together to every headphone in real time with zero delay, so you can guide breathing cues over the music exactly as you would with speakers — but with far more intimacy and clarity."
+      },
+      {
+        "question": "Why do breathwork facilitators prefer headphones over speakers?",
+        "answer": "Immersion. With speakers, participants hear the room — echoes, traffic, other people. With headphones, they hear only your voice and the music, which helps them drop into altered states faster and stay there longer. Many facilitators report noticeably deeper sessions after switching."
+      },
+      {
+        "question": "Can I run breathwork sessions outdoors with silent disco headphones?",
+        "answer": "Yes — this is one of the most popular use cases. Wind, waves, and background noise disappear entirely. Our transmitter has a 500m open-air range and the headphones have 10+ hours of battery, so beach ceremonies, jungle retreats, and rooftop sessions all work perfectly."
+      },
+      {
+        "question": "Do binaural beats work through silent disco headphones?",
+        "answer": "Yes, and this is a key advantage: binaural beats only work through headphones, because each ear must receive a slightly different frequency. Through speakers the effect is lost. Our headphones deliver true stereo separation, so brainwave entrainment tracks work as designed."
+      }
+    ],
+    "relatedEventTypes": ["meditation", "sound-healing", "wellness-events"],
+    "image": "silent-disco-event.jpg",
+    "icon": "wind"
+  },
+  {
+    "slug": "meditation",
+    "name": "Meditation",
+    "title": "Silent Disco Headphones for Meditation",
+    "metaDescription": "Silent disco headphones for guided meditation, group sits, and retreats. Noise-isolating, wireless, crystal-clear voice guidance. From $35 USD per headset.",
+    "heroHeadline": "Guided Meditation That Blocks Out the World",
+    "heroSubheadline": "Noise-isolating wireless headphones deliver your guidance directly to each meditator — no distractions, no straining to hear, no speakers.",
+    "intro": "The biggest enemy of group meditation is distraction — a door slamming, traffic, the class next door. Silent disco headphones remove all of it. Your guided meditation broadcasts wirelessly into padded, noise-isolating headphones, so every meditator sits inside their own bubble of stillness while you guide the whole room from one microphone. For urban studios, shared venues, corporate mindfulness sessions, and outdoor meditation, headphones turn any imperfect space into a perfect one.",
+    "benefits": [
+      "Noise-isolating ear cups create instant stillness in noisy environments",
+      "Every meditator hears your guidance at the same gentle, clear volume",
+      "Meditate anywhere — parks, beaches, offices, busy studios — regardless of ambient noise",
+      "Run a guided track, ambient music, and silence-with-bells on 3 separate channels",
+      "Comfortable padded fit designed for 60+ minute sessions without pressure points"
+    ],
+    "setupTips": [
+      "Speak closer to the mic and softer than you would with speakers — headphone intimacy rewards a low, calm voice",
+      "Offer Channel 1 with full guidance, Channel 2 with music only, and Channel 3 with nature sounds so experienced meditators can self-select",
+      "Use a chime or bell through the mic to open and close the sit — it lands beautifully in headphones",
+      "For corporate mindfulness sessions, headphones let you run meditation in an open-plan office without booking a quiet room",
+      "Dim or disable the LED glow for a distraction-free atmosphere"
+    ],
+    "recommendedPackage": "20-50 headphones + 1 transmitter for classes and corporate sessions, 50-100 for retreats",
+    "faqs": [
+      {
+        "question": "Are silent disco headphones comfortable enough for long meditation sessions?",
+        "answer": "Yes. The padded ear cups and adjustable headband are designed for extended wear — participants regularly wear them for 60-90 minute sessions. They're light enough that most meditators forget they're wearing them within minutes."
+      },
+      {
+        "question": "Can I guide a meditation live through the headphones?",
+        "answer": "Absolutely. Connect a microphone to the transmitter and your voice broadcasts to every headphone in real time. You can also mix in music or nature sounds from a phone or laptop, exactly like a recorded meditation track — but live."
+      },
+      {
+        "question": "Do the headphones block outside noise?",
+        "answer": "The over-ear cups provide strong passive noise isolation, which combined with your audio effectively removes ambient distraction — traffic, voices, air conditioning. It's the closest thing to meditating in a purpose-built quiet room, anywhere."
+      },
+      {
+        "question": "Can I run meditation and another class in the same space?",
+        "answer": "Yes — that's the power of the 3-channel system. Run a guided meditation on Channel 1 while a yoga class uses Channel 2 in the same hall. Neither group hears the other, which is ideal for retreats and multi-room studios with thin walls."
+      }
+    ],
+    "relatedEventTypes": ["breathwork", "sound-baths", "yoga-and-wellness"],
+    "image": "silent-disco-event.jpg",
+    "icon": "zen"
+  },
+  {
+    "slug": "sound-baths",
+    "name": "Sound Baths",
+    "title": "Silent Disco Headphones for Sound Baths",
+    "metaDescription": "Silent disco headphones for sound baths. Mic your bowls and gongs so every guest hears every overtone — outdoors, in large venues, anywhere. From $35 USD.",
+    "heroHeadline": "Sound Baths Where Every Guest Hears Every Overtone",
+    "heroSubheadline": "Mic your crystal bowls and gongs into wireless headphones — so the person at the back hears exactly what the person at the front hears, even outdoors.",
+    "intro": "A sound bath is only as good as what your guests can hear. In large venues, outdoor spaces, or rooms with poor acoustics, the delicate overtones of crystal bowls and gongs get lost — the guests nearest the instruments get a completely different experience to those at the back. Silent disco headphones fix this: mic your instruments into the transmitter, and every guest receives the full, detailed sound at identical volume, wherever they're lying. It also unlocks sound baths in places they were never possible before — beaches, parks, rooftops, and noisy urban venues.",
+    "benefits": [
+      "Every guest hears the full detail of your bowls and gongs — no dead spots at the back",
+      "Take sound baths outdoors — wind and background noise no longer wash out the subtle frequencies",
+      "Host in venues with bad acoustics or noise restrictions that would normally rule out a sound bath",
+      "Layer recorded frequencies or binaural tracks under your live instruments",
+      "Scale beyond small rooms — serve 50-100 guests with the intimacy of a private session"
+    ],
+    "setupTips": [
+      "Place one or two condenser microphones close to your bowls and gongs, running into a small mixer, then into the transmitter",
+      "Do a soundcheck lying down with a headphone on — balance the instruments the way a guest will hear them",
+      "Keep guests in the room with the instruments where possible — they'll still feel the physical vibrations while hearing the miked detail",
+      "Use Channel 2 for a pure recorded frequency journey so you can take breaks during long events",
+      "For beach or sunset sound baths, the 500m range and 10+ hour battery mean location is never a constraint"
+    ],
+    "recommendedPackage": "20-40 headphones + 1 transmitter for studio sound baths, 50-100 for outdoor and festival events",
+    "faqs": [
+      {
+        "question": "Doesn't using headphones defeat the purpose of a sound bath?",
+        "answer": "It's a fair question — and the answer is the opposite. Guests still feel the physical vibration of the instruments in the room; the headphones add what most guests were missing: the full harmonic detail. Practitioners tell us guests at the back of the room finally experience what the front row always got. And for outdoor or large-venue events, headphones are the only way a sound bath works at all."
+      },
+      {
+        "question": "How do I mic crystal bowls and gongs for silent disco headphones?",
+        "answer": "Use one or two condenser microphones positioned near your instruments, run them through a small mixer into the transmitter's 3.5mm or RCA input. The sound broadcasts to every headphone in real time. Setup takes about ten minutes and works with any standard mic and mixer."
+      },
+      {
+        "question": "Can I run a sound bath outdoors with headphones?",
+        "answer": "Yes — this is where headphones truly shine. Outdoors, delicate bowl overtones are normally lost to open air and wind within a few metres. With headphones, guests hear studio-quality sound on a beach at sunset. The 500m wireless range covers any outdoor setup."
+      },
+      {
+        "question": "How many headphones do I need for a sound bath event?",
+        "answer": "One per guest, since everyone listens for the entire session. Most studio sound baths run 15-30 guests, so 20-40 headphones covers regular events with spares. For festival or retreat sound journeys, 50-100 headphones lets you scale without losing intimacy."
+      }
+    ],
+    "relatedEventTypes": ["sound-healing", "meditation", "wellness-events"],
+    "image": "silent-disco-event.jpg",
+    "icon": "bowl"
+  },
+  {
+    "slug": "sound-healing",
+    "name": "Sound Healing",
+    "title": "Silent Disco Headphones for Sound Healing",
+    "metaDescription": "Silent disco headphones for sound healing practitioners. True stereo for binaural beats, frequency work, and immersive healing journeys. From $35 USD per headset.",
+    "heroHeadline": "Precision Audio for Sound Healing Practitioners",
+    "heroSubheadline": "Frequency work demands accurate delivery. Wireless headphones give every client true stereo, full frequency detail, and total immersion.",
+    "intro": "Sound healing depends on precise delivery of frequency — and speakers in an imperfect room can't guarantee it. Room acoustics swallow low frequencies, reflections blur tones, and every client hears something slightly different depending on where they lie. Silent disco headphones deliver your frequencies identically and accurately to every client: true stereo separation for binaural work, clean reproduction of tuning forks, bowls, and recorded frequency tracks, and complete acoustic isolation from the outside world. Whether you work one-on-one or run group healing journeys, headphones give you control over exactly what each client's nervous system receives.",
+    "benefits": [
+      "True stereo separation — essential for binaural beats and brainwave entrainment, which don't work through speakers",
+      "Every client receives identical, accurate frequencies regardless of room acoustics or position",
+      "Noise isolation removes environmental disruption during deep healing states",
+      "Run group healing journeys with the precision of a one-on-one session",
+      "Combine live instruments, voice, and recorded frequency tracks through one transmitter"
+    ],
+    "setupTips": [
+      "For binaural work, play tracks directly from a phone or laptop into the transmitter — the headphones preserve full left/right separation",
+      "Layer your voice over frequency tracks using a mic and small mixer for guided healing journeys",
+      "Offer different work on each channel — e.g., theta entrainment on 1, solfeggio frequencies on 2, guided journey on 3",
+      "Keep volume moderate — headphone intimacy means frequencies land at lower, safer volumes than speakers require",
+      "Use headphones for the journey and open-air integration afterwards — the transition out of isolation is part of the arc"
+    ],
+    "recommendedPackage": "20-40 headphones + 1 transmitter for group sessions, 50+ for retreat and event work",
+    "faqs": [
+      {
+        "question": "Why are headphones better than speakers for sound healing?",
+        "answer": "Control and accuracy. Room acoustics distort what each client hears — headphones bypass the room entirely, delivering your intended frequencies identically to every client. And for binaural beats specifically, headphones aren't just better, they're required: each ear must receive a separate frequency for the effect to occur."
+      },
+      {
+        "question": "Do binaural beats and brainwave entrainment work through these headphones?",
+        "answer": "Yes. The headphones deliver true stereo with full left/right separation, which is exactly what binaural entrainment requires. Play any binaural or isochronic track through the transmitter and every client receives it as the track's creator intended."
+      },
+      {
+        "question": "Can I combine live instruments with recorded frequencies?",
+        "answer": "Yes. Run a microphone (for voice or miked instruments) and a playback device through a small mixer into the transmitter. You can speak or play live over recorded frequency beds — a setup many practitioners use for guided healing journeys."
+      },
+      {
+        "question": "Is headphone volume safe for long sound healing sessions?",
+        "answer": "Yes. The headphones have onboard volume control and comfortable listening happens at moderate levels — typically lower than speaker setups need, because there's no room noise to overcome. Clients can adjust their own volume to what feels right for their body."
+      }
+    ],
+    "relatedEventTypes": ["sound-baths", "breathwork", "meditation"],
+    "image": "silent-disco-event.jpg",
+    "icon": "wave"
+  },
+  {
+    "slug": "ecstatic-dance",
+    "name": "Ecstatic Dance",
+    "title": "Silent Disco Headphones for Ecstatic Dance",
+    "metaDescription": "Silent disco headphones for ecstatic dance. Host conscious dance anywhere — beaches, rooftops, parks — with zero noise complaints. From $35 USD per headset.",
+    "heroHeadline": "Ecstatic Dance Anywhere — No Speakers, No Noise Complaints",
+    "heroSubheadline": "Take your conscious dance journeys to beaches, rooftops, and forests. Every dancer inside the same wave, with zero sound restrictions.",
+    "intro": "Ecstatic dance has a venue problem: the best spaces for conscious movement — beaches at sunrise, forest clearings, rooftops at sunset — are exactly the places where sound systems get shut down. Silent disco headphones remove the constraint entirely. Your DJ's journey broadcasts wirelessly to every dancer, the community moves together through the same wave, and the neighbourhood hears nothing. Facilitators use them to run sunrise dances in residential areas, extend events past noise curfews, and open up outdoor locations that were never possible before. The dance goes anywhere you go.",
+    "benefits": [
+      "Dance at sunrise, sunset, or midnight — anywhere — with zero noise complaints",
+      "Unlock outdoor locations: beaches, parks, forests, rooftops, boats",
+      "Every dancer hears the journey at perfect clarity, wherever they move in the space",
+      "500m wireless range lets dancers roam freely — even barefoot down the beach",
+      "Removing headphones creates instant quiet for sharing circles and integration"
+    ],
+    "setupTips": [
+      "Your DJ or facilitator connects a mixer or laptop straight to the transmitter — the whole journey broadcasts live",
+      "Open the event headphones-off with a grounding circle, then let the first track land as everyone puts them on together",
+      "Use Channel 2 for a slower, ambient journey so dancers can self-select intensity",
+      "For sunrise beach dances, charge headphones overnight — 10+ hours of battery covers even the longest wave",
+      "End with headphones off for the closing circle — the contrast of shared silence is part of the medicine"
+    ],
+    "recommendedPackage": "50-100 headphones + 1 transmitter for regular dances, 100+ for festivals and large gatherings",
+    "faqs": [
+      {
+        "question": "Does ecstatic dance work with headphones, or does it lose the shared experience?",
+        "answer": "It works beautifully — everyone hears the same journey at the same moment, so the collective wave stays fully intact. Dancers consistently report going deeper because the music feels closer and the outside world disappears. And the moment everyone removes headphones together for the closing circle is genuinely magic."
+      },
+      {
+        "question": "Can I host ecstatic dance outdoors or in noise-restricted venues?",
+        "answer": "That's exactly what silent disco headphones are for. Beaches, parks, rooftops, residential neighbourhoods, venues with strict curfews — none of them are obstacles anymore. There's no external sound, so there's nothing to complain about and no permit issues around amplified music in most locations."
+      },
+      {
+        "question": "How does the DJ set work with silent disco headphones?",
+        "answer": "The DJ connects their mixer output to the transmitter via standard 3.5mm or RCA cables and plays exactly as they would through a sound system. The set broadcasts to every headphone in real time with zero delay, up to 500m away."
+      },
+      {
+        "question": "How many headphones do I need for an ecstatic dance event?",
+        "answer": "One per dancer — unlike a party, everyone is dancing the whole time. Most community dances run 40-80 people, so 50-100 headphones covers regular events with spares. For hosts running ticketed events regularly, a purchased set typically pays for itself within a handful of dances compared to renting."
+      }
+    ],
+    "relatedEventTypes": ["wellness-events", "festivals", "breathwork"],
+    "image": "silent-disco-event.jpg",
+    "icon": "dance"
+  },
+  {
+    "slug": "wellness-events",
+    "name": "Wellness Events",
+    "title": "Silent Disco Headphones for Wellness Events",
+    "metaDescription": "Silent disco headphones for wellness events, retreats, and festivals. Run yoga, breathwork, meditation, and dance on 3 channels at once. From $35 USD per headset.",
+    "heroHeadline": "The Audio System Built for Wellness Events",
+    "heroSubheadline": "One set of headphones powers your entire event — yoga, breathwork, sound healing, meditation, and ecstatic dance — indoors, outdoors, anywhere.",
+    "intro": "Modern wellness events are multi-format: a retreat might run morning yoga, afternoon breathwork, a sunset sound bath, and an evening ecstatic dance — often in shared or outdoor spaces where speakers don't work. Silent disco headphones are the one audio system that handles all of it. Three independent channels let you run simultaneous sessions in the same space, the 500m wireless range covers any venue or beachfront, and facilitators simply plug their mic or music into the transmitter. For retreat centres, event producers, and wellness festivals, one headphone fleet replaces an entire AV setup — and creates the immersive, intimate experiences guests remember.",
+    "benefits": [
+      "Run 3 simultaneous sessions in one space — yoga, meditation, and dance without sound clash",
+      "One equipment investment covers every format: breathwork, sound baths, movement, workshops",
+      "Host anywhere — outdoor venues, noise-restricted resorts, shared halls, beachfronts",
+      "Immersive audio consistently rates as a guest experience highlight in event feedback",
+      "Owning your fleet pays for itself quickly versus renting for every event"
+    ],
+    "setupTips": [
+      "Map your schedule to channels — e.g., Channel 1 main sessions, Channel 2 ambient/chill space, Channel 3 workshops",
+      "Set up a headphone station at check-in — distribution and collection becomes part of the arrival ritual",
+      "Charge overnight: 10+ hours of battery covers a full event day per charge",
+      "Give each facilitator a 5-minute transmitter briefing — it's plug-and-play with any mic or music source",
+      "Use the LED colours to identify channels visually, or disable them for meditative sessions"
+    ],
+    "recommendedPackage": "50-100 headphones + 2-3 transmitters for retreats and events, 100+ for wellness festivals",
+    "faqs": [
+      {
+        "question": "How many headphones does a wellness event or retreat need?",
+        "answer": "Count your largest single session, not total attendance. If your biggest session hosts 60 people, 60-75 headphones (with spares) covers the whole event, since sessions run sequentially or split across channels. For wellness festivals with parallel programming, plan one headphone per concurrent participant."
+      },
+      {
+        "question": "Should a retreat centre or event producer buy or rent silent disco headphones?",
+        "answer": "If you run events regularly, buying wins quickly. At typical rental rates, a purchased fleet pays for itself within a few events — and you gain the freedom to use headphones for every class, not just special occasions. All our equipment comes with a 1-year warranty."
+      },
+      {
+        "question": "Can different facilitators use the system without technical knowledge?",
+        "answer": "Yes. The transmitter is plug-and-play: connect a phone, laptop, or microphone via standard 3.5mm or RCA cable and it broadcasts instantly. Facilitators need a 5-minute briefing at most — there's no software, pairing, or configuration."
+      },
+      {
+        "question": "Do the headphones work for both loud formats (dance) and quiet formats (meditation)?",
+        "answer": "Yes — that's what makes them ideal for wellness events. Each guest controls their own volume, the sound quality handles everything from bass-heavy dance journeys to whispered meditation guidance, and the LED lights can glow for dance parties or switch off for stillness."
+      }
+    ],
+    "relatedEventTypes": ["yoga-and-wellness", "corporate-events", "festivals"],
+    "image": "silent-disco-event.jpg",
+    "icon": "heart"
   }
 ]

@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const packageForm = document.getElementById('package-form');
 
   // Pricing (USD)
-  const HEADSET_PRICE = 39;
+  const HEADSET_PRICE = 35;
   const TRANSMITTER_PRICE = 169;
 
   // Function to update price summary
@@ -407,7 +407,7 @@ document.addEventListener('DOMContentLoaded', function() {
         gtag('event', 'purchase', {
           event_category: 'quote_request',
           event_label: headsets + ' headsets, ' + transmitters + ' transmitters',
-          value: parseInt(headsets) * 39 + parseInt(transmitters) * 169,
+          value: parseInt(headsets) * 35 + parseInt(transmitters) * 169,
           currency: 'USD',
           items: [{
             item_name: 'Silent Disco Headphones',

@@ -92,7 +92,7 @@ const fullOgImage = ogImage || `${site.url}/images/hero-headphones.jpg`;
     "brand": { "@type": "Brand", "name": site.name },
     "offers": {
       "@type": "Offer",
-      "price": "49",
+      "price": String(site.priceHeadset),
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
       "url": canonical
