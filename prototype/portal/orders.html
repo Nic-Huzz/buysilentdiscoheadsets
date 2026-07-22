@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2258374091587901');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2258374091587901&ev=PageView&noscript=1"/></noscript>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Orders - Customer Portal | Silent Disco Headsets</title>
@@ -189,6 +192,7 @@
             </div>
             <div class="modal-body">
                 <p style="color: var(--gray-medium); margin-bottom: var(--spacing-md);">Upload your company logo to be printed on your headsets. We accept PNG, JPG, or SVG files (max 5MB).</p>
+                <p style="color: var(--gray-medium); font-size: 0.8125rem; margin-bottom: var(--spacing-md); background: rgba(94, 23, 235, 0.05); padding: 0.75rem 1rem; border-radius: var(--border-radius);">Recommended: <strong>1000 x 1000px</strong> minimum, transparent background (PNG or SVG). Square logos work best for headset printing.</p>
 
                 <div class="logo-upload-area" id="logo-drop-zone">
                     <input type="file" id="logo-file-input" accept=".png,.jpg,.jpeg,.svg" style="display: none;">
@@ -369,7 +373,7 @@
                                 <div class="stage-icon">3</div>
                                 <span class="stage-label">Shipped</span>
                                 <span class="stage-subtitle">(expected 5-10 days)</span>
-                                ${stageIndex >= 2 && order.tracking_number ? `<span class="stage-subtitle-info">${order.tracking_number}</span>` : ''}
+                                ${stageIndex >= 2 && order.tracking_number ? (order.tracking_url ? `<a href="${order.tracking_url}" target="_blank" rel="noopener" class="stage-subtitle-link" onclick="event.stopPropagation();">${order.tracking_number}</a>` : `<span class="stage-subtitle-info">${order.tracking_number}</span>`) : ''}
                                 ${stageIndex >= 2 && order.shipping_address ? `<span class="stage-subtitle-address">${order.shipping_address.split(',')[0]}</span>` : ''}
                             </div>
 
@@ -487,6 +491,7 @@
                         <div class="dashboard-card" style="margin-bottom: var(--spacing-sm);">
                             <h4 style="margin-bottom: 0.5rem; font-size: 0.875rem; color: var(--gray-medium);">Tracking Number</h4>
                             <p style="margin-bottom: 0; font-family: monospace; font-size: 1rem;">${order.tracking_number}</p>
+                            ${order.tracking_url ? `<a href="${order.tracking_url}" target="_blank" rel="noopener" style="display: inline-block; margin-top: 0.5rem; font-size: 0.875rem; font-weight: 600;">Track your shipment &rarr;</a>` : ''}
                         </div>
                     ` : ''}
 

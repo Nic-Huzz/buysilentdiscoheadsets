@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2258374091587901');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2258374091587901&ev=PageView&noscript=1"/></noscript>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orders - Admin | Silent Disco Headsets</title>
@@ -232,6 +235,11 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="edit_tracking_url">Tracking Link</label>
+                        <input type="url" id="edit_tracking_url" name="tracking_url" placeholder="https://tracking-site.com/...">
+                    </div>
+
+                    <div class="form-group">
                         <label for="edit_notes">Notes</label>
                         <textarea id="edit_notes" name="notes" rows="3" placeholder="Any additional notes..."></textarea>
                     </div>
@@ -459,6 +467,7 @@
             document.getElementById('edit_order_id').value = order.id;
             document.getElementById('edit_current_stage').value = order.current_stage;
             document.getElementById('edit_tracking_number').value = order.tracking_number || '';
+            document.getElementById('edit_tracking_url').value = order.tracking_url || '';
             document.getElementById('edit_notes').value = order.notes || '';
             document.getElementById('edit_logo_enabled').checked = order.logo_enabled || false;
 
@@ -470,6 +479,7 @@
             const updates = {
                 current_stage: document.getElementById('edit_current_stage').value,
                 tracking_number: document.getElementById('edit_tracking_number').value,
+                tracking_url: document.getElementById('edit_tracking_url').value || null,
                 notes: document.getElementById('edit_notes').value,
                 logo_enabled: document.getElementById('edit_logo_enabled').checked
             };

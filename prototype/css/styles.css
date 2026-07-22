@@ -257,6 +257,20 @@ p {
   box-shadow: var(--shadow-purple);
 }
 
+.nav-whatsapp {
+  background: #25D366 !important;
+  color: var(--white) !important;
+  -webkit-text-fill-color: var(--white);
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-whatsapp:hover {
+  background: #1da851 !important;
+  color: var(--white);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+}
+
 .header-icons {
   display: flex;
   gap: var(--spacing-sm);

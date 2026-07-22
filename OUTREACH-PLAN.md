@@ -1,6 +1,6 @@
 # $10K Cold Outreach Plan — Buy Silent Disco Headphones
 
-_Created: 2026-06-16 | Status: Leads scraped, emails drafted, ready to send_
+_Created: 2026-06-16 | Updated: 2026-06-22 | Status: Leads scraped, emails drafted, ready to send_
 
 ---
 
@@ -58,36 +58,79 @@ Each email uses these merge fields:
 
 ## What's NOT Done (Next Steps)
 
-### Step 1: Set Up Cold Outreach Domain (Nic must do)
-- Register a separate domain for cold email (e.g. `silentdiscoevents.com` or `getsilentdisco.com`)
-- **DO NOT send cold email from the main domain** (buysilentdiscoheadphones.com) — risk of spam flags tanking deliverability
-- Set up Google Workspace ($7/mo) or use Instantly.ai ($30/mo) which handles domain warming
-- Configure SPF, DKIM, DMARC on the new domain
-- Warm up for 2 weeks before full volume (start at 10-20 emails/day, ramp to 100+)
+### Step 1: Set Up Cold Email Infrastructure (UPDATED 2026-06-22)
 
-### Step 2: Send Emails
-**Option A — Manual via Gmail MCP:**
-- Gmail MCP connector is available (connector_uuid: 02e41a5e-aea2-4c13-a9a9-f6768ce801a4)
-- Can create drafts and send via `mcp__claude_ai_Gmail__create_draft`
-- Low volume (50-100/day max), but zero setup cost
-- Best for Tier 1 high-value prospects (Switzerland, Singapore)
+**Domain setup (defeat spam filters):**
+- Buy **2-3 domains** (e.g. `silentdiscoevents.com`, `getsilentdisco.com`, `silentdiscogear.com`)
+- **10 email addresses per domain** = ~30 sending addresses total
+- 300 emails/day total (10 per address — stays under spam radar)
+- **DO NOT send from main domain** (buysilentdiscoheadphones.com)
+- Configure SPF, DKIM, DMARC on each domain
 
-**Option B — Cold email tool (Instantly.ai / Smartlead / Lemlist):**
-- Handles domain warming, sending limits, tracking, auto follow-ups
-- $30-50/month
-- Can send 200-500/day once warmed
-- Best for volume (USA, UK, Australia)
+**Tools:**
+- [Instantly.ai](https://instantly.ai) — sending platform, handles rotation across accounts + auto follow-ups ($30/mo)
+- [Warmer](https://warmer.ai) or Instantly's built-in — domain warmup (2 weeks before full volume)
+- [Sales.co](https://sales.co) — alternative/additional sending platform
 
-### Step 3: Track & Optimise
-- Track: emails sent, opens, replies, meetings booked, sales closed
+**Raw advice notes:** `lead-scraper/sales-advice-raw.md`
+
+### Step 2: Email Rules (UPDATED 2026-06-22)
+- **Founder in email signature** (not company name — person-to-person)
+- **Under 100 words** (current sequences already comply)
+- **NO links** — no website links, no calendly, nothing clickable
+- **NO open tracking** — tracking pixels trigger spam filters
+- **Structure every email:** Reason → Value prop → Ask
+- **Email 1 goal:** Get permission to send pricing sheet
+- **Email 2 goal:** Send pricing sheet + ask "considering buying in next 6 months?"
+
+### Step 3: New Email Templates (Shorter, Founder-to-Founder)
+
+**Email 1 — Cold Open:**
+> I saw {{business_name}}...
+>
+> Providing headphones to yoga studios in {{city}}.
+>
+> Can I send you the pricing sheet to open for when the time is right.
+>
+> Best,
+> Nic
+> Founder
+
+**Email 2 — Pricing Follow-up (on reply or after 3 days):**
+> Hey {{first_name}},
+>
+> Here's the pricing sheet [attach PDF].
+>
+> Are you considering buying sometime in the next 6 months?
+>
+> Nic
+
+_Note: These are shorter/softer than the sequences in `cold-email-sequences.md`. A/B test both approaches — use these for Tier 1 (Switzerland, Singapore, UAE), existing sequences for volume (USA, UK, AU)._
+
+### Step 4: Send Emails
+
+**Option A — Instantly.ai (recommended for scale):**
+- Rotate across 30 email addresses automatically
+- 300 emails/day once warmed
+- Auto follow-ups on the sequence
+- Best for USA, UK, Australia volume
+
+**Option B — Manual via Gmail MCP (for personalised Tier 1):**
+- Gmail MCP connector available (connector_uuid: 02e41a5e-aea2-4c13-a9a9-f6768ce801a4)
+- Low volume (5-10/day), heavily personalised
+- Best for Switzerland, Singapore high-value prospects
+
+### Step 5: Track & Close
 - Reply to every response within 2 hours
-- Move interested leads to WhatsApp conversation
-- The actual sale happens on WhatsApp, not on the website checkout
+- Move interested leads to WhatsApp — **the sale happens on WhatsApp**, not email
+- Track: emails sent, replies, WhatsApp conversations started, sales closed
+- Do NOT track opens (tracking disabled to avoid spam filters)
 
-### Step 4: Re-scrape for More Leads
-- Run `python3 lead-scraper/scrape_leads.py --region usa` to refresh specific regions
-- Add more queries (more cities, more niches like "sound healing", "meditation centre", "festival organiser")
-- DuckDuckGo rate-limits after ~200 queries — add delays or spread across sessions
+### Step 6: Grow Lead List
+- **New lead source:** New daily business registrations (wellness category) — freshly opened studios are actively buying equipment
+- Re-run scraper: `python3 lead-scraper/scrape_leads.py --region usa`
+- Add queries: "sound healing", "meditation centre", "festival organiser"
+- DuckDuckGo rate-limits after ~200 queries — spread across sessions
 
 ---
 
@@ -232,6 +275,7 @@ Saved in `prototype/images/event-videos/`:
 | `lead-scraper/leads_clean.csv` | 709 clean leads with emails |
 | `lead-scraper/scrape_leads.py` | Lead scraper (Python, DuckDuckGo) |
 | `lead-scraper/cold-email-sequences.md` | 4 cold email sequences (18 emails) |
+| `lead-scraper/sales-advice-raw.md` | Raw sales advice notes (2026-06-22) |
 | `ad-scripts-and-copy.md` | Video ad scripts + Facebook ad copy |
 | `email-flows.md` | Klaviyo pop-up + welcome flow |
 | `freedom-club-transcripts.md` | Full course transcripts (87k words) |
@@ -243,7 +287,7 @@ Saved in `prototype/images/event-videos/`:
 
 ## For the Next Agent
 
-**Immediate next action:** Ask Nic if he's registered a cold outreach domain. If yes, help him configure it and start sending. If no, start with Gmail MCP for high-value Tier 1 prospects (Switzerland, Singapore) while the domain warms up.
+**Immediate next action:** Ask Nic if he's registered 2-3 cold outreach domains and set up 10 email addresses per domain on Instantly.ai. If yes, help configure sequences with the new shorter templates (no links, no tracking). If no, start with Gmail MCP for high-value Tier 1 prospects (Switzerland, Singapore) while domains warm up.
 
 **Priority order for sending:**
 1. Switzerland + Singapore (highest margin, lowest competition) — send manually, personalise heavily
@@ -258,9 +302,10 @@ Saved in `prototype/images/event-videos/`:
 ## Recommendations (2026-06-16)
 
 ### Immediate (Do Today)
-1. **Register a cold outreach domain** — e.g. `silentdiscoevents.com` or `getsilentdisco.com`. Namecheap, $12, 5 minutes. Domain warming takes 2 weeks — every day delayed pushes sending window back.
-2. **Set up Instantly.ai** ($30/mo) — handles domain warming, sending limits, auto follow-ups, and tracking. Connect the new domain. Start warming immediately.
-3. **Commit all code changes** — 20+ files modified across the website. Push to deploy on Vercel.
+1. **Register 2-3 cold outreach domains** — e.g. `silentdiscoevents.com`, `getsilentdisco.com`, `silentdiscogear.com`. Namecheap, ~$12 each. Domain warming takes 2 weeks — every day delayed pushes sending window back.
+2. **Set up Instantly.ai** ($30/mo) — connect all domains, create 10 email addresses per domain (~30 total). Start warming immediately.
+3. **Disable open tracking** in Instantly settings — tracking pixels trigger spam filters.
+4. **Commit all code changes** — 20+ files modified across the website. Push to deploy on Vercel.
 
 ### This Week
 4. **Film 3 clips at your next event:**
