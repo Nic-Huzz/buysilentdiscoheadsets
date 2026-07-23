@@ -292,10 +292,7 @@ p {
   color: var(--purple-dark);
 }
 
-/* Mobile Menu Toggle */
-.menu-toggle {
-  display: none;
-}
+/* Mobile Menu Toggle — styled in MOBILE FIXES section below */
 
 /* ==================== */
 /* HERO SECTION */
@@ -1628,9 +1625,7 @@ p {
     display: none;
   }
 
-  .menu-toggle {
-    display: block;
-  }
+  /* .menu-toggle — handled in MOBILE FIXES section */
 
   .breadcrumb-bar .breadcrumb-row {
     flex-direction: column;
@@ -1903,6 +1898,153 @@ p {
 
   .newsletter-form {
     flex-direction: column;
+  }
+}
+
+/* ==================== */
+/* MOBILE FIXES (2026-07-22) */
+/* ==================== */
+
+/* Fix 1: Add-on services grid responsive */
+.addon-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+  .addon-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .addon-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Fix 2: Hamburger menu */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--white);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    z-index: 1000;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav .nav-link {
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+    width: 80%;
+    text-align: center;
+    border-radius: var(--border-radius);
+  }
+
+  .nav .nav-whatsapp {
+    margin-top: var(--spacing-sm);
+    justify-content: center;
+  }
+}
+
+/* Fix 4: Body bottom padding for floating WhatsApp */
+@media (max-width: 768px) {
+  .footer {
+    padding-bottom: 5rem;
+  }
+}
+
+/* Fix 5: Why-card "See more" collapse on mobile */
+.why-card-text .see-more-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .why-card-text.collapsible {
+    max-height: 180px;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.4s ease;
+  }
+
+  .why-card-text.collapsible::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(transparent, var(--white));
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .why-card-text.collapsible.expanded {
+    max-height: 2000px;
+  }
+
+  .why-card-text.collapsible.expanded::after {
+    opacity: 0;
+  }
+
+  .why-card-text .see-more-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--purple-dark);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    font-family: var(--font-body);
   }
 }
 

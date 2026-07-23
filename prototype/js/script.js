@@ -237,6 +237,14 @@ document.addEventListener('DOMContentLoaded', function() {
       nav.classList.toggle('active');
       menuToggle.classList.toggle('active');
     });
+
+    // Close menu when any nav link is clicked
+    nav.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        menuToggle.classList.remove('active');
+      });
+    });
   }
 });
 
