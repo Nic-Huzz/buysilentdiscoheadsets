@@ -1809,12 +1809,12 @@
         content.style.display = 'none';
         success.style.display = 'block';
         localStorage.setItem('popup_submitted', '1');
-        if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+        if (typeof fbq !== 'undefined') fbq('track', 'CompleteRegistration');
       }).catch(function() {
         content.style.display = 'none';
         success.style.display = 'block';
         localStorage.setItem('popup_submitted', '1');
-        if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+        if (typeof fbq !== 'undefined') fbq('track', 'CompleteRegistration');
       });
     });
   })();
@@ -1853,7 +1853,7 @@
       body: JSON.stringify({ email: email, tag: tag })
     }).then(function() {
       localStorage.setItem('playlist_' + playlistType, '1');
-      if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+      if (typeof fbq !== 'undefined') fbq('track', 'CompleteRegistration');
       if (urls[playlistType]) {
         window.open(urls[playlistType], '_blank');
       } else {
