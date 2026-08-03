@@ -30,15 +30,73 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* Header bar */
+    .quote-header {
+      background: var(--navy);
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .quote-header .logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--purple-dark), var(--purple-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: var(--purple-light);
+      text-decoration: none;
+    }
+
+    .quote-header .tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Hero */
     .quote-hero {
       background: linear-gradient(135deg, var(--purple-dark) 0%, #7c3aed 60%, var(--purple-light) 100%);
       padding: 4.5rem 2rem 5rem;
       text-align: center;
       color: var(--white);
+      position: relative;
     }
 
-    .quote-hero h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 0.5rem; }
-    .quote-hero .subtitle { font-size: clamp(0.9rem, 3vw, 1.1rem); opacity: 0.9; font-weight: 400; }
+    .quote-hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .quote-hero .subtitle {
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
+      opacity: 0.9;
+      font-weight: 400;
+    }
+
+    .quote-hero .context {
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      font-style: italic;
+      opacity: 0.8;
+    }
+
+    .quote-hero .social-proof {
+      margin-top: 1.25rem;
+      font-size: 0.8rem;
+      opacity: 0.65;
+      letter-spacing: 0.02em;
+    }
+
+    .quote-hero .date {
+      margin-top: 0.75rem;
+      font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+      opacity: 0.7;
+    }
 
     .valid-badge {
       display: inline-block;
@@ -50,38 +108,28 @@
       color: var(--gold);
       font-size: 0.8rem;
       font-weight: 600;
+      letter-spacing: 0.03em;
     }
 
-    .wave-divider { margin-top: -2px; line-height: 0; }
-    .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-    .section-heading { font-size: 1.75rem; font-weight: 800; margin-bottom: 2rem; text-align: center; }
-
-    /* Dance video grid */
-    .dance-videos { padding: 3rem 0; }
-
-    .dance-video-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 1rem;
+    /* Wave divider */
+    .wave-divider {
+      margin-top: -2px;
+      line-height: 0;
     }
 
-    @media (max-width: 600px) {
-      .dance-video-grid { grid-template-columns: 1fr; }
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
 
-    .dance-video-grid video {
-      width: 100%;
-      border-radius: 16px;
-      aspect-ratio: 9/16;
-      object-fit: cover;
-      background: var(--navy);
-    }
-
-    .dance-subtitle {
-      text-align: center;
-      color: var(--gray-medium);
-      font-size: 0.95rem;
+    /* Section headings standardized */
+    .section-heading {
+      font-size: 1.75rem;
+      font-weight: 800;
       margin-bottom: 2rem;
+      text-align: center;
     }
 
     /* Quote summary */
@@ -126,10 +174,15 @@
       line-height: 1.6;
     }
 
-    /* Products */
+    /* Product cards */
     .products { padding: 2.5rem 0; }
 
-    .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
     @media (max-width: 600px) { .product-grid { grid-template-columns: 1fr; } }
 
     .product-card {
@@ -152,15 +205,44 @@
 
     .product-card-body { padding: 1.25rem; }
     .product-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem; }
-    .product-card .product-desc { font-size: 0.85rem; color: var(--gray-medium); margin-bottom: 0.75rem; line-height: 1.5; }
-    .product-card .product-specs { list-style: none; padding: 0; font-size: 0.875rem; color: var(--gray-dark); }
-    .product-card .product-specs li { padding: 0.35rem 0; border-bottom: 1px solid var(--gray-light); }
-    .product-card .product-specs li::before { content: '\2713'; color: var(--purple-dark); font-weight: 700; margin-right: 0.5rem; }
+
+    .product-card .product-desc {
+      font-size: 0.85rem;
+      color: var(--gray-medium);
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .product-card .product-specs {
+      list-style: none;
+      padding: 0;
+      font-size: 0.875rem;
+      color: var(--gray-dark);
+    }
+
+    .product-card .product-specs li {
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .product-card .product-specs li::before {
+      content: '\2713';
+      color: var(--purple-dark);
+      font-weight: 700;
+      margin-right: 0.5rem;
+    }
+
     .product-card .product-specs li:last-child { border-bottom: none; }
 
-    /* Included */
+    /* What's included */
     .included { padding: 2.5rem 0; }
-    .included-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .included-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
     @media (max-width: 600px) { .included-grid { grid-template-columns: 1fr; } }
 
     .included-item {
@@ -176,40 +258,153 @@
     .included-item p { font-size: 0.9rem; line-height: 1.5; }
     .included-item strong { display: block; margin-bottom: 0.15rem; }
 
+    /* Video section */
+    .video-section { padding: 2.5rem 0; }
+
+    .video-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    .video-feature:last-child { margin-bottom: 0; }
+    .video-feature.reverse { direction: rtl; }
+    .video-feature.reverse > * { direction: ltr; }
+
+    @media (max-width: 600px) {
+      .video-feature { grid-template-columns: 1fr; }
+      .video-feature.reverse { direction: ltr; }
+    }
+
+    .video-feature video {
+      width: 100%;
+      border-radius: 16px;
+      aspect-ratio: 9/16;
+      object-fit: cover;
+      background: var(--navy);
+      max-height: 500px;
+    }
+
+    .video-feature-text h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 0.35rem; }
+
+    .video-feature-text .tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--purple-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-left: 3px solid var(--gold);
+      padding-left: 0.5rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .video-feature-text ul { list-style: none; padding: 0; }
+
+    .video-feature-text li {
+      padding: 0.5rem 0;
+      font-size: 0.9rem;
+      color: var(--gray-dark);
+      line-height: 1.5;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .video-feature-text li:last-child { border-bottom: none; }
+
+    .video-feature-text li::before {
+      content: '\2713';
+      color: var(--purple-dark);
+      font-weight: 700;
+      margin-right: 0.5rem;
+    }
+
     /* Timeline */
-    .timeline-section { background: var(--navy); padding: 3.5rem 0; color: var(--white); }
+    .timeline-section {
+      background: var(--navy);
+      padding: 3.5rem 0;
+      color: var(--white);
+    }
+
     .timeline-section .section-heading { color: var(--white); }
-    .timeline { position: relative; max-width: 600px; margin: 0 auto; padding-left: 3rem; }
-    .timeline::before { content: ''; position: absolute; left: 18px; top: 8px; bottom: 8px; width: 2px; background: rgba(255,255,255,0.15); }
+
+    .timeline {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+      padding-left: 3rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 18px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: rgba(255,255,255,0.15);
+    }
+
     .timeline-step { position: relative; padding-bottom: 2.5rem; }
     .timeline-step:last-child { padding-bottom: 0; }
 
     .timeline-dot {
-      position: absolute; left: -3rem; top: 0; width: 38px; height: 38px; border-radius: 50%;
-      background: rgba(94, 23, 235, 0.15); border: 2px solid rgba(94, 23, 235, 0.3);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.8rem; font-weight: 700; color: rgba(255,255,255,0.5);
+      position: absolute;
+      left: -3rem;
+      top: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(94, 23, 235, 0.15);
+      border: 2px solid rgba(94, 23, 235, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
     }
 
     .timeline-step.active .timeline-dot {
       background: linear-gradient(135deg, var(--purple-dark), var(--purple-light));
-      border-color: transparent; color: var(--white); box-shadow: 0 0 20px rgba(94, 23, 235, 0.4);
+      border-color: transparent;
+      color: var(--white);
+      box-shadow: 0 0 20px rgba(94, 23, 235, 0.4);
     }
 
     .timeline-days {
-      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
       background: linear-gradient(135deg, var(--purple-light), var(--gold));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.25rem;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.25rem;
     }
 
     .timeline-body h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem; }
     .timeline-body p { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
 
-    /* Support */
+    /* Support section */
     .support-section { padding: 3.5rem 0; }
-    .support-subtitle { text-align: center; color: var(--gray-medium); font-size: 0.95rem; margin-bottom: 2.5rem; }
-    .support-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+    .support-subtitle {
+      text-align: center;
+      color: var(--gray-medium);
+      font-size: 0.95rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
     @media (max-width: 600px) { .support-grid { grid-template-columns: 1fr; } }
+
     .support-card { padding: 1.5rem; border-radius: 16px; background: var(--gray-light); }
     .support-icon { font-size: 2rem; margin-bottom: 0.75rem; }
     .support-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; }
@@ -218,7 +413,9 @@
     /* CTA */
     .quote-cta {
       background: linear-gradient(135deg, var(--purple-dark) 0%, #7c3aed 60%, var(--purple-light) 100%);
-      padding: 3.5rem 2rem; text-align: center; color: var(--white);
+      padding: 3.5rem 2rem;
+      text-align: center;
+      color: var(--white);
     }
 
     .quote-cta h2 { font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem; }
@@ -226,32 +423,81 @@
     .quote-cta .trust-line { font-size: 0.8rem; opacity: 0.6; margin-top: 1.25rem; }
 
     .quote-cta .btn {
-      display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: var(--white);
-      padding: 1rem 2.5rem; border-radius: 100px; font-size: 1.1rem; font-weight: 700;
-      text-decoration: none; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #25D366;
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      border-radius: 100px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
       transition: background 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
     }
 
-    .quote-cta .btn:hover { background: #1da851; box-shadow: 0 6px 30px rgba(37, 211, 102, 0.45); }
+    .quote-cta .btn:hover {
+      background: #1da851;
+      box-shadow: 0 6px 30px rgba(37, 211, 102, 0.45);
+    }
+
     .quote-cta .btn svg { width: 22px; height: 22px; fill: currentColor; }
 
-    .quote-footer { text-align: center; padding: 1.5rem; font-size: 0.8rem; color: var(--gray-medium); }
+    /* Footer */
+    .quote-footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--gray-medium);
+    }
+
     .quote-footer a { color: var(--purple-dark); text-decoration: none; }
 
+    /* Sticky mobile CTA */
     .sticky-cta { display: none; }
 
     @media (max-width: 600px) {
       .sticky-cta {
-        position: fixed; bottom: 0; left: 0; right: 0; background: var(--navy);
-        padding: 0.75rem 1.5rem; display: flex; align-items: center; justify-content: space-between;
-        z-index: 100; box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--navy);
+        padding: 0.75rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 100;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
       }
-      .sticky-cta .sticky-price { color: var(--white); font-weight: 700; font-size: 1.1rem; }
-      .sticky-cta .sticky-price span { display: block; font-size: 0.7rem; font-weight: 400; color: var(--gray-medium); }
+
+      .sticky-cta .sticky-price {
+        color: var(--white);
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      .sticky-cta .sticky-price span {
+        display: block;
+        font-size: 0.7rem;
+        font-weight: 400;
+        color: var(--gray-medium);
+      }
+
       .sticky-cta .sticky-btn {
-        background: #25D366; color: var(--white); padding: 0.65rem 1.25rem; border-radius: 100px;
-        font-size: 0.85rem; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 6px;
+        background: #25D366;
+        color: var(--white);
+        padding: 0.65rem 1.25rem;
+        border-radius: 100px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
       }
+
       .sticky-cta .sticky-btn svg { width: 16px; height: 16px; fill: currentColor; }
       .quote-footer { padding-bottom: 5rem; }
     }
@@ -259,67 +505,19 @@
 </head>
 <body>
 
+  <!-- Hero -->
   <div class="quote-hero">
     <h1>Your Quote, Alice</h1>
     <p class="subtitle">30 Headphones + 3 Transmitters, United Kingdom</p>
     <span class="valid-badge">Valid for 14 days &middot; Prepared 3 August 2026</span>
   </div>
 
+  <!-- Wave divider -->
   <div class="wave-divider">
     <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z"/></svg>
   </div>
 
   <div class="container">
-
-    <!-- Dance videos -->
-    <section class="dance-videos">
-      <h2 class="section-heading">See What Your Events Could Look Like</h2>
-      <p class="dance-subtitle">Real footage from silent disco dance events powered by our headphones</p>
-      <div class="dance-video-grid">
-        <video autoplay muted loop playsinline>
-          <source src="../images/why-section/why-dance-video.mp4" type="video/mp4">
-        </video>
-        <video autoplay muted loop playsinline>
-          <source src="../images/event-videos/ev-fest.mp4" type="video/mp4">
-        </video>
-        <video autoplay muted loop playsinline>
-          <source src="../images/event-videos/ev-high.mp4" type="video/mp4">
-        </video>
-      </div>
-    </section>
-
-    <!-- Quote Summary -->
-    <div class="quote-summary">
-      <h2 class="section-heading" style="text-align:left; margin-bottom:1.5rem;">Quote Summary</h2>
-      <div class="line-item">
-        <span class="label">30x Premium Headphones <span class="unit-price">($35 each)</span></span>
-        <span class="value">$1,050 USD</span>
-      </div>
-      <div class="line-item">
-        <span class="label">3x Professional Transmitters <span class="unit-price">($169 each)</span></span>
-        <span class="value">$507 USD</span>
-      </div>
-      <div class="line-item">
-        <span class="label">1-year warranty</span>
-        <span class="value">Included</span>
-      </div>
-      <div class="line-item">
-        <label class="label" style="display:flex; align-items:center; gap:0.5rem; cursor:pointer;">
-          <input type="checkbox" id="logo-toggle" style="width:18px; height:18px; accent-color:var(--purple-dark); cursor:pointer;">
-          Custom logo on headphones
-        </label>
-        <span class="value" id="logo-price" style="opacity:0.4;">+$100 USD</span>
-      </div>
-      <div class="line-item">
-        <span class="label">Shipping to United Kingdom</span>
-        <span class="value">TBC</span>
-      </div>
-      <div class="line-total">
-        <span class="label">Total</span>
-        <span class="value" id="total-value">$1,557 USD + shipping</span>
-      </div>
-      <p class="shipping-note">Shipping via DHL Express with full tracking. Typical delivery to the UK is 10-14 business days. We'll confirm the exact shipping cost before you pay.</p>
-    </div>
 
     <!-- Products -->
     <section class="products">
@@ -358,7 +556,7 @@
       </div>
     </section>
 
-    <!-- Included -->
+    <!-- What's included -->
     <section class="included">
       <h2 class="section-heading">What's Included</h2>
       <div class="included-grid">
@@ -368,7 +566,7 @@
         </div>
         <div class="included-item">
           <span class="icon">📡</span>
-          <p><strong>3 Transmitters</strong> Run 3 separate audio channels simultaneously. Perfect for multi-genre dance events.</p>
+          <p><strong>3 Transmitters</strong> Run 3 separate music channels simultaneously. Perfect for multi-genre dance events.</p>
         </div>
         <div class="included-item">
           <span class="icon">📖</span>
@@ -384,6 +582,89 @@
         </div>
       </div>
     </section>
+
+    <!-- Events video -->
+    <section class="video-section">
+      <h2 class="section-heading">See Them in Action</h2>
+
+      <div class="video-feature">
+        <video autoplay muted loop playsinline>
+          <source src="../images/why-section/why-dance-video.mp4" type="video/mp4">
+        </video>
+        <div class="video-feature-text">
+          <span class="tag">Silent Disco Dance</span>
+          <h3>Epic Sound, Anywhere</h3>
+          <ul>
+            <li>Dance with perfect audio where speakers don't work. Beaches, rooftops, parks, gyms</li>
+            <li>LED colour-sync creates magical visual moments guests photograph and share</li>
+            <li>No noise complaints, no permits, no speaker setup</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="video-feature reverse">
+        <video autoplay muted loop playsinline>
+          <source src="../images/event-videos/ev-fest.mp4" type="video/mp4">
+        </video>
+        <div class="video-feature-text">
+          <span class="tag">Multi-Genre Events</span>
+          <h3>3 Channels, 3 Vibes, 1 Room</h3>
+          <ul>
+            <li>Each transmitter plays a different genre — guests switch channels with one button</li>
+            <li>See who's listening to what by the LED colour on their headphones</li>
+            <li>Perfect for gym classes, fitness events, and dance parties</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="video-feature">
+        <video autoplay muted loop playsinline>
+          <source src="../images/event-videos/ev-high.mp4" type="video/mp4">
+        </video>
+        <div class="video-feature-text">
+          <span class="tag">Premium Experience</span>
+          <h3>Turn Fitness Into a Festival</h3>
+          <ul>
+            <li>Transform your gym or studio into an immersive experience people talk about</li>
+            <li>Charge 2-3x more per ticket — headphones make any event feel premium</li>
+            <li>Returning participants drive word-of-mouth and fill your events on autopilot</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Summary -->
+    <div class="quote-summary">
+      <h2 class="section-heading" style="text-align:left; margin-bottom:1.5rem;">Quote Summary</h2>
+      <div class="line-item">
+        <span class="label">30x Premium Headphones <span class="unit-price">($35 each)</span></span>
+        <span class="value">$1,050 USD</span>
+      </div>
+      <div class="line-item">
+        <span class="label">3x Professional Transmitters <span class="unit-price">($169 each)</span></span>
+        <span class="value">$507 USD</span>
+      </div>
+      <div class="line-item">
+        <span class="label">1-year warranty</span>
+        <span class="value">Included</span>
+      </div>
+      <div class="line-item">
+        <label class="label" style="display:flex; align-items:center; gap:0.5rem; cursor:pointer;">
+          <input type="checkbox" id="logo-toggle" style="width:18px; height:18px; accent-color:var(--purple-dark); cursor:pointer;">
+          Custom logo on headphones
+        </label>
+        <span class="value" id="logo-price" style="opacity:0.4;">+$100 USD</span>
+      </div>
+      <div class="line-item">
+        <span class="label">Shipping to United Kingdom</span>
+        <span class="value">TBC</span>
+      </div>
+      <div class="line-total">
+        <span class="label">Total</span>
+        <span class="value">$1,557 USD + shipping</span>
+      </div>
+      <p class="shipping-note">Shipping via DHL Express with full tracking. Typical delivery to the UK is 10-14 business days. We'll confirm the exact shipping cost before you pay.</p>
+    </div>
   </div>
 
   <!-- Timeline -->
@@ -468,10 +749,12 @@
     <p class="trust-line">Trusted by 300+ events across 11 countries</p>
   </div>
 
+  <!-- Footer -->
   <div class="quote-footer">
     <p><a href="https://buysilentdiscoheadphones.com">buysilentdiscoheadphones.com</a> &middot; Premium wireless headsets for events worldwide</p>
   </div>
 
+  <!-- Sticky mobile CTA -->
   <div class="sticky-cta">
     <div class="sticky-price">
       $1,557 <span>+ shipping</span>
@@ -486,7 +769,7 @@
 (function() {
   var toggle = document.getElementById('logo-toggle');
   var price = document.getElementById('logo-price');
-  var total = document.getElementById('total-value');
+  var total = document.querySelector('.line-total .value');
   var sticky = document.querySelector('.sticky-price');
   var base = 1557;
 
