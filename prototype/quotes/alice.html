@@ -665,6 +665,40 @@
       </div>
       <p class="shipping-note">Shipping via DHL Express with full tracking. Typical delivery to the UK is 10-14 business days. We'll confirm the exact shipping cost before you pay.</p>
     </div>
+
+    <!-- ROI Calculator -->
+    <section class="roi-calc" style="padding:2.5rem 0;">
+      <h2 class="section-heading">How Quickly Do They Pay for Themselves?</h2>
+      <div style="background:var(--gray-light);border-radius:16px;padding:2rem;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+          <div>
+            <label style="font-size:0.85rem;font-weight:600;display:block;margin-bottom:0.35rem;">Number of attendees (headsets)</label>
+            <input type="number" id="roi-attendees" value="30" min="1" max="500" style="width:100%;padding:0.75rem;border-radius:8px;border:2px solid #e0e0e0;font-size:1rem;font-family:inherit;" readonly>
+          </div>
+          <div>
+            <label style="font-size:0.85rem;font-weight:600;display:block;margin-bottom:0.35rem;">Ticket price per person ($)</label>
+            <input type="number" id="roi-ticket" value="50" min="1" max="500" style="width:100%;padding:0.75rem;border-radius:8px;border:2px solid #e0e0e0;font-size:1rem;font-family:inherit;">
+          </div>
+        </div>
+
+        <div id="roi-results" style="margin-top:1.5rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;">
+          <div style="background:white;border-radius:12px;padding:1.25rem;text-align:center;">
+            <div style="font-size:0.75rem;font-weight:600;color:var(--gray-medium);text-transform:uppercase;letter-spacing:0.05em;">Your Investment</div>
+            <div id="roi-investment" style="font-size:1.5rem;font-weight:800;color:var(--gray-dark);margin-top:0.25rem;">$1,219</div>
+          </div>
+          <div style="background:white;border-radius:12px;padding:1.25rem;text-align:center;">
+            <div style="font-size:0.75rem;font-weight:600;color:var(--gray-medium);text-transform:uppercase;letter-spacing:0.05em;">Revenue per event</div>
+            <div id="roi-per-event" style="font-size:1.5rem;font-weight:800;color:var(--purple-dark);margin-top:0.25rem;">$1,500</div>
+          </div>
+          <div style="background:white;border-radius:12px;padding:1.25rem;text-align:center;">
+            <div style="font-size:0.75rem;font-weight:600;color:var(--gray-medium);text-transform:uppercase;letter-spacing:0.05em;">Pays for itself in</div>
+            <div id="roi-breakeven" style="font-size:1.5rem;font-weight:800;color:#22c55e;margin-top:0.25rem;">1 event</div>
+          </div>
+        </div>
+
+        <p style="margin-top:1rem;font-size:0.8rem;color:var(--gray-medium);text-align:center;">Adjust your ticket price to see how quickly the equipment pays for itself.</p>
+      </div>
+    </section>
   </div>
 
   <!-- Timeline -->
@@ -779,6 +813,26 @@
     total.textContent = '$' + amount.toLocaleString() + ' USD + shipping';
     if (sticky) sticky.innerHTML = '$' + amount.toLocaleString() + ' <span>+ shipping</span>';
   });
+})();
+
+// ROI Calculator — headsets fixed from quote
+(function() {
+  var headsets = 30;
+  var equipmentCost = 1219;
+  var tk = document.getElementById('roi-ticket');
+
+  function calc() {
+    var t = parseInt(tk.value) || 0;
+    var perEvent = headsets * t;
+    var breakeven = perEvent > 0 ? Math.ceil(equipmentCost / perEvent) : 0;
+
+    document.getElementById('roi-investment').textContent = '$' + equipmentCost.toLocaleString();
+    document.getElementById('roi-per-event').textContent = '$' + perEvent.toLocaleString();
+    document.getElementById('roi-breakeven').textContent = breakeven + ' event' + (breakeven !== 1 ? 's' : '');
+  }
+
+  tk.addEventListener('input', calc);
+  calc();
 })();
 </script>
 </body>
