@@ -74,7 +74,7 @@
       },
       {
         "question": "Are the headphones comfortable for yoga and meditation?",
-        "answer": "Yes. Our headphones feature padded ear cups and adjustable headbands designed for extended wear. They're lightweight enough for yoga poses including inversions, and the over-ear design stays secure during movement."
+        "answer": "Yes. Our headphones feature padded ear cups and adjustable headbands designed for extended wear. They're lightweight enough for yoga poses including inversions, and the on-ear design stays secure during movement."
       },
       {
         "question": "How do breathwork facilitators use silent disco headphones?",
@@ -109,7 +109,7 @@
       "For team building: run a silent disco dance-off competition between departments",
       "For networking events: play background music that doesn't prevent conversation",
       "Place the transmitter centrally — 500m range covers most corporate venues",
-      "Brief your AV team — the transmitter accepts standard 3.5mm or RCA input"
+      "Brief your AV team — the transmitter accepts standard AUX, RCA, or XLR input"
     ],
     "recommendedPackage": "100-200 headphones + 1-2 transmitters for conferences, 50-100 for team events",
     "faqs": [
@@ -213,7 +213,7 @@
       },
       {
         "question": "Can I use my own Spotify playlist?",
-        "answer": "Absolutely. Connect any audio source — phone, laptop, DJ mixer — to the transmitter via 3.5mm or RCA cable. Play Spotify, Apple Music, YouTube, or any audio source on each channel."
+        "answer": "Absolutely. Connect any audio source — phone, laptop, DJ mixer — to the transmitter via AUX, RCA, or XLR cable. Play Spotify, Apple Music, YouTube, or any audio source on each channel."
       },
       {
         "question": "Is it hard to set up silent disco for a birthday party?",
@@ -318,12 +318,12 @@
     "slug": "meditation",
     "name": "Meditation",
     "title": "Silent Disco Headphones for Meditation",
-    "metaDescription": "Silent disco headphones for guided meditation, group sits, and retreats. Noise-isolating, wireless, crystal-clear voice guidance. From $35 USD per headset.",
+    "metaDescription": "Silent disco headphones for guided meditation, group sits, and retreats. Wireless, crystal-clear voice guidance. From $35 USD per headset.",
     "heroHeadline": "Guided Meditation That Blocks Out the World",
-    "heroSubheadline": "Noise-isolating wireless headphones deliver your guidance directly to each meditator — no distractions, no straining to hear, no speakers.",
-    "intro": "The biggest enemy of group meditation is distraction — a door slamming, traffic, the class next door. Silent disco headphones remove all of it. Your guided meditation broadcasts wirelessly into padded, noise-isolating headphones, so every meditator sits inside their own bubble of stillness while you guide the whole room from one microphone. For urban studios, shared venues, corporate mindfulness sessions, and outdoor meditation, headphones turn any imperfect space into a perfect one.",
+    "heroSubheadline": "Wireless headphones deliver your guidance directly to each meditator — no distractions, no straining to hear, no speakers.",
+    "intro": "The biggest enemy of group meditation is distraction — a door slamming, traffic, the class next door. Silent disco headphones remove all of it. Your guided meditation broadcasts wirelessly into padded headphones, so every meditator sits inside their own bubble of stillness while you guide the whole room from one microphone. For urban studios, shared venues, corporate mindfulness sessions, and outdoor meditation, headphones turn any imperfect space into a perfect one.",
     "benefits": [
-      "Noise-isolating ear cups create instant stillness in noisy environments",
+      "Padded ear cups help block ambient distractions",
       "Every meditator hears your guidance at the same gentle, clear volume",
       "Meditate anywhere — parks, beaches, offices, busy studios — regardless of ambient noise",
       "Run a guided track, ambient music, and silence-with-bells on 3 separate channels",
@@ -348,7 +348,7 @@
       },
       {
         "question": "Do the headphones block outside noise?",
-        "answer": "The over-ear cups provide strong passive noise isolation, which combined with your audio effectively removes ambient distraction — traffic, voices, air conditioning. It's the closest thing to meditating in a purpose-built quiet room, anywhere."
+        "answer": "The padded on-ear cups combined with your audio help reduce ambient distraction — traffic, voices, air conditioning. It's the closest thing to meditating in a purpose-built quiet room, anywhere."
       },
       {
         "question": "Can I run meditation and another class in the same space?",
@@ -389,7 +389,7 @@
       },
       {
         "question": "How do I mic crystal bowls and gongs for silent disco headphones?",
-        "answer": "Use one or two condenser microphones positioned near your instruments, run them through a small mixer into the transmitter's 3.5mm or RCA input. The sound broadcasts to every headphone in real time. Setup takes about ten minutes and works with any standard mic and mixer."
+        "answer": "Use one or two condenser microphones positioned near your instruments, run them through a small mixer into the transmitter's AUX, RCA, or XLR input. The sound broadcasts to every headphone in real time. Setup takes about ten minutes and works with any standard mic and mixer."
       },
       {
         "question": "Can I run a sound bath outdoors with headphones?",
@@ -411,11 +411,11 @@
     "metaDescription": "Silent disco headphones for sound healing practitioners. True stereo for binaural beats, frequency work, and immersive healing journeys. From $35 USD per headset.",
     "heroHeadline": "Precision Audio for Sound Healing Practitioners",
     "heroSubheadline": "Frequency work demands accurate delivery. Wireless headphones give every client true stereo, full frequency detail, and total immersion.",
-    "intro": "Sound healing depends on precise delivery of frequency — and speakers in an imperfect room can't guarantee it. Room acoustics swallow low frequencies, reflections blur tones, and every client hears something slightly different depending on where they lie. Silent disco headphones deliver your frequencies identically and accurately to every client: true stereo separation for binaural work, clean reproduction of tuning forks, bowls, and recorded frequency tracks, and complete acoustic isolation from the outside world. Whether you work one-on-one or run group healing journeys, headphones give you control over exactly what each client's nervous system receives.",
+    "intro": "Sound healing depends on precise delivery of frequency — and speakers in an imperfect room can't guarantee it. Room acoustics swallow low frequencies, reflections blur tones, and every client hears something slightly different depending on where they lie. Silent disco headphones deliver your frequencies identically and accurately to every client: true stereo separation for binaural work, clean reproduction of tuning forks, bowls, and recorded frequency tracks, and immersive audio that helps block out the outside world. Whether you work one-on-one or run group healing journeys, headphones give you control over exactly what each client's nervous system receives.",
     "benefits": [
       "True stereo separation — essential for binaural beats and brainwave entrainment, which don't work through speakers",
       "Every client receives identical, accurate frequencies regardless of room acoustics or position",
-      "Noise isolation removes environmental disruption during deep healing states",
+      "Audio delivered directly to ears reduces environmental disruption during deep healing states",
       "Run group healing journeys with the precision of a one-on-one session",
       "Combine live instruments, voice, and recorded frequency tracks through one transmitter"
     ],
@@ -483,7 +483,7 @@
       },
       {
         "question": "How does the DJ set work with silent disco headphones?",
-        "answer": "The DJ connects their mixer output to the transmitter via standard 3.5mm or RCA cables and plays exactly as they would through a sound system. The set broadcasts to every headphone in real time with zero delay, up to 500m away."
+        "answer": "The DJ connects their mixer output to the transmitter via standard AUX, RCA, or XLR cables and plays exactly as they would through a sound system. The set broadcasts to every headphone in real time with zero delay, up to 500m away."
       },
       {
         "question": "How many headphones do I need for an ecstatic dance event?",
@@ -528,7 +528,7 @@
       },
       {
         "question": "Can different facilitators use the system without technical knowledge?",
-        "answer": "Yes. The transmitter is plug-and-play: connect a phone, laptop, or microphone via standard 3.5mm or RCA cable and it broadcasts instantly. Facilitators need a 5-minute briefing at most — there's no software, pairing, or configuration."
+        "answer": "Yes. The transmitter is plug-and-play: connect a phone, laptop, or microphone via standard AUX, RCA, or XLR cable and it broadcasts instantly. Facilitators need a 5-minute briefing at most — there's no software, pairing, or configuration."
       },
       {
         "question": "Do the headphones work for both loud formats (dance) and quiet formats (meditation)?",
