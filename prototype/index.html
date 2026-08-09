@@ -1079,6 +1079,24 @@
             }, 5000);
           });
         })();
+
+        // Auto-detect visitor country from IP
+        (function() {
+          var select = document.getElementById('delivery-country');
+          if (!select) return;
+          var countryMap = {
+            'AU': 'Australia', 'NZ': 'New Zealand', 'ID': 'Indonesia',
+            'TH': 'Thailand', 'SG': 'Singapore', 'MY': 'Malaysia',
+            'US': 'United States', 'GB': 'United Kingdom', 'CA': 'Canada'
+          };
+          fetch('https://ipapi.co/json/')
+            .then(function(r) { return r.json(); })
+            .then(function(d) {
+              var match = countryMap[d.country_code] || 'Other';
+              select.value = match;
+            })
+            .catch(function() {});
+        })();
       </script>
 
     </div>
