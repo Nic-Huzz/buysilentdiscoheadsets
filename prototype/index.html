@@ -1766,19 +1766,19 @@
       }
     });
 
-    // Trigger: after 15 seconds
+    // Trigger: after 30 seconds
     setTimeout(function() {
       if (!popup.classList.contains('visible') && !localStorage.getItem('popup_submitted')) {
         showPopup();
       }
-    }, 15000);
+    }, 30000);
 
     // Trigger: 50% scroll
     var scrollTriggered = false;
     window.addEventListener('scroll', function() {
       if (scrollTriggered) return;
       var scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-      if (scrollPercent > 50 && !popup.classList.contains('visible') && !localStorage.getItem('popup_submitted')) {
+      if (scrollPercent > 65 && !popup.classList.contains('visible') && !localStorage.getItem('popup_submitted')) {
         scrollTriggered = true;
         showPopup();
       }
