@@ -402,6 +402,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (headsetSelect && transmitterSelect) {
     headsetSelect.addEventListener('change', updatePrice);
     transmitterSelect.addEventListener('change', updatePrice);
+    updatePrice(); // Run on page load to sync with default selections
   }
 
   // Form submission handler
