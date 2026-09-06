@@ -86,36 +86,36 @@ document.addEventListener('DOMContentLoaded', function() {
 // ==================== //
 const testimonials = [
   {
-    text: "Absolutely incredible team and service! I already worked with them at least for 10 events that I hosted. Not a single problem! The sound quality was top-notch which made a huge difference for our event. What truly sets them apart for me is how easy and professional they are to work with.",
-    author: "Event Host",
+    text: "I already worked with them for at least 10 events. Not a single problem! The sound quality was top-notch which made a huge difference for our event. What truly sets them apart is how easy and professional they are to work with.",
+    author: "Event Host, 10+ events",
     role: "Bali, Indonesia",
     image: "images/testimonials/testimonial-1.jpg",
-    video: null // Set to video path if available: "images/testimonials/testimonial-1.mp4"
-  },
-  {
-    text: "Bali Silent Headphones Uluwatu is a beautiful business run by genuinely wonderful people. Their energy lifted me up and made the entire experience even more special. I am so grateful for everything they did to help me share my music in such a meaningful way.",
-    author: "Musician & Artist",
-    role: "Bali, Indonesia",
-    image: "images/testimonials/testimonial-2.jpg",
     video: null
   },
   {
-    text: "I'm not a big dancer, but using these headsets at a party I found myself dancing more than I ever have. It's like the headsets puts you in your own little world. The sound quality is amazing!",
+    text: "I'm not a big dancer, but using these headsets at a party I found myself dancing more than I ever have. It's like the headsets put you in your own little world. The sound quality is amazing!",
     author: "Silent Disco Attendee",
     role: "Bali, Indonesia",
     image: "images/testimonials/testimonial-3.jpg",
     video: null
   },
   {
-    text: "Nic was an absolute pleasure to work with. I'm so happy I found him when I was in Bali. He was responsive and was able to meet all my needs, and for a great price. He's definitely the go-to guy for all your silent disco needs 🎧 🕺🏻 🪩",
-    author: "Happy Customer",
+    text: "Their energy lifted me up and made the entire experience even more special. I am so grateful for everything they did to help me share my music in such a meaningful way.",
+    author: "Musician & Artist",
+    role: "Bali, Indonesia",
+    image: "images/testimonials/testimonial-2.jpg",
+    video: null
+  },
+  {
+    text: "Nic was responsive and was able to meet all my needs, and for a great price. He's definitely the go-to guy for all your silent disco needs.",
+    author: "Event Organizer",
     role: "Bali, Indonesia",
     image: "images/testimonials/testimonial-4.jpg",
     video: null
   },
   {
-    text: "Super sound quality headsets, one of my best nights in Bali. There's nothing better than these sweet silent discos- straight up vibes from your ears to your feet. Thanks Huzz!",
-    author: "Party Enthusiast",
+    text: "Super sound quality headsets. There's nothing better than these sweet silent discos. Straight up vibes from your ears to your feet!",
+    author: "Party Host",
     role: "Bali, Indonesia",
     image: "images/testimonials/testimonial-5.jpg",
     video: null
@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const packageForm = document.getElementById('package-form');
 
   // Pricing (USD)
-  const HEADSET_PRICE = 35;
+  const HEADSET_PRICE = 39;
   const TRANSMITTER_PRICE = 169;
 
   // Function to update price summary
@@ -416,7 +416,7 @@ document.addEventListener('DOMContentLoaded', function() {
         gtag('event', 'purchase', {
           event_category: 'quote_request',
           event_label: headsets + ' headsets, ' + transmitters + ' transmitters',
-          value: parseInt(headsets) * 35 + parseInt(transmitters) * 169,
+          value: parseInt(headsets) * 39 + parseInt(transmitters) * 169,
           currency: 'USD',
           items: [{
             item_name: 'Silent Disco Headphones',
