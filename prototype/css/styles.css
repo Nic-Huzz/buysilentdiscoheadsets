@@ -188,12 +188,6 @@ p {
 }
 
 .btn-primary {
-  background: var(--gold);
-  color: var(--navy);
-  box-shadow: var(--shadow-sm);
-}
-
-.btn-primary {
   background: linear-gradient(135deg, var(--gold), #f5d420);
   color: var(--navy);
   box-shadow: 0 4px 12px rgba(255, 221, 39, 0.3);

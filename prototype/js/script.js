@@ -440,4 +440,21 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Cookie consent banner removed
+// Lazy-load videos: only play when scrolled into view
+(function() {
+  var videos = document.querySelectorAll('.lazy-video');
+  if (!videos.length || !('IntersectionObserver' in window)) {
+    videos.forEach(function(v) { v.setAttribute('autoplay', ''); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.play().catch(function() {});
+      } else {
+        entry.target.pause();
+      }
+    });
+  }, { threshold: 0.25 });
+  videos.forEach(function(v) { observer.observe(v); });
+})();
