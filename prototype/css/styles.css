@@ -611,6 +611,60 @@ p {
 }
 
 /* ==================== */
+/* HEADSETS IN ACTION */
+/* ==================== */
+.in-action {
+  background: var(--white);
+}
+
+.in-action h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.in-action-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-sm);
+}
+
+.in-action-item {
+  position: relative;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+.in-action-item video {
+  width: 100%;
+  aspect-ratio: 9/16;
+  object-fit: cover;
+  display: block;
+}
+
+.in-action-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem 0.75rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .in-action-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .in-action-label {
+    font-size: 0.75rem;
+  }
+}
+
+/* ==================== */
 /* WHY USE HEADSETS SLIDER */
 /* ==================== */
 .why-headsets h2 {
@@ -909,27 +963,142 @@ p {
 }
 
 .builder-container {
-  max-width: 700px;
+  max-width: 540px;
   margin: 0 auto;
 }
 
 .builder-form {
   background: var(--white);
   border-radius: var(--border-radius-lg);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   box-shadow: var(--shadow-md);
 }
 
+.builder-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-sm);
+}
+
 .builder-field {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
 }
 
 .builder-field label {
   display: block;
   font-weight: 600;
   color: var(--navy);
-  margin-bottom: var(--spacing-xs);
-  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.85rem;
+}
+
+/* Live Price Strip */
+.builder-price-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--gradient-purple);
+  color: white;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.price-strip-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.price-strip-line {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.price-strip-line span {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+.price-strip-total {
+  text-align: right;
+}
+
+.price-strip-total #price-total,
+.price-strip-total span:first-child {
+  font-size: 1.35rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--gold) 0%, #ffaa00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  line-height: 1.2;
+}
+
+.price-strip-shipping {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.75);
+  display: block;
+}
+
+/* Add-ons Accordion */
+.builder-extras {
+  margin-bottom: var(--spacing-sm);
+  border: 1px solid var(--gray-light);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.builder-extras summary {
+  padding: 0.65rem 1rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--gray-medium);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.builder-extras summary::-webkit-details-marker {
+  display: none;
+}
+
+.builder-extras summary::after {
+  content: '+';
+  font-size: 1.1rem;
+  font-weight: 400;
+  transition: transform var(--transition-fast);
+}
+
+.builder-extras[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.builder-extras-content {
+  padding: 0 1rem 0.75rem;
+}
+
+.builder-extras-content .builder-field {
+  margin-bottom: 0.75rem;
+}
+
+.builder-addons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.builder-addon-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--gray-dark);
+  cursor: pointer;
 }
 
 .builder-note {
@@ -942,11 +1111,11 @@ p {
 .builder-select,
 .builder-input {
   width: 100%;
-  padding: 1rem;
-  font-size: 1rem;
-  border: 2px solid var(--gray-light);
-  border-radius: var(--border-radius);
-  background: var(--white);
+  padding: 0.7rem 0.85rem;
+  font-size: 0.9rem;
+  border: 1px solid #e0e0e5;
+  border-radius: 10px;
+  background: var(--gray-light);
   color: var(--navy);
   transition: all var(--transition-smooth);
   font-family: inherit;
@@ -977,6 +1146,26 @@ p {
   margin-top: var(--spacing-xs);
   font-size: 0.9rem;
   color: var(--gray-medium);
+}
+
+@media (max-width: 480px) {
+  .builder-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .builder-price-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .price-strip-total {
+    text-align: left;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 0.4rem;
+  }
 }
 
 .builder-summary {
@@ -1033,84 +1222,257 @@ p {
 /* ROI CALCULATOR */
 /* ==================== */
 .roi-calculator {
-  background: var(--white);
+  background: var(--gradient-purple);
 }
 
 .roi-calculator h2 {
   text-align: center;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  color: white;
 }
 
 .roi-calculator-container {
-  max-width: 900px;
+  max-width: 440px;
   margin: 0 auto;
 }
 
-.roi-calculator-placeholder {
-  padding: var(--spacing-md);
+.roi-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
 }
 
 .roi-inputs {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
 }
 
-.roi-inputs .builder-field {
-  margin-bottom: 0;
+.roi-field label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--gray-medium);
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.roi-field input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--navy);
+  background: var(--gray-light);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-family: inherit;
+  transition: border-color var(--transition-fast);
+  -moz-appearance: textfield;
+}
+
+.roi-field input::-webkit-inner-spin-button,
+.roi-field input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.roi-field input:focus {
+  outline: none;
+  border-color: var(--purple-dark);
+  box-shadow: 0 0 0 2px rgba(94, 23, 235, 0.1);
+}
+
+.roi-stats-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--gray-light);
+}
+
+.roi-stat-label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--gray-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.roi-stat-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.roi-payoff {
+  margin-top: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--gray-light);
+  text-align: center;
+}
+
+.roi-breakeven {
+  margin-bottom: 0.5rem;
+}
+
+.roi-breakeven-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--gray-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+}
+
+.roi-breakeven-value {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold) 0%, #ffaa00 100%);
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 2rem;
+  padding: 0.15rem 1rem;
+  border-radius: 9999px;
+  line-height: 1.3;
+}
+
+.roi-profit {
+  margin-top: 0.5rem;
+}
+
+.roi-profit-label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--gray-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.1rem;
+}
+
+.roi-profit-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+}
+
+.roi-note {
+  text-align: center;
+  color: var(--gray-medium);
+  font-size: 0.72rem;
+  margin-top: 0.75rem;
+  font-style: normal;
+}
+
+.roi-cta {
+  width: 100%;
+  margin-top: var(--spacing-sm);
 }
 
 @media (max-width: 768px) {
   .roi-calculator.section {
-    padding: 2rem 0;
+    padding: 2.5rem 0;
   }
 
   .roi-calculator h2 {
-    margin-bottom: 0.75rem;
-    font-size: 1.35rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
   }
 
-  .roi-calculator .builder-form {
-    padding: var(--spacing-sm);
+  .roi-card {
+    padding: 1.25rem;
   }
 
-  .roi-calculator .builder-summary {
-    margin-top: 0.75rem;
-    padding: 0.75rem;
-  }
-
-  .roi-calculator .summary-row {
-    padding: 0.4rem 0;
-    font-size: 0.9rem;
-  }
-
-  .roi-calculator .summary-total {
-    font-size: 1.1rem;
-  }
-
-  .roi-calculator .summary-total span:last-child {
-    font-size: 1.25rem;
-  }
-
-  .roi-calculator .summary-note {
-    margin-top: 0.5rem;
-    font-size: 0.8rem;
-  }
-
-  .roi-calculator .builder-input {
-    padding: 0.65rem 0.75rem;
-    font-size: 0.95rem;
-  }
-
-  .roi-calculator .builder-field label {
-    font-size: 0.85rem;
-    margin-bottom: 0.25rem;
+  .roi-profit-value {
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 380px) {
-  .roi-inputs {
+  .roi-card {
+    padding: 1rem;
+  }
+}
+
+/* ==================== */
+/* PRICING PROOF */
+/* ==================== */
+.pricing-proof h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.pricing-proof-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.pricing-proof-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+.pricing-proof-standard,
+.pricing-proof-headphones {
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pricing-proof-standard {
+  background: var(--gray-light);
+}
+
+.pricing-proof-headphones {
+  background: var(--gradient-purple);
+  color: white;
+}
+
+.pricing-proof-label {
+  font-size: 0.82rem;
+  line-height: 1.3;
+}
+
+.pricing-proof-standard .pricing-proof-label {
+  color: var(--gray-medium);
+}
+
+.pricing-proof-price {
+  font-size: 1.15rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.pricing-proof-standard .pricing-proof-price {
+  color: var(--gray-medium);
+}
+
+.pricing-proof-headphones .pricing-proof-price {
+  color: var(--gold);
+}
+
+@media (max-width: 600px) {
+  .pricing-proof-row {
     grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .pricing-proof-standard {
+    border-radius: 12px 12px 4px 4px;
+  }
+
+  .pricing-proof-headphones {
+    border-radius: 4px 4px 12px 12px;
   }
 }
 

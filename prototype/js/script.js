@@ -406,34 +406,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Form submission handler
-  if (packageForm) {
-    packageForm.addEventListener('submit', function(e) {
-      // GA4: Track quote request with package details
-      if (typeof gtag === 'function') {
-        const headsets = headsetSelect ? headsetSelect.value : '0';
-        const transmitters = transmitterSelect ? transmitterSelect.value : '0';
-        const country = packageForm.querySelector('[name="delivery-country"]');
-        gtag('event', 'purchase', {
-          event_category: 'quote_request',
-          event_label: headsets + ' headsets, ' + transmitters + ' transmitters',
-          value: parseInt(headsets) * 39 + parseInt(transmitters) * 169,
-          currency: 'USD',
-          items: [{
-            item_name: 'Silent Disco Headphones',
-            quantity: parseInt(headsets)
-          }, {
-            item_name: 'Transmitter',
-            quantity: parseInt(transmitters)
-          }]
-        });
-      }
-      // Let the form submit naturally to Formspree
-      // Show a loading state on the button
-      const submitBtn = document.getElementById('submit-quote-btn');
-      submitBtn.textContent = 'Sending...';
-      submitBtn.disabled = true;
-    });
-  }
+  // Form submission is handled by the inline script in index.html
+  // GA4 tracking is also handled there
 });
 
 // ==================== //

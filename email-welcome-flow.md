@@ -5,39 +5,39 @@ _Platform: Resend via Supabase Edge Function_
 _Trigger: Email pop-up sign-up (added to list)_
 _Promo: 5 free headsets with any order above 10 (monthly offer)_
 
-> **NOTE (2026-09-06):** Email 1 has been updated in the edge function. Emails 2-4 updated in this doc to reflect 5 free headsets promo and $39/headset pricing. Pop-up design section and Email 1 copy in this doc still show old 10%/WELCOME10 references (Email 1 is already correct in the deployed edge function).
+> **NOTE (2026-09-06):** All emails updated to reflect 5 free headsets promo and $39/headset pricing. Email 1 is deployed via Supabase edge function.
 
 ---
 
 ## Pop-Up Design
 
-**Trigger:** Exit intent + 15-second delay + 50% scroll
+**Trigger:** Exit intent + 30-second delay + 65% scroll
 **Frequency:** Show once per day, don't show again after submitted
 
-**Headline:** Get 10% Off Your First Order
+**Headline:** Claim 5 Free Headsets
 **Subheading:** Plus the 5 principles behind 200+ immersive sessions
 **Input field:** Email address
-**Button:** Send My Discount
+**Button:** Claim My Free Headsets
 **Fine print:** Join 200+ facilitators worldwide. Unsubscribe anytime.
 
-**Success state:** "Check your inbox - your 10% discount and 5 principles are on the way."
+**Success state:** "Check your inbox - your free headset offer and 5 principles are on the way."
 
 ---
 
-## Email 1 - Immediate: Deliver the Discount + 5 Principles
+## Email 1 - Immediate: Deliver the Offer + 5 Principles
 
-**Subject:** Your 10% off + the 5 principles behind 200+ sessions
+**Subject:** Your 5 free headsets + the 5 principles behind 200+ sessions
 **Preview text:** How we build every breathwork, dance, and guided session
 
 ---
 
 Hey,
 
-Welcome - here's your 10% discount code:
+Welcome. Here's your offer:
 
-**WELCOME10**
+**5 FREE HEADSETS with any order above 10** (that's $195 in free equipment).
 
-[Shop Now - 10% Off →]
+[Build Your Package →]
 
 After 200+ sessions and 400 hours of breathwork certification, these are the 5 principles I build every session off - whether it's breathwork, ecstatic dance, or a guided experience:
 
