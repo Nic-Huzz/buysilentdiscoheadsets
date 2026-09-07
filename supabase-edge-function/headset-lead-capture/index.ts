@@ -17,8 +17,8 @@ function buildWelcomeEmail(tag: string): string {
   return `
     <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#1d1d1f;">
       <p>Hey,</p>
-      <p>Welcome - this month we're giving away 5 free headsets with any order above 10.</p>
-      <div style="background:#5e17eb;color:#fff;text-align:center;padding:16px;border-radius:8px;font-size:20px;font-weight:700;letter-spacing:1px;margin:20px 0;">5 FREE HEADSETS - ORDERS ABOVE 10</div>
+      <p>Welcome - this month we're giving away 3 free headsets with any order above 10.</p>
+      <div style="background:#5e17eb;color:#fff;text-align:center;padding:16px;border-radius:8px;font-size:20px;font-weight:700;letter-spacing:1px;margin:20px 0;">3 FREE HEADSETS - ORDERS ABOVE 10</div>
       <p><a href="https://buysilentdiscoheadphones.com/#packages" style="color:#5e17eb;font-weight:600;">Build Your Package →</a></p>
       <p>After 200+ sessions and 400 hours of breathwork certification, these are the 5 principles I build every session off:</p>
       <div style="background:#f5f3f7;padding:20px;border-radius:8px;margin:20px 0;">
@@ -122,7 +122,7 @@ Deno.serve(async (req: Request) => {
           body: JSON.stringify({
             from: 'Nic Huzz <nic@nichuzz.com>',
             to: cleanEmail,
-            subject: 'Your 5 free headsets + the 5 principles behind 200+ sessions',
+            subject: 'Your 3 free headsets + the 5 principles behind 200+ sessions',
             html: buildWelcomeEmail(tag),
           }),
         })

@@ -3,9 +3,9 @@
 _For buysilentdiscoheadphones.com (sales site, not rental)_
 _Platform: Resend via Supabase Edge Function_
 _Trigger: Email pop-up sign-up (added to list)_
-_Promo: 5 free headsets with any order above 10 (monthly offer)_
+_Promo: 3 free headsets with any order above 10 (monthly offer)_
 
-> **NOTE (2026-09-06):** All emails updated to reflect 5 free headsets promo and $39/headset pricing. Email 1 is deployed via Supabase edge function.
+> **NOTE (2026-09-06):** All emails updated to reflect 3 free headsets promo and $39/headset pricing. Email 1 is deployed via Supabase edge function.
 
 ---
 
@@ -14,7 +14,7 @@ _Promo: 5 free headsets with any order above 10 (monthly offer)_
 **Trigger:** Exit intent + 30-second delay + 65% scroll
 **Frequency:** Show once per day, don't show again after submitted
 
-**Headline:** Claim 5 Free Headsets
+**Headline:** Claim 3 Free Headsets
 **Subheading:** Plus the 5 principles behind 200+ immersive sessions
 **Input field:** Email address
 **Button:** Claim My Free Headsets
@@ -26,7 +26,7 @@ _Promo: 5 free headsets with any order above 10 (monthly offer)_
 
 ## Email 1 - Immediate: Deliver the Offer + 5 Principles
 
-**Subject:** Your 5 free headsets + the 5 principles behind 200+ sessions
+**Subject:** Your 3 free headsets + the 5 principles behind 200+ sessions
 **Preview text:** How we build every breathwork, dance, and guided session
 
 ---
@@ -35,7 +35,7 @@ Hey,
 
 Welcome. Here's your offer:
 
-**5 FREE HEADSETS with any order above 10** (that's $195 in free equipment).
+**3 FREE HEADSETS with any order above 10** (that's $117 in free equipment).
 
 [Build Your Package →]
 
@@ -85,7 +85,7 @@ That's why I started selling direct. The same headphones the big brands charge $
 
 Whether you're running breathwork, ecstatic dance, retreats, or guided experiences - owning your own headphones means deeper sessions, anywhere you want, without fighting venue acoustics or noise restrictions.
 
-Right now, orders above 10 headphones get 5 free headsets included. It's the easiest way to start.
+Right now, orders above 10 headphones get 3 free headsets included. It's the easiest way to start.
 
 [Build Your Package →]
 
@@ -124,7 +124,7 @@ Same quality. Direct from our supply chain. No middleman.
 
 Every order includes a 1-year warranty - if anything's faulty, we replace it, no questions asked.
 
-Plus, orders above 10 headphones get 5 free headsets. That's $195 worth of headphones, on us.
+Plus, orders above 10 headphones get 3 free headsets. That's $117 worth of headphones, on us.
 
 [Build Your Package →]
 
@@ -134,14 +134,14 @@ Nic
 
 ## Email 4  - Day 5: Urgency / Last Chance
 
-**Subject:** Your 5 free headsets offer ends this week
+**Subject:** Your 3 free headsets offer ends this week
 **Preview text:** Last chance to claim them
 
 ---
 
 Hey,
 
-Quick one - the 5 free headsets offer for orders above 10 is ending this week.
+Quick one - the 3 free headsets offer for orders above 10 is ending this week.
 
 If you've been thinking about:
 
@@ -149,7 +149,7 @@ If you've been thinking about:
 - **Running sessions anywhere** - beaches, parks, rooftops, retreat centres. No speakers, no noise permits needed
 - **Charging premium prices** - headphone sessions feel like a completely different tier of experience. Participants pay more and talk about it for weeks
 
-Our most popular package - 30 headphones + transmitter - is **$1,339**. With 5 free headsets included, that's $195 of extra value.
+Our most popular package - 30 headphones + transmitter - is **$1,339**. With 3 free headsets included, that's $117 of extra value.
 
 [Build Your Package →]
 
@@ -170,7 +170,7 @@ P.S. Got a retreat or event coming up? Reply with the date and I'll make sure yo
 
 ## Promo Setup
 
-- **5 free headsets** with any order above 10 headphones (monthly offer, rotating)
+- **3 free headsets** with any order above 10 headphones (monthly offer, rotating)
 - Applied automatically at checkout or by the team when building a quote
 - No coupon code needed
 
