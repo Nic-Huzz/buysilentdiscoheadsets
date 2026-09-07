@@ -3,7 +3,7 @@
 _For buysilentdiscoheadphones.com (sales site, not rental)_
 _Platform: Resend via Supabase Edge Function_
 _Trigger: Email pop-up sign-up (added to list)_
-_Promo: 3 free headsets with any order above 10 (monthly offer)_
+_Promo: 3 free headsets with any order (monthly offer, minimum order 10)_
 
 > **NOTE (2026-09-06):** All emails updated to reflect 3 free headsets promo and $39/headset pricing. Email 1 is deployed via Supabase edge function.
 
@@ -35,7 +35,7 @@ Hey,
 
 Welcome. Here's your offer:
 
-**3 FREE HEADSETS with any order above 10** (that's $117 in free equipment).
+**3 FREE HEADSETS with any order** (that's $117 in free equipment).
 
 [Build Your Package →]
 
@@ -85,7 +85,7 @@ That's why I started selling direct. The same headphones the big brands charge $
 
 Whether you're running breathwork, ecstatic dance, retreats, or guided experiences - owning your own headphones means deeper sessions, anywhere you want, without fighting venue acoustics or noise restrictions.
 
-Right now, orders above 10 headphones get 3 free headsets included. It's the easiest way to start.
+Right now, every order gets 3 free headsets included. It's the easiest way to start.
 
 [Build Your Package →]
 
@@ -124,7 +124,7 @@ Same quality. Direct from our supply chain. No middleman.
 
 Every order includes a 1-year warranty - if anything's faulty, we replace it, no questions asked.
 
-Plus, orders above 10 headphones get 3 free headsets. That's $117 worth of headphones, on us.
+Plus, every order gets 3 free headsets. That's $117 worth of headphones, on us.
 
 [Build Your Package →]
 
@@ -141,7 +141,7 @@ Nic
 
 Hey,
 
-Quick one - the 3 free headsets offer for orders above 10 is ending this week.
+Quick one - the 3 free headsets offer is ending this week.
 
 If you've been thinking about:
 
@@ -170,7 +170,7 @@ P.S. Got a retreat or event coming up? Reply with the date and I'll make sure yo
 
 ## Promo Setup
 
-- **3 free headsets** with any order above 10 headphones (monthly offer, rotating)
+- **3 free headsets** with any order (monthly offer, rotating). Minimum order is 10 headphones
 - Applied automatically at checkout or by the team when building a quote
 - No coupon code needed
 

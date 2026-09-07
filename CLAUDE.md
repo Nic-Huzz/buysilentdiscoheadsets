@@ -17,7 +17,7 @@
 - Deploy to Vercel project `prototype`, NOT `headset-sales`.
 - Never use em dashes. Use periods, commas, or " - " instead.
 - All CTAs should say "Build Your Package" (not "Get Your Quote" or "Get a Quote").
-- Current promo: 3 free headsets with orders above 10. No 10% off / WELCOME10 codes.
+- Current promo: 3 free headsets with any order. Minimum order is 10 headsets. No 10% off / WELCOME10 codes.
 - Cisco (aka Silent Disco Jesus) "helped create" the headsets. He did NOT "choose the manufacturer."
 - Copy should pass the 12-year-old test. If a facilitator wouldn't understand it, simplify it.
 
