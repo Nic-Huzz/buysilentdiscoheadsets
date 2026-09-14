@@ -244,6 +244,21 @@
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
 <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","xxjnchq70f");</script>
+<script>
+function validateEmail(email) {
+  var trimmed = email.trim();
+  if (/^(https?:\/\/|www\.)/i.test(trimmed)) {
+    return 'That doesn\'t look right. Try just your email, like name@gmail.com';
+  }
+  if (/\s/.test(trimmed)) {
+    return 'Your email has a space in it. Please double-check.';
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
+    return 'Please enter a valid email address.';
+  }
+  return null;
+}
+</script>
 </head>
 <body>
 
@@ -810,7 +825,17 @@
             btn.disabled = true;
             btn.textContent = 'Sending...';
 
-            var email = document.getElementById('customer-email').value;
+            var emailInput = document.getElementById('customer-email');
+            var emailError = validateEmail(emailInput.value);
+            if (emailError) {
+              emailInput.setCustomValidity(emailError);
+              emailInput.reportValidity();
+              btn.disabled = false;
+              btn.textContent = 'Build Your Package';
+              return;
+            }
+            emailInput.setCustomValidity('');
+            var email = emailInput.value.trim();
             var headsets = document.getElementById('headset-quantity').value;
             var transmitters = document.getElementById('transmitter-quantity').value;
             var country = document.getElementById('delivery-country').value;
@@ -1508,7 +1533,15 @@
     // Form submit
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      var email = form.querySelector('input[type="email"]').value;
+      var popupInput = form.querySelector('input[type="email"]');
+      var popupEmailError = validateEmail(popupInput.value);
+      if (popupEmailError) {
+        popupInput.setCustomValidity(popupEmailError);
+        popupInput.reportValidity();
+        return;
+      }
+      popupInput.setCustomValidity('');
+      var email = popupInput.value.trim();
       var params = new URLSearchParams(window.location.search);
       var utms = {};
       ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(function(k) {
@@ -1562,6 +1595,12 @@
 
     var email = prompt('Enter your email to access our ' + labels[playlistType] + ':');
     if (!email || !email.includes('@')) return;
+    var playlistEmailError = validateEmail(email);
+    if (playlistEmailError) {
+      alert(playlistEmailError);
+      return;
+    }
+    email = email.trim();
 
     var params = new URLSearchParams(window.location.search);
     var utms = {};
