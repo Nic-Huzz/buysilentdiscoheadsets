@@ -1,0 +1,1 @@
+fetch('/internal_api/media_transcripts/2147150',{credentials:'include',headers:{Accept:'application/json'}}).then(function(r){return r.json()}).then(function(d){console.log('Keys:',Object.keys(d));console.log('Sample:',JSON.stringify(d).substring(0,1000))})
