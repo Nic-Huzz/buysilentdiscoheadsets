@@ -5,7 +5,7 @@
 - **Deployed site:** buysilentdiscoheadphones.com (Vercel, deploys from `prototype/` directory)
 - **Vercel project name:** `prototype` (NOT `headset-sales`)
 - **Quote pages:** `prototype/quotes/*.html` - branded quote pages sent to leads
-  - alice.html, chris.html, devon.html, devy.html, lizeddy.html, nikos.html, viva-cinemas.html, vladyslav.html
+  - alice.html, chris.html, devon.html, devy.html, lizeddy.html, meagan.html, nadene.html, nikos.html, rhys.html, viva-cinemas.html, vladyslav.html
 - **Quote template reference:** Use `devon.html` as the most complete template for new quotes
 - **Local path:** `/Users/nichuzz/creations/Landingpages/Headset-sales/`
 - **Edge function:** `supabase-edge-function/supabase/functions/headset-lead-capture/index.ts` (deploys to Supabase project `qlwfcfypnoptsocdpxuv`). NOTE: there are two copies of this file, both must be updated together.
@@ -17,7 +17,7 @@
 - Deploy to Vercel project `prototype`, NOT `headset-sales`.
 - Never use em dashes. Use periods, commas, or " - " instead.
 - All CTAs should say "Build Your Package" (not "Get Your Quote" or "Get a Quote").
-- Current promo: 3 free headsets with any order (on top of paid quantity). Minimum order is 10 headsets. No 10% off / WELCOME10 codes.
+- Current promo: 3 free headsets with any order (on top of paid quantity). Minimum order is 10 paid headsets, so the smallest package is always 13 total (10 paid + 3 free). No 10% off / WELCOME10 codes.
 - **Every quote must include a charging cable** ($19 USD). This is easy to forget.
 - Cisco (aka Silent Disco Jesus) "helped create" the headsets. He did NOT "choose the manufacturer."
 - Copy should pass the 12-year-old test. If a facilitator wouldn't understand it, simplify it.
