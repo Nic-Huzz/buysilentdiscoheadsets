@@ -61,41 +61,70 @@
     .quote-hero {
       background: linear-gradient(135deg, var(--purple-dark) 0%, #7c3aed 60%, var(--purple-light) 100%);
       padding: 4.5rem 2rem 5rem;
-      text-align: center;
       color: var(--white);
       position: relative;
     }
 
-    .quote-hero h1 {
+    .hero-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .hero-details {
+      text-align: left;
+    }
+
+    .hero-details h1 {
       font-size: clamp(1.75rem, 4vw, 2.5rem);
       font-weight: 800;
       margin-bottom: 0.5rem;
     }
 
-    .quote-hero .subtitle {
+    .hero-details .subtitle {
       font-size: clamp(0.9rem, 3vw, 1.1rem);
       opacity: 0.9;
       font-weight: 400;
     }
 
-    .quote-hero .context {
-      margin-top: 0.75rem;
-      font-size: 0.95rem;
-      font-style: italic;
-      opacity: 0.8;
+    .hero-endorsement {
+      margin-top: 1.5rem;
+      border-left: 3px solid var(--gold);
+      padding-left: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      opacity: 0.9;
     }
 
-    .quote-hero .social-proof {
-      margin-top: 1.25rem;
-      font-size: 0.8rem;
-      opacity: 0.65;
-      letter-spacing: 0.02em;
+    .hero-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
     }
 
-    .quote-hero .date {
-      margin-top: 0.75rem;
-      font-size: clamp(0.75rem, 2.5vw, 0.85rem);
-      opacity: 0.7;
+    @media (max-width: 600px) {
+      .hero-split {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-details {
+        text-align: center;
+      }
+      .hero-endorsement {
+        border-left: none;
+        border-top: 3px solid var(--gold);
+        padding-left: 0;
+        padding-top: 1rem;
+        text-align: center;
+      }
+      .hero-image {
+        order: 2;
+      }
     }
 
     .valid-badge {
@@ -522,6 +551,65 @@
       line-height: 1.6;
     }
 
+    /* Founder section */
+    .founder-section {
+      padding: 3.5rem 0;
+    }
+
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 600px) {
+      .founder-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .founder-video video {
+      width: 100%;
+      border-radius: 16px;
+      aspect-ratio: 9/16;
+      object-fit: cover;
+      background: var(--navy);
+      max-height: 500px;
+    }
+
+    .founder-bio h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .founder-bio p {
+      font-size: 0.95rem;
+      color: var(--gray-dark);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .founder-instagram {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      background: var(--gray-light);
+      color: var(--purple-dark);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .founder-instagram:hover {
+      background: #e8e8ec;
+    }
+
     /* CTA */
     .quote-cta {
       background: linear-gradient(135deg, var(--purple-dark) 0%, #7c3aed 60%, var(--purple-light) 100%);
@@ -651,9 +739,17 @@
 
   <!-- Hero -->
   <div class="quote-hero">
-    <h1>Your Quote, Michael</h1>
-    <p class="subtitle">25 Headphones (22 + 3 free) + 1 Transmitter, Macedon VIC</p>
-    <span class="valid-badge">Valid for 14 days &middot; Prepared 30 September 2026</span>
+    <div class="hero-split">
+      <div class="hero-details">
+        <h1>Your Quote, Michael</h1>
+        <p class="subtitle">25 Headphones (22 + 3 free) + 1 Transmitter, Macedon VIC</p>
+        <span class="valid-badge">Valid for 14 days &middot; Prepared 30 September 2026</span>
+        <p class="hero-endorsement">The best silent disco headset on the market, endorsed by Cisco, the founder of the silent disco movement. 30+ years of events, built into every headset.</p>
+      </div>
+      <div class="hero-image">
+        <img src="../images/equipment-headset.webp" alt="Premium Silent Disco Headphone">
+      </div>
+    </div>
   </div>
 
   <!-- Wave divider -->
@@ -673,12 +769,12 @@
             <h3>Premium Headphone</h3>
             <p class="product-desc">Hi-Fi wireless headphone with padded on-ear cups and LED channel indicator.</p>
             <ul class="product-specs">
-              <li>40mm professional-grade drivers</li>
-              <li>Cushion noise reduction</li>
-              <li>3-channel LED (Red / Green / Blue)</li>
-              <li>10+ hours battery life</li>
-              <li>500m wireless range</li>
-              <li>Adjustable, comfortable on-ear fit</li>
+              <li>Epic Sound Quality: Hi-Fi system</li>
+              <li>Full Immersion: Padded on-ear cushions</li>
+              <li>Eye Catching Visuals: LED Colours (Red / Green / Blue)</li>
+              <li>Run Any Event Length: 10 hour battery</li>
+              <li>Clear Sound Everywhere: 500m range</li>
+              <li>Fits All Head Sizes: Adjustable</li>
             </ul>
           </div>
         </div>
@@ -688,12 +784,12 @@
             <h3>Professional Transmitter</h3>
             <p class="product-desc">Broadcast-grade RF transmitter with multi-input support and 500m range.</p>
             <ul class="product-specs">
-              <li>AUX, RCA + XLR inputs - connect any audio source</li>
-              <li>500m open-air range</li>
-              <li>Powers unlimited headphones</li>
-              <li>Plug and play, no pairing needed</li>
-              <li>1 transmitter = 1 audio channel</li>
-              <li>Compact and portable</li>
+              <li>Any Audio Source: Bluetooth, AUX, RCA</li>
+              <li>Place Anywhere: Battery powered</li>
+              <li>No Dead Spots: 500m range, same as headsets</li>
+              <li>Unlimited Headphones: No cap on connections</li>
+              <li>Perfect Matching: 1 transmitter per channel</li>
+              <li>Portable: Size of a book</li>
             </ul>
           </div>
         </div>
@@ -835,6 +931,32 @@
       </div>
     </section>
 
+    <!-- How Headsets Support Your Growth -->
+    <section style="padding:2.5rem 0;">
+      <h2 class="section-heading">How Headsets Support Your Growth</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;">
+
+        <div style="background:var(--gray-light);border-radius:16px;padding:1.75rem;position:relative;border-left:4px solid var(--purple-dark);">
+          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple-dark);margin-bottom:0.35rem;">Stage 1</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.35rem;">Bigger Shifts, Better Sessions</h3>
+          <p style="font-size:0.85rem;color:var(--gray-medium);line-height:1.5;">Add headphones to your existing sessions at the same price. People notice immediately. The experience feels different from anything else they've tried.</p>
+        </div>
+
+        <div style="background:var(--gray-light);border-radius:16px;padding:1.75rem;position:relative;border-left:4px solid var(--purple-light);">
+          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple-light);margin-bottom:0.35rem;">Stage 2</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.35rem;">More People Come Back</h3>
+          <p style="font-size:0.85rem;color:var(--gray-medium);line-height:1.5;">People come back more often. They tell friends. Your sessions fill up faster.</p>
+        </div>
+
+        <div style="background:var(--gray-light);border-radius:16px;padding:1.75rem;position:relative;border-left:4px solid #22c55e;">
+          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#22c55e;margin-bottom:0.35rem;">Stage 3</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.35rem;">Price Increases To Match Demand</h3>
+          <p style="font-size:0.85rem;color:var(--gray-medium);line-height:1.5;">Raising your price from $30 to $50 to $70 doesn't feel like a risk. Each increase becomes obvious. People already want in.</p>
+        </div>
+
+      </div>
+    </section>
+
   </div>
 
   <!-- Timeline -->
@@ -903,6 +1025,25 @@
           <div class="support-icon">🎨</div>
           <h3>Marketing Poster Templates <span style="color:var(--purple-dark); font-size:0.85rem;">$139 AUD</span></h3>
           <p>Ready-to-use poster templates and social media assets customized with your branding. Just add your event details and start promoting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder -->
+  <section class="founder-section">
+    <div class="container">
+      <h2 class="section-heading">Meet Nic Huzz</h2>
+      <div class="founder-grid">
+        <div class="founder-video">
+          <video controls playsinline preload="metadata" poster="../images/founder-portrait.jpg">
+            <source src="../images/founder-video.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="founder-bio">
+          <p>I've run 200+ events in three years. From 5 people on Bondi Beach to 150 at Bali's biggest venues. I've tested every headset brand out there.</p>
+          <p>Cisco, aka Silent Disco Jesus, the founder of the silent disco movement, helped create these headsets, empowering them to become the market leader. Same headsets. 51% less. So price is no longer a barrier for facilitators to create even better experiences.</p>
+          <a href="https://www.instagram.com/_huzz" target="_blank" class="founder-instagram">@_huzz on Instagram</a>
         </div>
       </div>
     </div>

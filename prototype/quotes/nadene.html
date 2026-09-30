@@ -34,27 +34,70 @@
     .quote-hero {
       background: linear-gradient(135deg, var(--purple-dark) 0%, #7c3aed 60%, var(--purple-light) 100%);
       padding: 4.5rem 2rem 5rem;
-      text-align: center;
       color: var(--white);
       position: relative;
     }
 
-    .quote-hero h1 {
+    .hero-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .hero-details {
+      text-align: left;
+    }
+
+    .hero-details h1 {
       font-size: clamp(1.75rem, 4vw, 2.5rem);
       font-weight: 800;
       margin-bottom: 0.5rem;
     }
 
-    .quote-hero .subtitle {
+    .hero-details .subtitle {
       font-size: clamp(0.9rem, 3vw, 1.1rem);
       opacity: 0.9;
       font-weight: 400;
     }
 
-    .quote-hero .date {
-      margin-top: 0.75rem;
-      font-size: clamp(0.75rem, 2.5vw, 0.85rem);
-      opacity: 0.7;
+    .hero-endorsement {
+      margin-top: 1.5rem;
+      border-left: 3px solid var(--gold);
+      padding-left: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 600px) {
+      .hero-split {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-details {
+        text-align: center;
+      }
+      .hero-endorsement {
+        border-left: none;
+        border-top: 3px solid var(--gold);
+        padding-left: 0;
+        padding-top: 1rem;
+        text-align: center;
+      }
+      .hero-image {
+        order: 2;
+      }
     }
 
     .valid-badge {
@@ -582,6 +625,65 @@
       line-height: 1.6;
     }
 
+    /* Founder section */
+    .founder-section {
+      padding: 3.5rem 0;
+    }
+
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 600px) {
+      .founder-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .founder-video video {
+      width: 100%;
+      border-radius: 16px;
+      aspect-ratio: 9/16;
+      object-fit: cover;
+      background: var(--navy);
+      max-height: 500px;
+    }
+
+    .founder-bio h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .founder-bio p {
+      font-size: 0.95rem;
+      color: var(--gray-dark);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .founder-instagram {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      background: var(--gray-light);
+      color: var(--purple-dark);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .founder-instagram:hover {
+      background: #e8e8ec;
+    }
+
     /* CTA */
     .quote-cta {
       background: linear-gradient(135deg, var(--purple-dark) 0%, #7c3aed 60%, var(--purple-light) 100%);
@@ -710,9 +812,17 @@
 
   <!-- Hero -->
   <div class="quote-hero">
-    <h1>Your Quote, Nadene</h1>
-    <p class="subtitle" id="hero-subtitle">20 Headphones + 1 Transmitter</p>
-    <span class="valid-badge">Valid for 14 days · Prepared 25 September 2026</span>
+    <div class="hero-split">
+      <div class="hero-details">
+        <h1>Your Quote, Nadene</h1>
+        <p class="subtitle" id="hero-subtitle">20 Headphones + 1 Transmitter</p>
+        <span class="valid-badge">Valid for 14 days · Prepared 30 September 2026</span>
+        <p class="hero-endorsement">The best silent disco headset on the market, endorsed by Cisco, the founder of the silent disco movement. 30+ years of events, built into every headset.</p>
+      </div>
+      <div class="hero-image">
+        <img src="../images/equipment-headset.webp" alt="Premium Silent Disco Headphone">
+      </div>
+    </div>
   </div>
 
   <!-- Wave divider -->
@@ -732,12 +842,12 @@
             <h3>Premium Headphone</h3>
             <p class="product-desc">Hi-Fi wireless headphone with padded on-ear cups and LED channel indicator.</p>
             <ul class="product-specs">
-              <li>40mm professional-grade drivers</li>
-              <li>Cushion noise reduction</li>
-              <li>3-channel LED (Red / Green / Blue)</li>
-              <li>10+ hours battery life</li>
-              <li>500m wireless range</li>
-              <li>Adjustable, comfortable on-ear fit</li>
+              <li>Epic Sound Quality: Hi-Fi system</li>
+              <li>Full Immersion: Padded on-ear cushions</li>
+              <li>Eye Catching Visuals: LED Colours (Red / Green / Blue)</li>
+              <li>Run Any Event Length: 10 hour battery</li>
+              <li>Clear Sound Everywhere: 500m range</li>
+              <li>Fits All Head Sizes: Adjustable</li>
             </ul>
           </div>
         </div>
@@ -747,12 +857,12 @@
             <h3>Professional Transmitter</h3>
             <p class="product-desc">Broadcast-grade RF transmitter with multi-input support and 500m range.</p>
             <ul class="product-specs">
-              <li>AUX, RCA + XLR inputs - connect any audio source</li>
-              <li>500m open-air range</li>
-              <li>Powers unlimited headphones</li>
-              <li>Plug and play, no pairing needed</li>
-              <li>1 transmitter = 1 audio channel</li>
-              <li>Compact and portable</li>
+              <li>Any Audio Source: Bluetooth, AUX, RCA</li>
+              <li>Place Anywhere: Battery powered</li>
+              <li>No Dead Spots: 500m range, same as headsets</li>
+              <li>Unlimited Headphones: No cap on connections</li>
+              <li>Perfect Matching: 1 transmitter per channel</li>
+              <li>Portable: Size of a book</li>
             </ul>
           </div>
         </div>
@@ -779,35 +889,6 @@
         </div>
       </div>
 
-      <!-- Sound Baths: text left, video right (reversed) -->
-      <div class="video-feature reverse">
-        <video autoplay muted loop playsinline>
-          <source src="../images/event-videos/soundbath.mp4" type="video/mp4">
-        </video>
-        <div class="video-feature-text">
-          <span class="tag">Sound Baths</span>
-          <h3>Every Frequency, Crystal Clear</h3>
-          <ul>
-            <li>Participants hear every subtle overtone from your bowls, gongs, and drums</li>
-            <li>No external noise. Every vibration lands exactly as intended</li>
-            <li>Works anywhere. Parks, studios, retreat centres, outdoor ceremonies</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Drumming & Sound Healing: photo left, text right -->
-      <div class="video-feature">
-        <img class="feature-img" src="../images/why-section/why-soundbath.jpg" alt="Sound healing with silent disco headphones">
-        <div class="video-feature-text">
-          <span class="tag">Drumming & Sound Healing</span>
-          <h3>Intimate Immersion, Any Space</h3>
-          <ul>
-            <li>Layer live drumming with recorded tracks through one transmitter</li>
-            <li>Participants stay fully immersed without ambient noise pulling them out</li>
-            <li>Host in non-traditional spaces. No speakers, no noise complaints</li>
-          </ul>
-        </div>
-      </div>
     </section>
 
     <!-- What's included -->
@@ -852,8 +933,8 @@
           <div class="package-breakdown">17 paid + 3 free promo</div>
           <div class="promo-tag">3 free headphones included</div>
           <div class="package-price">
-            $1,202 AUD
-            <span class="before-shipping">+ shipping</span>
+            $1,450 AUD
+            <span class="before-shipping">inc. shipping</span>
           </div>
         </div>
         <div class="package-option" data-pkg="30" onclick="selectPackage(30)">
@@ -863,8 +944,8 @@
           <div class="package-breakdown">27 paid + 3 free promo</div>
           <div class="promo-tag">3 free headphones included</div>
           <div class="package-price">
-            $1,752 AUD
-            <span class="before-shipping">+ shipping</span>
+            $1,940 AUD
+            <span class="before-shipping">inc. shipping</span>
           </div>
         </div>
       </div>
@@ -874,8 +955,8 @@
     <div class="quote-summary">
       <h2 class="section-heading" style="text-align:left; margin-bottom:1.5rem;">Quote Summary</h2>
       <div class="line-item">
-        <span class="label" id="paid-label">17x Premium Headphones <span class="unit-price">($55 AUD each)</span></span>
-        <span class="value" id="paid-value">$935 AUD</span>
+        <span class="label" id="paid-label">17x Premium Headphones <span class="unit-price">($49 AUD each)</span></span>
+        <span class="value" id="paid-value">$833 AUD</span>
       </div>
       <div class="line-item">
         <span class="label">3x Premium Headphones <span class="unit-price">(Promo)</span></span>
@@ -887,7 +968,7 @@
       </div>
       <div class="line-item">
         <span class="label">1x Charging Cable</span>
-        <span class="value">$27 AUD</span>
+        <span class="value">$25 AUD</span>
       </div>
       <div class="line-item">
         <span class="label">1-year warranty</span>
@@ -895,18 +976,18 @@
       </div>
       <div class="line-item">
         <span class="label">Shipping to Australia</span>
-        <span class="value" id="shipping-value">To be confirmed</span>
+        <span class="value" id="shipping-value">$350 AUD</span>
       </div>
       <div class="line-item">
         <label class="label" style="display:flex;align-items:center;gap:0.5rem;cursor:pointer;">
-          <input type="checkbox" class="addon-quote-check" data-price="215" data-name="Custom Logo" style="width:18px;height:18px;accent-color:var(--purple-dark);cursor:pointer;">
+          <input type="checkbox" class="addon-quote-check" data-price="199" data-name="Custom Logo" style="width:18px;height:18px;accent-color:var(--purple-dark);cursor:pointer;">
           Custom Logo on Headphones
         </label>
-        <span class="value addon-quote-price" style="opacity:0.4;">+$215 AUD</span>
+        <span class="value addon-quote-price" style="opacity:0.4;">+$199 AUD</span>
       </div>
       <div class="line-total">
         <span class="label">Estimated Total</span>
-        <span class="value" id="quote-total">$1,202 AUD + shipping</span>
+        <span class="value" id="quote-total">$1,450 AUD</span>
       </div>
       <p class="shipping-note">Shipping via DHL Express with full tracking. Typical delivery to Australia is 1-2 weeks. We'll confirm the exact shipping cost and timeline once your order is confirmed.</p>
     </div>
@@ -929,7 +1010,7 @@
         <div id="roi-results" style="margin-top:1.5rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;">
           <div style="background:white;border-radius:12px;padding:1.25rem;text-align:center;">
             <div style="font-size:0.75rem;font-weight:600;color:var(--gray-medium);text-transform:uppercase;letter-spacing:0.05em;">Your Investment</div>
-            <div id="roi-investment" style="font-size:1.5rem;font-weight:800;color:var(--gray-dark);margin-top:0.25rem;">$1,202</div>
+            <div id="roi-investment" style="font-size:1.5rem;font-weight:800;color:var(--gray-dark);margin-top:0.25rem;">$1,450</div>
           </div>
           <div style="background:white;border-radius:12px;padding:1.25rem;text-align:center;">
             <div style="font-size:0.75rem;font-weight:600;color:var(--gray-medium);text-transform:uppercase;letter-spacing:0.05em;">Revenue per event</div>
@@ -942,6 +1023,32 @@
         </div>
 
         <p style="margin-top:1rem;font-size:0.8rem;color:var(--gray-medium);text-align:center;">Adjust your ticket price to see how quickly the equipment pays for itself.</p>
+      </div>
+    </section>
+
+    <!-- How Headsets Support Your Growth -->
+    <section style="padding:2.5rem 0;">
+      <h2 class="section-heading">How Headsets Support Your Growth</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;">
+
+        <div style="background:var(--gray-light);border-radius:16px;padding:1.75rem;position:relative;border-left:4px solid var(--purple-dark);">
+          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple-dark);margin-bottom:0.35rem;">Stage 1</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.35rem;">Bigger Shifts, Better Sessions</h3>
+          <p style="font-size:0.85rem;color:var(--gray-medium);line-height:1.5;">Add headphones to your existing sessions at the same price. People notice immediately. The experience feels different from anything else they've tried.</p>
+        </div>
+
+        <div style="background:var(--gray-light);border-radius:16px;padding:1.75rem;position:relative;border-left:4px solid var(--purple-light);">
+          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple-light);margin-bottom:0.35rem;">Stage 2</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.35rem;">More People Come Back</h3>
+          <p style="font-size:0.85rem;color:var(--gray-medium);line-height:1.5;">People come back more often. They tell friends. Your sessions fill up faster.</p>
+        </div>
+
+        <div style="background:var(--gray-light);border-radius:16px;padding:1.75rem;position:relative;border-left:4px solid #22c55e;">
+          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#22c55e;margin-bottom:0.35rem;">Stage 3</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.35rem;">Price Increases To Match Demand</h3>
+          <p style="font-size:0.85rem;color:var(--gray-medium);line-height:1.5;">Raising your price from $30 to $50 to $70 doesn't feel like a risk. Each increase becomes obvious. People already want in.</p>
+        </div>
+
       </div>
     </section>
 
@@ -1071,6 +1178,25 @@
     </div>
   </section>
 
+  <!-- Founder -->
+  <section class="founder-section">
+    <div class="container">
+      <h2 class="section-heading">Meet Nic Huzz</h2>
+      <div class="founder-grid">
+        <div class="founder-video">
+          <video controls playsinline preload="metadata" poster="../images/founder-portrait.jpg">
+            <source src="../images/founder-video.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="founder-bio">
+          <p>I've run 200+ events in three years. From 5 people on Bondi Beach to 150 at Bali's biggest venues. I've tested every headset brand out there.</p>
+          <p>Cisco, aka Silent Disco Jesus, the founder of the silent disco movement, helped create these headsets, empowering them to become the market leader. Same headsets. 51% less. So price is no longer a barrier for facilitators to create even better experiences.</p>
+          <a href="https://www.instagram.com/_huzz" target="_blank" class="founder-instagram">@_huzz on Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <div class="quote-cta">
     <h2>Ready to Go?</h2>
@@ -1079,7 +1205,7 @@
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Confirm on WhatsApp
     </a>
-    <p class="trust-line">Trusted by 300+ events across 11 countries</p>
+    <p class="trust-line">Trusted by 300+ events across 12 countries</p>
   </div>
 
   <!-- Footer -->
@@ -1090,7 +1216,7 @@
   <!-- Sticky mobile CTA -->
   <div class="sticky-cta">
     <div class="sticky-price">
-      <span id="sticky-total">$1,202</span> <span>AUD + shipping</span>
+      <span id="sticky-total">$1,450</span> <span>AUD inc. shipping</span>
     </div>
     <a id="sticky-btn" href="https://wa.me/61423220241?text=Hi%20Nic%2C%20I%27d%20like%20to%20confirm%20my%20order%20for%2020%20headphones%20%2B%201%20transmitter" class="sticky-btn">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -1100,8 +1226,8 @@
 
 <script>
 var packages = {
-  20: { total: 20, paid: 17, free: 3, headsetCost: 935, equipmentTotal: 1202 },
-  30: { total: 30, paid: 27, free: 3, headsetCost: 1485, equipmentTotal: 1752 }
+  20: { total: 20, paid: 17, free: 3, headsetCost: 833, equipmentTotal: 1100, withShipping: 1450 },
+  30: { total: 30, paid: 27, free: 3, headsetCost: 1323, equipmentTotal: 1590, withShipping: 1940 }
 };
 
 var currentPkg = 20;
@@ -1116,9 +1242,9 @@ function selectPackage(n) {
 
   document.getElementById('hero-subtitle').textContent = pkg.total + ' Headphones + 1 Transmitter';
   document.getElementById('included-headphones').textContent = pkg.total + ' Headphones (' + pkg.paid + ' paid + ' + pkg.free + ' free promo)';
-  document.getElementById('paid-label').innerHTML = pkg.paid + 'x Premium Headphones <span class="unit-price">($55 AUD each)</span>';
+  document.getElementById('paid-label').innerHTML = pkg.paid + 'x Premium Headphones <span class="unit-price">($49 AUD each)</span>';
   document.getElementById('paid-value').textContent = '$' + pkg.headsetCost.toLocaleString() + ' AUD';
-  document.getElementById('sticky-total').textContent = '$' + pkg.equipmentTotal.toLocaleString();
+  document.getElementById('sticky-total').textContent = '$' + pkg.withShipping.toLocaleString();
 
   updateTotal();
   calcROI();
@@ -1142,8 +1268,8 @@ function updateTotal() {
     }
   });
 
-  var total = pkg.equipmentTotal + addonTotal;
-  document.getElementById('quote-total').textContent = '$' + total.toLocaleString() + ' AUD + shipping';
+  var total = pkg.withShipping + addonTotal;
+  document.getElementById('quote-total').textContent = '$' + total.toLocaleString() + ' AUD';
   document.getElementById('roi-investment').textContent = '$' + total.toLocaleString();
 }
 
@@ -1151,9 +1277,9 @@ function calcROI() {
   var pkg = packages[currentPkg];
   var ticket = parseInt(document.getElementById('roi-ticket').value) || 0;
   var perEvent = pkg.total * ticket;
-  var breakeven = perEvent > 0 ? Math.ceil(pkg.equipmentTotal / perEvent) : 0;
+  var breakeven = perEvent > 0 ? Math.ceil(pkg.withShipping / perEvent) : 0;
 
-  document.getElementById('roi-investment').textContent = '$' + pkg.equipmentTotal.toLocaleString();
+  document.getElementById('roi-investment').textContent = '$' + pkg.withShipping.toLocaleString();
   document.getElementById('roi-per-event').textContent = '$' + perEvent.toLocaleString();
   document.getElementById('roi-breakeven').textContent = breakeven + ' event' + (breakeven !== 1 ? 's' : '');
 }
