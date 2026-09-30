@@ -30,7 +30,7 @@
 
 ## Design System
 
-- **Font:** Geist (NOT Poppins). Some subpages still load Poppins and need updating.
+- **Font:** Poppins for quote pages. Geist for main landing page (may migrate to Poppins later).
 - **Buttons:** Pill shape (border-radius: 9999px), gold primary with glow shadow, active:scale(0.98) press state
 - **Border radius:** 16px / 20px
 - **Section padding:** 5rem / 3rem
