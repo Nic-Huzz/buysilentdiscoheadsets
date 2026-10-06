@@ -644,6 +644,17 @@
         padding-bottom: 5rem;
       }
     }
+
+    /* Mobile fixes for inline grids */
+    @media (max-width: 600px) {
+      .roi-inputs { grid-template-columns: 1fr !important; }
+      .roi-results-grid { grid-template-columns: 1fr !important; }
+      .growth-stages { grid-template-columns: 1fr !important; }
+      .scale-grid { grid-template-columns: 1fr !important; direction: ltr !important; }
+      .scale-section-pad { padding: 2rem 1.5rem !important; }
+      .scale-intro-pad { padding: 2.5rem 1.5rem 1.5rem !important; }
+      .scale-footer-pad { padding: 1rem 1.5rem !important; }
+    }
   </style>
 <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","xxjnchq70f");</script>
 </head>
@@ -851,7 +862,7 @@
     <section class="roi-calc" style="padding:2.5rem 0;">
       <h2 class="section-heading">How Quickly Do They Pay for Themselves?</h2>
       <div style="background:var(--gray-light);border-radius:16px;padding:2rem;">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+        <div class="roi-inputs" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
           <div>
             <label style="font-size:0.85rem;font-weight:600;display:block;margin-bottom:0.35rem;">Number of attendees (headsets)</label>
             <input type="number" id="roi-attendees" value="11" min="1" max="500" style="width:100%;padding:0.75rem;border-radius:8px;border:2px solid #e0e0e0;font-size:1rem;font-family:inherit;" readonly>
@@ -862,7 +873,7 @@
           </div>
         </div>
 
-        <div id="roi-results" style="margin-top:1.5rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;">
+        <div id="roi-results" class="roi-results-grid" style="margin-top:1.5rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;">
           <div style="background:white;border-radius:12px;padding:1.25rem;text-align:center;">
             <div style="font-size:0.75rem;font-weight:600;color:var(--gray-medium);text-transform:uppercase;letter-spacing:0.05em;">Your Investment</div>
             <div id="roi-investment" style="font-size:1.5rem;font-weight:800;color:var(--gray-dark);margin-top:0.25rem;">$513</div>
@@ -890,7 +901,7 @@
         <div style="position:absolute;bottom:-60px;left:-60px;width:250px;height:250px;background:radial-gradient(circle,rgba(255,221,39,0.08) 0%,transparent 70%);pointer-events:none;"></div>
 
         <!-- Intro -->
-        <div style="padding:3rem 3rem 2rem;text-align:center;position:relative;">
+        <div class="scale-intro-pad" style="padding:3rem 3rem 2rem;text-align:center;position:relative;">
           <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;background:linear-gradient(135deg, #a78bfa, #fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:0.75rem;">Bonus Included With Your Order</p>
           <h3 style="font-size:1.75rem;font-weight:800;margin-bottom:0.4rem;letter-spacing:-0.02em;">1 Month Free Access to Scale</h3>
           <p style="color:rgba(255,255,255,0.35);font-size:0.8rem;margin-bottom:1rem;">Normally $499 setup + $99/month</p>
@@ -900,10 +911,10 @@
         <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(139,92,246,0.2),rgba(255,221,39,0.15),transparent);margin:0 3rem;"></div>
 
         <!-- Position, Fill, Grow -->
-        <div style="padding:2rem 3rem 3rem;display:flex;flex-direction:column;gap:2.5rem;">
+        <div class="scale-section-pad" style="padding:2rem 3rem 3rem;display:flex;flex-direction:column;gap:2.5rem;">
 
           <!-- Position: text left, image right -->
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;">
+          <div class="scale-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;">
             <div>
               <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#a78bfa;margin-bottom:0.35rem;">The Setup</p>
               <h4 style="font-size:1.25rem;font-weight:800;margin-bottom:0.75rem;letter-spacing:-0.01em;">Position</h4>
@@ -921,7 +932,7 @@
           </div>
 
           <!-- Fill: image left, text right -->
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;direction:rtl;">
+          <div class="scale-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;direction:rtl;">
             <div style="direction:ltr;">
               <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fbbf24;margin-bottom:0.35rem;">The Portal</p>
               <h4 style="font-size:1.25rem;font-weight:800;margin-bottom:0.5rem;letter-spacing:-0.01em;">Fill</h4>
@@ -939,7 +950,7 @@
           </div>
 
           <!-- Grow: text left, image right -->
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;">
+          <div class="scale-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;">
             <div>
               <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#4ade80;margin-bottom:0.35rem;">The Engine</p>
               <h4 style="font-size:1.25rem;font-weight:800;margin-bottom:0.75rem;letter-spacing:-0.01em;">Grow</h4>
@@ -958,7 +969,7 @@
         </div>
 
         <!-- Footer -->
-        <div style="background:rgba(255,255,255,0.02);border-top:1px solid rgba(255,255,255,0.05);padding:1.25rem 3rem;text-align:center;">
+        <div class="scale-footer-pad" style="background:rgba(255,255,255,0.02);border-top:1px solid rgba(255,255,255,0.05);padding:1.25rem 3rem;text-align:center;">
           <p style="font-size:0.78rem;color:rgba(255,255,255,0.35);margin:0;letter-spacing:0.01em;">Free for 1 month with your headset order. No setup fee. Cancel anytime.</p>
         </div>
 
