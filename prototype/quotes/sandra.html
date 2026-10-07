@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Your Quote - Buy Silent Disco Headphones</title>
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --purple-dark: #5e17eb;
+      --purple-light: #8b5cf6;
+      --gold: #ffdd27;
+      --white: #ffffff;
+      --gray-light: #f5f5f7;
+      --gray-medium: #86868b;
+      --gray-dark: #1d1d1f;
+      --navy: #11151c;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--gray-dark);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Hero */
+    .quote-hero {
+      background: linear-gradient(135deg, var(--purple-dark) 0%, #7c3aed 60%, var(--purple-light) 100%);
+      padding: 4.5rem 2rem 5rem;
+      color: var(--white);
+      position: relative;
+    }
+
+    .hero-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .hero-details {
+      text-align: left;
+    }
+
+    .hero-details h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-details .subtitle {
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
+      opacity: 0.9;
+      font-weight: 400;
+    }
+
+    .hero-endorsement {
+      margin-top: 1.5rem;
+      border-left: 3px solid var(--gold);
+      padding-left: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 600px) {
+      .hero-split {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-details {
+        text-align: center;
+      }
+      .hero-endorsement {
+        border-left: none;
+        border-top: 3px solid var(--gold);
+        padding-left: 0;
+        padding-top: 1rem;
+        text-align: center;
+      }
+      .hero-image {
+        order: 2;
+      }
+    }
+
+    .valid-badge {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1.25rem;
+      border-radius: 100px;
+      background: rgba(255, 221, 39, 0.22);
+      border: 1px solid rgba(255, 221, 39, 0.35);
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    /* Wave divider */
+    .wave-divider {
+      margin-top: -2px;
+      line-height: 0;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Section headings */
+    .section-heading {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    /* Quote summary */
+    .quote-summary {
+      background: var(--gray-light);
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 2.5rem 0;
+      border-left: 4px solid var(--purple-dark);
+    }
+
+    .line-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      font-size: 1rem;
+    }
+
+    .line-item:last-of-type {
+      border-bottom: none;
+    }
+
+    .line-item .label {
+      color: var(--gray-dark);
+    }
+
+    .line-item .value {
+      font-weight: 600;
+      color: var(--gray-dark);
+    }
+
+    .line-item .unit-price {
+      font-size: 0.8rem;
+      color: var(--gray-medium);
+      font-weight: 400;
+    }
+
+    .line-total {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 0 0;
+      margin-top: 0.5rem;
+      border-top: 2px solid var(--purple-dark);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .line-total .label {
+      font-weight: 700;
+    }
+
+    .line-total .value {
+      color: var(--purple-dark);
+    }
+
+    .shipping-note {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--gray-medium);
+      line-height: 1.6;
+    }
+
+    /* Product card - single centered */
+    .products {
+      padding: 2.5rem 0;
+    }
+
+    .product-single {
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background: var(--white);
+      border: 2px solid var(--gray-light);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 8px 30px rgba(94, 23, 235, 0.12);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: contain;
+      background: var(--gray-light);
+      padding: 1.5rem;
+    }
+
+    .product-card-body {
+      padding: 1.25rem;
+    }
+
+    .product-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .product-card .product-desc {
+      font-size: 0.85rem;
+      color: var(--gray-medium);
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .product-card .product-specs {
+      list-style: none;
+      padding: 0;
+      font-size: 0.875rem;
+      color: var(--gray-dark);
+    }
+
+    .product-card .product-specs li {
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .product-card .product-specs li::before {
+      content: '\2713';
+      color: var(--purple-dark);
+      font-weight: 700;
+      margin-right: 0.5rem;
+    }
+
+    .product-card .product-specs li:last-child {
+      border-bottom: none;
+    }
+
+    /* What's included */
+    .included {
+      padding: 2.5rem 0;
+    }
+
+    .included-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .included-grid { grid-template-columns: 1fr; }
+    }
+
+    .included-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: var(--gray-light);
+      border-radius: 12px;
+    }
+
+    .included-item .icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .included-item p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .included-item strong {
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    /* Video section */
+    .video-section {
+      padding: 2.5rem 0;
+    }
+
+    .video-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    .video-feature:last-child {
+      margin-bottom: 0;
+    }
+
+    .video-feature.reverse {
+      direction: rtl;
+    }
+
+    .video-feature.reverse > * {
+      direction: ltr;
+    }
+
+    @media (max-width: 600px) {
+      .video-feature {
+        grid-template-columns: 1fr;
+      }
+      .video-feature.reverse {
+        direction: ltr;
+      }
+    }
+
+    .video-feature video,
+    .video-feature .feature-img {
+      width: 100%;
+      border-radius: 16px;
+      aspect-ratio: 9/16;
+      object-fit: cover;
+      background: var(--navy);
+      max-height: 500px;
+    }
+
+    .video-feature-text h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 0.35rem;
+    }
+
+    .video-feature-text .tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--purple-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-left: 3px solid var(--gold);
+      padding-left: 0.5rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .video-feature-text ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .video-feature-text li {
+      padding: 0.5rem 0;
+      font-size: 0.9rem;
+      color: var(--gray-dark);
+      line-height: 1.5;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .video-feature-text li:last-child {
+      border-bottom: none;
+    }
+
+    .video-feature-text li::before {
+      content: '\2713';
+      color: var(--purple-dark);
+      font-weight: 700;
+      margin-right: 0.5rem;
+    }
+
+    /* Timeline */
+    .timeline-section {
+      background: var(--navy);
+      padding: 3.5rem 0;
+      color: var(--white);
+    }
+
+    .timeline-section .section-heading {
+      color: var(--white);
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+      padding-left: 3rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 18px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: rgba(255,255,255,0.15);
+    }
+
+    .timeline-step {
+      position: relative;
+      padding-bottom: 2.5rem;
+    }
+
+    .timeline-step:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -3rem;
+      top: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(94, 23, 235, 0.15);
+      border: 2px solid rgba(94, 23, 235, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .timeline-step.active .timeline-dot {
+      background: linear-gradient(135deg, var(--purple-dark), var(--purple-light));
+      border-color: transparent;
+      color: var(--white);
+      box-shadow: 0 0 20px rgba(94, 23, 235, 0.4);
+    }
+
+    .timeline-days {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, var(--purple-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-body p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+    }
+
+    /* Founder section */
+    .founder-section {
+      padding: 3.5rem 0;
+    }
+
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 600px) {
+      .founder-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .founder-video video {
+      width: 100%;
+      border-radius: 16px;
+      aspect-ratio: 9/16;
+      object-fit: cover;
+      background: var(--navy);
+      max-height: 500px;
+    }
+
+    .founder-bio p {
+      font-size: 0.95rem;
+      color: var(--gray-dark);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .founder-instagram {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      background: var(--gray-light);
+      color: var(--purple-dark);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .founder-instagram:hover {
+      background: #e8e8ec;
+    }
+
+    /* CTA */
+    .quote-cta {
+      background: linear-gradient(135deg, var(--purple-dark) 0%, #7c3aed 60%, var(--purple-light) 100%);
+      padding: 3.5rem 2rem;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .quote-cta h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .quote-cta p {
+      font-size: 0.95rem;
+      opacity: 0.85;
+      margin-bottom: 1.5rem;
+    }
+
+    .quote-cta .trust-line {
+      font-size: 0.8rem;
+      opacity: 0.6;
+      margin-top: 1.25rem;
+    }
+
+    .quote-cta .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #25D366;
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      border-radius: 100px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+    }
+
+    .quote-cta .btn:hover {
+      background: #1da851;
+      box-shadow: 0 6px 30px rgba(37, 211, 102, 0.45);
+    }
+
+    .quote-cta .btn svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    /* Footer */
+    .quote-footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--gray-medium);
+    }
+
+    .quote-footer a {
+      color: var(--purple-dark);
+      text-decoration: none;
+    }
+
+    /* Sticky mobile CTA */
+    .sticky-cta {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .sticky-cta {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--navy);
+        padding: 0.75rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 100;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
+      }
+
+      .sticky-cta .sticky-price {
+        color: var(--white);
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      .sticky-cta .sticky-price span {
+        display: block;
+        font-size: 0.7rem;
+        font-weight: 400;
+        color: var(--gray-medium);
+      }
+
+      .sticky-cta .sticky-btn {
+        background: #25D366;
+        color: var(--white);
+        padding: 0.65rem 1.25rem;
+        border-radius: 100px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .sticky-cta .sticky-btn svg {
+        width: 16px;
+        height: 16px;
+        fill: currentColor;
+      }
+
+      .quote-footer {
+        padding-bottom: 5rem;
+      }
+    }
+
+    /* Mobile fixes for inline grids */
+    @media (max-width: 600px) {
+      .roi-inputs { grid-template-columns: 1fr !important; }
+      .roi-results-grid { grid-template-columns: 1fr !important; }
+      .growth-stages { grid-template-columns: 1fr !important; }
+      .scale-grid { grid-template-columns: 1fr !important; direction: ltr !important; }
+      .scale-section-pad { padding: 2rem 1.5rem !important; }
+      .scale-intro-pad { padding: 2.5rem 1.5rem 1.5rem !important; }
+      .scale-footer-pad { padding: 1rem 1.5rem !important; }
+    }
+  </style>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","xxjnchq70f");</script>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="quote-hero">
+    <div class="hero-split">
+      <div class="hero-details">
+        <h1>Your Quote, Sandra</h1>
+        <p class="subtitle">13 Headphones, United Kingdom</p>
+        <span class="valid-badge">Valid for 14 days &middot; Prepared 7 October 2026</span>
+        <p class="hero-endorsement">The best silent disco headset on the market, endorsed by Cisco, the founder of the silent disco movement. 30+ years of events, built into every headset.</p>
+      </div>
+      <div class="hero-image">
+        <img src="../images/equipment-headset.webp" alt="Premium Silent Disco Headphone">
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave divider -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z"/></svg>
+  </div>
+
+  <div class="container">
+
+    <!-- Product -->
+    <section class="products">
+      <h2 class="section-heading">Your Equipment</h2>
+      <div class="product-single">
+        <div class="product-card">
+          <img src="../images/equipment-headset.webp" alt="Premium Silent Disco Headphone">
+          <div class="product-card-body">
+            <h3>Premium Headphone</h3>
+            <p class="product-desc">Hi-Fi wireless headphone with padded on-ear cups and LED channel indicator.</p>
+            <ul class="product-specs">
+              <li>Epic Sound Quality: Hi-Fi system</li>
+              <li>Full Immersion: Padded on-ear cushions</li>
+              <li>Eye Catching Visuals: LED Colours (Red / Green / Blue)</li>
+              <li>Run Any Event Length: 10 hour battery</li>
+              <li>Clear Sound Everywhere: 500m range</li>
+              <li>Fits All Head Sizes: Adjustable</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- See Them in Action -->
+    <section class="video-section">
+      <h2 class="section-heading">See Them in Action</h2>
+
+      <div class="video-feature">
+        <video autoplay muted loop playsinline>
+          <source src="../images/why-section/why-breathwork-video.mp4" type="video/mp4">
+        </video>
+        <div class="video-feature-text">
+          <span class="tag">Breathwork Sessions</span>
+          <h3>Deeper Drops, Bigger Releases</h3>
+          <ul>
+            <li>Padded ear cups create a private cocoon. Participants feel safe to let go</li>
+            <li>Crystal-clear guided cues without external noise, even outdoors</li>
+            <li>Beginners go deeper, experienced practitioners go further</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- What's included -->
+    <section class="included">
+      <h2 class="section-heading">What's Included</h2>
+      <div class="included-grid">
+        <div class="included-item">
+          <span class="icon">🎧</span>
+          <p><strong>13 Headphones (10 paid + 3 free promo)</strong> Ready to use out of the box. Each headphone charges via single-point charger.</p>
+        </div>
+        <div class="included-item">
+          <span class="icon">🔌</span>
+          <p><strong>1 Charging Cable</strong> Charge multiple headphones at once. Keep your fleet ready between sessions.</p>
+        </div>
+        <div class="included-item">
+          <span class="icon">📖</span>
+          <p><strong>Setup Guide</strong> Step-by-step instructions. Setup takes 5 minutes, no technical skills needed.</p>
+        </div>
+        <div class="included-item">
+          <span class="icon">🛡️</span>
+          <p><strong>1-Year Warranty</strong> Covers manufacturing defects and malfunctions. Faulty unit? We replace it.</p>
+        </div>
+        <div class="included-item">
+          <span class="icon">💬</span>
+          <p><strong>Priority WhatsApp Support</strong> Direct line to Nic for setup help, troubleshooting, and event advice.</p>
+        </div>
+        <div class="included-item">
+          <span class="icon">🚀</span>
+          <p><strong>1 Month Free Access to Scale App</strong> Your desktop companion for experience creators. Plan events, build offers, and grow your audience.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Summary -->
+    <div class="quote-summary">
+      <h2 class="section-heading" style="text-align:left; margin-bottom:1.5rem;">Quote Summary</h2>
+      <div class="line-item">
+        <span class="label">10x Premium Headphones <span class="unit-price">(&pound;31 each)</span></span>
+        <span class="value">&pound;310</span>
+      </div>
+      <div class="line-item">
+        <span class="label">3x Premium Headphones <span class="unit-price">(Promo)</span></span>
+        <span class="value" style="color:#16a34a;">Free</span>
+      </div>
+      <div class="line-item">
+        <span class="label">1x Charging Cable</span>
+        <span class="value">&pound;15</span>
+      </div>
+      <div class="line-item">
+        <span class="label">1-Year Warranty</span>
+        <span class="value">Included</span>
+      </div>
+      <div class="line-item">
+        <span class="label">Shipping to United Kingdom</span>
+        <span class="value">TBC</span>
+      </div>
+      <div class="line-item">
+        <label class="label" style="display:flex;align-items:center;gap:0.5rem;cursor:pointer;">
+          <input type="checkbox" class="addon-quote-check" data-price="119" data-name="Custom Logo" style="width:18px;height:18px;accent-color:var(--purple-dark);cursor:pointer;">
+          Custom Logo on Headphones
+        </label>
+        <span class="value addon-quote-price" style="opacity:0.4;">+&pound;119</span>
+      </div>
+      <div class="line-total">
+        <span class="label">Estimated Total</span>
+        <span class="value" id="quote-total">&pound;325 + shipping</span>
+      </div>
+      <p class="shipping-note">Shipping via DHL Express with full tracking. Typical delivery to the United Kingdom is 2-3 weeks. We'll confirm the exact shipping cost and timeline once your order is confirmed.</p>
+    </div>
+
+    <!-- ROI Calculator -->
+    <section class="roi-calc" style="padding:2.5rem 0;">
+      <h2 class="section-heading">How Quickly Do They Pay for Themselves?</h2>
+      <div style="background:var(--gray-light);border-radius:16px;padding:2rem;">
+        <div class="roi-inputs" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+          <div>
+            <label style="font-size:0.85rem;font-weight:600;display:block;margin-bottom:0.35rem;">Number of attendees (headsets)</label>
+            <input type="number" id="roi-attendees" value="13" min="1" max="500" style="width:100%;padding:0.75rem;border-radius:8px;border:2px solid #e0e0e0;font-size:1rem;font-family:inherit;" readonly>
+          </div>
+          <div>
+            <label style="font-size:0.85rem;font-weight:600;display:block;margin-bottom:0.35rem;">Ticket price per person (&pound;)</label>
+            <input type="number" id="roi-ticket" value="40" min="1" max="500" style="width:100%;padding:0.75rem;border-radius:8px;border:2px solid #e0e0e0;font-size:1rem;font-family:inherit;">
+          </div>
+        </div>
+
+        <div id="roi-results" class="roi-results-grid" style="margin-top:1.5rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;">
+          <div style="background:white;border-radius:12px;padding:1.25rem;text-align:center;">
+            <div style="font-size:0.75rem;font-weight:600;color:var(--gray-medium);text-transform:uppercase;letter-spacing:0.05em;">Your Investment</div>
+            <div id="roi-investment" style="font-size:1.5rem;font-weight:800;color:var(--gray-dark);margin-top:0.25rem;">&pound;325</div>
+          </div>
+          <div style="background:white;border-radius:12px;padding:1.25rem;text-align:center;">
+            <div style="font-size:0.75rem;font-weight:600;color:var(--gray-medium);text-transform:uppercase;letter-spacing:0.05em;">Revenue per event</div>
+            <div id="roi-per-event" style="font-size:1.5rem;font-weight:800;color:var(--purple-dark);margin-top:0.25rem;">&pound;520</div>
+          </div>
+          <div style="background:white;border-radius:12px;padding:1.25rem;text-align:center;">
+            <div style="font-size:0.75rem;font-weight:600;color:var(--gray-medium);text-transform:uppercase;letter-spacing:0.05em;">Pays for itself in</div>
+            <div id="roi-breakeven" style="font-size:1.5rem;font-weight:800;color:#22c55e;margin-top:0.25rem;">1 event</div>
+          </div>
+        </div>
+
+        <p style="margin-top:1rem;font-size:0.8rem;color:var(--gray-medium);text-align:center;">Adjust your ticket price to see how quickly the equipment pays for itself.</p>
+      </div>
+    </section>
+
+    <!-- How Headsets Support Your Growth -->
+    <section style="padding:2.5rem 0;">
+      <h2 class="section-heading">How Headsets Support Your Growth</h2>
+      <div class="growth-stages" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;">
+
+        <div style="background:var(--gray-light);border-radius:16px;padding:1.75rem;position:relative;border-left:4px solid var(--purple-dark);">
+          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple-dark);margin-bottom:0.35rem;">Stage 1</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.35rem;">Bigger Shifts, Better Sessions</h3>
+          <p style="font-size:0.85rem;color:var(--gray-medium);line-height:1.5;">Add headphones to your existing sessions at the same price. People notice immediately. The experience feels different from anything else they've tried.</p>
+        </div>
+
+        <div style="background:var(--gray-light);border-radius:16px;padding:1.75rem;position:relative;border-left:4px solid var(--purple-light);">
+          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple-light);margin-bottom:0.35rem;">Stage 2</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.35rem;">More People Come Back</h3>
+          <p style="font-size:0.85rem;color:var(--gray-medium);line-height:1.5;">People come back more often. They tell friends. Your sessions fill up faster.</p>
+        </div>
+
+        <div style="background:var(--gray-light);border-radius:16px;padding:1.75rem;position:relative;border-left:4px solid #22c55e;">
+          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#22c55e;margin-bottom:0.35rem;">Stage 3</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.35rem;">Price Increases To Match Demand</h3>
+          <p style="font-size:0.85rem;color:var(--gray-medium);line-height:1.5;">Raising your price from &pound;20 to &pound;40 to &pound;60 doesn't feel like a risk. Each increase becomes obvious. People already want in.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Bonus: Scale App -->
+    <section style="padding:3rem 0;">
+      <div style="background:linear-gradient(160deg, #0d0f18 0%, #131728 40%, #1a1535 100%);border-radius:20px;overflow:hidden;color:#fff;position:relative;">
+
+        <div style="position:absolute;top:-80px;right:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(94,23,235,0.15) 0%,transparent 70%);pointer-events:none;"></div>
+        <div style="position:absolute;bottom:-60px;left:-60px;width:250px;height:250px;background:radial-gradient(circle,rgba(255,221,39,0.08) 0%,transparent 70%);pointer-events:none;"></div>
+
+        <div class="scale-intro-pad" style="padding:3rem 3rem 2rem;text-align:center;position:relative;">
+          <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;background:linear-gradient(135deg, #a78bfa, #fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:0.75rem;">Bonus Included With Your Order</p>
+          <h3 style="font-size:1.75rem;font-weight:800;margin-bottom:0.4rem;letter-spacing:-0.02em;">1 Month Free Access to Scale</h3>
+          <p style="color:rgba(255,255,255,0.35);font-size:0.8rem;margin-bottom:1rem;">Normally &pound;395 setup + &pound;79/month</p>
+        </div>
+
+        <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(139,92,246,0.2),rgba(255,221,39,0.15),transparent);margin:0 3rem;"></div>
+
+        <div class="scale-section-pad" style="padding:2rem 3rem 3rem;display:flex;flex-direction:column;gap:2.5rem;">
+
+          <div class="scale-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;">
+            <div>
+              <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#a78bfa;margin-bottom:0.35rem;">The Setup</p>
+              <h4 style="font-size:1.25rem;font-weight:800;margin-bottom:0.75rem;letter-spacing:-0.01em;">Position</h4>
+              <p style="font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.6;margin-bottom:0.75rem;">We studied 100 internationally known experience creators like Tony Robbins, Wim Hof and Deepak Chopra and how they blew up their brands.</p>
+              <ul style="font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.8;padding-left:1.2rem;margin:0;">
+                <li>How they paid rent before they were an internationally known name</li>
+                <li>How they scaled their income</li>
+                <li>How they became known internationally</li>
+                <li>We guide you through a process to do the same</li>
+              </ul>
+            </div>
+            <div>
+              <img src="../images/scale-position.png" alt="Blow Up Brand playbook" style="width:100%;border-radius:12px;box-shadow:0 8px 32px rgba(94,23,235,0.25),0 0 0 1px rgba(139,92,246,0.1);">
+            </div>
+          </div>
+
+          <div class="scale-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;direction:rtl;">
+            <div style="direction:ltr;">
+              <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fbbf24;margin-bottom:0.35rem;">The Portal</p>
+              <h4 style="font-size:1.25rem;font-weight:800;margin-bottom:0.5rem;letter-spacing:-0.01em;">Fill</h4>
+              <p style="font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.6;margin-bottom:0.75rem;">My secrets learnt from 200+ events and scaling from 10 participants to 100+ participants per event.</p>
+              <ul style="font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.8;padding-left:1.2rem;margin:0;">
+                <li>Experience pipeline for every event</li>
+                <li>Execution engine - tasks become challenges</li>
+                <li>Fill checklists so nothing gets forgotten</li>
+                <li>Price-It-Right calculator</li>
+              </ul>
+            </div>
+            <div style="direction:ltr;">
+              <img src="../images/scale-fill.png" alt="Experience library and pipeline" style="width:100%;border-radius:12px;box-shadow:0 8px 32px rgba(255,221,39,0.12),0 0 0 1px rgba(255,221,39,0.08);">
+            </div>
+          </div>
+
+          <div class="scale-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;">
+            <div>
+              <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#4ade80;margin-bottom:0.35rem;">The Engine</p>
+              <h4 style="font-size:1.25rem;font-weight:800;margin-bottom:0.75rem;letter-spacing:-0.01em;">Grow</h4>
+              <ul style="font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.8;padding-left:1.2rem;margin:0;">
+                <li>Repeat-attendee tracking</li>
+                <li>Profit per event</li>
+                <li>The 3% improvement note</li>
+                <li>A contact list that builds itself</li>
+              </ul>
+            </div>
+            <div>
+              <img src="../images/scale-grow.png" alt="Growth metrics and tracking" style="width:100%;border-radius:12px;box-shadow:0 8px 32px rgba(34,197,94,0.15),0 0 0 1px rgba(34,197,94,0.08);">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="scale-footer-pad" style="background:rgba(255,255,255,0.02);border-top:1px solid rgba(255,255,255,0.05);padding:1.25rem 3rem;text-align:center;">
+          <p style="font-size:0.78rem;color:rgba(255,255,255,0.35);margin:0;letter-spacing:0.01em;">Free for 1 month with your headset order. No setup fee. Cancel anytime.</p>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- Timeline -->
+  <section class="timeline-section">
+    <div class="container">
+      <h2 class="section-heading">Order to Your Door</h2>
+      <div class="timeline">
+        <div class="timeline-step active">
+          <div class="timeline-dot">1</div>
+          <div class="timeline-body">
+            <div class="timeline-days">Today</div>
+            <h3>Confirm Your Order</h3>
+            <p>Reply on WhatsApp to lock in your quote. We'll send a payment link. No upfront fees until you're ready.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-dot">2</div>
+          <div class="timeline-body">
+            <div class="timeline-days">7 - 10 days</div>
+            <h3>Manufacturing &amp; QA</h3>
+            <p>Your headphones are assembled and quality-tested.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-dot">3</div>
+          <div class="timeline-body">
+            <div class="timeline-days">5 - 8 days</div>
+            <h3>Shipping via DHL Express</h3>
+            <p>Full tracking provided. Shipped direct to your door in the United Kingdom. We'll confirm shipping cost before payment.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-dot">4</div>
+          <div class="timeline-body">
+            <div class="timeline-days">5 minutes</div>
+            <h3>Setup &amp; Go</h3>
+            <p>Turn on headphones - they sync automatically with your transmitter. No app, no pairing, no tech skills needed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder -->
+  <section class="founder-section">
+    <div class="container">
+      <h2 class="section-heading">Meet Nic Huzz</h2>
+      <div class="founder-grid">
+        <div class="founder-video">
+          <video controls playsinline preload="metadata" poster="../images/founder-portrait.jpg">
+            <source src="../images/founder-video.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="founder-bio">
+          <p>I've run 200+ events in three years. From 5 people on Bondi Beach to 150 at Bali's biggest venues. I've tested every headset brand out there.</p>
+          <p>Cisco, aka Silent Disco Jesus, the founder of the silent disco movement, helped create these headsets, empowering them to become the market leader. Same headsets. 51% less. So price is no longer a barrier for facilitators to create even better experiences.</p>
+          <a href="https://www.instagram.com/_huzz" target="_blank" class="founder-instagram">@_huzz on Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="quote-cta">
+    <h2>Ready to Go?</h2>
+    <p>Reply on WhatsApp to confirm your order or ask any questions.</p>
+    <a href="https://wa.me/61423220241?text=Hi%20Nic%2C%20I%27d%20like%20to%20confirm%20my%20order%20for%2013%20headphones" class="btn">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Build Your Package
+    </a>
+    <p class="trust-line">Trusted by 300+ events across 12 countries</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="quote-footer">
+    <p><a href="https://buysilentdiscoheadphones.com">buysilentdiscoheadphones.com</a> &middot; Premium wireless headsets for events worldwide</p>
+  </div>
+
+  <!-- Sticky mobile CTA -->
+  <div class="sticky-cta">
+    <div class="sticky-price">
+      &pound;325 <span>+ shipping</span>
+    </div>
+    <a href="https://wa.me/61423220241?text=Hi%20Nic%2C%20I%27d%20like%20to%20confirm%20my%20order%20for%2013%20headphones" class="sticky-btn">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Build Your Package
+    </a>
+  </div>
+
+<script>
+// ROI Calculator
+(function() {
+  var headsets = 13;
+  var equipmentCost = 325;
+  var tk = document.getElementById('roi-ticket');
+
+  function calc() {
+    var t = parseInt(tk.value) || 0;
+    var perEvent = headsets * t;
+    var breakeven = perEvent > 0 ? Math.ceil(equipmentCost / perEvent) : 0;
+
+    document.getElementById('roi-investment').textContent = '\u00A3' + equipmentCost.toLocaleString();
+    document.getElementById('roi-per-event').textContent = '\u00A3' + perEvent.toLocaleString();
+    document.getElementById('roi-breakeven').textContent = breakeven + ' event' + (breakeven !== 1 ? 's' : '');
+  }
+
+  tk.addEventListener('input', calc);
+  calc();
+})();
+
+// Quote add-on checkboxes
+(function() {
+  var checks = document.querySelectorAll('.addon-quote-check');
+  var totalEl = document.getElementById('quote-total');
+  var base = 325;
+
+  function update() {
+    var addonTotal = 0;
+    checks.forEach(function(cb) {
+      var priceEl = cb.closest('.line-item').querySelector('.addon-quote-price');
+      if (cb.checked) {
+        addonTotal += parseInt(cb.dataset.price) || 0;
+        priceEl.style.opacity = '1';
+      } else {
+        priceEl.style.opacity = '0.4';
+      }
+    });
+    totalEl.textContent = '\u00A3' + (base + addonTotal).toLocaleString() + ' + shipping';
+  }
+
+  checks.forEach(function(cb) {
+    cb.addEventListener('change', update);
+  });
+})();
+</script>
+</body>
+</html>
