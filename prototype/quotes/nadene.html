@@ -937,32 +937,14 @@
       </div>
     </section>
 
-    <!-- Package selector -->
+    <!-- Package summary -->
     <section>
-      <h2 class="section-heading">Choose Your Package</h2>
-      <div class="package-selector">
-        <div class="package-option active" data-pkg="20" onclick="selectPackage(20)">
-          <input type="radio" name="package" value="20" checked>
-          <span class="package-radio"></span>
-          <span class="package-label">20 Headphones</span>
-          <div class="package-breakdown">17 paid + 3 free promo</div>
-          <div class="promo-tag">3 free headphones included</div>
-          <div class="package-price">
-            $1,228 AUD
-            <span class="before-shipping">inc. shipping</span>
-          </div>
-        </div>
-        <div class="package-option" data-pkg="30" onclick="selectPackage(30)">
-          <input type="radio" name="package" value="30">
-          <span class="package-radio"></span>
-          <span class="package-label">30 Headphones</span>
-          <div class="package-breakdown">27 paid + 3 free promo</div>
-          <div class="promo-tag">3 free headphones included</div>
-          <div class="package-price">
-            $1,718 AUD
-            <span class="before-shipping">inc. shipping</span>
-          </div>
-        </div>
+      <h2 class="section-heading">Your Package</h2>
+      <div style="background:var(--gray-light);border-radius:16px;padding:1.5rem;text-align:center;">
+        <span style="font-size:1.1rem;font-weight:700;">20 Headphones</span>
+        <div style="font-size:0.85rem;color:var(--gray-medium);margin-top:0.25rem;">17 paid + 3 free promo</div>
+        <div class="promo-tag" style="margin-top:0.5rem;">3 free headphones included</div>
+        <div style="font-size:1.35rem;font-weight:800;color:var(--purple-dark);margin-top:0.75rem;">$1,228 AUD <span style="font-size:0.75rem;font-weight:400;color:var(--gray-medium);display:block;">inc. shipping</span></div>
       </div>
     </section>
 
@@ -1240,35 +1222,7 @@
   </div>
 
 <script>
-var packages = {
-  20: { total: 20, paid: 17, free: 3, headsetCost: 833, equipmentTotal: 1098, withShipping: 1228 },
-  30: { total: 30, paid: 27, free: 3, headsetCost: 1323, equipmentTotal: 1588, withShipping: 1718 }
-};
-
-var currentPkg = 20;
-
-function selectPackage(n) {
-  currentPkg = n;
-  var pkg = packages[n];
-
-  document.querySelectorAll('.package-option').forEach(function(el) {
-    el.classList.toggle('active', parseInt(el.dataset.pkg) === n);
-  });
-
-  document.getElementById('hero-subtitle').textContent = pkg.total + ' Headphones + 1 Transmitter';
-  document.getElementById('included-headphones').textContent = pkg.total + ' Headphones (' + pkg.paid + ' paid + ' + pkg.free + ' free promo)';
-  document.getElementById('paid-label').innerHTML = pkg.paid + 'x Premium Headphones <span class="unit-price">($49 AUD each)</span>';
-  document.getElementById('paid-value').textContent = '$' + pkg.headsetCost.toLocaleString() + ' AUD';
-  document.getElementById('sticky-total').textContent = '$' + pkg.withShipping.toLocaleString();
-
-  updateTotal();
-  calcROI();
-
-  var msg = encodeURIComponent('Hi Nic, I\'d like to confirm my order for ' + pkg.total + ' headphones + 1 transmitter');
-  var waUrl = 'https://wa.me/61423220241?text=' + msg;
-  document.getElementById('cta-btn').href = waUrl;
-  document.getElementById('sticky-btn').href = waUrl;
-}
+var pkg = { total: 20, paid: 17, free: 3, headsetCost: 833, equipmentTotal: 1098, withShipping: 1228 };
 
 function getAddonTotal() {
   var addonTotal = 0;
@@ -1285,7 +1239,6 @@ function getAddonTotal() {
 }
 
 function updateTotal() {
-  var pkg = packages[currentPkg];
   var addonTotal = getAddonTotal();
   var total = pkg.withShipping + addonTotal;
   document.getElementById('quote-total').textContent = '$' + total.toLocaleString() + ' AUD';
@@ -1293,7 +1246,6 @@ function updateTotal() {
 }
 
 function calcROI() {
-  var pkg = packages[currentPkg];
   var addonTotal = getAddonTotal();
   var investment = pkg.withShipping + addonTotal;
   var ticket = parseInt(document.getElementById('roi-ticket').value) || 0;
