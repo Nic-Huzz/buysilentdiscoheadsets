@@ -306,6 +306,45 @@
       line-height: 1.6;
     }
 
+    .addon-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .addon-checkbox input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #d1d5db;
+      border-radius: 6px;
+      flex-shrink: 0;
+      cursor: pointer;
+      position: relative;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .addon-checkbox input[type="checkbox"]:checked {
+      background: var(--purple-dark);
+      border-color: var(--purple-dark);
+    }
+
+    .addon-checkbox input[type="checkbox"]:checked::after {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 1px;
+      width: 8px;
+      height: 12px;
+      border: 2px solid white;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg);
+    }
+
     .promo-tag {
       display: inline-block;
       margin-top: 0.5rem;
@@ -543,7 +582,7 @@
     <div class="hero-split">
       <div class="hero-details">
         <h1>Your Quote, Jodhi</h1>
-        <p class="subtitle">33 Headphones + 1 Transmitter + 2 Charging Cables</p>
+        <p class="subtitle">30 Headphones + 1 Transmitter + 2 Charging Cables</p>
         <span class="valid-badge">Valid for 14 days · Prepared 12 October 2026</span>
         <p class="hero-endorsement">The best silent disco headset on the market, endorsed by Cisco, the founder of the silent disco movement. 30+ years of events, built into every headset.</p>
       </div>
@@ -620,7 +659,7 @@
       <div class="included-grid">
         <div class="included-item">
           <span class="icon">🎧</span>
-          <p><strong>33 Headphones (30 paid + 3 free promo)</strong> Ready to use out of the box. Each headphone charges via single-point charger.</p>
+          <p><strong>30 Headphones (27 paid + 3 free promo)</strong> Ready to use out of the box. Each headphone charges via single-point charger.</p>
         </div>
         <div class="included-item">
           <span class="icon">📡</span>
@@ -653,8 +692,8 @@
     <div class="quote-summary">
       <h2 class="section-heading" style="text-align:left; margin-bottom:1.5rem;">Quote Summary</h2>
       <div class="line-item">
-        <span class="label">30x Premium Headphones <span class="unit-price">($39 USD / $55 AUD each)</span></span>
-        <span class="value">$1,170 USD <span class="unit-price">/ $1,650 AUD</span></span>
+        <span class="label">27x Premium Headphones <span class="unit-price">($55 AUD each)</span></span>
+        <span class="value">$1,485 AUD</span>
       </div>
       <div class="line-item">
         <span class="label">3x Premium Headphones <span class="unit-price">(Promo)</span></span>
@@ -662,11 +701,25 @@
       </div>
       <div class="line-item">
         <span class="label">1x Professional Transmitter</span>
-        <span class="value">$169 USD <span class="unit-price">/ $239 AUD</span></span>
+        <span class="value">$239 AUD</span>
       </div>
       <div class="line-item">
-        <span class="label">2x Charging Cables <span class="unit-price">($19 USD / $25 AUD each)</span></span>
-        <span class="value">$38 USD <span class="unit-price">/ $50 AUD</span></span>
+        <span class="label">2x Charging Cables <span class="unit-price">($25 AUD each)</span></span>
+        <span class="value">$50 AUD</span>
+      </div>
+      <div class="line-item">
+        <label class="addon-checkbox">
+          <input type="checkbox" id="addon-logo" onchange="updateQuoteTotal()">
+          <span class="label">Custom Logo on Headphones <span class="unit-price">(Optional add-on)</span></span>
+        </label>
+        <span class="value" style="color:var(--gray-medium);">+ $270 AUD</span>
+      </div>
+      <div class="line-item">
+        <label class="addon-checkbox">
+          <input type="checkbox" id="addon-colours" onchange="updateQuoteTotal()">
+          <span class="label">Custom LED Colour Choice <span class="unit-price">(Free add-on)</span></span>
+        </label>
+        <span class="value" style="color:#16a34a;">Free</span>
       </div>
       <div class="line-item">
         <span class="label">1-year warranty</span>
@@ -678,7 +731,7 @@
       </div>
       <div class="line-total">
         <span class="label">Subtotal (excl. shipping)</span>
-        <span class="value">$1,377 USD <span style="font-size:0.85rem;color:var(--gray-medium);font-weight:400;">/ $1,939 AUD</span></span>
+        <span class="value"><span id="subtotal-display">$1,774 AUD</span></span>
       </div>
       <p class="shipping-note">Shipping via DHL Express with full tracking. We'll confirm the exact shipping cost and delivery timeline once your order is confirmed.</p>
     </div>
@@ -690,10 +743,10 @@
         <div class="roi-inputs" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
           <div>
             <label style="font-size:0.85rem;font-weight:600;display:block;margin-bottom:0.35rem;">Number of attendees (headsets)</label>
-            <input type="number" id="roi-attendees" value="33" min="1" max="500" style="width:100%;padding:0.75rem;border-radius:8px;border:2px solid #e0e0e0;font-size:1rem;font-family:inherit;" readonly>
+            <input type="number" id="roi-attendees" value="30" min="1" max="500" style="width:100%;padding:0.75rem;border-radius:8px;border:2px solid #e0e0e0;font-size:1rem;font-family:inherit;" readonly>
           </div>
           <div>
-            <label style="font-size:0.85rem;font-weight:600;display:block;margin-bottom:0.35rem;">Ticket price per person (USD)</label>
+            <label style="font-size:0.85rem;font-weight:600;display:block;margin-bottom:0.35rem;">Ticket price per person (AUD)</label>
             <input type="number" id="roi-ticket" value="50" min="1" max="500" style="width:100%;padding:0.75rem;border-radius:8px;border:2px solid #e0e0e0;font-size:1rem;font-family:inherit;">
           </div>
         </div>
@@ -864,7 +917,7 @@
   <div class="quote-cta">
     <h2>Ready to Go?</h2>
     <p>Reply on WhatsApp to confirm your order or ask any questions.</p>
-    <a href="https://wa.me/61423220241?text=Hi%20Nic%2C%20I%27d%20like%20to%20confirm%20my%20order%20for%2033%20headphones%20%2B%201%20transmitter%20%2B%202%20charging%20cables" class="btn">
+    <a href="https://wa.me/61423220241?text=Hi%20Nic%2C%20I%27d%20like%20to%20confirm%20my%20order%20for%2030%20headphones%20%2B%201%20transmitter%20%2B%202%20charging%20cables" class="btn">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Build Your Package
     </a>
@@ -879,34 +932,41 @@
   <!-- Sticky mobile CTA -->
   <div class="sticky-cta">
     <div class="sticky-price">
-      $1,377 USD <span>/ $1,939 AUD excl. shipping</span>
+      <span id="sticky-price">$1,774 AUD</span> <span>excl. shipping</span>
     </div>
-    <a href="https://wa.me/61423220241?text=Hi%20Nic%2C%20I%27d%20like%20to%20confirm%20my%20order%20for%2033%20headphones%20%2B%201%20transmitter%20%2B%202%20charging%20cables" class="sticky-btn">
+    <a href="https://wa.me/61423220241?text=Hi%20Nic%2C%20I%27d%20like%20to%20confirm%20my%20order%20for%2030%20headphones%20%2B%201%20transmitter%20%2B%202%20charging%20cables" class="sticky-btn">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Confirm
     </a>
   </div>
 
 <script>
-// ROI Calculator
-(function() {
-  var headsets = 33;
-  var investment = 1377;
-  var tk = document.getElementById('roi-ticket');
+  var BASE_AUD = 1774;
+  var LOGO_AUD = 270;
+  var ROI_HEADSETS = 30;
+  var currentInvestment = BASE_AUD;
 
-  function calc() {
+  function updateQuoteTotal() {
+    var hasLogo = document.getElementById('addon-logo').checked;
+    currentInvestment = BASE_AUD + (hasLogo ? LOGO_AUD : 0);
+    var display = '$' + currentInvestment.toLocaleString() + ' AUD';
+    document.getElementById('subtotal-display').textContent = display;
+    document.getElementById('sticky-price').textContent = display;
+    calcROI();
+  }
+
+  function calcROI() {
+    var tk = document.getElementById('roi-ticket');
     var t = parseInt(tk.value) || 0;
-    var perEvent = headsets * t;
-    var breakeven = perEvent > 0 ? Math.ceil(investment / perEvent) : 0;
-    document.getElementById('roi-investment').textContent = '$' + investment.toLocaleString() + ' USD';
-    var audRate = 1.432;
-    document.getElementById('roi-per-event').textContent = '$' + perEvent.toLocaleString() + ' USD';
+    var perEvent = ROI_HEADSETS * t;
+    var breakeven = perEvent > 0 ? Math.ceil(currentInvestment / perEvent) : 0;
+    document.getElementById('roi-investment').textContent = '$' + currentInvestment.toLocaleString() + ' AUD';
+    document.getElementById('roi-per-event').textContent = '$' + perEvent.toLocaleString() + ' AUD';
     document.getElementById('roi-breakeven').textContent = breakeven + ' event' + (breakeven !== 1 ? 's' : '');
   }
 
-  tk.addEventListener('input', calc);
-  calc();
-})();
+  document.getElementById('roi-ticket').addEventListener('input', calcROI);
+  calcROI();
 </script>
 </body>
 </html>
