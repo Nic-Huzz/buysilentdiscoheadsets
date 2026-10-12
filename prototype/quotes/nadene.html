@@ -295,6 +295,87 @@
       line-height: 1.6;
     }
 
+    /* Payment section */
+    .payment-section {
+      background: rgba(94,23,235,0.05);
+      border: 1px solid rgba(94,23,235,0.15);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .payment-section h3 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--purple-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+
+    .payment-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      font-size: 0.9rem;
+    }
+
+    .payment-row:last-child { border-bottom: none; }
+    .payment-row .pay-label { color: var(--gray-medium); }
+    .payment-row .pay-value { font-weight: 600; color: var(--gray-dark); font-family: 'Poppins', monospace; }
+
+    .invoice-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--white);
+      color: var(--gray-dark);
+      border: 2px solid #e0e0e0;
+      padding: 0.7rem 1.5rem;
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      transition: border-color 0.2s, color 0.2s;
+      margin-top: 1.25rem;
+    }
+
+    .invoice-btn:hover { border-color: var(--purple-dark); color: var(--purple-dark); }
+
+    /* Print-only invoice header */
+    .print-invoice-header { display: none; }
+
+    @media print {
+      .print-invoice-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px solid #5e17eb;
+      }
+      .print-invoice-header .from-block h2 { font-size: 1rem; font-weight: 800; color: #5e17eb; }
+      .print-invoice-header .from-block p { font-size: 0.75rem; color: #666; line-height: 1.6; }
+      .print-invoice-header .inv-block { text-align: right; }
+      .print-invoice-header .inv-block .inv-num { font-size: 1.1rem; font-weight: 800; color: #5e17eb; }
+      .print-invoice-header .inv-block p { font-size: 0.75rem; color: #666; }
+      .print-invoice-header .bill-block h4 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #999; margin-bottom: 0.25rem; }
+      .print-invoice-header .bill-block p { font-size: 0.9rem; font-weight: 600; color: #111; }
+
+      .quote-hero, .wave-divider, .products, .video-section,
+      .included, .roi-calc, .section-growth, .section-scale,
+      .timeline-section, .founder-section, .quote-cta,
+      .quote-footer, .sticky-cta { display: none !important; }
+
+      body { background: white; }
+      .container { padding: 2rem; max-width: 100%; }
+      .quote-summary { background: white; border-left: 4px solid #5e17eb; }
+      .invoice-btn { display: none; }
+      @page { margin: 1.5cm; size: A4; }
+    }
+
     /* Product cards */
     .products {
       padding: 2.5rem 0;
@@ -949,6 +1030,22 @@
     </section>
 
     <!-- Quote Summary -->
+    <!-- Print-only invoice header (hidden on screen) -->
+    <div class="print-invoice-header">
+      <div class="from-block">
+        <h2>Buy Silent Disco Headphones</h2>
+        <p>PT Tropic Sip Bali<br>NPWP: 1000 0000 0787 7772<br>buysilentdiscoheadphones.com</p>
+      </div>
+      <div class="bill-block">
+        <h4>Bill To</h4>
+        <p>Nadene<br>Australia</p>
+      </div>
+      <div class="inv-block">
+        <div class="inv-num">INV-2610-002</div>
+        <p>Issued: 12 October 2026<br>Due on receipt</p>
+      </div>
+    </div>
+
     <div class="quote-summary">
       <h2 class="section-heading" style="text-align:left; margin-bottom:1.5rem;">Quote Summary</h2>
       <div class="line-item">
@@ -987,6 +1084,40 @@
         <span class="value" id="quote-total">$1,228 AUD</span>
       </div>
       <p class="shipping-note">Shipping via DHL Express with full tracking. Typical delivery to Australia is 1-2 weeks. We'll confirm the exact shipping cost and timeline once your order is confirmed.</p>
+
+      <!-- Payment Details -->
+      <div class="payment-section">
+        <h3>Payment Details - Bank Transfer (AUD)</h3>
+        <div class="payment-row">
+          <span class="pay-label">Bank</span>
+          <span class="pay-value">Wise</span>
+        </div>
+        <div class="payment-row">
+          <span class="pay-label">Account Name</span>
+          <span class="pay-value">Nicholas Hurrell</span>
+        </div>
+        <div class="payment-row">
+          <span class="pay-label">BSB</span>
+          <span class="pay-value">774 001</span>
+        </div>
+        <div class="payment-row">
+          <span class="pay-label">Account Number</span>
+          <span class="pay-value">2072 680 14</span>
+        </div>
+        <div class="payment-row">
+          <span class="pay-label">Wise Tag</span>
+          <span class="pay-value">@nicholaschusakh</span>
+        </div>
+        <div class="payment-row">
+          <span class="pay-label">Reference</span>
+          <span class="pay-value">Nadene - Headphones</span>
+        </div>
+      </div>
+
+      <button class="invoice-btn" onclick="window.print()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        Generate Invoice
+      </button>
     </div>
 
     <!-- ROI Calculator -->
@@ -1024,7 +1155,7 @@
     </section>
 
     <!-- How Headsets Support Your Growth -->
-    <section style="padding:2.5rem 0;">
+    <section class="section-growth" style="padding:2.5rem 0;">
       <h2 class="section-heading">How Headsets Support Your Growth</h2>
       <div class="growth-stages" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;">
 
@@ -1050,7 +1181,7 @@
     </section>
 
     <!-- Bonus: Scale App -->
-    <section style="padding:3rem 0;">
+    <section class="section-scale" style="padding:3rem 0;">
       <div style="background:linear-gradient(160deg, #0d0f18 0%, #131728 40%, #1a1535 100%);border-radius:20px;overflow:hidden;color:#fff;position:relative;">
 
         <!-- Ambient glow -->
