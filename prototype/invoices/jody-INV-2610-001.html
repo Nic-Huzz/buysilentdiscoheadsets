@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invoice INV-2610-001 — Jody | Buy Silent Disco Headphones</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #0d0d14;
+    color: #e8e4f0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .invoice {
+    width: 100%;
+    max-width: 720px;
+    background: #11151c;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #4a0ea8 0%, #5e17eb 50%, #7c3aed 100%);
+    padding: 44px 48px 40px;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .brand h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  .brand .tagline {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-top: 5px;
+  }
+
+  .brand .npwp {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 3px;
+  }
+
+  .invoice-badge {
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 14px 22px;
+    text-align: right;
+  }
+
+  .invoice-badge .inv-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .invoice-badge .inv-number {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffdd27;
+    margin-top: 3px;
+  }
+
+  .invoice-badge .inv-date {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 4px;
+  }
+
+  /* Parties */
+  .parties {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .party {
+    padding: 28px 36px;
+    background: #11151c;
+  }
+
+  .party-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 10px;
+  }
+
+  .party h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  .party p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+  }
+
+  .party .npwp-tag {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 3px 10px;
+    border-radius: 100px;
+    background: rgba(94,23,235,0.2);
+    border: 1px solid rgba(94,23,235,0.3);
+    font-size: 11px;
+    color: #a78bfa;
+    font-weight: 500;
+  }
+
+  /* Line items */
+  .items {
+    padding: 32px 36px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .items-header {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 1rem;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .items-header .col-price { text-align: right; }
+  .items-header .col-total { text-align: right; min-width: 90px; }
+
+  .line-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 1rem;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    align-items: center;
+  }
+
+  .line-item:last-child { border-bottom: none; }
+
+  .item-name {
+    font-size: 13px;
+    color: #e8e4f0;
+    font-weight: 500;
+  }
+
+  .item-sub {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    margin-top: 2px;
+  }
+
+  .item-price {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .item-total {
+    font-size: 13px;
+    color: #e8e4f0;
+    font-weight: 600;
+    text-align: right;
+    min-width: 90px;
+    white-space: nowrap;
+  }
+
+  /* Totals */
+  .totals {
+    padding: 0 36px 32px;
+  }
+
+  .totals-box {
+    background: rgba(255,255,255,0.03);
+    border-radius: 12px;
+    padding: 20px 24px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .subtotal-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    padding: 5px 0;
+  }
+
+  .total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .total-row .label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .total-row .amount {
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffdd27;
+  }
+
+  /* Payment */
+  .payment {
+    margin: 0 36px 32px;
+    background: rgba(94,23,235,0.08);
+    border: 1px solid rgba(94,23,235,0.2);
+    border-radius: 12px;
+    padding: 22px 24px;
+  }
+
+  .payment-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 12px;
+  }
+
+  .payment-method {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .stripe-badge {
+    background: #635bff;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.5px;
+  }
+
+  .payment a {
+    color: #a78bfa;
+    font-size: 13px;
+    word-break: break-all;
+    text-decoration: none;
+  }
+
+  .payment a:hover { color: #ffdd27; }
+
+  .pay-btn {
+    display: inline-block;
+    margin-top: 14px;
+    background: #635bff;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.2s;
+  }
+
+  .pay-btn:hover { background: #4f46e5; }
+
+  /* Footer */
+  .footer {
+    background: rgba(255,255,255,0.02);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 20px 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer p {
+    font-size: 11px;
+    color: rgba(255,255,255,0.25);
+  }
+
+  .footer a {
+    color: rgba(255,255,255,0.35);
+    text-decoration: none;
+    font-size: 11px;
+  }
+
+  /* Print styles */
+  @media print {
+    body { background: white; padding: 0; }
+    .invoice { box-shadow: none; border-radius: 0; background: white; color: #111; }
+    .header { background: #5e17eb !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .pay-btn { display: none; }
+    .payment a { color: #5e17eb; }
+    .party, .items, .totals, .payment, .footer { background: white; color: #111; }
+    .item-name, .item-total, .total-row .label { color: #111; }
+    .item-sub, .item-price, .subtotal-row, .footer p { color: #666; }
+    .total-row .amount { color: #5e17eb; }
+    @page { margin: 0; }
+  }
+
+  @media (max-width: 600px) {
+    .header { padding: 28px 24px; }
+    .header-top { flex-direction: column; gap: 16px; }
+    .invoice-badge { text-align: left; }
+    .parties { grid-template-columns: 1fr; }
+    .items, .totals, .payment { padding-left: 24px; padding-right: 24px; }
+    .footer { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="invoice">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-top">
+      <div class="brand">
+        <h1>Buy Silent Disco Headphones</h1>
+        <p class="tagline">buysilentdiscoheadphones.com</p>
+        <p class="npwp">PT Tropic Sip Bali &nbsp;·&nbsp; NPWP: 1000 0000 0787 7772</p>
+      </div>
+      <div class="invoice-badge">
+        <div class="inv-label">Invoice</div>
+        <div class="inv-number">INV-2610-001</div>
+        <div class="inv-date">12 October 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Parties -->
+  <div class="parties">
+    <div class="party">
+      <div class="party-label">From</div>
+      <h3>Buy Silent Disco Headphones</h3>
+      <p>PT Tropic Sip Bali</p>
+      <p>buysilentdiscoheadphones.com</p>
+      <span class="npwp-tag">NPWP: 1000 0000 0787 7772</span>
+    </div>
+    <div class="party">
+      <div class="party-label">Bill To</div>
+      <h3>Jody</h3>
+      <p>United States</p>
+    </div>
+  </div>
+
+  <!-- Line Items -->
+  <div class="items">
+    <div class="items-header">
+      <span>Description</span>
+      <span class="col-price">Unit Price</span>
+      <span class="col-total">Amount</span>
+    </div>
+
+    <div class="line-item">
+      <div>
+        <div class="item-name">Premium Silent Disco Headphones</div>
+        <div class="item-sub">Custom colour (red/green/blue LED) · Qty 3</div>
+      </div>
+      <div class="item-price">$40 USD</div>
+      <div class="item-total">$120 USD</div>
+    </div>
+
+    <div class="line-item">
+      <div>
+        <div class="item-name">Custom Logo on Headphones</div>
+        <div class="item-sub">1x design, applied to all 3 units</div>
+      </div>
+      <div class="item-price">$150 USD</div>
+      <div class="item-total">$150 USD</div>
+    </div>
+
+    <div class="line-item">
+      <div>
+        <div class="item-name">Professional RF Transmitter</div>
+        <div class="item-sub">Single channel · 500m range · Battery powered</div>
+      </div>
+      <div class="item-price">$169 USD</div>
+      <div class="item-total">$169 USD</div>
+    </div>
+
+    <div class="line-item">
+      <div>
+        <div class="item-name">Charging Cable</div>
+        <div class="item-sub">Multi-headphone charging</div>
+      </div>
+      <div class="item-price">$19 USD</div>
+      <div class="item-total">$19 USD</div>
+    </div>
+
+    <div class="line-item">
+      <div>
+        <div class="item-name">Shipping — DHL Express</div>
+        <div class="item-sub">Full tracking · Delivery 2-3 weeks</div>
+      </div>
+      <div class="item-price">$84 USD</div>
+      <div class="item-total">$84 USD</div>
+    </div>
+
+    <div class="line-item">
+      <div>
+        <div class="item-name">Card Processing Fee</div>
+        <div class="item-sub">3% Stripe processing</div>
+      </div>
+      <div class="item-price">3%</div>
+      <div class="item-total">$16.26 USD</div>
+    </div>
+
+  </div>
+
+  <!-- Totals -->
+  <div class="totals">
+    <div class="totals-box">
+      <div class="subtotal-row">
+        <span>Subtotal (excl. fee)</span>
+        <span>$542.00 USD</span>
+      </div>
+      <div class="subtotal-row">
+        <span>Card processing fee (3%)</span>
+        <span>$16.26 USD</span>
+      </div>
+      <div class="total-row">
+        <span class="label">Total Due</span>
+        <span class="amount">$558.26 USD</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Payment -->
+  <div class="payment">
+    <div class="payment-label">Payment</div>
+    <div class="payment-method">
+      <span class="stripe-badge">Stripe</span>
+      <span style="font-size:12px;color:rgba(255,255,255,0.4);">Secure card payment</span>
+    </div>
+    <div style="margin-top:12px;">
+      <a href="[STRIPE_PAYMENT_LINK]" id="pay-link">[STRIPE_PAYMENT_LINK]</a>
+    </div>
+    <a href="[STRIPE_PAYMENT_LINK]" id="pay-btn" class="pay-btn">Pay $558.26 USD</a>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>Invoice INV-2610-001 · Issued 12 October 2026 · Due on receipt</p>
+    <a href="https://buysilentdiscoheadphones.com">buysilentdiscoheadphones.com</a>
+  </div>
+
+</div>
+
+</body>
+</html>
