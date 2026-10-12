@@ -6,35 +6,6 @@ const corsHeaders = {
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
 }
 
-function buildWelcomeEmail(tag: string): string {
-  const spotifyLinks: Record<string, string> = {
-    'breathwork-playlist': '<p style="margin-top:20px;"><a href="https://open.spotify.com/playlist/3QerAp22uDXUJ1n8Bq0NwJ?si=9e07f61dab6444d9" style="color:#5e17eb;font-weight:600;">Listen to our Breathwork Playlist on Spotify →</a></p>',
-    'dance-playlist': '<p style="margin-top:20px;"><a href="https://open.spotify.com/playlist/6Ftw0T93Qjo48TJcFY9aC5?si=d05f6427289d4b75" style="color:#5e17eb;font-weight:600;">Listen to our Dance Playlist on Spotify →</a></p>',
-  }
-
-  const playlistBlock = spotifyLinks[tag] || ''
-
-  return `
-    <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#1d1d1f;">
-      <p>Hey,</p>
-      <p>Welcome - this month we're giving away 3 free headsets with any order.</p>
-      <div style="background:#5e17eb;color:#fff;text-align:center;padding:16px;border-radius:8px;font-size:20px;font-weight:700;letter-spacing:1px;margin:20px 0;">3 FREE HEADSETS WITH ANY ORDER</div>
-      <p><a href="https://buysilentdiscoheadphones.com/#packages" style="color:#5e17eb;font-weight:600;">Build Your Package →</a></p>
-      <p>After 200+ sessions and 400 hours of breathwork certification, these are the 5 principles I build every session off:</p>
-      <div style="background:#f5f3f7;padding:20px;border-radius:8px;margin:20px 0;">
-        <p style="margin:8px 0;"><strong>1. Safety is key</strong> - participants can only go as deep or feel as high as they feel safe</p>
-        <p style="margin:8px 0;"><strong>2. They leave feeling great</strong> - every session ends with movement</p>
-        <p style="margin:8px 0;"><strong>3. Clear on the peaks</strong> - design the peak highs and peak lows intentionally</p>
-        <p style="margin:8px 0;"><strong>4. Never have attendees sitting still passively consuming for more than 5 minutes</strong> - keep the energy and session fresh and moving</p>
-        <p style="margin:8px 0;"><strong>5. Connect them to the mission</strong> - they need to feel why they're here</p>
-      </div>
-      <p>Noise-cancelling headphones are how I deliver on principle #1. The moment external distractions disappear, participants feel safe enough to actually let go. It changed everything for my sessions.</p>
-      ${playlistBlock}
-      <p style="margin-top:20px;">This offer is valid through the end of the month.</p>
-      <p>Talk soon,<br>Nic<br><span style="color:#86868b;font-size:14px;">Founder, Buy Silent Disco Headphones<br>400-hour certified breathwork facilitator</span></p>
-    </div>
-  `
-}
 
 Deno.serve(async (req: Request) => {
   if (req.method === 'OPTIONS') {
@@ -76,21 +47,16 @@ Deno.serve(async (req: Request) => {
 
     if (existing) {
       const currentTags = existing.tags || []
-      const updates: Record<string, unknown> = {}
-      if (!currentTags.includes(tag)) {
-        updates.tags = [...currentTags, tag]
-      }
-      if (metadata) {
-        const existingMeta = (existing as any).metadata || {}
-        updates.metadata = { ...existingMeta, ...metadata, last_activity: new Date().toISOString() }
-      }
-      if (Object.keys(updates).length > 0) {
-        const { error } = await supabase
-          .from('external_contacts')
-          .update(updates)
-          .eq('id', existing.id)
-        if (error) throw error
-      }
+      const updatedTags = currentTags.includes(tag) ? currentTags : [...currentTags, tag]
+      const mergedMetadata = metadata
+        ? { ...(existing.metadata || {}), ...metadata, last_activity: new Date().toISOString() }
+        : existing.metadata || {}
+
+      const { error } = await supabase
+        .from('external_contacts')
+        .update({ tags: updatedTags, metadata: mergedMetadata })
+        .eq('id', existing.id)
+      if (error) throw error
       contactId = existing.id
     } else {
       const { data, error } = await supabase
@@ -101,7 +67,7 @@ Deno.serve(async (req: Request) => {
           source: 'headset-sales',
           tags: [tag],
           subscribed: true,
-          metadata: metadata || {},
+          metadata: metadata ? { ...metadata, last_activity: new Date().toISOString() } : {},
         })
         .select('id')
         .single()
@@ -109,25 +75,24 @@ Deno.serve(async (req: Request) => {
       contactId = data.id
     }
 
-    // Send welcome email via Resend
-    const resendApiKey = Deno.env.get('RESEND_API_KEY')
-    if (resendApiKey) {
+    // Add to MailerLite and trigger welcome sequence for popup signups
+    const mailerliteApiKey = Deno.env.get('MAILERLITE_API_KEY')
+    if (mailerliteApiKey && (tag === 'popup-free-headsets' || tag === 'popup-discount')) {
       try {
-        await fetch('https://api.resend.com/emails', {
+        await fetch('https://connect.mailerlite.com/api/subscribers', {
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${resendApiKey}`,
+            'Authorization': `Bearer ${mailerliteApiKey}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            from: 'Nic Huzz <nic@nichuzz.com>',
-            to: cleanEmail,
-            subject: 'Your 3 free headsets + the 5 principles behind 200+ sessions',
-            html: buildWelcomeEmail(tag),
+            email: cleanEmail,
+            name: name || undefined,
+            groups: ['200817537597835023'],
           }),
         })
       } catch (err) {
-        console.error('Resend error:', err)
+        console.error('MailerLite error:', err)
       }
     }
 
