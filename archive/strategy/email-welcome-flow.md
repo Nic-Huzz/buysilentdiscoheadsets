@@ -3,7 +3,7 @@
 _For buysilentdiscoheadphones.com (sales site, not rental)_
 _Platform: Resend via Supabase Edge Function_
 _Trigger: Email pop-up sign-up (added to list)_
-_Promo: 3 free headsets with any order (monthly offer, minimum order 10)_
+_Promo: 2 free headsets with any order (valid until end of November 2026, minimum order 10)_
 _Structure: Hormozi 3-7-30 framework + Hopkins Scientific Advertising copy method_
 
 > **NOTE (2026-09-19):** Full 3-7-30 rebuild. Days 1-3 best stuff upfront (kept). Days 5-11 objection busters (new). Days 14-37 value nurture (new). Old Email 4 (urgency/last chance) removed - it was "just buy my thing" pattern.
@@ -15,7 +15,7 @@ _Structure: Hormozi 3-7-30 framework + Hopkins Scientific Advertising copy metho
 **Trigger:** Exit intent + 30-second delay + 65% scroll
 **Frequency:** Show once per day, don't show again after submitted
 
-**Headline:** Claim 3 Free Headsets
+**Headline:** Claim 2 Free Headsets
 **Subheading:** Plus the 5 principles behind 200+ immersive sessions
 **Input field:** Email address
 **Button:** Claim My Free Headsets
@@ -42,7 +42,7 @@ _Daily emails. Give them the best you've got immediately._
 
 Hey there!
 
-After 200+ sessions and 400 hours of breathwork certification, these are the 5 principles that separate sessions people forget by dinner from ones they talk about for weeks:
+After 200+ sessions (breathwork, dance, guided journeys) and 400 hours of breathwork certification, these are the 5 principles that separate sessions people forget by dinner from ones they talk about for weeks:
 
 **1. Safety first.** Participants can only go as deep as they feel safe. The moment they're scanning the room or hearing traffic outside, they're monitoring, not surrendering. Remove the external world and they drop in faster.
 
@@ -60,7 +60,7 @@ That's the problem headphones solve. Noise-cancelling cushions over the ear crea
 
 Emily, a breathwork facilitator, told me her participants "drop in twice as fast" since switching to headphones. At $39 per headset, most facilitators pay for them in a single session.
 
-I include 3 free headsets with every order placed before October 30th - I'm building case studies from facilitators who are just getting started, and I want to remove every barrier.
+I include 2 free headsets with every order placed before November 30th - I'm building case studies from facilitators who are just getting started, and I want to remove every barrier.
 
 Reply to this email and tell me what you facilitate. I'll tell you exactly what setup you need.
 
@@ -95,7 +95,7 @@ This is the part that matters for your sessions: Every session you've ever cance
 
 I completed a 400-hour breathwork teacher training along the way, and started selling direct. The same headphones the big brands charge $70-80 for, yours to own from $39.
 
-Every order placed before October 30th includes 3 free headsets. I'm building case studies from facilitators who are just getting started.
+Every order placed before November 30th includes 2 free headsets. I'm building case studies from facilitators who are just getting started.
 
 Reply and tell me where you'd run your first session if venue didn't matter. I'll tell you exactly what setup you need.
 
@@ -138,7 +138,7 @@ Here's what facilitators told us after their first session:
 
 Every order includes a 1-year warranty. If anything is faulty, we replace it.
 
-Every order placed before October 30th also includes 3 free headsets. That's 30 headsets for the price of 27.
+Every order placed before November 30th also includes 2 free headsets. That's 30 headsets for the price of 28.
 
 Reply with your group size and I'll send you an exact quote within 24 hours.
 
@@ -177,7 +177,7 @@ Every one of those premium experiences uses headphones.
 
 I'm not saying headphones are the only reason they charge more. But I've never seen a facilitator add headphones and charge less.
 
-Our headsets start at $39. Every order placed before October 30th includes 3 free headsets.
+Our headsets start at $39. Every order placed before November 30th includes 2 free headsets.
 
 Reply with what you charge per session and I'll show you the break-even math for your specific setup.
 
@@ -221,7 +221,7 @@ That doesn't count the flexibility. When you own, you can:
 
 Most facilitators break even within the first month if they're running weekly sessions.
 
-Every order placed before October 30th includes 3 free headsets.
+Every order placed before November 30th includes 2 free headsets.
 
 Reply with how often you run sessions and I'll show you your exact break-even point.
 
@@ -258,7 +258,7 @@ The $79 headphones from Party Headphones use the same RF technology and similar 
 
 I went direct to the factory Cisco helped build the relationship with. Same quality, 51% less.
 
-Every order placed before October 30th includes 3 free headsets.
+Every order placed before November 30th includes 2 free headsets.
 
 Reply and tell me what's holding you back. I'll answer honestly.
 
@@ -295,7 +295,7 @@ That's it. Under 10 minutes from opening the box to running your first session.
 
 Every order also comes with a setup guide. And if you get stuck at any point, I'm personally available on WhatsApp. Not a support team. Me.
 
-Every order placed before October 30th includes 3 free headsets.
+Every order placed before November 30th includes 2 free headsets.
 
 Reply with your setup (phone, DJ controller, mixer) and I'll confirm exactly what cables come in the box.
 
@@ -320,7 +320,7 @@ One more thing I want to address, because I've seen it hold people back:
 
 "I don't have a big enough audience yet."
 
-Our minimum order is 10 headphones. With 3 free headsets included, that's 13 total. Enough for a small breathwork circle, an intimate sound journey, or a test run at your next class.
+Our minimum order is 10 headphones. With 2 free headsets included, that's 12 total. Enough for a small breathwork circle, an intimate sound journey, or a test run at your next class.
 
 I've shipped orders of 10 multiple times. Here's what usually happens:
 
@@ -330,7 +330,7 @@ Jess in Germany ordered 11 headphones for guided healing experiences. Not 50. No
 
 You don't need to go all-in. You just need to run one session and see the difference for yourself.
 
-10 headphones + 1 transmitter + 3 free headsets = $559. Every order placed before October 30th includes the 3 free headsets.
+10 headphones + 1 transmitter + 2 free headsets = $559. Every order placed before November 30th includes the 2 free headsets. That's 12 headphones total.
 
 Reply with how many people are in a typical session and I'll recommend the right setup.
 
@@ -371,7 +371,7 @@ I've seen it at beaches, rooftops, yoga studios, corporate events, and festivals
 
 This is what your participants will feel in the first 30 seconds.
 
-Every order placed before October 30th includes 3 free headsets.
+Every order placed before November 30th includes 2 free headsets.
 
 Reply if you want to see videos of what this looks like in action.
 
@@ -402,7 +402,7 @@ You bring your own sound. Plug in the transmitter, turn on the headsets, and you
 
 I've hosted events in 12 countries this way. No speaker hire, no sound checks, no negotiating with venue managers about volume levels. Just headsets in a bag and a transmitter in my pocket.
 
-Every order placed before October 30th includes 3 free headsets.
+Every order placed before November 30th includes 2 free headsets.
 
 Reply if you've got an event coming up overseas. I'll help you figure out the lightest setup for your group size.
 
@@ -437,7 +437,7 @@ Nobody doubles their prices overnight. Here's what I've seen play out:
 
 A set of 20 headphones + transmitter costs $949. Most facilitators have made that back within the first two months, before they've even raised their price.
 
-Every order placed before October 30th includes 3 free headsets.
+Every order placed before November 30th includes 2 free headsets.
 
 Reply with your session size and ticket price and I'll run the math for your specific setup.
 
@@ -470,7 +470,7 @@ Headphones remove the variables you can't control. The sound your participants h
 
 That's the difference. The best facilitators don't just run great sessions. They run great sessions every time.
 
-Every order placed before October 30th includes 3 free headsets.
+Every order placed before November 30th includes 2 free headsets.
 
 Reply if you want to chat about how headphones would fit into your sessions.
 
@@ -501,7 +501,7 @@ That's when the real shifts happen. Not because you facilitate differently. Beca
 
 If you run any modality where depth matters, headphones are the infrastructure that makes it possible.
 
-Every order placed before October 30th includes 3 free headsets.
+Every order placed before November 30th includes 2 free headsets.
 
 Reply if you want to talk about how this applies to your specific modality.
 
@@ -543,7 +543,7 @@ That's it. No tech skills. No sound engineering. Plug in, turn on, press play.
 
 The thing most facilitators tell me: they spent weeks overthinking it, and then the actual setup took less time than their morning coffee.
 
-Every order placed before October 30th includes 3 free headsets.
+Every order placed before November 30th includes 2 free headsets.
 
 If you want a checklist customized for your specific modality, reply with what you facilitate and I'll send one.
 
@@ -571,7 +571,7 @@ I'm not going to pretend there's a countdown timer or fake scarcity here. The he
 Here's what's waiting for you:
 
 - **$39 per headset.** Direct from the factory, same quality as the $79 competitors.
-- **3 free headsets** with every order.
+- **2 free headsets** with every order.
 - **1-year warranty.** If anything's faulty, I replace it.
 - **WhatsApp setup support.** Not a help desk. Me, personally.
 - **Ships worldwide.** We've sent headphones to 12 countries.
@@ -580,7 +580,7 @@ If you have an event or session coming up, reply with the date and I'll make sur
 
 If the timing isn't right, no stress. You're on the list. I'll share facilitator tips and session ideas every now and then. No spam, no pressure.
 
-P.S. If you know another facilitator who'd benefit from headphones, forward this email. The 3 free headsets offer is available to everyone.
+P.S. If you know another facilitator who'd benefit from headphones, forward this email. The 2 free headsets offer is available to everyone.
 
 Nic
 Founder, Buy Silent Disco Headphones
@@ -618,7 +618,7 @@ Hosted 200+ events across 12 countries
 
 ## Promo Setup
 
-- **3 free headsets** with any order (monthly offer, rotating). Minimum order is 10 headphones, so smallest package is always 13 total (10 paid + 3 free)
+- **2 free headsets** with any order (valid until end of November 2026). Minimum order is 10 headphones, so smallest package is always 12 total (10 paid + 2 free)
 - Applied automatically at checkout or by the team when building a quote
 - No coupon code needed
 
