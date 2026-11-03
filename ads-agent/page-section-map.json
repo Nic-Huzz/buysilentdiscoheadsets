@@ -1,0 +1,24 @@
+{
+  "url": "https://buysilentdiscoheadphones.com/",
+  "mapped_at": "2026-11-03",
+  "html_hash": "666d05b18af1186c4c93f202b34c5dd9",
+  "sections": [
+    {"id": "hero", "element": "section.hero", "scroll_pct": 0, "height_pct": 8, "content_summary": "Hero - 'Buy Silent Disco Headphones' h1, subhead, Build Your Package CTA"},
+    {"id": "brand-trust", "element": "section.brand-trust", "scroll_pct": 8, "height_pct": 5, "content_summary": "Brand logos - Brands Who've Used Our Headphones"},
+    {"id": "in-action", "element": "section.in-action", "scroll_pct": 13, "height_pct": 7, "content_summary": "See the Headsets in Action - video/image showcase"},
+    {"id": "products", "element": "section#products", "scroll_pct": 20, "height_pct": 7, "content_summary": "What You Get for $39 Per Headset - product features"},
+    {"id": "sound-quality", "element": "section (after products)", "scroll_pct": 27, "height_pct": 5, "content_summary": "Sound quality details section"},
+    {"id": "competitor-compare", "element": "section.competitor-compare", "scroll_pct": 32, "height_pct": 8, "content_summary": "How We Compare - competitor comparison table"},
+    {"id": "roi-calculator", "element": "section.roi-calculator", "scroll_pct": 40, "height_pct": 8, "content_summary": "How Quickly Do They Pay for Themselves? - ROI calc"},
+    {"id": "pricing-proof", "element": "section.pricing-proof", "scroll_pct": 48, "height_pct": 5, "content_summary": "Is It Actually Better with Headphones? - before/after"},
+    {"id": "packages", "element": "section#packages", "scroll_pct": 53, "height_pct": 12, "content_summary": "Choose Your Package - package builder form with pricing"},
+    {"id": "testimonials", "element": "section#testimonials", "scroll_pct": 65, "height_pct": 5, "content_summary": "What People Say About Our Headphones - testimonials"},
+    {"id": "why-headsets", "element": "section.why-headsets", "scroll_pct": 70, "height_pct": 8, "content_summary": "What Headsets Do for Your Sessions - benefit cards"},
+    {"id": "reformer-analogy", "element": "section (navy bg)", "scroll_pct": 78, "height_pct": 4, "content_summary": "Reformers Changed Pilates Forever analogy"},
+    {"id": "our-story", "element": "section.story-timeline", "scroll_pct": 82, "height_pct": 5, "content_summary": "Our Story - timeline of how headsets were created"},
+    {"id": "transmitter", "element": "section.equipment-section", "scroll_pct": 87, "height_pct": 4, "content_summary": "The Transmitter - product details"},
+    {"id": "guarantee", "element": "section.guarantee-section", "scroll_pct": 91, "height_pct": 3, "content_summary": "Money-back guarantee"},
+    {"id": "faq", "element": "section#faq", "scroll_pct": 94, "height_pct": 4, "content_summary": "Frequently Asked Questions - accordion"},
+    {"id": "definition", "element": "section.definition-snippet", "scroll_pct": 98, "height_pct": 2, "content_summary": "What Are Silent Disco Headphones? - SEO snippet"}
+  ]
+}
