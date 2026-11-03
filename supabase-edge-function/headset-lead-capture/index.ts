@@ -64,7 +64,7 @@ Deno.serve(async (req: Request) => {
         .insert({
           email: cleanEmail,
           name: name || null,
-          source: 'headset-sales',
+          source: (metadata?.utm?.utm_source) || 'headset-sales',
           tags: [tag],
           subscribed: true,
           metadata: metadata ? { ...metadata, last_activity: new Date().toISOString() } : {},
