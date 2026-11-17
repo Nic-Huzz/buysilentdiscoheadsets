@@ -262,6 +262,11 @@ function validateEmail(email) {
 </head>
 <body>
 
+  <!-- SECTION ORDER: 12-section research-validated structure (CXL/Baymard 2026-11-15) -->
+  <!-- New: How It Works, Value Stack, Final CTA -->
+  <!-- Merged: Founder+Reformer, CompetitorCompare+ROI+PricingProof, Packages+Guarantee -->
+  <!-- Removed: Story Timeline, Definition Snippet, Product Overview -->
+
   <!-- ==================== -->
   <!-- HEADER -->
   <!-- ==================== -->
@@ -302,7 +307,7 @@ function validateEmail(email) {
   </script>
 
   <!-- ==================== -->
-  <!-- HERO SECTION -->
+  <!-- 1. HERO SECTION -->
   <!-- ==================== -->
   <section class="hero">
     <div class="container">
@@ -333,7 +338,7 @@ function validateEmail(email) {
   </section>
 
   <!-- ==================== -->
-  <!-- BRAND TRUST SECTION -->
+  <!-- 2. BRAND TRUST SECTION -->
   <!-- ==================== -->
   <section class="brand-trust section-sm">
     <div class="container">
@@ -381,7 +386,7 @@ function validateEmail(email) {
   </section>
 
   <!-- ==================== -->
-  <!-- HEADSETS IN ACTION -->
+  <!-- 3. HEADSETS IN ACTION / VIDEO GRID -->
   <!-- ==================== -->
   <section class="in-action section">
     <div class="container">
@@ -418,9 +423,9 @@ function validateEmail(email) {
   </section>
 
   <!-- ==================== -->
-  <!-- WHY USE HEADSETS -->
+  <!-- 4. WHY USE HEADSETS (moved UP from 12) -->
   <!-- ==================== -->
-  <section class="why-headsets section" style="background: var(--white);">
+  <section id="products" class="why-headsets section" style="background: var(--white);">
     <div class="container">
       <h2>What Headsets Do for Your Sessions</h2>
 
@@ -530,73 +535,40 @@ function validateEmail(email) {
     </div>
   </section>
 
-
   <!-- ==================== -->
-  <!-- HOW IT WORKS -->
+  <!-- 5. HOW IT WORKS (NEW) -->
   <!-- ==================== -->
   <section class="section" style="background: var(--gray-light);">
     <div class="container" style="max-width: 800px;">
       <h2 class="text-center">How It Works</h2>
-      <p class="text-center" style="margin-bottom: var(--spacing-lg); color: var(--gray-dark);">Three steps from order to your best session.</p>
+      <p class="text-center" style="max-width: 600px; margin: 0 auto var(--spacing-lg); color: var(--gray-dark);">From order to your first event in under 3 weeks.</p>
 
-      <div style="display: grid; gap: 2rem;">
-        <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-          <div style="flex-shrink: 0; width: 48px; height: 48px; background: var(--gradient-purple); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2rem;">1</div>
-          <div>
-            <h3 style="margin-bottom: 0.25rem;">Build Your Package</h3>
-            <p style="color: var(--gray-dark); margin: 0;">Choose your headset quantity and transmitters. Add your logo and custom LED colours. We send a quote within 24 hours.</p>
-          </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--spacing-lg); margin-top: var(--spacing-lg);">
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; font-weight: 800; color: var(--purple-dark); margin-bottom: 0.5rem;">1</div>
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Build Your Package</h3>
+          <p style="color: var(--gray-dark); font-size: 0.95rem; line-height: 1.6;">Choose your headset quantity, transmitters, and delivery location. We'll send a detailed quote within 24 hours.</p>
         </div>
-        <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-          <div style="flex-shrink: 0; width: 48px; height: 48px; background: var(--gradient-purple); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2rem;">2</div>
-          <div>
-            <h3 style="margin-bottom: 0.25rem;">We Manufacture and Ship</h3>
-            <p style="color: var(--gray-dark); margin: 0;">Manufacturing takes 7-10 days. Shipping takes 7-10 days with full tracking. Free shipping on orders over $500.</p>
-          </div>
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; font-weight: 800; color: var(--purple-dark); margin-bottom: 0.5rem;">2</div>
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">We Manufacture and Ship</h3>
+          <p style="color: var(--gray-dark); font-size: 0.95rem; line-height: 1.6;">Manufacturing takes 7-10 days. Shipping takes 7-10 days. Full tracking provided for every order.</p>
         </div>
-        <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-          <div style="flex-shrink: 0; width: 48px; height: 48px; background: var(--gradient-purple); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2rem;">3</div>
-          <div>
-            <h3 style="margin-bottom: 0.25rem;">Run Your Best Session</h3>
-            <p style="color: var(--gray-dark); margin: 0;">Plug in the transmitter, connect your audio, and you are live in 5 minutes. We include a setup walkthrough and WhatsApp support.</p>
-          </div>
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; font-weight: 800; color: var(--purple-dark); margin-bottom: 0.5rem;">3</div>
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Run Your Best Session</h3>
+          <p style="color: var(--gray-dark); font-size: 0.95rem; line-height: 1.6;">Plug in the transmitter, connect your audio source, and you're running within 5 minutes. No technical skills needed.</p>
         </div>
+      </div>
+
+      <div class="text-center" style="margin-top: var(--spacing-lg);">
+        <a href="#package-form" class="btn btn-primary">Build Your Package</a>
       </div>
     </div>
   </section>
 
   <!-- ==================== -->
-  <!-- REFORMER ANALOGY -->
-  <!-- ==================== -->
-  <section class="section" style="background: var(--navy);">
-    <div class="container" style="max-width: 900px;">
-      <p style="color: var(--gold); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; margin-bottom: 0.75rem;">The Shift</p>
-      <h2 style="color: white; text-align: center; margin-bottom: var(--spacing-md);">Reformers Changed Pilates Forever. Headsets Will Do the Same for Wellness.</h2>
-
-      <div style="max-width: 700px; margin: 0 auto;">
-        <p style="color: rgba(255,255,255,0.7); font-size: 1rem; line-height: 1.8; margin-bottom: var(--spacing-md);">When Reformer machines entered Pilates studios, they didn't replace mat classes. They created an entirely new tier. Suddenly there was <strong style="color: white;">standard Pilates</strong> and <strong style="color: white;">premium Pilates</strong>. Studios that adopted Reformers early charged 2-3x more per class. The experience was deeper, the results were faster, and clients never went back to mat-only.</p>
-
-        <p style="color: white; font-size: 1.25rem; font-weight: 700; line-height: 1.4; margin-bottom: var(--spacing-md); text-align: center;">Headsets are the Reformer of wellness.</p>
-
-        <p style="color: rgba(255,255,255,0.7); font-size: 1rem; line-height: 1.8;">Facilitators who adopt headsets now will be the ones running the premium-tier classes of the future. Just like the studios that got Reformers early.</p>
-      </div>
-
-      <div class="reformer-comparison">
-        <div style="text-align: center;">
-          <p style="color: var(--gray-medium); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">Standard Class</p>
-          <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; margin: 0;">Open room, shared audio, distractions</p>
-        </div>
-        <div class="reformer-arrow">→</div>
-        <div style="text-align: center;">
-          <p style="color: var(--gold); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; font-weight: 700;">Premium Class</p>
-          <p style="color: rgba(255,255,255,0.9); font-size: 0.95rem; margin: 0;">Hi-Fi guided audio, total immersion</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== -->
-  <!-- FOUNDER MESSAGE -->
+  <!-- 6. POSITIONING STORY (MERGED: Founder + Reformer) -->
   <!-- ==================== -->
   <section class="section" style="background: var(--white);">
     <div class="container">
@@ -623,11 +595,38 @@ function validateEmail(email) {
         </div>
 
       </div>
+
+      <!-- Reformer Analogy (merged into Positioning Story) -->
+      <div style="margin-top: var(--spacing-xl); padding: var(--spacing-lg); background: var(--navy); border-radius: 20px; max-width: 900px; margin-left: auto; margin-right: auto;">
+        <p style="color: var(--gold); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; margin-bottom: 0.75rem;">The Shift</p>
+        <h2 style="color: white; text-align: center; margin-bottom: var(--spacing-md);">Reformers Changed Pilates Forever. Headsets Will Do the Same for Wellness.</h2>
+
+        <div style="max-width: 700px; margin: 0 auto;">
+          <p style="color: rgba(255,255,255,0.7); font-size: 1rem; line-height: 1.8; margin-bottom: var(--spacing-md);">When Reformer machines entered Pilates studios, they didn't replace mat classes. They created an entirely new tier. Suddenly there was <strong style="color: white;">standard Pilates</strong> and <strong style="color: white;">premium Pilates</strong>. Studios that adopted Reformers early charged 2-3x more per class. The experience was deeper, the results were faster, and clients never went back to mat-only.</p>
+
+          <p style="color: white; font-size: 1.25rem; font-weight: 700; line-height: 1.4; margin-bottom: var(--spacing-md); text-align: center;">Headsets are the Reformer of wellness.</p>
+
+          <p style="color: rgba(255,255,255,0.7); font-size: 1rem; line-height: 1.8;">Facilitators who adopt headsets now will be the ones running the premium-tier classes of the future. Just like the studios that got Reformers early.</p>
+        </div>
+
+        <div class="reformer-comparison">
+          <div style="text-align: center;">
+            <p style="color: var(--gray-medium); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">Standard Class</p>
+            <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; margin: 0;">Open room, shared audio, distractions</p>
+          </div>
+          <div class="reformer-arrow">→</div>
+          <div style="text-align: center;">
+            <p style="color: var(--gold); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; font-weight: 700;">Premium Class</p>
+            <p style="color: rgba(255,255,255,0.9); font-size: 0.95rem; margin: 0;">Hi-Fi guided audio, total immersion</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- ==================== -->
-  <!-- TESTIMONIALS -->
+  <!-- 7. TESTIMONIALS (moved UP from 11) -->
   <!-- ==================== -->
   <section id="testimonials" class="testimonials section">
     <div class="container">
@@ -663,58 +662,62 @@ function validateEmail(email) {
   </section>
 
   <!-- ==================== -->
-  <!-- PRICING PROOF -->
+  <!-- 8. ROI PROOF (MERGED: Competitor Compare + ROI Calculator + Pricing Proof) -->
   <!-- ==================== -->
-  <section class="pricing-proof section" style="background: var(--white);">
-    <div class="container" style="max-width: 700px;">
-      <h2 class="text-center">Is It Actually Better with Headphones?</h2>
-      <p class="text-center" style="margin: 0 auto var(--spacing-lg); color: var(--gray-dark);">Every leading wellness experience that adopted headphones now charges 2-3x more.</p>
+  <section class="section" style="background: var(--gray-light);">
+    <div class="container">
 
-      <div class="pricing-proof-grid">
-        <div class="pricing-proof-row">
-          <div class="pricing-proof-standard">
-            <span class="pricing-proof-label">Average breathwork class</span>
-            <span class="pricing-proof-price">$30</span>
-          </div>
-          <div class="pricing-proof-headphones">
-            <span class="pricing-proof-label">9D Breathwork (uses headphones)</span>
-            <span class="pricing-proof-price">$60</span>
-          </div>
-        </div>
-        <div class="pricing-proof-row">
-          <div class="pricing-proof-standard">
-            <span class="pricing-proof-label">Average sober dance event</span>
-            <span class="pricing-proof-price">$20</span>
-          </div>
-          <div class="pricing-proof-headphones">
-            <span class="pricing-proof-label">Dawnbreaker silent disco (Australia)</span>
-            <span class="pricing-proof-price">$50</span>
-          </div>
-        </div>
-        <div class="pricing-proof-row">
-          <div class="pricing-proof-standard">
-            <span class="pricing-proof-label">Average guided journey</span>
-            <span class="pricing-proof-price">$25</span>
-          </div>
-          <div class="pricing-proof-headphones">
-            <span class="pricing-proof-label">Sanctum (hired by the World Economic Forum)</span>
-            <span class="pricing-proof-price">$70</span>
-          </div>
-        </div>
+      <!-- Competitor Comparison -->
+      <h2 class="text-center">How We Compare</h2>
+      <p class="text-center" style="max-width: 700px; margin: 0 auto var(--spacing-lg);">
+        Same manufacturer. Same specs. See the price difference.
+      </p>
+      <div style="overflow-x: auto;">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Supplier</th>
+              <th>Per Headset</th>
+              <th>Transmitter</th>
+              <th>30 Headsets + 1 TX</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Party Headphones <span style="color: var(--gray-medium);">(US)</span></td>
+              <td>$79</td>
+              <td>$259</td>
+              <td>$2,629</td>
+            </tr>
+            <tr>
+              <td>Silent Sounds <span style="color: var(--gray-medium);">(Australia)</span></td>
+              <td>A$100</td>
+              <td>A$330</td>
+              <td>A$3,330</td>
+            </tr>
+            <tr>
+              <td>Silent Disco Direct <span style="color: var(--gray-medium);">(UK)</span></td>
+              <td>$46</td>
+              <td>$190</td>
+              <td>$1,570</td>
+            </tr>
+            <tr style="background: var(--gradient-purple); color: white; font-weight: 700;">
+              <td>Buy Silent Disco Headphones</td>
+              <td><span class="text-gold-gradient" style="-webkit-text-fill-color: var(--gold);">$39</span></td>
+              <td><span style="color: var(--gold);">$169</span></td>
+              <td><span style="color: var(--gold); font-size: 1.1rem;">$1,339</span></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-
-      <p class="text-center" style="margin-top: var(--spacing-lg); color: var(--gray-dark); font-size: 0.95rem;">Not because the headphones are flashy. Because participants drop deeper, come back more, and tell their friends.</p>
-      <div class="text-center" style="margin-top: var(--spacing-md);">
+      <div style="text-align: center; margin-top: var(--spacing-lg);">
+        <p style="font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: var(--spacing-sm);">Save up to $1,290 on 30 headsets</p>
         <a href="#package-form" class="btn btn-primary">Build Your Package</a>
       </div>
-    </div>
-  </section>
 
-  <!-- ==================== -->
-  <!-- ROI CALCULATOR -->
-  <!-- ==================== -->
-  <section class="roi-calculator section">
-    <div class="container">
+      <hr style="border: none; border-top: 1px solid #e5e7eb; margin: var(--spacing-xl) 0;">
+
+      <!-- ROI Calculator -->
       <h2>How Quickly Do They Pay for Themselves?</h2>
       <div class="roi-calculator-container">
         <div class="roi-card">
@@ -776,11 +779,95 @@ function validateEmail(email) {
           calc();
         })();
       </script>
+
+      <hr style="border: none; border-top: 1px solid #e5e7eb; margin: var(--spacing-xl) 0;">
+
+      <!-- Pricing Proof -->
+      <div style="max-width: 700px; margin: 0 auto;">
+        <h2 class="text-center">Is It Actually Better with Headphones?</h2>
+        <p class="text-center" style="margin: 0 auto var(--spacing-lg); color: var(--gray-dark);">Every leading wellness experience that adopted headphones now charges 2-3x more.</p>
+
+        <div class="pricing-proof-grid">
+          <div class="pricing-proof-row">
+            <div class="pricing-proof-standard">
+              <span class="pricing-proof-label">Average breathwork class</span>
+              <span class="pricing-proof-price">$30</span>
+            </div>
+            <div class="pricing-proof-headphones">
+              <span class="pricing-proof-label">9D Breathwork (uses headphones)</span>
+              <span class="pricing-proof-price">$60</span>
+            </div>
+          </div>
+          <div class="pricing-proof-row">
+            <div class="pricing-proof-standard">
+              <span class="pricing-proof-label">Average sober dance event</span>
+              <span class="pricing-proof-price">$20</span>
+            </div>
+            <div class="pricing-proof-headphones">
+              <span class="pricing-proof-label">Dawnbreaker silent disco (Australia)</span>
+              <span class="pricing-proof-price">$50</span>
+            </div>
+          </div>
+          <div class="pricing-proof-row">
+            <div class="pricing-proof-standard">
+              <span class="pricing-proof-label">Average guided journey</span>
+              <span class="pricing-proof-price">$25</span>
+            </div>
+            <div class="pricing-proof-headphones">
+              <span class="pricing-proof-label">Sanctum (hired by the World Economic Forum)</span>
+              <span class="pricing-proof-price">$70</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-center" style="margin-top: var(--spacing-lg); color: var(--gray-dark); font-size: 0.95rem;">Not because the headphones are flashy. Because participants drop deeper, come back more, and tell their friends.</p>
+        <div class="text-center" style="margin-top: var(--spacing-md);">
+          <a href="#package-form" class="btn btn-primary">Build Your Package</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- ==================== -->
-  <!-- BUNDLE PACKAGES -->
+  <!-- 9. VALUE STACK (NEW) -->
+  <!-- ==================== -->
+  <section class="section" style="background: var(--white);">
+    <div class="container" style="max-width: 800px;">
+      <h2 class="text-center">Included Free with Every Order</h2>
+      <p class="text-center" style="max-width: 600px; margin: 0 auto var(--spacing-lg); color: var(--gray-dark);">We don't just ship headphones. We ship everything you need to fill your events.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: var(--spacing-md);">
+        <div style="padding: 1.25rem; border: 1px solid #e5e7eb; border-radius: 16px;">
+          <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">"Sell Out Your Events" Playbook</h4>
+          <p style="color: var(--gray-dark); font-size: 0.9rem; line-height: 1.6;">How to fill your first 3 events. Pricing, marketing, and launch strategy from 200+ events hosted.</p>
+        </div>
+        <div style="padding: 1.25rem; border: 1px solid #e5e7eb; border-radius: 16px;">
+          <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">"Scale from 30 to 100+ People" Playbook</h4>
+          <p style="color: var(--gray-dark); font-size: 0.9rem; line-height: 1.6;">The growth roadmap our clients use. Venue selection, ticket pricing tiers, and scaling without burning out.</p>
+        </div>
+        <div style="padding: 1.25rem; border: 1px solid #e5e7eb; border-radius: 16px;">
+          <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Content Playbook</h4>
+          <p style="color: var(--gray-dark); font-size: 0.9rem; line-height: 1.6;">What to film, post, and say to attract attendees. Proven content templates from events that sold out.</p>
+        </div>
+        <div style="padding: 1.25rem; border: 1px solid #e5e7eb; border-radius: 16px;">
+          <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">5-Minute Setup Guide + 1-Year Warranty</h4>
+          <p style="color: var(--gray-dark); font-size: 0.9rem; line-height: 1.6;">Step-by-step setup walkthrough plus full warranty on every headset. WhatsApp direct support included.</p>
+        </div>
+        <div style="padding: 1.25rem; border: 1px solid #e5e7eb; border-radius: 16px;">
+          <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">2 Free Headsets with Any Order</h4>
+          <p style="color: var(--gray-dark); font-size: 0.9rem; line-height: 1.6;">This month's promo. On top of your paid quantity, so 10 ordered = 12 delivered.</p>
+        </div>
+        <div style="padding: 1.25rem; border: 1px solid #e5e7eb; border-radius: 16px;">
+          <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Frequency Matching for Existing Headsets</h4>
+          <p style="color: var(--gray-dark); font-size: 0.9rem; line-height: 1.6;">Already own headsets from another supplier? We can match frequencies so they work together. Free.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== -->
+  <!-- 10. PACKAGES + GUARANTEE (MERGED) -->
   <!-- ==================== -->
   <section id="packages" class="package-builder section">
     <div class="container">
@@ -1064,55 +1151,22 @@ function validateEmail(email) {
         })();
       </script>
 
-    </div>
-  </section>
-
-  <!-- ==================== -->
-  <!-- GUARANTEE SECTION -->
-  <!-- ==================== -->
-  <section class="guarantee-section">
-    <div class="guarantee-container">
-      <div class="guarantee-badge">
-        <div class="guarantee-icon">🛡️</div>
-        <div>
-          <h3>1-Year Warranty</h3>
-          <p>Every order is backed by a 1-year warranty covering defects and malfunctions. We'll replace any faulty unit.</p>
+      <!-- Guarantee (merged into Packages section) -->
+      <div class="guarantee-container" style="margin-top: var(--spacing-lg); text-align: center;">
+        <div class="guarantee-badge">
+          <div class="guarantee-icon">🛡️</div>
+          <div>
+            <h3>1-Year Warranty</h3>
+            <p>Every order is backed by a 1-year warranty covering defects and malfunctions. We'll replace any faulty unit.</p>
+          </div>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- ==================== -->
-  <!-- PRODUCT OVERVIEW -->
-  <!-- ==================== -->
-  <section id="products" class="product-overview section" style="background: var(--gray-light);">
-    <div class="container">
-      <div class="product-overview-content">
-        <div class="product-overview-image">
-          <img src="images/product-showcase.webp" alt="Silent disco headphones product showcase with Hi-Fi audio drivers" width="1334" height="1488" loading="lazy">
-        </div>
-        <div class="product-overview-text">
-          <h2>What You Get for $39 Per Headset</h2>
-          <p>The same headphones competitors sell for $79. We cut the middleman, not the quality.</p>
-
-          <ul class="product-overview-features">
-            <li><strong>Hi-Fi Sound</strong> so every whisper and beat comes through, even outdoors</li>
-            <li><strong>Comfortable on-ear design</strong> guests wear them for hours without fatigue</li>
-            <li><strong>10+ hours battery life</strong> outlasts any event, no mid-session charging</li>
-            <li><strong>500m wireless range</strong> covers entire venues, beaches, and festival grounds</li>
-            <li><strong>3-channel LED system</strong> guests see who's on which channel, creating instant community</li>
-          </ul>
-
-          <p style="margin-top: var(--spacing-md); font-size: 0.95rem; line-height: 1.7; color: var(--gray-dark);">Every feature serves one purpose. When participants put these on, outside noise disappears. They drop in. Their nervous system becomes fully immersed in the experience. That immersion is what creates real shifts. Facilitators who use headsets never go back for a reason.</p>
-
-          <a href="#package-form" class="btn btn-secondary" style="margin-top: 1.5rem;">Build Your Package</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== -->
-  <!-- EQUIPMENT SECTION -->
+  <!-- 11. EQUIPMENT/TRANSMITTER -->
   <!-- ==================== -->
   <section class="equipment-section section" style="background: var(--gray-light);">
     <div class="container">
@@ -1139,8 +1193,7 @@ function validateEmail(email) {
   </section>
 
   <!-- ==================== -->
-  <!-- ==================== -->
-  <!-- FAQ SECTION -->
+  <!-- 12. FAQ SECTION -->
   <!-- ==================== -->
   <section id="faq" class="faq section">
     <div class="container">
@@ -1261,15 +1314,14 @@ function validateEmail(email) {
     </div>
   </section>
 
-
   <!-- ==================== -->
-  <!-- FINAL CTA -->
+  <!-- FINAL CTA (NEW) -->
   <!-- ==================== -->
-  <section class="section" style="background: linear-gradient(135deg, #4a0ea8 0%, #5e17eb 50%, #7c3aed 100%); padding: 4rem 0;">
+  <section class="section" style="background: var(--gradient-purple);">
     <div class="container" style="max-width: 700px; text-align: center;">
-      <h2 style="color: white; margin-bottom: var(--spacing-md);">Ready to Transform Your Sessions?</h2>
+      <h2 style="color: white; margin-bottom: var(--spacing-sm);">Ready to Build Your Package?</h2>
+      <p style="color: rgba(255,255,255,0.85); margin-bottom: var(--spacing-md); font-size: 1.05rem;">$39 per headset. Direct from the factory. Free playbooks, setup guide, and 2 free headsets with every order.</p>
       <a href="#package-form" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Build Your Package</a>
-      <p style="color: rgba(255,255,255,0.8); margin-top: var(--spacing-md); font-size: 0.95rem; font-weight: 600;">This month: 2 free headsets with any order</p>
     </div>
   </section>
 
