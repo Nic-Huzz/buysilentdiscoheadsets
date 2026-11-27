@@ -1110,7 +1110,8 @@ function validateEmail(email) {
             var transmitters = document.getElementById('transmitter-quantity').value;
             var country = document.getElementById('delivery-country').value;
             var whatsapp = document.getElementById('customer-whatsapp').value;
-            var training = document.getElementById('training-interest').value;
+            var trainingEl = document.getElementById('training-interest');
+            var training = trainingEl ? trainingEl.value : null;
             var total = document.getElementById('estimated-total').value;
 
             var params = new URLSearchParams(window.location.search);
