@@ -6,6 +6,75 @@ const corsHeaders = {
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
 }
 
+// SHA256 hash for Meta CAPI (requires lowercase, trimmed input)
+async function sha256(value: string): Promise<string> {
+  const data = new TextEncoder().encode(value.toLowerCase().trim())
+  const hash = await crypto.subtle.digest('SHA-256', data)
+  return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('')
+}
+
+// Send Lead event to Meta Conversions API
+async function sendMetaCAPI(email: string, req: Request, metadata?: Record<string, unknown>) {
+  const accessToken = Deno.env.get('META_CAPI_ACCESS_TOKEN')
+  const pixelId = '2258374091587901'
+  if (!accessToken) return
+
+  try {
+    const hashedEmail = await sha256(email)
+    const eventTime = Math.floor(Date.now() / 1000)
+    const clientIp = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || req.headers.get('cf-connecting-ip') || ''
+    const clientUa = req.headers.get('user-agent') || ''
+
+    const userData: Record<string, unknown> = {
+      em: [hashedEmail],
+      client_ip_address: clientIp,
+      client_user_agent: clientUa,
+    }
+
+    // Pass fbp/fbc click cookies if the client sent them
+    if (metadata?.fbp) userData.fbp = metadata.fbp
+    if (metadata?.fbc) userData.fbc = metadata.fbc
+
+    // Hash and include phone number (WhatsApp) for stronger matching
+    if (metadata?.whatsapp) {
+      const cleanPhone = String(metadata.whatsapp).replace(/[^0-9+]/g, '')
+      if (cleanPhone.length >= 7) {
+        userData.ph = [await sha256(cleanPhone)]
+      }
+    }
+
+    const eventData: Record<string, unknown> = {
+      event_name: 'Lead',
+      event_time: eventTime,
+      action_source: 'website',
+      event_source_url: 'https://buysilentdiscoheadphones.com',
+      user_data: userData,
+    }
+
+    // Deduplication: match event_id with client-side pixel
+    if (metadata?.event_id) eventData.event_id = metadata.event_id
+
+    // Value-based optimization: send deal value so Meta optimizes for high-value leads
+    if (metadata?.estimated_total) {
+      const numericValue = parseInt(String(metadata.estimated_total).replace(/[^0-9]/g, ''))
+      if (numericValue > 0) {
+        eventData.custom_data = { value: numericValue, currency: 'USD' }
+      }
+    }
+
+    await fetch(`https://graph.facebook.com/v21.0/${pixelId}/events`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        data: [eventData],
+        access_token: accessToken,
+      }),
+    })
+  } catch (err) {
+    console.error('Meta CAPI error:', err)
+  }
+}
+
 
 Deno.serve(async (req: Request) => {
   if (req.method === 'OPTIONS') {
@@ -75,6 +144,39 @@ Deno.serve(async (req: Request) => {
       contactId = data.id
     }
 
+    // Auto-create sales_deals entry for quote requests
+    if (tag === 'quote-request' && metadata) {
+      try {
+        const headsets = parseInt(metadata.headsets) || 0
+        const transmitters = parseInt(metadata.transmitters) || 0
+        const estimatedValue = parseInt(String(metadata.estimated_total).replace(/[^0-9]/g, '')) || 0
+
+        const { data: existingDeal } = await supabase
+          .from('sales_deals')
+          .select('id')
+          .eq('contact_email', cleanEmail)
+          .eq('product_type', 'headset_sales')
+          .single()
+
+        if (!existingDeal) {
+          await supabase
+            .from('sales_deals')
+            .insert({
+              user_id: 'ebe69854-2ebd-4236-a437-3a362f5e1af4',
+              contact_name: name || cleanEmail.split('@')[0],
+              contact_email: cleanEmail,
+              source: (metadata.utm?.utm_source) || 'Website',
+              product_type: 'headset_sales',
+              value: estimatedValue,
+              status: 'lead',
+              notes: `${headsets} headphones + ${transmitters} transmitter(s). ${metadata.estimated_total || 'Value TBC'}. ${metadata.country || 'Country TBC'}. Auto-created from landing page form.`,
+            })
+        }
+      } catch (err) {
+        console.error('sales_deals insert error:', err)
+      }
+    }
+
     // Add to MailerLite and trigger welcome sequence for popup signups
     const mailerliteApiKey = Deno.env.get('MAILERLITE_API_KEY')
     if (mailerliteApiKey && (tag === 'popup-free-headsets' || tag === 'popup-discount')) {
@@ -94,6 +196,12 @@ Deno.serve(async (req: Request) => {
       } catch (err) {
         console.error('MailerLite error:', err)
       }
+    }
+
+    // Send Lead event to Meta Conversions API (server-side)
+    if (['popup-free-headsets', 'popup-discount', 'quote-request',
+         'breathwork-playlist', 'dance-playlist', '5-principles'].includes(tag)) {
+      await sendMetaCAPI(cleanEmail, req, metadata)
     }
 
     return new Response(
